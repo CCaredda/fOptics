@@ -1,0 +1,176 @@
+\doxysection{polyfit.\+hpp}
+\hypertarget{polyfit_8hpp_source}{}\label{polyfit_8hpp_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/polyfit.hpp@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/polyfit.hpp}}
+\mbox{\hyperlink{polyfit_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ BOOST\_UBLAS\_TYPE\_CHECK}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ \ \ undef\ BOOST\_UBLAS\_TYPE\_CHECK}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ BOOST\_UBLAS\_TYPE\_CHECK\ 0}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ \_USE\_MATH\_DEFINES}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#\ \ \ define\ \_USE\_MATH\_DEFINES}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <boost/assert.hpp>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <boost/numeric/ublas/matrix.hpp>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <boost/numeric/ublas/lu.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{using\ namespace\ }cv;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{polyfit_8hpp_a2601e2640ffaf5ef1c1f8d1f3fd207d8}{polyfit}}(\ \textcolor{keyword}{const}\ QVector<T>\&\ oX,\ \textcolor{keyword}{const}\ QVector<T>\&\ oY,\ \textcolor{keywordtype}{int}\ nDegree,std::vector<T>\ \&\_out)}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{using\ namespace\ }boost::numeric::ublas;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ oX.size()\ !=\ oY.size()\ )}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ qDebug()<<\textcolor{stringliteral}{"{}X\ and\ Y\ vector\ sizes\ do\ not\ match"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ more\ intuative\ this\ way}}
+\DoxyCodeLine{00063\ \ \ \ \ nDegree++;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nCount\ =\ \ oX.size();}
+\DoxyCodeLine{00066\ \ \ \ \ matrix<T>\ oXMatrix(\ nCount,\ nDegree\ );}
+\DoxyCodeLine{00067\ \ \ \ \ matrix<T>\ oYMatrix(\ nCount,\ 1\ );}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ copy\ y\ matrix}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nCount;\ i++\ )}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ oYMatrix(i,\ 0)\ =\ oY[i];}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ create\ the\ X\ matrix}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{size\_t}\ nRow\ =\ 0;\ nRow\ <\ nCount;\ nRow++\ )}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ T\ nVal\ =\ 1.0f;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{int}\ nCol\ =\ 0;\ nCol\ <\ nDegree;\ nCol++\ )}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ oXMatrix(nRow,\ nCol)\ =\ nVal;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ nVal\ *=\ oX[nRow];}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ transpose\ X\ matrix}}
+\DoxyCodeLine{00087\ \ \ \ \ matrix<T>\ oXtMatrix(\ trans(oXMatrix)\ );}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ multiply\ transposed\ X\ matrix\ with\ X\ matrix}}
+\DoxyCodeLine{00089\ \ \ \ \ matrix<T>\ oXtXMatrix(\ prec\_prod(oXtMatrix,\ oXMatrix)\ );}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ multiply\ transposed\ X\ matrix\ with\ Y\ matrix}}
+\DoxyCodeLine{00091\ \ \ \ \ matrix<T>\ oXtYMatrix(\ prec\_prod(oXtMatrix,\ oYMatrix)\ );}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ lu\ decomposition}}
+\DoxyCodeLine{00094\ \ \ \ \ permutation\_matrix<int>\ pert(oXtXMatrix.size1());}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ singular\ =\ lu\_factorize(oXtXMatrix,\ pert);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ must\ be\ singular}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{if}(singular\ !=\ 0)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ qDebug()<<\textcolor{stringliteral}{"{}[Polyfit]\ Erreur\ singular"{}};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ BOOST\_ASSERT(\ singular\ ==\ 0\ );}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ backsubstitution}}
+\DoxyCodeLine{00106\ \ \ \ \ lu\_substitute(oXtXMatrix,\ pert,\ oXtYMatrix);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ copy\ the\ result\ to\ coeff}}
+\DoxyCodeLine{00109\ \ \ \ \ std::vector<T>\ out(\ oXtYMatrix.data().begin(),\ oXtYMatrix.data().end()\ );}
+\DoxyCodeLine{00110\ \ \ \ \ \_out=out;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{polyfit_8hpp_afa35cffdd29e52f8471629f30594588f}{polyfit2}}(\ \textcolor{keyword}{const}\ QVector<T>\&\ oX,\ \textcolor{keyword}{const}\ QVector<T>\&\ oY,\ \textcolor{keywordtype}{int}\ nDegree,std::vector<T>\ \&\_out)}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{using\ namespace\ }boost::numeric::ublas;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ more\ intuative\ this\ way}}
+\DoxyCodeLine{00136\ \ \ \ \ nDegree++;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nCount\ =\ \ oX.size();}
+\DoxyCodeLine{00139\ \ \ \ \ matrix<T>\ oXMatrix(\ nCount,\ nDegree\ );}
+\DoxyCodeLine{00140\ \ \ \ \ matrix<T>\ oYMatrix(\ nCount,\ 1\ );}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ copy\ y\ matrix}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nCount;\ i++\ )}
+\DoxyCodeLine{00144\ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ oYMatrix(i,\ 0)\ =\ oY[i];}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ create\ the\ X\ matrix}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{size\_t}\ nRow\ =\ 0;\ nRow\ <\ nCount;\ nRow++\ )}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ T\ nVal\ =\ 1.0f;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{int}\ nCol\ =\ 0;\ nCol\ <\ nDegree;\ nCol++\ )}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ oXMatrix(nRow,\ nCol)\ =\ nVal;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ nVal\ *=\ oX[nRow];}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//\ transpose\ X\ matrix}}
+\DoxyCodeLine{00160\ \ \ \ \ matrix<T>\ oXtMatrix(\ trans(oXMatrix)\ );}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//\ multiply\ transposed\ X\ matrix\ with\ X\ matrix}}
+\DoxyCodeLine{00162\ \ \ \ \ matrix<T>\ oXtXMatrix(\ prec\_prod(oXtMatrix,\ oXMatrix)\ );}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{comment}{//\ multiply\ transposed\ X\ matrix\ with\ Y\ matrix}}
+\DoxyCodeLine{00164\ \ \ \ \ matrix<T>\ oXtYMatrix(\ prec\_prod(oXtMatrix,\ oYMatrix)\ );}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//\ lu\ decomposition}}
+\DoxyCodeLine{00167\ \ \ \ \ permutation\_matrix<int>\ pert(oXtXMatrix.size1());}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ singular\ =\ lu\_factorize(oXtXMatrix,\ pert);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ must\ be\ singular}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{if}(singular\ !=\ 0)}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ qDebug()<<\textcolor{stringliteral}{"{}[Polyfit]\ Erreur\ singular"{}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ BOOST\_ASSERT(\ singular\ ==\ 0\ );}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ backsubstitution}}
+\DoxyCodeLine{00179\ \ \ \ \ lu\_substitute(oXtXMatrix,\ pert,\ oXtYMatrix);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ copy\ the\ result\ to\ coeff}}
+\DoxyCodeLine{00182\ \ \ \ \ std::vector<T>\ out(\ oXtYMatrix.data().begin(),\ oXtYMatrix.data().end()\ );}
+\DoxyCodeLine{00183\ \ \ \ \ \_out=out;}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00185\ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00202\ std::vector<T>\ \mbox{\hyperlink{polyfit_8hpp_ab2da5956d89190298853e56aed821b8e}{polyval}}(\ \textcolor{keyword}{const}\ std::vector<T>\&\ oCoeff,\ \textcolor{keyword}{const}\ std::vector<T>\&\ oX\ )}
+\DoxyCodeLine{00203\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nCount\ =\ \ oX.size();}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nDegree\ =\ oCoeff.size();}
+\DoxyCodeLine{00206\ \ \ \ \ std::vector<T>\ \ oY(\ nCount\ );}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nCount;\ i++\ )}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ T\ nY\ =\ 0;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ T\ nXT\ =\ 1;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ T\ nX\ =\ oX[i];}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ nDegree;\ j++\ )}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ multiply\ current\ x\ by\ a\ coefficient}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ nY\ +=\ oCoeff[j]\ *\ nXT;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ power\ up\ the\ X}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ nXT\ *=\ nX;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ oY[i]\ =\ nY;}
+\DoxyCodeLine{00221\ \ \ \ \ \}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ oY;}
+\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{00225\ }
+
+\end{DoxyCode}

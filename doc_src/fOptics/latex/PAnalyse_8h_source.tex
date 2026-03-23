@@ -1,0 +1,531 @@
+\doxysection{PAnalyse.\+h}
+\hypertarget{PAnalyse_8h_source}{}\label{PAnalyse_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PAnalyse.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PAnalyse.h}}
+\mbox{\hyperlink{PAnalyse_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ PANALYSE\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ PANALYSE\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QImage>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QTime>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{filtering_8h}{filtering.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{oxygenation_8h}{oxygenation.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PCoeff_8h}{PCoeff.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PFiltering_8h}{PFiltering.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <omp.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QProcess>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Statistic__functions_8h}{Statistic\_functions.h}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{PrealTimeProcess_8h}{PrealTimeProcess.h}}>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PPixelWiseMolarCoeff_8h}{PPixelWiseMolarCoeff.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PProcessTimes_8h}{PProcessTimes.h}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PModifiedBeerLambertLaw_8h}{PModifiedBeerLambertLaw.h}}"{}}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{P__SPM_8h}{P\_SPM.h}}"{}}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FastICA_8h}{FastICA.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ Max\_Freq\_Cardiac\_Filter\ 2.5}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ Min\_Freq\_Cardiac\_Filter\ 0.7}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ MAX\_data\_WEIGHT\_GB\ 11500000000}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ REAL\_TIME\_PROCESSING\_PERIOD\ 1000}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{using\ namespace\ }cv;}
+\DoxyCodeLine{00060\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }PAnalyse\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{explicit}\ PAnalyse(QObject\ *parent\ =\ 0);}
+\DoxyCodeLine{00067\ \ \ \ \ \string~PAnalyse();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPAnalyse_a868c651c3e500023c3fbf44ea08e5758}{isLearningDone}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_learningDone;\}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPAnalyse_a435765c9745f67e96895d0f249fa19ef}{isROIempty}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_ROI.empty();\}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a5cc15637efc9ff981c527182d124df6d}{setProcessTimes}}(QVector<int>\ v)\ \ \ \ \{\_M\_paradigm\_times.setProcessTimes(v);\}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a62121f05d421109696bf4baf728ffe9a}{setFirstLastFrameForAnalysis}}(\textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ end)\ \ \ \{\_M\_paradigm\_times.setFirstLastFrameForAnalysis(start,\ end);\}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ac8dd302dd2e79e3ce23f112fac3f7d2b}{Initialize}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a15f2e55620b5aab457b9b77e6436bb17}{setModeRealTime}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a4efb09c8acaa7a274710db05cc9e0e72}{onnewCorticalAreaDefinition}}(Rect,\ QVector<Rect>,QVector<Mat>);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ad2668a4324f9a095eda6efe405488f7a}{onnewCorticalAreaDefinition}}(QVector<Rect>,\ QVector<Mat>);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aa5945686ea4d383cb455097f7f1afb1c}{newResolutionReferenceImage}}(Mat\ img)\ \ \ \{img.copyTo(\_M\_reso\_img);\}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ae0eb62f23ebc002feb39ac6a08fdf307}{setExportedDataPath}}(QString\ dir)\ \ \ \ \ \ \ \{\_M\_exported\_data\_path\ =\ dir;\}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aacbd0e0b5a405b5b9e90eeaf5dd112c4}{enableDataExport}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_enable\_data\_export=v;\}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ signals:}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ae4913396715be1e5b954c55b0a8d7bee}{requestAcquisitionInfo}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a01edef4012c99dd42064dd51540fddce}{newAcquisitionInfo}}(QString);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a4654241ac94da59dae63308178e49a78}{newBoldSignal}}(QVector<float>);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a999fa56bc1ec80891c817b730d970ab7}{newActivationtimes}}(QVector<double>);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a3030e5919d1e9f1061d85a64aa2c350f}{DataAcquisitionIsReady}}();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a23f8bc2dd7ec55e3fc7320c647b2da33}{newProgressStatut}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ac78ef3a30cc7de71d09a5e46f9f4e5f3}{newRTProgressStatut}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ab5e36c7f0c806c3ad95933200888bf6b}{Elapsed\_ProcessingTime}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a472ebcd4821798b6571a585cd817875e}{Error}}(QString);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a2fed6137cb7b151231a17e881069fbc8}{newContrastplot}}(QVector<QVector<float>\ >);}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a604ad37d6f4630edb63e5c4db2b797ab}{newFFTVectors}}(QVector<QVector<float>\ >);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a3a2ceaf058e9d8d07dec85435c4e4ee6}{newFilter}}(QVector<float>);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ac3b0344d6b46139c941aaf3cb2d2e5d2}{newContrastImage}}(QVector<Mat>);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_abb4b89b010bbccc888d435e5ab789f49}{newRTCartography}}(Mat,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ad16393769d363f125b9dc8d7d562a237}{newPixelPos}}(QVector<Point>);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a64111f2dff55b8c7fd816a67ca5ed3d9}{ConsiderBloodVesselDistance}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a887deb9adeb7e01b51d89506f001725a}{newHyperspectralSegmentation}}(QVector<int>);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a3c54dff91a40567921f93e811a6b3b15}{newRestingStateMaps}}(QVector<QVector<Mat>\ >);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a8b4bc18bb154ffc1e13c408516e9d197}{newKmeans\_RestingStateMaps}}(QVector<Mat>);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ab6dcafe3f8bcebf2f671a676ce88ac17}{newActivationMap}}(QVector<bool>);}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a5f580ecea1a645ab7494fc9f05feba2c}{newActivationMap}}(Mat);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a6d8c86291f55a91e779d08de698e4dab}{newActivationMap}}(QVector<bool>,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a3654a4d592e0f8b39428c9f709d0581b}{newZThresh}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ onNewRealTimeProcess();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ac49454f611ea02e9063ac22b23d4a03f}{onTest}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a3a0dd5a5a4b4cb9b19941ac925988eb1}{onnewHyperspectralImagesDynamic}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \{\_M\_HS\_Dyn\ =\ v;\}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_af6470495391baa76abb4c36917554c82}{onGreyOutsideContourIsRequested}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \{\_M\_grey\_outside\_contour\ =\ v;\}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ab2a9ac5f6e59fa632e78cf1de002aa2c}{onnewDisplayValue}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \{\_M\_max\_display\_value\ =\ v;\}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a9fcb72bfb63bd73549af1371d5834ec0}{onnewInitialImg}}(Mat\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \{v.copyTo(\_M\_initial\_img);\}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a4f3b35112df561b96d5f9e92e80e983e}{onEnableFiltering}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \ \ \ \{\_M\_filtering.enableFiltering(v);\}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a214a8f8ac8947dfed5a74451616de4d7}{onEnableLowPassFiltering}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \{\_M\_filtering.enableLowPassFiltering(v);\}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_adb46978451c0c56cc7c8d1ba9eea1d03}{onEnableDataCorrection}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \{\_M\_filtering.enableDataCorrection(v);\}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a680702a9fe2b5da8ec0a19dbd434d14f}{onCreateNewVideo}}();}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a5fad650439dee0be49a455a8a2902891}{onnewVideo\_nb\_Frames}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \{\_M\_video\_nb\_frames\ =\ v;\}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aa10d20279b884b07ce8599fc5b5924b2}{onnewVideoFramerate}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \{\_M\_video\_framerate\ =\ v;\}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ab204a1dea29649e72eb1e537b6772f9b}{onnewMeanROIRadius}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \{\_M\_Mean\_ROI\_radius\ =\ (int)v;\}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ade47f7794c5c3d271aac17d3df4c631e}{onrequestMeanROIMeasure}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \{\_M\_request\_Mean\_ROI\_Measure\ =\ v;\}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aed20bcbf8e528c70e3f8915dc5d13a2c}{onrequestSaveResults}}(\mbox{\hyperlink{struct__data__saving__info}{\_data\_saving\_info}}\ info);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_abae71f75533e995d1e4456355afb081b}{onrequestNonFilteredDataSaving}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a9f58d1e53adee0673de317c2871e177f}{LaunchProcess}}();}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ \ \ \ /*********Statistics**********/}}
+\DoxyCodeLine{00225\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ad3e0d8c08a5fa84aff60b3e29ac19ced}{onRequireDistanceToBloodVessels}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \{\_M\_get\_distance\_to\_Blood\_Vessels\ =\ v;\}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a7997b7d23f828e061eba7d9bc24efc4f}{onRequireFilteredNonFilteredSignals}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \{\_M\_get\_filtered\_non\_filtered\_signals\ =\ v;\}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a26bcb6811478fadc4174454685cbe4b5}{onnewStatType}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a29a4a110a53c3160f422bfa9e8b7d5e0}{onnewFHWM}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_SPM.setFWHM(v);\}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a08b895bb7e762832638226eabc16789b}{onnewStatisticalLevel}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \ \{\_M\_SPM.set\_Statistical\_Significance\_Level(v);\}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00243\ \textcolor{comment}{\ \ \ \ /*********Auto\ method*********/}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a5ff6134a0d3a78e3570a0e1fcca56944}{onnewAutoMethod}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_coeff.SetAutoMethod(v);\ \_Compute\_Auto\_Coeff();\ \mbox{\hyperlink{classPAnalyse_a9f58d1e53adee0673de317c2871e177f}{LaunchProcess}}();\}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00250\ \textcolor{comment}{\ \ \ \ /*********Resting\ state*******/}}
+\DoxyCodeLine{00251\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a818de4c2db0fbe7e6fccd23ca7d8dfa1}{onnewRestingStateMethod}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a8fa52efc74de0fd196833f38a41437f7}{onNewIndependantNbofSources}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ad0f874e58550ecb3fc943e97ae12338f}{onenableRestingState}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_enable\_resting\_state=v;\ \_M\_filtering.setModeRestingState(v);\ \_M\_paradigm\_times.setModeRestingState(v);\ \mbox{\hyperlink{classPAnalyse_a9f58d1e53adee0673de317c2871e177f}{LaunchProcess}}();\}}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ac00fca89f25222e6367f58dd8fbecef2}{onnewRestingStateSeeds}}(QVector<Mat>);}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a0ba7009aa24f04e5eb7f1c0d8ac8c0f2}{InitRestingStateSeeds}}();}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a4c30a0bc2f1aa44fd840a6e6f1ea3639}{\_ProcessRestingState}}();}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aa23d32140795488c408741c51195ea5b}{onNewRestingStateMapsSampling}}(\textcolor{keywordtype}{double}\ v)\ \ \ \{\_M\_resting\_state\_map\_sampling=int(v);\}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a4e849aaa9b0b2f46185ade7c1d155e49}{onnewClustersRestingState}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \{\_M\_nb\_clusters\_resting\_state\ =\ (int)v;\mbox{\hyperlink{classPAnalyse_a9f58d1e53adee0673de317c2871e177f}{LaunchProcess}}();\}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00276\ \textcolor{comment}{\ \ \ \ /*********Segmentation********/}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ab3e7979d31f8081932794e9399cbd0a3}{onnewSegmentationLayers}}(Mat\ SurfaceBlood,Mat\ BuriedBlood,Mat\ nonused);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00283\ \textcolor{comment}{\ \ \ \ /*********Camera\ config*******/}}
+\DoxyCodeLine{00284\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ab7bd564701e1f011918adbbf50ce9b46}{onnew\_HS\_config}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a15fb32691c530f3da832d88e2ddf6437}{onnewSpectralRange}}(\textcolor{keywordtype}{int}\ lambda\_min,\textcolor{keywordtype}{int}\ lambda\_max)\ \ \ \ \{\_M\_PixelWise\_Molar\_Coeff.setSpectralRange(lambda\_min,lambda\_max);\}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a425102a094ef89ec7d469eb665d922c3}{onRequireSpectralCorrection}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \{\_M\_filtering.requireSpectralCorrection(v);\}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a038d3258315431f2c4c5a94f141e460e}{onNewOpticalConfigIDx}}(\textcolor{keywordtype}{int}\ camera\_id,\ \textcolor{keywordtype}{int}\ light\_id)\ \ \ \{\_M\_PixelWise\_Molar\_Coeff.setOpticalConfigIDx(camera\_id,\ light\_id);\}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{comment}{//Hyperspectral\ imaging}}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a081af6a4b53e129afaecf937e11b2767}{onrequireHSOptimizedQuantification}}(\textcolor{keywordtype}{bool}\ v)\ \{\_M\_PixelWise\_Molar\_Coeff.setHSOptimizedQuantification(v);\}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00305\ \textcolor{comment}{\ \ \ \ /*********New\ Images**********/}}
+\DoxyCodeLine{00306\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a25295feae5be9729175dfbad6bd8dc20}{onnewFirstHSImage}}(vector<Mat>\ v)\ \ \ \{\_M\_PixelWise\_Molar\_Coeff.setnewHSImg(v);\}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aa64253a4455cda4daa4c9161e1b13b15}{addDatas}}(\mbox{\hyperlink{struct__Processed__img}{\_Processed\_img}}\ \&img);}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aa6efc60967eea01e2bc9e58f5d4ad4ea}{addDatas}}(\mbox{\hyperlink{struct__Processed__img__HS}{\_Processed\_img\_HS}}\ \&img);}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_abbcee9d1a061c8dc417b298bd0b787d2}{setMethodeAuto}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aba4f4ad8cc18530195d23048b8233cb6}{\_function\_temporaire}}();}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_af283c50934acf272093d61ff4e58a1c6}{setFrameRate}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_frame\_rate=v;\_M\_filtering.setFrameRate(v);\_M\_paradigm\_times.setFrameRate(v);\_M\_coeff.setFrameRate(v);\}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aefaae4609e6430e0bbd8bbcfaf824d90}{setAnalysisZone}}(QVector<QPoint>\ c,\ Size\ img\_size,\ \textcolor{keywordtype}{int}\ nbChannels,\ \textcolor{keywordtype}{int}\ NbFrames);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a6d400725e9ddfadcd33c61de713c8b33}{setStudiedPoint}}(Point\ P);}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a913efa5f9cf1c3716d705c1eea6fc5be}{DataFinishLoading}}();}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_adc410e78f5ca83cf52d633903f72191f}{onNewCorrelationThreshold}}(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a6130d7ac851916ba990fd265ab8e9a5c}{onFilteringTypeChanged}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \{\_M\_filtering.setFilteringType(v);\}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a15d57381cda4e6893dd6ac3f115ae21f}{onNewChromophoreID}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_chromophore\_id\ =\ v;\ \_M\_RT\_process.setChromophoreID(v);\}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a4cabc8d687dc2407f45f88e9814acdf0}{onoxCCOQuantificationrequested}}(\textcolor{keywordtype}{bool}\ v)\ \{\_M\_PixelWise\_Molar\_Coeff.Quantify\_oxCCO(v);\}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_a6111e416f09c499d38fe1571be586e61}{onNewActivationStepsToConsider}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \ \{\_M\_paradigm\_times.setActivationStepsToConsider(v);\ \mbox{\hyperlink{classPAnalyse_a9f58d1e53adee0673de317c2871e177f}{LaunchProcess}}();\}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00355\ \textcolor{comment}{\ \ \ \ /*********New\ Images**********/}}
+\DoxyCodeLine{00356\ \textcolor{comment}{\ \ \ \ /*****************************/}}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ad634b4adc16762877ebc3138c07e6567}{onNewcontrastIndexes\_Phase\_Analysis}}(\textcolor{keywordtype}{int}\ id1,\textcolor{keywordtype}{int}\ id2)\ \ \ \{\_M\_id\_phase1\ =\ id1;\ \_M\_id\_phase2\ =\ id2;\ \mbox{\hyperlink{classPAnalyse_a9f58d1e53adee0673de317c2871e177f}{LaunchProcess}}();\}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_ac8a04ffa8490d6529761bfad0c3550d0}{onNewResultDirectory}}(QString\ v);}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00366\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPAnalyse_aa48c5b82bb24392c999351c5a3032c4a}{run}}();}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{comment}{//Private\ function}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{comment}{//\ Get\ Delta\ C\ maps\ for\ statistical\ tests}}
+\DoxyCodeLine{00372\ \ \ \ \ QVector<Mat>\ \_Get\_Delta\_C\_Maps(\textcolor{keywordtype}{int}\ nb\_chromopores,\ \textcolor{keywordtype}{bool}\ use\_filtered\_data\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{comment}{//Get\ camera\ intensities}}
+\DoxyCodeLine{00375\ \ \ \ \ QVector<Mat>\ \_Get\_Camera\_Intensity(\textcolor{keywordtype}{bool}\ use\_filtered\_data\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{comment}{//Get\ Absorbance\ changes}}
+\DoxyCodeLine{00378\ \ \ \ \ QVector<Mat>\ \_Get\_Absorbance\_Changes(\textcolor{keywordtype}{bool}\ use\_filtered\_data\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{comment}{//Save\ results}}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Save\_Results();}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{comment}{//Process\ statistics\ per\ zone}}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_Compare\_To\_True\_Mean();}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_Compare\_To\_True\_Mean\_Beer\_Lambert\_Method();}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_Compare\_To\_True\_Mean\_Auto\_Method();}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \textcolor{comment}{//\ \ \ \ //Process\ pixel\ wise\ statistics}}
+\DoxyCodeLine{00389\ \textcolor{comment}{//\ \ \ \ void\ \_DefineActivatedZones\_Corr\_DeltaC\_Pixel\_wise\_Tests();}}
+\DoxyCodeLine{00390\ \textcolor{comment}{//\ \ \ \ void\ \_DefineActivatedZones\_Corr\_DeltaC\_Pixel\_wise\_Tests\_Beer\_Lambert\_Method();}}
+\DoxyCodeLine{00391\ \textcolor{comment}{//\ \ \ \ void\ \_DefineActivatedZones\_Corr\_DeltaC\_Pixel\_wise\_Tests\_Auto\_Method();}}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_2\_samples\_T\_Tests();}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_Pixel\_Wise\_Compare\_To\_True\_Mean\_Bonferroni();}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordtype}{void}\ \_General\_Linear\_Model\_pixel\_wise();}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{comment}{//Test\ Delta\ C}}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_DeltaC\_Pixel\_wise\_per\_paradigm();}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_DeltaC\_Pixel\_wise\_Tests();}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_DeltaC\_Pixel\_wise\_Tests\_MBLL();}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DefineActivatedZones\_DeltaC\_Pixel\_wise\_Tests\_Auto();}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{comment}{//\ Get\ stats\ mask\ position}}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Get\_Stats\_Mask\_pos(Mat\ mask,\ QVector<int>\ \&pos);}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Get\_Stats\_Mask\_pos(Rect\ mask,QVector<int>\ \&pos);}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{comment}{//Write\ Img\ frame\ (for\ img\ clustering)}}
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \_WriteImg(Mat\ \&img);}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{comment}{//Process\ mean\ concentration\ measure}}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ProcessMeanConcentrationMeasure();}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{comment}{//Process\ not\ real\ time\ (process\ all\ images\ of\ the\ video\ loaded)}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{comment}{//process\ Phase\ Difference\ analysis}}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Phase\_Difference\_Analysis();}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{comment}{//process\ Phase\ correlation\ analysis}}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Phase\_Correlation\_Analysis();}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{comment}{//Compute\ auto\ coeff}}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Compute\_Auto\_Coeff();}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{comment}{//Mean\ Delta\ C}}
+\DoxyCodeLine{00428\ \ \ \ \ QVector<Mat>\ \_Process\_Mean\_Delta\_C();}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{comment}{//Process\ Correlation\ of\ BOLD\ signal}}
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ProcessCorrelationMeasure();}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ProcessCorrelation(QVector<QVector<float>\ >\ \&Concentration\_map);}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{comment}{//Std\ reflectance\ (noise\ analysis)}}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Mean\_Reflectance\_Spectra();}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{comment}{//Noise\ analysis}}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Noise\_Analysis();}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{comment}{//Get\ QMAP\ and\ corr}}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Get\_QMAP\_AND\_CORR(\textcolor{keywordtype}{int}\ i,QVector<double>\ \&Corr\_C,QVector<QVector<double>\ >\ \&Mean\_C,QVector<int>\ \&activity\_id\_start,QVector<int>\ \&activity\_id\_end);}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Get\_QMAP\_AND\_CORR(QVector<double>\ \&stat\_vec,\ QVector<QVector<double>\ >\ \&QMap\_temp,\ QVector<QVector<float>\ >\ contrast,\ QVector<int>\ coeff\_multi,\ QVector<int>\ \&activity\_id\_start,\ QVector<int>\ \&activity\_id\_end);}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{comment}{//Display\ oxynation\ concentration\ results}}
+\DoxyCodeLine{00445\ \ \ \ \ Mat\ \_Display(QVector<float>\ \&contrast\_proc);}
+\DoxyCodeLine{00446\ \ \ \ \ Mat\ \_Display(QVector<bool>\ \&contrast\_proc);}
+\DoxyCodeLine{00447\ \ \ \ \ Mat\ \_Display(Mat\ \&contrast\_proc);}
+\DoxyCodeLine{00448\ \ \ \ \ Mat\ \_Display(\textcolor{keyword}{const}\ Mat\ \&contrast\_proc,\textcolor{keyword}{const}\ QVector<int>\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00449\ \ \ \ \ Mat\ \_Display\_ROI\_activation(QVector<bool>\ \&contrast\_proc);}
+\DoxyCodeLine{00450\ \ \ \ \ Mat\ \_Display\_ROI\_activation(QVector<float>\ \&contrast\_proc);}
+\DoxyCodeLine{00451\ \ \ \ \ Mat\ \_Display\_ROI\_activation(Mat\ \&contrast\_proc);}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{comment}{//Write\ img\ result}}
+\DoxyCodeLine{00454\ \ \ \ \ Mat\ \_writeCartography(Mat\ \&contrast\_proc,\ QString\ filename);}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordtype}{void}\ \_writeFloatCartography(Mat\ \&contrast\_proc,QString\ filename);}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{comment}{//reconstruct\ img}}
+\DoxyCodeLine{00458\ \ \ \ \ Mat\ \_reconstruct\_Float\_Carography(Mat\ \&contrast\_proc);}
+\DoxyCodeLine{00459\ \ \ \ \ Mat\ \_reconstruct\_uchar\_Carography(Mat\ \&contrast\_proc);}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{comment}{//Create\ falsecolormap}}
+\DoxyCodeLine{00462\ \ \ \ \ Mat\ \_Convert\_to\_FalseColor(Mat\ \&in,\ Mat\ \&mask\_img,\ \textcolor{keywordtype}{double}\ \&min,\ \textcolor{keywordtype}{double}\ \&max);}
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordtype}{void}\ \_GreyOutsideContour(Mat\ mask,\ Mat\ \&inout);}
+\DoxyCodeLine{00464\ \ \ \ \ Mat\ \_create\_colorbar(Mat\ in\_img);}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{comment}{//Draw\ text\ on\ image}}
+\DoxyCodeLine{00467\ \ \ \ \ Mat\ \_drawTextOnImg(Mat\ img,\ String\ text,\ \textcolor{keywordtype}{int}\ pos,\ \textcolor{keywordtype}{double}\ font\_size,\ \textcolor{keywordtype}{int}\ thick);}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ Mat\ \_reconstruct\_Kmeans\_img(Mat\ \&label,QVector<Scalar>\ \&color\_cluster);}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{comment}{//Real\ time\ processing}}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordtype}{void}\ \_RealTimeProcess();}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{comment}{//Real\ time\ functional\ map\ processing}}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordtype}{void}\ \_RealTimeFunctionalMapProcessing(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{comment}{//Real\ time\ activated\ cortical\ area\ detection}}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{void}\ \_RealTimeActivationMaps(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordtype}{void}\ \_RealTimeActivatedCorticalAreasDetection\_Zone\_2Samples(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordtype}{void}\ \_RealTimeActivatedCorticalAreasDetection\_Zone\_1Sample\_to\_TrueMean(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_enable\_Real\_Time\_Processing;}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_real\_time\_process\_is\_running;}
+\DoxyCodeLine{00482\ \ \ \ \ \mbox{\hyperlink{classPrealTimeProcess}{PrealTimeProcess}}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_RT\_process;}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_id\_real\_time\_process;}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_point\_of\_interest;}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{comment}{//Data\ info}}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_tot\_frames;}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_channels;}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_temporal\_vectors;}
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_frame\_rate;}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{comment}{//ROI}}
+\DoxyCodeLine{00494\ \ \ \ \ vector<Point>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_ROI;}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{comment}{//Pixel\ pos}}
+\DoxyCodeLine{00497\ \ \ \ \ QVector<cv::Point>\ \ \ \ \ \ \ \ \ \ \_M\_pixels\_pos;}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{comment}{//Indicators\ (Learning,\ acquisition,\ processing)}}
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_learningDone;}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{comment}{//Video\ frames\ size}}
+\DoxyCodeLine{00503\ \ \ \ \ cv::Size\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_img\_size;}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{comment}{//Coefficient\ class}}
+\DoxyCodeLine{00506\ \ \ \ \ \mbox{\hyperlink{classPCoeff}{PCoeff}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_coeff;}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \mbox{\hyperlink{classPPixelWiseMolarCoeff}{PPixelWiseMolarCoeff}}\ \ \ \ \ \ \ \ \_M\_PixelWise\_Molar\_Coeff;}
+\DoxyCodeLine{00509\ \ \ \ \ \mbox{\hyperlink{classPModifiedBeerLambertLaw}{PModifiedBeerLambertLaw}}\ \ \ \ \ \_M\_MBLL;}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{comment}{//Statistical\ Parametric\ Mapping}}
+\DoxyCodeLine{00513\ \ \ \ \ \mbox{\hyperlink{classP__SPM}{P\_SPM}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_SPM;}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{comment}{//Processing\ times\ in\ not\ RT\ mode\ (reference\ times\ and\ process\ times)}}
+\DoxyCodeLine{00517\ \ \ \ \ \mbox{\hyperlink{classPProcessTimes}{PProcessTimes}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_paradigm\_times;}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{comment}{//Methode\ choice}}
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_methode\_auto;}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{comment}{//Correlation\ threshold}}
+\DoxyCodeLine{00524\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_correlation\_threshold;}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{comment}{//Fitlering\ class}}
+\DoxyCodeLine{00527\ \ \ \ \ \mbox{\hyperlink{classPFiltering}{PFiltering}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_filtering;}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{comment}{//Statistics}}
+\DoxyCodeLine{00530\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_get\_distance\_to\_Blood\_Vessels;}
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_get\_filtered\_non\_filtered\_signals;}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{comment}{//Processing\ type\ (SPM,\ t-\/tests,\ Mean\ concentration\ changes,\ correlation....}}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_processing\_type;}
+\DoxyCodeLine{00535\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_statistical\_significance;}
+\DoxyCodeLine{00536\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_HbO2\_apriori;}
+\DoxyCodeLine{00537\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_Hb\_apriori;}
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_oxCCO\_apriori;}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ \textcolor{comment}{//areas}}
+\DoxyCodeLine{00542\ \ \ \ \ QVector<int>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reference\_area\_pos;}
+\DoxyCodeLine{00543\ \ \ \ \ QVector<QVector<int>\ >\ \ \ \ \ \ \_M\_cortical\_areas\_pos;}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00546\ \ \ \ \ \textcolor{comment}{//Resolution\ reference\ img}}
+\DoxyCodeLine{00547\ \ \ \ \ \textcolor{comment}{//Get\ image\ resolution}}
+\DoxyCodeLine{00548\ \ \ \ \ \textcolor{keywordtype}{void}\ \_GetImageResolution();}
+\DoxyCodeLine{00549\ \ \ \ \ Mat\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reso\_img;}
+\DoxyCodeLine{00550\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reso;}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00552\ \ \ \ \ \textcolor{comment}{//Exported\ data}}
+\DoxyCodeLine{00553\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_exported\_data\_path;}
+\DoxyCodeLine{00554\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_enable\_data\_export;}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \textcolor{comment}{//Resting\ state}}
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Resting\_state\_ICA\_based\_method();}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Resting\_state\_seed\_based\_method();}
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Resting\_state\_seed\_SPM();}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Resting\_state\_Low\_Frequency\_Power\_Method();}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Resting\_state\_K\_means();}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_enable\_resting\_state;}
+\DoxyCodeLine{00563\ \ \ \ \ QVector<Mat>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_resting\_state\_seeds;}
+\DoxyCodeLine{00564\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_resting\_state\_method;}
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_resting\_states\_independant\_sources;}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_resting\_state\_map\_sampling;}
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_clusters\_resting\_state;}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{comment}{//Save\ resutls}}
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_save\_results;}
+\DoxyCodeLine{00572\ \ \ \ \ \mbox{\hyperlink{struct__data__saving__info}{\_data\_saving\_info}}\ \ \ \ \ \ \ \ \ \ \ \_M\_saving\_info;}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{comment}{//MEan\ ROI}}
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getMeanReflectance\_ROI\_MEasurement(Point\ P,\ QString\ saving\_dir);}
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getMeanROIMeasurement(Point\ P,\ \textcolor{keywordtype}{int}\ rest\_start,\ \textcolor{keywordtype}{int}\ rest\_end,\ \textcolor{keywordtype}{int}\ correlation\_start,\ \textcolor{keywordtype}{int}\ correlation\_end,\ QVector<QVector<float>\ >\ \&mean\_contrast,\ QString\ saving\_dir);}
+\DoxyCodeLine{00577\ \textcolor{comment}{//\ \ \ \ void\ \_getMeanContrast\_AND\_Stats(int\ nb\_wavelength,bool\ Hb\_HBO2\_deco,QVector<int>\ id,QString\ write\_file);}}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getMeanContrast\_AND\_Stats(QVector<int>\ \textcolor{keywordtype}{id},\ QString\ write\_file);}
+\DoxyCodeLine{00579\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getMeanContrast(QVector<QVector<float>\ >\ \&mean\_contrast,\ QVector<int>\ \textcolor{keywordtype}{id},\ QString\ write\_file,\ \textcolor{keywordtype}{int}\ rest\_start,\ \textcolor{keywordtype}{int}\ rest\_end,\ \textcolor{keywordtype}{int}\ correlation\_start,\ \textcolor{keywordtype}{int}\ correlation\_end);}
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getMeanReflectance(QVector<int>\ \textcolor{keywordtype}{id},QString\ write\_file);}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \ \ \ \ \textcolor{comment}{//Radius}}
+\DoxyCodeLine{00583\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_Mean\_ROI\_radius;}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{comment}{//Enable\ measurement}}
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_request\_Mean\_ROI\_Measure;}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \ \ \textcolor{comment}{//Max\ display\ value}}
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_max\_display\_value;}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{comment}{//Create\ video}}
+\DoxyCodeLine{00593\ \ \ \ \ Mat\ \ \ \ \ \_M\_initial\_img;}
+\DoxyCodeLine{00594\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_create\_video;}
+\DoxyCodeLine{00595\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_video\_nb\_frames;}
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_video\_framerate;}
+\DoxyCodeLine{00597\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Create\_Video();}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{comment}{//chromophore\ ID\ (HbO2,\ Hb,\ (oxCCO))}}
+\DoxyCodeLine{00600\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_chromophore\_id;}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{comment}{//Grey\ outside\ contour}}
+\DoxyCodeLine{00604\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_grey\_outside\_contour;}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00607\ \ \ \ \ \textcolor{comment}{//Contrast\ idx\ for\ phase\ analysis}}
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{comment}{//0:\ HbO2;\ 1:\ Hb;\ 2:\ HbT;\ 3:\ oxCCO}}
+\DoxyCodeLine{00609\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_id\_phase1;}
+\DoxyCodeLine{00610\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_id\_phase2;}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00612\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00613\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00614\ }
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{comment}{//Hyperspectral\ img\ dynamic}}
+\DoxyCodeLine{00617\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_HS\_Dyn;}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00620\ \};}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PANALYSE\_H}}
+
+\end{DoxyCode}

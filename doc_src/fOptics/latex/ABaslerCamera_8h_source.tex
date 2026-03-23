@@ -1,0 +1,161 @@
+\doxysection{ABasler\+Camera.\+h}
+\hypertarget{ABaslerCamera_8h_source}{}\label{ABaslerCamera_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/ABaslerCamera.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/ABaslerCamera.h}}
+\mbox{\hyperlink{ABaslerCamera_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ ABASLERCAMERA\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ ABASLERCAMERA\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QTime>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <omp.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QtConcurrent>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ using\ namespace\ Pylon;}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ \#include\ <pylon/PylonIncludes.h>}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ \#include\ <pylon/usb/BaslerUsbInstantCamera.h>}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ typedef\ Pylon::CBaslerUsbInstantCamera\ Camera\_t;}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ using\ namespace\ Basler\_UsbCameraParams;}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }ABaslerCamera\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{explicit}\ ABaslerCamera(QObject\ *parent\ =\ 0);}
+\DoxyCodeLine{00045\ \ \ \ \ \string~ABaslerCamera();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classABaslerCamera_a1cf5345fde2ed98ade9b7aa2082b01fb}{isCameraConnected}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_isCameraConnected;\}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a604ee377baa089d341231a96a2285d6e}{setReferencePath}}(QString\ path)\ \ \ \ \ \ \ \ \ \{\_M\_reference\_path=path;\}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ setReferenceImgSetting()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_ref\_img=\textcolor{keyword}{true};\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a17456558269a5e75324c07e7fad42550}{setRecPath}}(QString\ p)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_path=p;\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a74ea36c1560f543753c819a76e581348}{StopLineEmission}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_request\_Line=\textcolor{keyword}{false};\}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a1292ee90ee84b80406676d417f1466a6}{initAcquisition}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classABaslerCamera_a846da5187e545267506e81d3bf7c55b8}{getFrameRate}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_FPS;\}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_abf777b943d58e8f50ae59e5917540e07}{setTotalFrameToAcquire}}(\textcolor{keywordtype}{int}\ acquisition\_duration)\ \ \ \ \ \ \ \{\_M\_tot\_frames\ =\ int(acquisition\_duration*60*\_M\_FPS);\}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ getTotalFrameNumber()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_tot\_frames;\}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a2ef0b1be5a06ec83300d0966994cdc16}{Start\_Video\_Flux\_and\_Img\_Saving}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ signals:}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_ac946b84810b2a418fd7e0d1efabdeda1}{newProcessid}}(QVector<int>,\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_aa9c7ee58a0e15e0ff38a3242b4dd4520}{newImgSend}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_ae827e4ef6e1d1066a14794360e43a2b9}{Message}}(QString,\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_af9179585462bb33f398ebc7f55463c90}{newDisplayImage}}(Mat);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a43918100c990e70b5193a9ab2b7441f4}{newImageAcquired}}(\mbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a8e0909f1f8ab3a353d639d8467b8e81d}{gainRange}}(\textcolor{keywordtype}{double},\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a6677d9d9b74b56b0fbc3d6b2fefdf3cf}{FPSRange}}(\textcolor{keywordtype}{double},\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a639a2e7f67f7bc2c09908fb1e2cfce72}{exposureTimeRange}}(\textcolor{keywordtype}{double},\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a5f5a5f97170d2d1217b99b19985dcfe0}{newLineProfile}}(QVector<Vec3b>);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a1e2417d28f4b05dfbba3dc9b1e2815fe}{cameraIsGrabbingImages}}();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_aa81929d33dec771023f6802d81952d78}{run}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_adf6e6fc8cc89a761dc18acf2424d1c34}{onNewAcquisitionStep}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a962954dbd76550cc49a2d86e700142ac}{setFPS}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ setGain(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ setExposureTime(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a0616dae5dbe66ca613e6e53be831e405}{onNewWhiteBalance}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_add1ce54aab17f062c28785ba470e9712}{PlayStop}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a9959b99685fc20228f091a25168530de}{connectCamera}}();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_aca530de5802659b3ebae8eaa0c335d4c}{grabImg}}();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a15375cf5525bbac3526912b4a9d25e88}{onRequestLine}}(QPoint,QPoint);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classABaslerCamera_a748a2b1b31a684e8ddb347efb47eda48}{InitROI}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ setRectROI(QPoint,QPoint);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classABaslerCamera_a9562503708d2b089325d8ca32dc24694}{isCameraGrabbingImages}}()\ \ \ \{\textcolor{keywordflow}{return}\ \_M\_Display\_flux;\}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ releaseCamera();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \_InitParameters();}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getImgFlux();}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getSingleImg();}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Process\_Save\_Img();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getLine(Mat\ \&openCVimg);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getReference(Mat\ \&openCVimg);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getRecordingInfos(QString\ path);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_isCameraConnected;}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_Display\_flux;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_grab\_img;}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_Processing\_rec\_mode;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00173\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \_M\_path;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \_M\_reference\_path;}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_ref\_img;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \_M\_FPS;}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \_M\_exposure\_time;}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \_M\_gain;}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \_M\_red\_ratio;}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \_M\_green\_ratio;}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \_M\_blue\_ratio;}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{//\ Camera\_t\ \ \ \ \ \ \ \ *\_M\_camera;}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_img\_id;}
+\DoxyCodeLine{00192\ \ \ \ \ QVector<int>\ \ \ \ \_M\_id\_img\_suffix;}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_request\_Line;}
+\DoxyCodeLine{00196\ \ \ \ \ Point\ \ \ \ \ \ \ \ \ \ \ \_M\_Point1;}
+\DoxyCodeLine{00197\ \ \ \ \ Point\ \ \ \ \ \ \ \ \ \ \ \_M\_Point2;}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_tot\_frames;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \ \ \ \ QVector<int>\ \ \ \ \_M\_acquisition\_steps;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ABASLERCAMERA\_H}}
+
+\end{DoxyCode}

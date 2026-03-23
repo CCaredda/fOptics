@@ -1,0 +1,126 @@
+\doxysection{HPLot\+Profile.\+h}
+\hypertarget{HPLotProfile_8h_source}{}\label{HPLotProfile_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HPLotProfile.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HPLotProfile.h}}
+\mbox{\hyperlink{HPLotProfile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ HPLotProfile\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ HPLotProfile\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QMouseEvent>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QFileDialog>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{polyfit_8hpp}{polyfit.hpp}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}Crosshairs.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QtCharts/QChartView>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QtCharts/QLineSeries>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QtCharts/QValueAxis>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QtCharts/QChart>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QtCharts/QLegend>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }HPLotProfile;}
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }HPLotProfile\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{explicit}\ HPLotProfile(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00041\ \ \ \ \ \string~HPLotProfile();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a74d8b6cd2f671be74b2503f36b280255}{setXInterval}}(\textcolor{keywordtype}{double}\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_x\_interval=x;\}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_ab63061f879797398e983b075c00862d4}{setPlotNames}}(QVector<QString>\ n);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_af041db4b1ce1ab56956987423773b6a7}{setPlotColors}}(QVector<QColor>\ c);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_ae36195f13ccc9d15c2e82489c4301093}{setYName}}(QString\ s)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_y\_name=s;\}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a34db01fa16b80784bad186a7aeefe556}{setXName}}(QString\ s)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_x\_name=s;\}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_add06ecc7f8a368b41a00b72e998dcc7a}{InitializeMinMaxValues}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a4a5d59560cad6e5e9723b4772c60d8ca}{InitializeMinMaxValues}}(\textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a1aeade4898477217048641b4200416e6}{setYValue}}(QVector<Vec3b>\ v);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_aa6dd048ef46b7981aeba38fdc4e77ed0}{setYValue}}(QVector<QVector<float>\ >\ v);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a48113639828fa00f31cb771846007961}{setYValue}}(QVector<float>\ v);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a3e2ef9d537a69b14a9890571d1403230}{setYValue}}(QVector<QVector<double>\ >\ v1,\ QVector<QVector<double>\ >\ v2);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_ab32f0e775853f7f60faa53235c45b663}{setYInterval}}(\textcolor{keywordtype}{double}\ min,\textcolor{keywordtype}{double}\ max)\ \ \ \ \{\_M\_min\_y=min;\_M\_max\_y=max;\}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_abd06f2d98d8f2c81ee154f58a0cd4efe}{setTitle}}(QString\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_graph\_title=v;\}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_addd25f7bcff6f2c715d5174faae18598}{setXStart}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_x\_start=v;\}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a9333dc1bc3eff952616ff4616047c6a4}{PlotValues}}(QVector<double>\ v,\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\textcolor{keywordtype}{double}\ elapsed\_time);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a4afde43aea406f2c1da194ef61c3a7bf}{setDisplayMeanValues}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \ \ \ \ \{\_M\_display\_mean\_values=v;\}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a932504a1348a08e868391647cb86b80a}{setNbMeasure}}(\textcolor{keywordtype}{int}\ n)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_nb\_Measure=n;\}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a679afbc9637d663510db475e7211778f}{DisplayRegistrationResult}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_ace51c01b5b4009d40caaf2dc12a11537}{DisplayRegistrationResult\_HS}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a04b3f9985073c73560f9b1b7650789d6}{setVerticalLinesYPosition}}(QVector<double>\ v);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a6fd5965aad5e7ca2846ac0e541dfe000}{setBoldSignal}}(QVector<float>\ v);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a1bd787ad012959953bd965902af8fef5}{InitValues}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_abb583e7727701bd04b5c8e41936d1a38}{closeEvent}}\ (QCloseEvent\ *);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_aa15504acc6cf174baa6417d81d75c3fc}{mouseMoveEvent}}(QMouseEvent*);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ onSavePlot();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ signals:}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHPLotProfile_a8539171a48d31af83ddb4c9cb4b2d393}{requestLineEmissionStop}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00114\ \ \ \ \ Ui::HPLotProfile\ *ui;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//Functions}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateGraphs();}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ Update\_HS\_Graphs();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//Parameters}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_x\_interval;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_x\_start;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_Measure;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ QVector<QVector<double>\ >\ \ \ \_M\_y\_values;}
+\DoxyCodeLine{00126\ \ \ \ \ QVector<QVector<double>\ >\ \ \ \_M\_x\_values;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_graph\_title;}
+\DoxyCodeLine{00129\ \ \ \ \ QVector<QString>\ \ \ \ \ \ \ \ \ \ \ \ \_M\_names;}
+\DoxyCodeLine{00130\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_y\_name;}
+\DoxyCodeLine{00131\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_x\_name;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_min\_y;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_max\_y;}
+\DoxyCodeLine{00134\ \ \ \ \ QVector<QColor>\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_color;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_display\_mean\_values;}
+\DoxyCodeLine{00137\ \ \ \ \ QVector<double>\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_elapsed\_values;}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_first\_draw;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//Registration\ results}}
+\DoxyCodeLine{00141\ \ \ \ \ QVector<double>\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reg\_mean;}
+\DoxyCodeLine{00142\ \ \ \ \ QVector<double>\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reg\_std;}
+\DoxyCodeLine{00143\ \ \ \ \ QVector<double>\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reg\_slope;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{comment}{//Draw\ vertical\ lines}}
+\DoxyCodeLine{00146\ \ \ \ \ QVector<double>\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_vertical\_lines\_pos;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//Bold\ signal}}
+\DoxyCodeLine{00149\ \ \ \ \ QVector<float>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_Bold\_signal;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//cross\ cursors}}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{classCrosshairs}{Crosshairs}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\_M\_crosshairs;}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HPLotProfile\_H}}
+
+\end{DoxyCode}

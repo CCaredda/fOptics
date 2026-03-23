@@ -1,0 +1,78 @@
+\doxysection{/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Vision/inc/polyfit.hpp File Reference}
+\hypertarget{polyfit_8hpp}{}\label{polyfit_8hpp}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/polyfit.hpp@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/polyfit.hpp}}
+
+
+File containing functions to find the coefficients of a polynomial p(x) of degree n that fits the data, p(x(i)) to y(i), in a least squares sense. The result p is a row vector of length n+1 containing the polynomial coefficients in incremental powers.  
+
+
+{\ttfamily \#include $<$boost/assert.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/ublas/matrix.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/ublas/lu.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$QVector$>$}\newline
+{\ttfamily \#include "{}conversion.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{polyfit_8hpp_a20205a89cb81145766e74d5a1d27f049}\label{polyfit_8hpp_a20205a89cb81145766e74d5a1d27f049} 
+\#define {\bfseries BOOST\+\_\+\+UBLAS\+\_\+\+TYPE\+\_\+\+CHECK}~0
+\item 
+\Hypertarget{polyfit_8hpp_a525335710b53cb064ca56b936120431e}\label{polyfit_8hpp_a525335710b53cb064ca56b936120431e} 
+\#define {\bfseries \+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\int \mbox{\hyperlink{polyfit_8hpp_a2601e2640ffaf5ef1c1f8d1f3fd207d8}{polyfit}} (const QVector$<$ T $>$ \&oX, const QVector$<$ T $>$ \&oY, int n\+Degree, std\+::vector$<$ T $>$ \&\+\_\+out)
+\item 
+{\footnotesize template$<$typename T$>$ }\\int \mbox{\hyperlink{polyfit_8hpp_afa35cffdd29e52f8471629f30594588f}{polyfit2}} (const QVector$<$ T $>$ \&oX, const QVector$<$ T $>$ \&oY, int n\+Degree, std\+::vector$<$ T $>$ \&\+\_\+out)
+\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::vector$<$ T $>$ \mbox{\hyperlink{polyfit_8hpp_ab2da5956d89190298853e56aed821b8e}{polyval}} (const std\+::vector$<$ T $>$ \&o\+Coeff, const std\+::vector$<$ T $>$ \&oX)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing functions to find the coefficients of a polynomial p(x) of degree n that fits the data, p(x(i)) to y(i), in a least squares sense. The result p is a row vector of length n+1 containing the polynomial coefficients in incremental powers. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact\+: \href{mailto:caredda.c@gmail.com}{\texttt{ caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{polyfit_8hpp_a2601e2640ffaf5ef1c1f8d1f3fd207d8}\index{polyfit.hpp@{polyfit.hpp}!polyfit@{polyfit}}
+\index{polyfit@{polyfit}!polyfit.hpp@{polyfit.hpp}}
+\doxysubsubsection{\texorpdfstring{polyfit()}{polyfit()}}
+{\footnotesize\ttfamily \label{polyfit_8hpp_a2601e2640ffaf5ef1c1f8d1f3fd207d8} 
+template$<$typename T$>$ \\
+int polyfit (\begin{DoxyParamCaption}\item[{const QVector$<$ T $>$ \&}]{oX}{, }\item[{const QVector$<$ T $>$ \&}]{oY}{, }\item[{int}]{n\+Degree}{, }\item[{std\+::vector$<$ T $>$ \&}]{\+\_\+out}{}\end{DoxyParamCaption})}
+
+Finds the coefficients of a polynomial p(x) of degree n that fits the data, p(x(i)) to y(i), in a least squares sense. The result p is a row vector of length n+1 containing the polynomial coefficients in incremental powers.
+
+param\+: oX x axis values oY y axis values n\+Degree polynomial degree including the constant
+
+return\+: coefficients of a polynomial starting at the constant coefficient and ending with the coefficient of power to n\+Degree. C++0x-\/compatible compilers make returning locally created vectors very efficient. \Hypertarget{polyfit_8hpp_afa35cffdd29e52f8471629f30594588f}\index{polyfit.hpp@{polyfit.hpp}!polyfit2@{polyfit2}}
+\index{polyfit2@{polyfit2}!polyfit.hpp@{polyfit.hpp}}
+\doxysubsubsection{\texorpdfstring{polyfit2()}{polyfit2()}}
+{\footnotesize\ttfamily \label{polyfit_8hpp_afa35cffdd29e52f8471629f30594588f} 
+template$<$typename T$>$ \\
+int polyfit2 (\begin{DoxyParamCaption}\item[{const QVector$<$ T $>$ \&}]{oX}{, }\item[{const QVector$<$ T $>$ \&}]{oY}{, }\item[{int}]{n\+Degree}{, }\item[{std\+::vector$<$ T $>$ \&}]{\+\_\+out}{}\end{DoxyParamCaption})}
+
+Finds the coefficients of a polynomial p(x) of degree n that fits the data, p(x(i)) to y(i), in a least squares sense. The result p is a row vector of length n+1 containing the polynomial coefficients in incremental powers.
+
+param\+: oX x axis values oY y axis values n\+Degree polynomial degree including the constant
+
+return\+: coefficients of a polynomial starting at the constant coefficient and ending with the coefficient of power to n\+Degree. C++0x-\/compatible compilers make returning locally created vectors very efficient. \Hypertarget{polyfit_8hpp_ab2da5956d89190298853e56aed821b8e}\index{polyfit.hpp@{polyfit.hpp}!polyval@{polyval}}
+\index{polyval@{polyval}!polyfit.hpp@{polyfit.hpp}}
+\doxysubsubsection{\texorpdfstring{polyval()}{polyval()}}
+{\footnotesize\ttfamily \label{polyfit_8hpp_ab2da5956d89190298853e56aed821b8e} 
+template$<$typename T$>$ \\
+std\+::vector$<$ T $>$ polyval (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{o\+Coeff}{, }\item[{const std\+::vector$<$ T $>$ \&}]{oX}{}\end{DoxyParamCaption})}
+
+Calculates the value of a polynomial of degree n evaluated at x. The input argument p\+Coeff is a vector of length n+1 whose elements are the coefficients in incremental powers of the polynomial to be evaluated.
+
+param\+: o\+Coeff polynomial coefficients generated by \doxylink{polyfit_8hpp_a2601e2640ffaf5ef1c1f8d1f3fd207d8}{polyfit()} function oX x axis values
+
+return\+: Fitted Y values. C++0x-\/compatible compilers make returning locally created vectors very efficient. 

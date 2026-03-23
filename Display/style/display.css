@@ -1,0 +1,125 @@
+/*QPushButton#_Left
+{
+   border : none;
+   background-color : transparent;
+   image: url(:/Display/rc/Left.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :80px;
+   max-height:60px;
+   min-width:80px;
+   min-height:50px;
+}
+
+QPushButton#_Left:pressed
+{
+   border : none;
+   background-color : #3A414C;
+   image: url(:/Display/rc/Left.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :50px;
+   max-height:60px;
+   min-width:50px;
+   min-height:50px;
+}
+
+QPushButton#_Right
+{
+   border : none;
+   background-color : transparent;
+   image: url(:/Display/rc/Right.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :80px;
+   max-height:60px;
+   min-width:80px;
+   min-height:50px;
+}
+
+QPushButton#_Right:pressed
+{
+   border : none;
+   background-color : #3A414C;
+   image: url(:/Display/rc/Right.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :50px;
+   max-height:60px;
+   min-width:50px;
+   min-height:50px;
+}
+
+QPushButton#_Replay
+{
+   border : none;
+   background-color : transparent;
+   image: url(:/Display/rc/Replay.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :80px;
+   max-height:60px;
+   min-width:80px;
+   min-height:50px;
+}
+
+
+QPushButton#_Play_Stop
+{
+   border : none;
+   background-color : transparent;
+   image: url(:/Display/rc/play.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :80px;
+   max-height:60px;
+   min-width:80px;
+   min-height:50px;
+}
+
+QPushButton#_Play_Stop:pressed
+{
+   border : none;
+   background-color : #3A414C;
+   image: url(:/Display/rc/play.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :50px;
+   max-height:60px;
+   min-width:50px;
+   min-height:50px;
+}
+
+QPushButton#_Play_Stop:checked
+{
+   border : none;
+   background-color : transparent;
+   image: url(:/Display/rc/pause.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :50px;
+   max-height:60px;
+   min-width:50px;
+   min-height:50px;
+}
+
+QPushButton#_save1,#_save2
+{
+   border : none;
+   background-color : transparent;
+   image: url(:/Plot/rc/save.png);
+   border-width:0px;
+   border-radius:25px;
+   max-width :80px;
+   max-height:60px;
+   min-width:80px;
+   min-height:50px;
+}
+
+QGroupBox#groupBox_process_param,#groupBox_Acquis,#groupBox_Matlab,#groupBox_Processing_period,#groupBox_Acquis_type,#groupBox_Filter
+{
+     border: 2px solid gray;
+     border-radius: 3px;
+ }
+
+*/

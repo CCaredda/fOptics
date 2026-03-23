@@ -1,0 +1,164 @@
+\doxysection{AImage\+Registration Class Reference}
+\hypertarget{classAImageRegistration}{}\label{classAImageRegistration}\index{AImageRegistration@{AImageRegistration}}
+Inheritance diagram for AImage\+Registration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAImageRegistration}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a3074198c16a561ffa270f194997305e1}{request\+Parallel\+Thread\+Process}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}} img)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a31133d126eecce8431b0b3a0a0841518}{request\+Parallel\+Thread\+Process}} (\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}} img)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_acdcfb417a50796a8f29e5b89c38a87e9}{enable\+Motion\+Compensation}} (bool)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_aeaef2c894c7f512ded42b43f277a4565}{on\+New\+Result\+Directory}} (QString v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a28d796b5902210c53dc627c1838c3bf4}{registration\+Is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a3c32ebeed90639ea3e4b4e1119187bf2}{new\+Registered\+Image}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}})
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a78f7b1b531fb85d310912a2d87d8f149}{new\+Registered\+Image}} (\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}})
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a52a4d96218091fba8de7d01454f60a5b}{new\+Registration\+Progress}} (QString, int)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a743a1a7eecba8b0b032c90145bcc9fcf}{new\+Hyperspectral\+Images\+Dynamic}} (int)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAImageRegistration_a1222f5c901d9a1e9332e26e16ea0c5e0}\label{classAImageRegistration_a1222f5c901d9a1e9332e26e16ea0c5e0} 
+{\bfseries AImage\+Registration} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_af0835f1b29e06a55d62221f07648f6ea}{set\+Camera\+Mode\+RGB}} (bool v)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a8472e8da30db84666e1d2066e683f3c5}{Data\+Acquisition\+Is\+Ready}} ()
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a0544a4ea043ee3ba28550bb74846c1d6}{set\+Analysis\+Zone}} (QVector$<$ QPoint $>$ c)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a4a244b44a3403d0cd64677d5f6eca665}{set\+Total\+Nb\+Frames}} (int v)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a7c5461f743e11f686b8f41cf6612275f}{set\+Transfo\+Model}} ()
+\item 
+void \mbox{\hyperlink{classAImageRegistration_a3d83d02c95279308075287ec32e5d728}{new\+Registrationtype}} (int v)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_af3600557366f6977b6be1278c7210293}{set\+First\+Img}} (vector$<$ Mat $>$ \&img)
+\item 
+void \mbox{\hyperlink{classAImageRegistration_adb3362808e0ae3073fefbeb9eb1c62b9}{set\+First\+Img}} (Mat \&img)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAImageRegistration_a8472e8da30db84666e1d2066e683f3c5}\index{AImageRegistration@{AImageRegistration}!DataAcquisitionIsReady@{DataAcquisitionIsReady}}
+\index{DataAcquisitionIsReady@{DataAcquisitionIsReady}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{DataAcquisitionIsReady()}{DataAcquisitionIsReady()}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a8472e8da30db84666e1d2066e683f3c5} 
+void AImage\+Registration\+::\+Data\+Acquisition\+Is\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Data processing is ready \Hypertarget{classAImageRegistration_acdcfb417a50796a8f29e5b89c38a87e9}\index{AImageRegistration@{AImageRegistration}!enableMotionCompensation@{enableMotionCompensation}}
+\index{enableMotionCompensation@{enableMotionCompensation}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{enableMotionCompensation}{enableMotionCompensation}}
+{\footnotesize\ttfamily \label{classAImageRegistration_acdcfb417a50796a8f29e5b89c38a87e9} 
+void AImage\+Registration\+::enable\+Motion\+Compensation (\begin{DoxyParamCaption}\item[{bool}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+enable motion compensation \Hypertarget{classAImageRegistration_a743a1a7eecba8b0b032c90145bcc9fcf}\index{AImageRegistration@{AImageRegistration}!newHyperspectralImagesDynamic@{newHyperspectralImagesDynamic}}
+\index{newHyperspectralImagesDynamic@{newHyperspectralImagesDynamic}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{newHyperspectralImagesDynamic}{newHyperspectralImagesDynamic}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a743a1a7eecba8b0b032c90145bcc9fcf} 
+void AImage\+Registration\+::new\+Hyperspectral\+Images\+Dynamic (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+New dynamic of the hyperspectral images \Hypertarget{classAImageRegistration_a3c32ebeed90639ea3e4b4e1119187bf2}\index{AImageRegistration@{AImageRegistration}!newRegisteredImage@{newRegisteredImage}}
+\index{newRegisteredImage@{newRegisteredImage}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{newRegisteredImage}{newRegisteredImage}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a3c32ebeed90639ea3e4b4e1119187bf2} 
+void AImage\+Registration\+::new\+Registered\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new registered image (RGB) \Hypertarget{classAImageRegistration_a78f7b1b531fb85d310912a2d87d8f149}\index{AImageRegistration@{AImageRegistration}!newRegisteredImage@{newRegisteredImage}}
+\index{newRegisteredImage@{newRegisteredImage}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{newRegisteredImage}{newRegisteredImage}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a78f7b1b531fb85d310912a2d87d8f149} 
+void AImage\+Registration\+::new\+Registered\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new registered image (Hyperspectral) \Hypertarget{classAImageRegistration_a52a4d96218091fba8de7d01454f60a5b}\index{AImageRegistration@{AImageRegistration}!newRegistrationProgress@{newRegistrationProgress}}
+\index{newRegistrationProgress@{newRegistrationProgress}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{newRegistrationProgress}{newRegistrationProgress}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a52a4d96218091fba8de7d01454f60a5b} 
+void AImage\+Registration\+::new\+Registration\+Progress (\begin{DoxyParamCaption}\item[{QString}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+registration progress \Hypertarget{classAImageRegistration_a3d83d02c95279308075287ec32e5d728}\index{AImageRegistration@{AImageRegistration}!newRegistrationtype@{newRegistrationtype}}
+\index{newRegistrationtype@{newRegistrationtype}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{newRegistrationtype()}{newRegistrationtype()}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a3d83d02c95279308075287ec32e5d728} 
+void AImage\+Registration\+::new\+Registrationtype (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})}
+
+Called when a new registration type is selected \Hypertarget{classAImageRegistration_aeaef2c894c7f512ded42b43f277a4565}\index{AImageRegistration@{AImageRegistration}!onNewResultDirectory@{onNewResultDirectory}}
+\index{onNewResultDirectory@{onNewResultDirectory}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{onNewResultDirectory}{onNewResultDirectory}}
+{\footnotesize\ttfamily \label{classAImageRegistration_aeaef2c894c7f512ded42b43f277a4565} 
+void AImage\+Registration\+::on\+New\+Result\+Directory (\begin{DoxyParamCaption}\item[{QString}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Set result directory \Hypertarget{classAImageRegistration_a28d796b5902210c53dc627c1838c3bf4}\index{AImageRegistration@{AImageRegistration}!registrationIsFinished@{registrationIsFinished}}
+\index{registrationIsFinished@{registrationIsFinished}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{registrationIsFinished}{registrationIsFinished}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a28d796b5902210c53dc627c1838c3bf4} 
+void AImage\+Registration\+::registration\+Is\+Finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Registration is finished \Hypertarget{classAImageRegistration_a3074198c16a561ffa270f194997305e1}\index{AImageRegistration@{AImageRegistration}!requestParallelThreadProcess@{requestParallelThreadProcess}}
+\index{requestParallelThreadProcess@{requestParallelThreadProcess}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{requestParallelThreadProcess}{requestParallelThreadProcess}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a3074198c16a561ffa270f194997305e1} 
+void AImage\+Registration\+::request\+Parallel\+Thread\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request parallel thread process (RGB) \Hypertarget{classAImageRegistration_a31133d126eecce8431b0b3a0a0841518}\index{AImageRegistration@{AImageRegistration}!requestParallelThreadProcess@{requestParallelThreadProcess}}
+\index{requestParallelThreadProcess@{requestParallelThreadProcess}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{requestParallelThreadProcess}{requestParallelThreadProcess}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a31133d126eecce8431b0b3a0a0841518} 
+void AImage\+Registration\+::request\+Parallel\+Thread\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}}}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request parallel thread process (Hyperspectral) \Hypertarget{classAImageRegistration_a0544a4ea043ee3ba28550bb74846c1d6}\index{AImageRegistration@{AImageRegistration}!setAnalysisZone@{setAnalysisZone}}
+\index{setAnalysisZone@{setAnalysisZone}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{setAnalysisZone()}{setAnalysisZone()}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a0544a4ea043ee3ba28550bb74846c1d6} 
+void AImage\+Registration\+::set\+Analysis\+Zone (\begin{DoxyParamCaption}\item[{QVector$<$ QPoint $>$}]{c}{}\end{DoxyParamCaption})}
+
+Set analysis zone (for NCC measure) \Hypertarget{classAImageRegistration_af0835f1b29e06a55d62221f07648f6ea}\index{AImageRegistration@{AImageRegistration}!setCameraModeRGB@{setCameraModeRGB}}
+\index{setCameraModeRGB@{setCameraModeRGB}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{setCameraModeRGB()}{setCameraModeRGB()}}
+{\footnotesize\ttfamily \label{classAImageRegistration_af0835f1b29e06a55d62221f07648f6ea} 
+void AImage\+Registration\+::set\+Camera\+Mode\+RGB (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Camera Mode (RGB\+: true, Hyperspectral\+: false) \Hypertarget{classAImageRegistration_adb3362808e0ae3073fefbeb9eb1c62b9}\index{AImageRegistration@{AImageRegistration}!setFirstImg@{setFirstImg}}
+\index{setFirstImg@{setFirstImg}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{setFirstImg()}{setFirstImg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classAImageRegistration_adb3362808e0ae3073fefbeb9eb1c62b9} 
+void AImage\+Registration\+::set\+First\+Img (\begin{DoxyParamCaption}\item[{Mat \&}]{img}{}\end{DoxyParamCaption})}
+
+set First image (RGB) \Hypertarget{classAImageRegistration_af3600557366f6977b6be1278c7210293}\index{AImageRegistration@{AImageRegistration}!setFirstImg@{setFirstImg}}
+\index{setFirstImg@{setFirstImg}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{setFirstImg()}{setFirstImg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classAImageRegistration_af3600557366f6977b6be1278c7210293} 
+void AImage\+Registration\+::set\+First\+Img (\begin{DoxyParamCaption}\item[{vector$<$ Mat $>$ \&}]{img}{}\end{DoxyParamCaption})}
+
+set First image (Hyperspectral) \Hypertarget{classAImageRegistration_a4a244b44a3403d0cd64677d5f6eca665}\index{AImageRegistration@{AImageRegistration}!setTotalNbFrames@{setTotalNbFrames}}
+\index{setTotalNbFrames@{setTotalNbFrames}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{setTotalNbFrames()}{setTotalNbFrames()}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a4a244b44a3403d0cd64677d5f6eca665} 
+void AImage\+Registration\+::set\+Total\+Nb\+Frames (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})}
+
+Set the number of frames to register \Hypertarget{classAImageRegistration_a7c5461f743e11f686b8f41cf6612275f}\index{AImageRegistration@{AImageRegistration}!setTransfoModel@{setTransfoModel}}
+\index{setTransfoModel@{setTransfoModel}!AImageRegistration@{AImageRegistration}}
+\doxysubsubsection{\texorpdfstring{setTransfoModel()}{setTransfoModel()}}
+{\footnotesize\ttfamily \label{classAImageRegistration_a7c5461f743e11f686b8f41cf6612275f} 
+void AImage\+Registration\+::set\+Transfo\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Set transformation model 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc/\mbox{\hyperlink{AImageRegistration_8h}{AImage\+Registration.\+h}}\end{DoxyCompactItemize}

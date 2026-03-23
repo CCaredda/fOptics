@@ -1,0 +1,183 @@
+\doxysection{ARegistration Class Reference}
+\hypertarget{classARegistration}{}\label{classARegistration}\index{ARegistration@{ARegistration}}
+Inheritance diagram for ARegistration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classARegistration}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classARegistration_a81023edfbfaf18e999ce02243db20eca}{request\+Parallel\+Thread\+Process}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}} img)
+\item 
+void \mbox{\hyperlink{classARegistration_a80a5a991badc1e64a7756e11eeba8ab1}{on\+New\+Result\+Directory}} (QString v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classARegistration_a6e97c7a387dc3e4f7819972d46ce3dfc}{registration\+Is\+Finished}} ()
+\item 
+void \mbox{\hyperlink{classARegistration_a9820bdb6369dd26624da4f1382da6ada}{new\+Registered\+Image}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}})
+\item 
+void \mbox{\hyperlink{classARegistration_a84da432c65f3a3726b080343185431e0}{new\+Registration\+Progress}} (QString, int)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classARegistration_afb29c42edecf31e53acb614b52bc1627}\label{classARegistration_afb29c42edecf31e53acb614b52bc1627} 
+{\bfseries ARegistration} (QObject \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+void \mbox{\hyperlink{classARegistration_ac77358cc9c4f6839c2c4113a90ef240e}{set\+First\+Img}} (Mat \&img)
+\item 
+void \mbox{\hyperlink{classARegistration_a5fc2fb8d38ed822c10a7363b58f29268}{new\+Registrationtype}} (int)
+\item 
+void \mbox{\hyperlink{classARegistration_ac7fa4cdca30a01b0d0591c6519e9ae80}{set\+Harris\+Dist\+Value}} (double v)
+\item 
+void \mbox{\hyperlink{classARegistration_a81f13c0839130dd1b485c0cb770b1edb}{set\+Nb\+Learning\+Frames}} (double v)
+\item 
+void \mbox{\hyperlink{classARegistration_ad468e61e48b5995ba103c6844c6c722d}{set\+Nb\+Key\+Points}} (double v)
+\item 
+void \mbox{\hyperlink{classARegistration_a64e482ae19b3814f0aa3da6bc3052979}{set\+Sig\+Dy\+Value}} (double v)
+\item 
+void \mbox{\hyperlink{classARegistration_ae21f7605a04c0a4fa6ce3acea6f3c5cf}{set\+Transfo\+Model}} ()
+\item 
+void \mbox{\hyperlink{classARegistration_a4446b5d126db748374ac505fef394e0a}{set\+Total\+Nb\+Frames}} (int v)
+\item 
+void \mbox{\hyperlink{classARegistration_ae294fd933e5d343d75b18e077345a2d3}{set\+Analysis\+Zone}} (QVector$<$ QPoint $>$ c)
+\item 
+vector$<$ Point $>$ \mbox{\hyperlink{classARegistration_a938525363f1dac1e0fce8aad0b746848}{get\+Analysis\+Zone}} ()
+\item 
+QVector$<$ QVector$<$ float $>$ $>$ \mbox{\hyperlink{classARegistration_addcb5d3e480aa8a70a54e688690a3b71}{get\+NCCResults}} ()
+\item 
+void \mbox{\hyperlink{classARegistration_a05cb16653f36b30ffc784b0712eef433}{Data\+Acquisition\+Is\+Ready}} ()
+\item 
+void \mbox{\hyperlink{classARegistration_a383f7879847f0015bb6cdb7f82de6871}{enable\+Motion\+Compensation}} (bool v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classARegistration_ad6387788303d562c9e81a48960988bae}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classARegistration_a05cb16653f36b30ffc784b0712eef433}\index{ARegistration@{ARegistration}!DataAcquisitionIsReady@{DataAcquisitionIsReady}}
+\index{DataAcquisitionIsReady@{DataAcquisitionIsReady}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{DataAcquisitionIsReady()}{DataAcquisitionIsReady()}}
+{\footnotesize\ttfamily \label{classARegistration_a05cb16653f36b30ffc784b0712eef433} 
+void ARegistration\+::\+Data\+Acquisition\+Is\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Inform that the rest of the software is ready to store the registred images \Hypertarget{classARegistration_a383f7879847f0015bb6cdb7f82de6871}\index{ARegistration@{ARegistration}!enableMotionCompensation@{enableMotionCompensation}}
+\index{enableMotionCompensation@{enableMotionCompensation}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{enableMotionCompensation()}{enableMotionCompensation()}}
+{\footnotesize\ttfamily \label{classARegistration_a383f7879847f0015bb6cdb7f82de6871} 
+void ARegistration\+::enable\+Motion\+Compensation (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enable motion compensation \Hypertarget{classARegistration_a938525363f1dac1e0fce8aad0b746848}\index{ARegistration@{ARegistration}!getAnalysisZone@{getAnalysisZone}}
+\index{getAnalysisZone@{getAnalysisZone}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{getAnalysisZone()}{getAnalysisZone()}}
+{\footnotesize\ttfamily \label{classARegistration_a938525363f1dac1e0fce8aad0b746848} 
+vector$<$ Point $>$ ARegistration\+::get\+Analysis\+Zone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get analysis zone \Hypertarget{classARegistration_addcb5d3e480aa8a70a54e688690a3b71}\index{ARegistration@{ARegistration}!getNCCResults@{getNCCResults}}
+\index{getNCCResults@{getNCCResults}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{getNCCResults()}{getNCCResults()}}
+{\footnotesize\ttfamily \label{classARegistration_addcb5d3e480aa8a70a54e688690a3b71} 
+QVector$<$ QVector$<$ float $>$ $>$ ARegistration\+::get\+NCCResults (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get NCC result \Hypertarget{classARegistration_a9820bdb6369dd26624da4f1382da6ada}\index{ARegistration@{ARegistration}!newRegisteredImage@{newRegisteredImage}}
+\index{newRegisteredImage@{newRegisteredImage}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{newRegisteredImage}{newRegisteredImage}}
+{\footnotesize\ttfamily \label{classARegistration_a9820bdb6369dd26624da4f1382da6ada} 
+void ARegistration\+::new\+Registered\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new registered image \Hypertarget{classARegistration_a84da432c65f3a3726b080343185431e0}\index{ARegistration@{ARegistration}!newRegistrationProgress@{newRegistrationProgress}}
+\index{newRegistrationProgress@{newRegistrationProgress}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{newRegistrationProgress}{newRegistrationProgress}}
+{\footnotesize\ttfamily \label{classARegistration_a84da432c65f3a3726b080343185431e0} 
+void ARegistration\+::new\+Registration\+Progress (\begin{DoxyParamCaption}\item[{QString}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+registration progress \Hypertarget{classARegistration_a5fc2fb8d38ed822c10a7363b58f29268}\index{ARegistration@{ARegistration}!newRegistrationtype@{newRegistrationtype}}
+\index{newRegistrationtype@{newRegistrationtype}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{newRegistrationtype()}{newRegistrationtype()}}
+{\footnotesize\ttfamily \label{classARegistration_a5fc2fb8d38ed822c10a7363b58f29268} 
+void ARegistration\+::new\+Registrationtype (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})}
+
+New registration type \Hypertarget{classARegistration_a80a5a991badc1e64a7756e11eeba8ab1}\index{ARegistration@{ARegistration}!onNewResultDirectory@{onNewResultDirectory}}
+\index{onNewResultDirectory@{onNewResultDirectory}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{onNewResultDirectory}{onNewResultDirectory}}
+{\footnotesize\ttfamily \label{classARegistration_a80a5a991badc1e64a7756e11eeba8ab1} 
+void ARegistration\+::on\+New\+Result\+Directory (\begin{DoxyParamCaption}\item[{QString}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New result directory \Hypertarget{classARegistration_a6e97c7a387dc3e4f7819972d46ce3dfc}\index{ARegistration@{ARegistration}!registrationIsFinished@{registrationIsFinished}}
+\index{registrationIsFinished@{registrationIsFinished}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{registrationIsFinished}{registrationIsFinished}}
+{\footnotesize\ttfamily \label{classARegistration_a6e97c7a387dc3e4f7819972d46ce3dfc} 
+void ARegistration\+::registration\+Is\+Finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Registration is finished \Hypertarget{classARegistration_a81023edfbfaf18e999ce02243db20eca}\index{ARegistration@{ARegistration}!requestParallelThreadProcess@{requestParallelThreadProcess}}
+\index{requestParallelThreadProcess@{requestParallelThreadProcess}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{requestParallelThreadProcess}{requestParallelThreadProcess}}
+{\footnotesize\ttfamily \label{classARegistration_a81023edfbfaf18e999ce02243db20eca} 
+void ARegistration\+::request\+Parallel\+Thread\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request parallel thread process \Hypertarget{classARegistration_ad6387788303d562c9e81a48960988bae}\index{ARegistration@{ARegistration}!run@{run}}
+\index{run@{run}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classARegistration_ad6387788303d562c9e81a48960988bae} 
+void ARegistration\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Call parallel thread \Hypertarget{classARegistration_ae294fd933e5d343d75b18e077345a2d3}\index{ARegistration@{ARegistration}!setAnalysisZone@{setAnalysisZone}}
+\index{setAnalysisZone@{setAnalysisZone}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setAnalysisZone()}{setAnalysisZone()}}
+{\footnotesize\ttfamily \label{classARegistration_ae294fd933e5d343d75b18e077345a2d3} 
+void ARegistration\+::set\+Analysis\+Zone (\begin{DoxyParamCaption}\item[{QVector$<$ QPoint $>$}]{c}{}\end{DoxyParamCaption})}
+
+Set analysis zone (for NCC measure) \Hypertarget{classARegistration_ac77358cc9c4f6839c2c4113a90ef240e}\index{ARegistration@{ARegistration}!setFirstImg@{setFirstImg}}
+\index{setFirstImg@{setFirstImg}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setFirstImg()}{setFirstImg()}}
+{\footnotesize\ttfamily \label{classARegistration_ac77358cc9c4f6839c2c4113a90ef240e} 
+void ARegistration\+::set\+First\+Img (\begin{DoxyParamCaption}\item[{Mat \&}]{img}{}\end{DoxyParamCaption})}
+
+Set the first Img you want to consider for the registration \Hypertarget{classARegistration_ac7fa4cdca30a01b0d0591c6519e9ae80}\index{ARegistration@{ARegistration}!setHarrisDistValue@{setHarrisDistValue}}
+\index{setHarrisDistValue@{setHarrisDistValue}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setHarrisDistValue()}{setHarrisDistValue()}}
+{\footnotesize\ttfamily \label{classARegistration_ac7fa4cdca30a01b0d0591c6519e9ae80} 
+void ARegistration\+::set\+Harris\+Dist\+Value (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Harris dist \Hypertarget{classARegistration_ad468e61e48b5995ba103c6844c6c722d}\index{ARegistration@{ARegistration}!setNbKeyPoints@{setNbKeyPoints}}
+\index{setNbKeyPoints@{setNbKeyPoints}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setNbKeyPoints()}{setNbKeyPoints()}}
+{\footnotesize\ttfamily \label{classARegistration_ad468e61e48b5995ba103c6844c6c722d} 
+void ARegistration\+::set\+Nb\+Key\+Points (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Nb of Key Points \Hypertarget{classARegistration_a81f13c0839130dd1b485c0cb770b1edb}\index{ARegistration@{ARegistration}!setNbLearningFrames@{setNbLearningFrames}}
+\index{setNbLearningFrames@{setNbLearningFrames}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setNbLearningFrames()}{setNbLearningFrames()}}
+{\footnotesize\ttfamily \label{classARegistration_a81f13c0839130dd1b485c0cb770b1edb} 
+void ARegistration\+::set\+Nb\+Learning\+Frames (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Nb of learning frames \Hypertarget{classARegistration_a64e482ae19b3814f0aa3da6bc3052979}\index{ARegistration@{ARegistration}!setSigDyValue@{setSigDyValue}}
+\index{setSigDyValue@{setSigDyValue}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setSigDyValue()}{setSigDyValue()}}
+{\footnotesize\ttfamily \label{classARegistration_a64e482ae19b3814f0aa3da6bc3052979} 
+void ARegistration\+::set\+Sig\+Dy\+Value (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Ponderation sigma \Hypertarget{classARegistration_a4446b5d126db748374ac505fef394e0a}\index{ARegistration@{ARegistration}!setTotalNbFrames@{setTotalNbFrames}}
+\index{setTotalNbFrames@{setTotalNbFrames}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setTotalNbFrames()}{setTotalNbFrames()}}
+{\footnotesize\ttfamily \label{classARegistration_a4446b5d126db748374ac505fef394e0a} 
+void ARegistration\+::set\+Total\+Nb\+Frames (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})}
+
+Set the number of frames to register \Hypertarget{classARegistration_ae21f7605a04c0a4fa6ce3acea6f3c5cf}\index{ARegistration@{ARegistration}!setTransfoModel@{setTransfoModel}}
+\index{setTransfoModel@{setTransfoModel}!ARegistration@{ARegistration}}
+\doxysubsubsection{\texorpdfstring{setTransfoModel()}{setTransfoModel()}}
+{\footnotesize\ttfamily \label{classARegistration_ae21f7605a04c0a4fa6ce3acea6f3c5cf} 
+void ARegistration\+::set\+Transfo\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Set File\+Names 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc/\mbox{\hyperlink{ARegistration_8h}{ARegistration.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Plot">
+        <file>rc/save.png</file>
+        <file>style/plot.css</file>
+    </qresource>
+</RCC>

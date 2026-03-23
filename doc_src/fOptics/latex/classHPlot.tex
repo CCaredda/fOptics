@@ -1,0 +1,137 @@
+\doxysection{HPlot Class Reference}
+\hypertarget{classHPlot}{}\label{classHPlot}\index{HPlot@{HPlot}}
+Inheritance diagram for HPlot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHPlot}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHPlot_a6b15123a95d4aa43610f562bbcaad456}{new\+FFTVectors}} (QVector$<$ QVector$<$ float $>$ $>$)
+\item 
+void \mbox{\hyperlink{classHPlot_aa5401f09894b6b57ef4d304bf6e3df64}{on\+New\+Filter}} (QVector$<$ float $>$)
+\item 
+void \mbox{\hyperlink{classHPlot_a9d35c4ceb8abcb3f5bf258b3ead23c00}{on\+New\+Activation\+Times}} (QVector$<$ double $>$ v)
+\item 
+void \mbox{\hyperlink{classHPlot_a6e1d37adb4a5fb25f3be614e77f588da}{onnew\+Bold\+Signal}} (QVector$<$ float $>$ v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classHPlot_a2eb8e1161aa8f74fff09c565a5af10f0}\label{classHPlot_a2eb8e1161aa8f74fff09c565a5af10f0} 
+{\bfseries HPlot} (QWidget \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+void \mbox{\hyperlink{classHPlot_afec041982465749d8f8fbae6d12ef9bf}{set\+Plot\+Names}} (QVector$<$ QString $>$ n, int plot\+\_\+id)
+\item 
+void \mbox{\hyperlink{classHPlot_a2b43b06778246d0fb704d6314e01f33c}{set\+YName}} (QString, int)
+\item 
+void \mbox{\hyperlink{classHPlot_a91eaae7d8cf41db0da8ca8d9a7a0ae98}{set\+XName}} (QString n, int v)
+\item 
+void \mbox{\hyperlink{classHPlot_a33f01210fede9b2262402e1c21631728}{Plot\+\_\+\+HS\+\_\+registration\+\_\+results}} (QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$)
+\item 
+void \mbox{\hyperlink{classHPlot_a3fb315e2b0ab669c47642b48f0e058ea}{set\+YInterval}} (double min, double max, int plot\+\_\+id)
+\item 
+void \mbox{\hyperlink{classHPlot_aa7589979a31eb189ce8a7c12a55735a1}{set\+XInterval}} (double x, int plot\+\_\+id)
+\item 
+void \mbox{\hyperlink{classHPlot_a2068c084c3a8ca08d8e5d8cf50289697}{set\+XStart}} (double v, int id)
+\item 
+void \mbox{\hyperlink{classHPlot_a94ccc2631d908278545f64a563ab3209}{set\+YValue}} (QVector$<$ QVector$<$ float $>$ $>$ v, int plot\+\_\+id)
+\item 
+void \mbox{\hyperlink{classHPlot_a493c9aa8f67ff95e97e18dd860b6c7c0}{set\+Frame\+Rate}} (double v)
+\item 
+void \mbox{\hyperlink{classHPlot_ae95a405459e735e48b4faaefa3ba39bc}{set\+Nb\+Spectral\+Component}} (int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHPlot_a6b15123a95d4aa43610f562bbcaad456}\index{HPlot@{HPlot}!newFFTVectors@{newFFTVectors}}
+\index{newFFTVectors@{newFFTVectors}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{newFFTVectors}{newFFTVectors}}
+{\footnotesize\ttfamily \label{classHPlot_a6b15123a95d4aa43610f562bbcaad456} 
+void HPlot\+::new\+FFTVectors (\begin{DoxyParamCaption}\item[{QVector$<$ QVector$<$ float $>$ $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+new FFT vectors \Hypertarget{classHPlot_a9d35c4ceb8abcb3f5bf258b3ead23c00}\index{HPlot@{HPlot}!onNewActivationTimes@{onNewActivationTimes}}
+\index{onNewActivationTimes@{onNewActivationTimes}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{onNewActivationTimes}{onNewActivationTimes}}
+{\footnotesize\ttfamily \label{classHPlot_a9d35c4ceb8abcb3f5bf258b3ead23c00} 
+void HPlot\+::on\+New\+Activation\+Times (\begin{DoxyParamCaption}\item[{QVector$<$ double $>$}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New process times \Hypertarget{classHPlot_a6e1d37adb4a5fb25f3be614e77f588da}\index{HPlot@{HPlot}!onnewBoldSignal@{onnewBoldSignal}}
+\index{onnewBoldSignal@{onnewBoldSignal}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{onnewBoldSignal}{onnewBoldSignal}}
+{\footnotesize\ttfamily \label{classHPlot_a6e1d37adb4a5fb25f3be614e77f588da} 
+void HPlot\+::onnew\+Bold\+Signal (\begin{DoxyParamCaption}\item[{QVector$<$ float $>$}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set Bold signal \Hypertarget{classHPlot_aa5401f09894b6b57ef4d304bf6e3df64}\index{HPlot@{HPlot}!onNewFilter@{onNewFilter}}
+\index{onNewFilter@{onNewFilter}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{onNewFilter}{onNewFilter}}
+{\footnotesize\ttfamily \label{classHPlot_aa5401f09894b6b57ef4d304bf6e3df64} 
+void HPlot\+::on\+New\+Filter (\begin{DoxyParamCaption}\item[{QVector$<$ float $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New filter \Hypertarget{classHPlot_a33f01210fede9b2262402e1c21631728}\index{HPlot@{HPlot}!Plot\_HS\_registration\_results@{Plot\_HS\_registration\_results}}
+\index{Plot\_HS\_registration\_results@{Plot\_HS\_registration\_results}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{Plot\_HS\_registration\_results()}{Plot\_HS\_registration\_results()}}
+{\footnotesize\ttfamily \label{classHPlot_a33f01210fede9b2262402e1c21631728} 
+void HPlot\+::\+Plot\+\_\+\+HS\+\_\+registration\+\_\+results (\begin{DoxyParamCaption}\item[{QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$}]{}{}\end{DoxyParamCaption})}
+
+plot HS registration results \Hypertarget{classHPlot_a493c9aa8f67ff95e97e18dd860b6c7c0}\index{HPlot@{HPlot}!setFrameRate@{setFrameRate}}
+\index{setFrameRate@{setFrameRate}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setFrameRate()}{setFrameRate()}}
+{\footnotesize\ttfamily \label{classHPlot_a493c9aa8f67ff95e97e18dd860b6c7c0} 
+void HPlot\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set frame rate \Hypertarget{classHPlot_ae95a405459e735e48b4faaefa3ba39bc}\index{HPlot@{HPlot}!setNbSpectralComponent@{setNbSpectralComponent}}
+\index{setNbSpectralComponent@{setNbSpectralComponent}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setNbSpectralComponent()}{setNbSpectralComponent()}}
+{\footnotesize\ttfamily \label{classHPlot_ae95a405459e735e48b4faaefa3ba39bc} 
+void HPlot\+::set\+Nb\+Spectral\+Component (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})}
+
+Set nb of spectral channels \Hypertarget{classHPlot_afec041982465749d8f8fbae6d12ef9bf}\index{HPlot@{HPlot}!setPlotNames@{setPlotNames}}
+\index{setPlotNames@{setPlotNames}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setPlotNames()}{setPlotNames()}}
+{\footnotesize\ttfamily \label{classHPlot_afec041982465749d8f8fbae6d12ef9bf} 
+void HPlot\+::set\+Plot\+Names (\begin{DoxyParamCaption}\item[{QVector$<$ QString $>$}]{n}{, }\item[{int}]{plot\+\_\+id}{}\end{DoxyParamCaption})}
+
+Set plot names \Hypertarget{classHPlot_aa7589979a31eb189ce8a7c12a55735a1}\index{HPlot@{HPlot}!setXInterval@{setXInterval}}
+\index{setXInterval@{setXInterval}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setXInterval()}{setXInterval()}}
+{\footnotesize\ttfamily \label{classHPlot_aa7589979a31eb189ce8a7c12a55735a1} 
+void HPlot\+::set\+XInterval (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{int}]{plot\+\_\+id}{}\end{DoxyParamCaption})}
+
+Set X interval \Hypertarget{classHPlot_a91eaae7d8cf41db0da8ca8d9a7a0ae98}\index{HPlot@{HPlot}!setXName@{setXName}}
+\index{setXName@{setXName}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setXName()}{setXName()}}
+{\footnotesize\ttfamily \label{classHPlot_a91eaae7d8cf41db0da8ca8d9a7a0ae98} 
+void HPlot\+::set\+XName (\begin{DoxyParamCaption}\item[{QString}]{n}{, }\item[{int}]{v}{}\end{DoxyParamCaption})}
+
+Set x axis name \Hypertarget{classHPlot_a2068c084c3a8ca08d8e5d8cf50289697}\index{HPlot@{HPlot}!setXStart@{setXStart}}
+\index{setXStart@{setXStart}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setXStart()}{setXStart()}}
+{\footnotesize\ttfamily \label{classHPlot_a2068c084c3a8ca08d8e5d8cf50289697} 
+void HPlot\+::set\+XStart (\begin{DoxyParamCaption}\item[{double}]{v}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+Set X start \Hypertarget{classHPlot_a3fb315e2b0ab669c47642b48f0e058ea}\index{HPlot@{HPlot}!setYInterval@{setYInterval}}
+\index{setYInterval@{setYInterval}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setYInterval()}{setYInterval()}}
+{\footnotesize\ttfamily \label{classHPlot_a3fb315e2b0ab669c47642b48f0e058ea} 
+void HPlot\+::set\+YInterval (\begin{DoxyParamCaption}\item[{double}]{min}{, }\item[{double}]{max}{, }\item[{int}]{plot\+\_\+id}{}\end{DoxyParamCaption})}
+
+Set Y interval \Hypertarget{classHPlot_a2b43b06778246d0fb704d6314e01f33c}\index{HPlot@{HPlot}!setYName@{setYName}}
+\index{setYName@{setYName}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setYName()}{setYName()}}
+{\footnotesize\ttfamily \label{classHPlot_a2b43b06778246d0fb704d6314e01f33c} 
+void HPlot\+::set\+YName (\begin{DoxyParamCaption}\item[{QString}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+Set y axis name \Hypertarget{classHPlot_a94ccc2631d908278545f64a563ab3209}\index{HPlot@{HPlot}!setYValue@{setYValue}}
+\index{setYValue@{setYValue}!HPlot@{HPlot}}
+\doxysubsubsection{\texorpdfstring{setYValue()}{setYValue()}}
+{\footnotesize\ttfamily \label{classHPlot_a94ccc2631d908278545f64a563ab3209} 
+void HPlot\+::set\+YValue (\begin{DoxyParamCaption}\item[{QVector$<$ QVector$<$ float $>$ $>$}]{v}{, }\item[{int}]{plot\+\_\+id}{}\end{DoxyParamCaption})}
+
+Set Y values 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Display/inc/\mbox{\hyperlink{HPlot_8h}{HPlot.\+h}}\end{DoxyCompactItemize}

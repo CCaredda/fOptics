@@ -1,0 +1,75 @@
+\doxysection{HKeypad.\+h}
+\hypertarget{HKeypad_8h_source}{}\label{HKeypad_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Widget/inc/HKeypad.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Widget/inc/HKeypad.h}}
+\mbox{\hyperlink{HKeypad_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ HKeypad\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ HKeypad\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }HKeypad;}
+\DoxyCodeLine{00019\ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }HKeypad\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{explicit}\ HKeypad(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00029\ \ \ \ \ \string~HKeypad();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ QChar\ decimalSeparator();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setDecimalSeparator(QChar\ c);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntegerMode(\textcolor{keywordtype}{bool}\ integerMode=\textcolor{keyword}{true});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setValueRange(\textcolor{keywordtype}{double}\ min,\textcolor{keywordtype}{double}\ max\ ,\ QString\ unite=QString());}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ disableRangeDisplay();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ value();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}\ slots\ :}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ on0();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ on1();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ on2();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ on3();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ on4();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ on5();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ on6();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ on7();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ on8();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ on9();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ onPoint();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ onEnter();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ onClear();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ onClear1();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ onPlusOuMoins();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}\ slots\ :}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(QString\ v);}
+\DoxyCodeLine{00061\ signals:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ valueEntred(\textcolor{keywordtype}{double}\ );}
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \_valFromStr(QString);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ addDigit(\textcolor{keywordtype}{int}\ digit);}
+\DoxyCodeLine{00067\ \ \ \ \ Ui::HKeypad\ *ui;}
+\DoxyCodeLine{00068\ \ \ \ \ QChar\ \ \ \ \ \ \ m\_decimalSeparator;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ m\_min;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ m\_max;}
+\DoxyCodeLine{00071\ \ \ \ \ QString\ \ \ \ \ m\_unite;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ m\_old\_value;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ m\_selected;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ m\_isIntegerMode;}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HKeypad\_H}}
+
+\end{DoxyCode}

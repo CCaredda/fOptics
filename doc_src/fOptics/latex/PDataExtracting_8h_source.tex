@@ -1,0 +1,92 @@
+\doxysection{PData\+Extracting.\+h}
+\hypertarget{PDataExtracting_8h_source}{}\label{PDataExtracting_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PDataExtracting.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PDataExtracting.h}}
+\mbox{\hyperlink{PDataExtracting_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ PDATAEXTRACTING\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ PDATAEXTRACTING\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{filtering_8h}{filtering.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ Filter\_675\_975nm\ 0}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ Filter\_600\_875nm\ 1}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }PDataExtracting\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ PDataExtracting(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ \ \ \ \ \string~PDataExtracting();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_a1f9c5277786157722c3300e45a3ee527}{requireSpectralCorrection}}(\textcolor{keywordtype}{bool}\ v)\ \ \{\_M\_correct\_spectral\_data=v;\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_abbc069b05650662ff0b05ed69e5f9da2}{setPixelPos}}(QVector<Point>\ p)\ \ \{\_M\_pixels\_pos.clear();\ \_M\_pixels\_pos=p;\}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_aa079d5cb3d2d54b70a8a80fccbd715a0}{setTotFrames}}(\textcolor{keywordtype}{int}\ p)\ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_tot\_frames=p;\}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_a3535a161b7be374b7b6d135211ac55e6}{setNew\_HS\_config}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_a08462d114b864df0e9851290af6ef3c3}{init}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ QString\ \mbox{\hyperlink{classPDataExtracting_a1fd8dc9c761789b7dc0c98eaa77e02e1}{requestAcquisitionInfo}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ signals:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_ab9d49a2b6882e8b9305684e9af7af61a}{newExtractedData}}(\mbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_adc58849b5d3f2a88dc32cdd797268f64}{run}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_ac058b1dc20c822381d4ef0009c44cf22}{extractData}}(\mbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_a799acf04c82894662e7e489f5261c847}{extractData}}(\mbox{\hyperlink{struct__Processed__img__HS}{\_Processed\_img\_HS}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPDataExtracting_a9b7358e544430a4426c7071b507c621c}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_result\_directory\ =\ v;\}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ onThreadFinished();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \_extractData\_RGB(\mbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \_extractData\_HS(\mbox{\hyperlink{struct__Processed__img__HS}{\_Processed\_img\_HS}});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//Empty\ img\ buffers}}
+\DoxyCodeLine{00082\ \ \ \ \ Mat\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_empty\_img\_buffer;}
+\DoxyCodeLine{00083\ \ \ \ \ vector<Mat>\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_empty\_img\_buffer\_HS;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//Image\ FIFO}}
+\DoxyCodeLine{00086\ \ \ \ \ QVector<\_Processed\_img>\ \ \ \ \ \_M\_buffer\_img;}
+\DoxyCodeLine{00087\ \ \ \ \ QVector<\_Processed\_img\_HS>\ \ \_M\_buffer\_img\_HS;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ QVector<Point>\ \ \ \ \ \ \ \ \ \ \_M\_pixels\_pos;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_tot\_frames;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_acquisition\_is\_over;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_mode\_RGB;}
+\DoxyCodeLine{00093\ \ \ \ \ QMutex\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_mutex;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//Spectral\ correction\ matrix}}
+\DoxyCodeLine{00096\ \ \ \ \ Mat\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_Spectral\_Corr\_Matrix;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_correct\_spectral\_data;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_in\_thread;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//Debug\ level}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_debug\_level;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00105\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PDATAEXTRACTING\_H}}
+
+\end{DoxyCode}

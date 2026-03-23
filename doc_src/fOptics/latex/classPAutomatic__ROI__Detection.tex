@@ -1,0 +1,71 @@
+\doxysection{PAutomatic\+\_\+\+ROI\+\_\+\+Detection Class Reference}
+\hypertarget{classPAutomatic__ROI__Detection}{}\label{classPAutomatic__ROI__Detection}\index{PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}}
+Inheritance diagram for PAutomatic\+\_\+\+ROI\+\_\+\+Detection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPAutomatic__ROI__Detection}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPAutomatic__ROI__Detection_a7b621f8073146269cdbb0aabd8826b17}{request\+\_\+\+ROI\+\_\+\+Detection}} (Mat in\+\_\+img, QString path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPAutomatic__ROI__Detection_ad536107436cf843b8403bffcbe347738}{new\+Progress\+Statut}} (QString, int)
+\item 
+void \mbox{\hyperlink{classPAutomatic__ROI__Detection_aa8a8137c5dabbe9cbb00936594736c7d}{new\+Rect\+ROI}} (QPoint, QPoint)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPAutomatic__ROI__Detection_a6fd684f8a0dae142703106e53f8be73a}\label{classPAutomatic__ROI__Detection_a6fd684f8a0dae142703106e53f8be73a} 
+{\bfseries PAutomatic\+\_\+\+ROI\+\_\+\+Detection} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QVector$<$ QPoint $>$ \mbox{\hyperlink{classPAutomatic__ROI__Detection_a36efc4aaa2d435b82a195a88d860e9e2}{get\+\_\+\+Analysis\+\_\+\+Zone\+\_\+\+Detection}} (cv\+::\+Size s)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPAutomatic__ROI__Detection_a07294540ea5bac3c07a10bf2438a3f96}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPAutomatic__ROI__Detection_a36efc4aaa2d435b82a195a88d860e9e2}\index{PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}!get\_Analysis\_Zone\_Detection@{get\_Analysis\_Zone\_Detection}}
+\index{get\_Analysis\_Zone\_Detection@{get\_Analysis\_Zone\_Detection}!PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}}
+\doxysubsubsection{\texorpdfstring{get\_Analysis\_Zone\_Detection()}{get\_Analysis\_Zone\_Detection()}}
+{\footnotesize\ttfamily \label{classPAutomatic__ROI__Detection_a36efc4aaa2d435b82a195a88d860e9e2} 
+QVector$<$ QPoint $>$ PAutomatic\+\_\+\+ROI\+\_\+\+Detection\+::get\+\_\+\+Analysis\+\_\+\+Zone\+\_\+\+Detection (\begin{DoxyParamCaption}\item[{cv\+::\+Size}]{s}{}\end{DoxyParamCaption})}
+
+Get analysis zone \Hypertarget{classPAutomatic__ROI__Detection_ad536107436cf843b8403bffcbe347738}\index{PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}!newProgressStatut@{newProgressStatut}}
+\index{newProgressStatut@{newProgressStatut}!PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}}
+\doxysubsubsection{\texorpdfstring{newProgressStatut}{newProgressStatut}}
+{\footnotesize\ttfamily \label{classPAutomatic__ROI__Detection_ad536107436cf843b8403bffcbe347738} 
+void PAutomatic\+\_\+\+ROI\+\_\+\+Detection\+::new\+Progress\+Statut (\begin{DoxyParamCaption}\item[{QString}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Progress statut \Hypertarget{classPAutomatic__ROI__Detection_aa8a8137c5dabbe9cbb00936594736c7d}\index{PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}!newRectROI@{newRectROI}}
+\index{newRectROI@{newRectROI}!PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}}
+\doxysubsubsection{\texorpdfstring{newRectROI}{newRectROI}}
+{\footnotesize\ttfamily \label{classPAutomatic__ROI__Detection_aa8a8137c5dabbe9cbb00936594736c7d} 
+void PAutomatic\+\_\+\+ROI\+\_\+\+Detection\+::new\+Rect\+ROI (\begin{DoxyParamCaption}\item[{QPoint}]{}{, }\item[{QPoint}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new ROI Rect \Hypertarget{classPAutomatic__ROI__Detection_a7b621f8073146269cdbb0aabd8826b17}\index{PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}!request\_ROI\_Detection@{request\_ROI\_Detection}}
+\index{request\_ROI\_Detection@{request\_ROI\_Detection}!PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}}
+\doxysubsubsection{\texorpdfstring{request\_ROI\_Detection}{request\_ROI\_Detection}}
+{\footnotesize\ttfamily \label{classPAutomatic__ROI__Detection_a7b621f8073146269cdbb0aabd8826b17} 
+void PAutomatic\+\_\+\+ROI\+\_\+\+Detection\+::request\+\_\+\+ROI\+\_\+\+Detection (\begin{DoxyParamCaption}\item[{Mat}]{in\+\_\+img}{, }\item[{QString}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request automatic ROI detection \Hypertarget{classPAutomatic__ROI__Detection_a07294540ea5bac3c07a10bf2438a3f96}\index{PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}!run@{run}}
+\index{run@{run}!PAutomatic\_ROI\_Detection@{PAutomatic\_ROI\_Detection}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classPAutomatic__ROI__Detection_a07294540ea5bac3c07a10bf2438a3f96} 
+void PAutomatic\+\_\+\+ROI\+\_\+\+Detection\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Run process in parallel thread 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Vision/inc/\mbox{\hyperlink{PAutomatic__ROI__Detection_8h}{PAutomatic\+\_\+\+ROI\+\_\+\+Detection.\+h}}\end{DoxyCompactItemize}

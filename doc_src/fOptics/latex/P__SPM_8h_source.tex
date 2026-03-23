@@ -1,0 +1,119 @@
+\doxysection{P\+\_\+\+SPM.\+h}
+\hypertarget{P__SPM_8h_source}{}\label{P__SPM_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/P\_SPM.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/P\_SPM.h}}
+\mbox{\hyperlink{P__SPM_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ P\_SPM\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ P\_SPM\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <opencv2/core/cuda.hpp>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifdef\ \_\_CUDA\_ARCH\_\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \#include\ <opencv2/cudaarithm.hpp>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Statistic__functions_8h}{Statistic\_functions.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }P\_SPM\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ P\_SPM(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_aeab40805c9b735c2bde2f76cbbf3e272}{GeneralLinearModel}}(\textcolor{keyword}{const}\ Mat\ \&Y,\ \textcolor{keyword}{const}\ Mat\ \&X);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//Design\ Matrices}}
+\DoxyCodeLine{00041\ \ \ \ \ Mat\ \mbox{\hyperlink{classP__SPM_a26307fdc64423bd5321b49af027db503}{Build\_Design\_Matrix}}(\textcolor{keyword}{const}\ QVector<float>\ \&Signal,\ \textcolor{keywordtype}{int}\ nb\_frames);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ QVector<float>\ get\_Mean\_Expected\_DeltaC(\textcolor{keyword}{const}\ QVector<float>\ \&HRF,\textcolor{keywordtype}{float}\ apriori,QVector<int>\ \&activity\_start,QVector<int>\ \&activity\_end);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ get\_Mean\_Expected\_DeltaC(\textcolor{keyword}{const}\ QVector<float>\ \&HRF,\ \textcolor{keywordtype}{float}\ apriori,\ \textcolor{keywordtype}{int}\ activity\_start,\ \textcolor{keywordtype}{int}\ activity\_end);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Get\ statistic\ maps}}
+\DoxyCodeLine{00048\ \ \ \ \ Mat\ \mbox{\hyperlink{classP__SPM_aa97640f6ba79376c53c52f315b3b47a7}{get\_Z\_map}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ Mat\ \mbox{\hyperlink{classP__SPM_a73a2647b6a2c7b04ea4a219bfe05abe0}{get\_T\_map}}()\ \{\textcolor{keywordflow}{return}\ \_M\_T\_map;\}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_ac1a4f3801d7712ff15c33028c170c781}{set\_Statistical\_Significance\_Level}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_aa6f853463ab4907f877435fcc35644b9}{setZThreshValue}}(\textcolor{keywordtype}{double}\ v)\ \{\_M\_z\_thresh\ =v;\}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_a41c790b62cfdf9081d66da88a70a1f76}{setNbResels}}(\textcolor{keywordtype}{int}\ nb);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classP__SPM_a7199d3fdac82fe377c597676d9bcb71a}{getNbResels}}()\ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_resels;\}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_acc082acd74bebdc342f08e871d0bb932}{setFWHM}}(\textcolor{keywordtype}{double}\ v)\ \ \{\_M\_FWHM=v;\}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classP__SPM_a3a9788290d9ab2678fa2416e0478e47f}{getFWHM}}()\ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_FWHM;\}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ Mat\ \mbox{\hyperlink{classP__SPM_a531e1803f7d0617fcce2c2cbd9aaf623}{convert\_Correlation\_Map\_to\_Z\_Map}}(\textcolor{keyword}{const}\ Mat\ \&in);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ Mat\ \mbox{\hyperlink{classP__SPM_a1c180d42ea7f3989fb6b9589c18937d9}{getThresholdedZMap}}(\textcolor{keyword}{const}\ Mat\ \&Z\_map);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_a9909788f935b91f3f49b5012d6483892}{Write\_SPM\_info}}(QString\ saving\_dir);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ Mat\ \mbox{\hyperlink{classP__SPM_a1e729ecf214bf29996dcce36a92910e6}{process\_SPM}}(Mat\ Deltta\_C\_map,\ QVector<cv::Point>\ pixels\_pos,\ Size\ img\_size,\ QString\ path,\ QVector<float>\ \&model,Mat\ \&mask\_SPM);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_SPM\_Phase\_Correlation(Mat\ Delta\_C\_map,\ QString\ path,\ QVector<float>\ \&model,QVector<cv::Point>\ pixels\_pos,\ cv::Size\ img\_size);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ Mat\ \mbox{\hyperlink{classP__SPM_a0a2ce4948ac427b600a85cfe99a6ce3e}{gaussianBlur}}(\textcolor{keyword}{const}\ Mat\ \&in);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ signals:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_aaa174f63006442ab26b840e0f2adc692}{newProgressStatut}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classP__SPM_ad9b2b6a4cee74f17944780db1c02681a}{newZThresh}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//Resels\ vs\ z\ threshold\ (obtained\ by\ solving\ E[EC]\ =\ 0.05)}}
+\DoxyCodeLine{00096\ \ \ \ \ QVector<double>\ \_M\_z\_thresh\_possible\_values;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//T\ Map}}
+\DoxyCodeLine{00099\ \ \ \ \ Mat\ \_M\_T\_map;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//Nb\ of\ resels}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_resels;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//Ful-\/width\ Half\ Maximum\ (FWHM)}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_FWHM;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//Z\ threshold}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_z\_thresh;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//GPU\ acceleration}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_GPU\_enabled;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//hemodynamic\ response\ function}}
+\DoxyCodeLine{00114\ \ \ \ \ QVector<float>\ \_M\_HRF;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//effective\ degree\ of\ freedom\ (Satterthwaithe\ approximation)}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//e:\ errors\ size(T,N)}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//R:\ Residuals\ in\ GLM\ computation\ size(T,T)}}
+\DoxyCodeLine{00120\ \ \ \ \ QVector<double>\ \_effective\_degree\_of\_freedom\_GLM(\textcolor{keyword}{const}\ Mat\&\ R,\textcolor{keyword}{const}\ Mat\ \&e);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//GLM\ T\ statistics}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//invert\_X\ =\ (X'X)-\/1\ size\ (S=2,S=2)}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//B\ size(S=2,N)}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//var\_e\ size\ (1,N)}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//T\_map\ size(1,N)}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ stimulus\_id\ :\ 0\ (activation)\ 1\ (non\ activation)}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \_GLM\_t\_stats(\textcolor{keyword}{const}\ Mat\ \&invert\_X,\textcolor{keyword}{const}\ Mat\ \&B,\textcolor{keyword}{const}\ Mat\ \&var\_e,Mat\ \&T\_map,\textcolor{keywordtype}{int}\ stimulus\_id);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//Activation\ indicator}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \_get\_Activation\_indicator\_Bonferroni(\textcolor{keyword}{const}\ Mat\&\ T\_map,Mat\ \&activation\_indicator,\textcolor{keywordtype}{double}\ alpha,QVector<double>\ \&degree\_of\_freedom);}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \_get\_Activation\_indicator\_Bonferroni2(\textcolor{keyword}{const}\ Mat\&\ T\_map,Mat\ \&activation\_indicator,\textcolor{keywordtype}{double}\ alpha,\textcolor{keywordtype}{double}\ \&degree\_of\_freedom);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//General\ model\ (CPU\ or\ GPU\ handling)}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \_CPU\_GeneralLinearModel(\textcolor{keyword}{const}\ Mat\ \&Y,\textcolor{keyword}{const}\ Mat\ \&X);}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \_GPU\_GeneralLinearModel(\textcolor{keyword}{const}\ Mat\ \&Y,\textcolor{keyword}{const}\ Mat\ \&X);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ P\_SPM\_H}}
+
+\end{DoxyCode}

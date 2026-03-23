@@ -1,0 +1,23 @@
+\hypertarget{dir_d3ee766fbb7785a1a449ebbe3a97e4c6}{}\section{/home/caredda/\+D\+V\+P/\+C++/imagerie\+\_\+fonctionnelle\+\_\+cerveau/git/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc Directory Reference}
+\label{dir_d3ee766fbb7785a1a449ebbe3a97e4c6}\index{/home/caredda/\+D\+V\+P/\+C++/imagerie\+\_\+fonctionnelle\+\_\+cerveau/git/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc Directory Reference@{/home/caredda/\+D\+V\+P/\+C++/imagerie\+\_\+fonctionnelle\+\_\+cerveau/git/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc Directory Reference}}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{ABaslerCamera_8h}{A\+Basler\+Camera.\+h}
+\begin{DoxyCompactList}\small\item\em This class aims to acquire images collected from a R\+GB camera (B\+A\+S\+L\+ER camera) using the Pylon framework. Images are grabbed by the camera then saved in the hardrive and send to processing units. The saving location is indicated by the user through the graphical interface) \end{DoxyCompactList}\item 
+file \hyperlink{ACamera_8h}{A\+Camera.\+h}
+\begin{DoxyCompactList}\small\item\em This class is the camera scheduler. For the moment, it only contains one camera object to control Basler cameras. If other cameras are used, the instance of this class should be declared here. \end{DoxyCompactList}\item 
+file \hyperlink{AImageRegistration_8h}{A\+Image\+Registration.\+h}
+\begin{DoxyCompactList}\small\item\em This class is the motion compensation scheduler. Two objects are declared here that aims to compensate motion in R\+GB and hyperspectral images. \end{DoxyCompactList}\item 
+file \hyperlink{AloadDatas_8h}{Aload\+Datas.\+h}
+\begin{DoxyCompactList}\small\item\em This class aims to simulate the acquiwition of R\+GB or hyperspectral images and send images at video framerate to the processing units. Images have to be located in the computer hardrive in raw format (.png or .tiff) or in video format (.avi). \end{DoxyCompactList}\item 
+file \hyperlink{APostAcquisition_8h}{A\+Post\+Acquisition.\+h}
+\begin{DoxyCompactList}\small\item\em After the acquisition (through \hyperlink{classACamera}{A\+Camera} instance) or the loading of the images (through \hyperlink{classAloadDatas}{Aload\+Datas} instance) images are injected in this class to compute preprocessing steps (image cropping and undersampling). Then images are send to processing units. \end{DoxyCompactList}\item 
+file \hyperlink{ARegistration_8h}{A\+Registration.\+h}
+\begin{DoxyCompactList}\small\item\em Real time motion compensation of R\+GB images. This class aims a direct link to code provided by Michaël Sdika \+: \href{https://doi.org/10.1016/j.media.2018.12.005}{\tt https\+://doi.\+org/10.\+1016/j.\+media.\+2018.\+12.\+005}. \end{DoxyCompactList}\item 
+file \hyperlink{ARegistration__HyperSpectral2_8h}{A\+Registration\+\_\+\+Hyper\+Spectral2.\+h}
+\begin{DoxyCompactList}\small\item\em Real time motion compensation of hyperspectral images. This class aims a direct link to code provided by Michaël Sdika \+: \href{https://doi.org/10.1016/j.media.2018.12.005}{\tt https\+://doi.\+org/10.\+1016/j.\+media.\+2018.\+12.\+005}. \end{DoxyCompactList}\item 
+file \hyperlink{conversion_8h}{conversion.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions enabling data conversion. \end{DoxyCompactList}\item 
+file \hyperlink{loadinfos_8h}{loadinfos.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions used to load acquisition info from a image dataset. \end{DoxyCompactList}\end{DoxyCompactItemize}

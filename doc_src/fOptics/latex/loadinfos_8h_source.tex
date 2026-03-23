@@ -1,0 +1,46 @@
+\doxysection{loadinfos.\+h}
+\hypertarget{loadinfos_8h_source}{}\label{loadinfos_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/loadinfos.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/loadinfos.h}}
+\mbox{\hyperlink{loadinfos_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ LOADINFOS\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ LOADINFOS\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QRegularExpression>}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{loadinfos_8h_a32294b705e1c2bac510328a353faeac7}{LoadFrameRateInfo}}(QString\ path);}
+\DoxyCodeLine{00029\ QVector<int>\ \mbox{\hyperlink{loadinfos_8h_ab02b82e17267b0a5cdd29ab84efdf9b9}{LoadTotalFrameCountInfo}}(QString\ path);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{loadinfos_8h_ab325a7a3392217a46340e6560c6fdfd2}{LoadTimeProcessInfo}}(QString\ path,\ QVector<int>\ \&process\_id,\ \textcolor{keywordtype}{int}\ tot\_frames);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{loadinfos_8h_a37941a0ea36878b692533553a0790a12}{LoadStartEndAnalysisFrames}}(QString\ path,\ \textcolor{keywordtype}{int}\ analysis,\ \textcolor{keywordtype}{int}\ \&start\_frame,\ \textcolor{keywordtype}{int}\ \&end\_frame);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ QVector<int>\ \mbox{\hyperlink{loadinfos_8h_aa4365f49475eac8a790e39ce14b00759}{LoadAnalysisType}}(QString\ path);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{loadinfos_8h_a3953ea0fc54831fe21d307247e46002d}{getHyperspectral\_Dynamic}}(QString\ path);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{loadinfos_8h_a4990daa9e5a7df7ad776809c7eea1030}{LoadCameraType}}(QString\ path);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ QString\ \mbox{\hyperlink{loadinfos_8h_a785c1d1a04e56c22a28493db092df793}{LoadCameraName}}(QString\ path);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ QString\ \mbox{\hyperlink{loadinfos_8h_a30d27747b0d8c5534eea39c273cc9ae9}{LoadLightSourceType}}(QString\ path);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ QStringList\ \mbox{\hyperlink{loadinfos_8h_ab1fd49fe0c43bd8d4bb3553c6187eb20}{check\_acquisition\_info\_file}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOADINFOS\_H}}
+
+\end{DoxyCode}

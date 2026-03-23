@@ -1,0 +1,115 @@
+\doxysection{/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc/conversion.h File Reference}
+\hypertarget{conversion_8h}{}\label{conversion_8h}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/conversion.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/conversion.h}}
+
+
+Set of functions enabling data conversion.  
+
+
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$QImage$>$}\newline
+{\ttfamily \#include "{}opencv2/imgproc/imgproc.\+hpp"{}}\newline
+{\ttfamily \#include "{}opencv2/imgproc/types\+\_\+c.\+h"{}}\newline
+{\ttfamily \#include "{}opencv2/highgui/highgui.\+hpp"{}}\newline
+{\ttfamily \#include "{}opencv2/core/core.\+hpp"{}}\newline
+{\ttfamily \#include "{}opencv2/opencv.\+hpp"{}}\newline
+{\ttfamily \#include "{}opencv2/imgproc/imgproc\+\_\+c.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__HS__img}{\+\_\+\+HS\+\_\+img}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{conversion_8h_a09c46ae8a14a815ab3089812fc0006ff}\label{conversion_8h_a09c46ae8a14a815ab3089812fc0006ff} 
+\#define {\bfseries Row\+\_\+offset}~3
+\item 
+\Hypertarget{conversion_8h_a7353f0c6ee7b895cfe6f6c39d1b875e5}\label{conversion_8h_a7353f0c6ee7b895cfe6f6c39d1b875e5} 
+\#define {\bfseries Col\+\_\+offset}~0
+\item 
+\Hypertarget{conversion_8h_a2bdf33df62f8e6c6e89bf4c69523f770}\label{conversion_8h_a2bdf33df62f8e6c6e89bf4c69523f770} 
+\#define {\bfseries Size\+\_\+filter}~5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Mat \mbox{\hyperlink{conversion_8h_a68a80ab9701de2b8cf4b92b6aa9a5e4d}{qimage\+\_\+to\+\_\+mat\+\_\+ref}} (QImage \&img, int format)
+\item 
+QImage \mbox{\hyperlink{conversion_8h_a6167ec190470822d1e98ac0b969e5bfb}{mat\+\_\+to\+\_\+qimage\+\_\+ref}} (cv\+::\+Mat \&mat, QImage\+::\+Format format)
+\item 
+void \mbox{\hyperlink{conversion_8h_a3996dbc064b36b8f7bb679b15bc930f7}{vector2\+QVector}} (const vector$<$ vector$<$ Point $>$ $>$ \&c, QVector$<$ QVector$<$ QPoint $>$ $>$ \&C, Point offset)
+\item 
+QString \mbox{\hyperlink{conversion_8h_a1db414b6a89ba07eb23641564dea6d5c}{type2str}} (int type)
+\item 
+Mat \mbox{\hyperlink{conversion_8h_a10679cd6d6e9e83c4ed64e2b6f164e32}{QVector2\+Mat}} (QVector$<$ QVector$<$ float $>$ $>$ \&c)
+\item 
+void \mbox{\hyperlink{conversion_8h_a106e3b943445f439b81a3f05f55f2c03}{Create\+Hyper\+Cube}} (const Mat \&img\+\_\+in, vector$<$ Mat $>$ \&img\+\_\+out)
+\item 
+\Hypertarget{conversion_8h_a80af590d1bb9f642c2c23ecbaa23c1f5}\label{conversion_8h_a80af590d1bb9f642c2c23ecbaa23c1f5} 
+void {\bfseries get\+Min\+Image\+From\+Hypercube} (vector$<$ Mat $>$ \&img\+\_\+in, Mat \&img\+\_\+out)
+\item 
+\Hypertarget{conversion_8h_a772e6967c48323fc6d0f14a86bb8bd17}\label{conversion_8h_a772e6967c48323fc6d0f14a86bb8bd17} 
+void {\bfseries get\+Max\+Image\+From\+Hypercube} (vector$<$ Mat $>$ \&img\+\_\+in, Mat \&img\+\_\+out)
+\item 
+void \mbox{\hyperlink{conversion_8h_a83088b022e793d98ff56dc6fcb0fedbd}{get\+Specter\+At\+Hyper\+Spectral\+Pixel\+Pos}} (const vector$<$ Mat $>$ \texorpdfstring{$\ast$}{*}img\+\_\+in, QVector$<$ double $>$ \&specter, int row, int col)
+\item 
+\Hypertarget{conversion_8h_a71e6063daaa5835c0a16dc35e1f08283}\label{conversion_8h_a71e6063daaa5835c0a16dc35e1f08283} 
+void {\bfseries Create\+Hyper\+Cube} (const Mat \&img\+\_\+in, vector$<$ Mat $>$ \&img\+\_\+out, int size\+\_\+filter)
+\item 
+\Hypertarget{conversion_8h_a6155ebb3288d736b62bd86ef9adc674e}\label{conversion_8h_a6155ebb3288d736b62bd86ef9adc674e} 
+void {\bfseries convert\+Original\+Point\+\_\+to\+\_\+\+Hyperspectral\+Point} (Point \&P\+\_\+in, Point \&P\+\_\+out, int size\+\_\+filter, Size out\+Size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of functions enabling data conversion. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact\+: \href{mailto:caredda.c@gmail.com}{\texttt{ caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{conversion_8h_a106e3b943445f439b81a3f05f55f2c03}\index{conversion.h@{conversion.h}!CreateHyperCube@{CreateHyperCube}}
+\index{CreateHyperCube@{CreateHyperCube}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{CreateHyperCube()}{CreateHyperCube()}}
+{\footnotesize\ttfamily \label{conversion_8h_a106e3b943445f439b81a3f05f55f2c03} 
+void Create\+Hyper\+Cube (\begin{DoxyParamCaption}\item[{const Mat \&}]{img\+\_\+in}{, }\item[{vector$<$ Mat $>$ \&}]{img\+\_\+out}{}\end{DoxyParamCaption})}
+
+Hyper spectral img conversions \Hypertarget{conversion_8h_a83088b022e793d98ff56dc6fcb0fedbd}\index{conversion.h@{conversion.h}!getSpecterAtHyperSpectralPixelPos@{getSpecterAtHyperSpectralPixelPos}}
+\index{getSpecterAtHyperSpectralPixelPos@{getSpecterAtHyperSpectralPixelPos}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{getSpecterAtHyperSpectralPixelPos()}{getSpecterAtHyperSpectralPixelPos()}}
+{\footnotesize\ttfamily \label{conversion_8h_a83088b022e793d98ff56dc6fcb0fedbd} 
+void get\+Specter\+At\+Hyper\+Spectral\+Pixel\+Pos (\begin{DoxyParamCaption}\item[{const vector$<$ Mat $>$ \texorpdfstring{$\ast$}{*}}]{img\+\_\+in}{, }\item[{QVector$<$ double $>$ \&}]{specter}{, }\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption})}
+
+Hyper spectral img conversions \Hypertarget{conversion_8h_a6167ec190470822d1e98ac0b969e5bfb}\index{conversion.h@{conversion.h}!mat\_to\_qimage\_ref@{mat\_to\_qimage\_ref}}
+\index{mat\_to\_qimage\_ref@{mat\_to\_qimage\_ref}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{mat\_to\_qimage\_ref()}{mat\_to\_qimage\_ref()}}
+{\footnotesize\ttfamily \label{conversion_8h_a6167ec190470822d1e98ac0b969e5bfb} 
+QImage mat\+\_\+to\+\_\+qimage\+\_\+ref (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{mat}{, }\item[{QImage\+::\+Format}]{format}{}\end{DoxyParamCaption})}
+
+Convert Mat image (Open\+CV format) to QImage images (Qt images) \Hypertarget{conversion_8h_a68a80ab9701de2b8cf4b92b6aa9a5e4d}\index{conversion.h@{conversion.h}!qimage\_to\_mat\_ref@{qimage\_to\_mat\_ref}}
+\index{qimage\_to\_mat\_ref@{qimage\_to\_mat\_ref}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{qimage\_to\_mat\_ref()}{qimage\_to\_mat\_ref()}}
+{\footnotesize\ttfamily \label{conversion_8h_a68a80ab9701de2b8cf4b92b6aa9a5e4d} 
+Mat qimage\+\_\+to\+\_\+mat\+\_\+ref (\begin{DoxyParamCaption}\item[{QImage \&}]{img}{, }\item[{int}]{format}{}\end{DoxyParamCaption})}
+
+Convert QImage images (Qt images) to Mat image (Open\+CV format) \Hypertarget{conversion_8h_a10679cd6d6e9e83c4ed64e2b6f164e32}\index{conversion.h@{conversion.h}!QVector2Mat@{QVector2Mat}}
+\index{QVector2Mat@{QVector2Mat}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{QVector2Mat()}{QVector2Mat()}}
+{\footnotesize\ttfamily \label{conversion_8h_a10679cd6d6e9e83c4ed64e2b6f164e32} 
+Mat QVector2\+Mat (\begin{DoxyParamCaption}\item[{QVector$<$ QVector$<$ float $>$ $>$ \&}]{c}{}\end{DoxyParamCaption})}
+
+Convert QVector to Mat \Hypertarget{conversion_8h_a1db414b6a89ba07eb23641564dea6d5c}\index{conversion.h@{conversion.h}!type2str@{type2str}}
+\index{type2str@{type2str}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{type2str()}{type2str()}}
+{\footnotesize\ttfamily \label{conversion_8h_a1db414b6a89ba07eb23641564dea6d5c} 
+QString type2str (\begin{DoxyParamCaption}\item[{int}]{type}{}\end{DoxyParamCaption})}
+
+Convert Open\+CV image format as QString \Hypertarget{conversion_8h_a3996dbc064b36b8f7bb679b15bc930f7}\index{conversion.h@{conversion.h}!vector2QVector@{vector2QVector}}
+\index{vector2QVector@{vector2QVector}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{vector2QVector()}{vector2QVector()}}
+{\footnotesize\ttfamily \label{conversion_8h_a3996dbc064b36b8f7bb679b15bc930f7} 
+void vector2\+QVector (\begin{DoxyParamCaption}\item[{const vector$<$ vector$<$ Point $>$ $>$ \&}]{c}{, }\item[{QVector$<$ QVector$<$ QPoint $>$ $>$ \&}]{C}{, }\item[{Point}]{offset}{}\end{DoxyParamCaption})}
+
+Convert std vector to QVector 

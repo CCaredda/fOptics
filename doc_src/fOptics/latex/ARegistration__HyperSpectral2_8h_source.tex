@@ -1,0 +1,153 @@
+\doxysection{ARegistration\+\_\+\+Hyper\+Spectral2.\+h}
+\hypertarget{ARegistration__HyperSpectral2_8h_source}{}\label{ARegistration__HyperSpectral2_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/ARegistration\_HyperSpectral2.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/ARegistration\_HyperSpectral2.h}}
+\mbox{\hyperlink{ARegistration__HyperSpectral2_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ ARegistration\_HyperSpectral2\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ARegistration\_HyperSpectral2\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <opencv2/video/tracking.hpp>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <OFReg.h>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <SparseOFPCA.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\#include\ <Timer.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{using\ namespace\ }cv;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{using\ namespace\ }omigod;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }ARegistration\_HyperSpectral2\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{explicit}\ ARegistration\_HyperSpectral2(QObject\ *parent\ =\ 0);}
+\DoxyCodeLine{00049\ \ \ \ \ \string~ARegistration\_HyperSpectral2();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a2bfa814dbaf8dc16c08d1a8bdf07dce3}{setFirstImg}}(vector<Mat>\ \&img);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a5df7950690fa83e17c71fea57d765a7e}{newRegistrationtype}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a5071db8d553321f0a251a8ea41d66b1f}{setHarrisDistValue}}(\textcolor{keywordtype}{double}\ v)\ \ \ \{\_M\_harrisDist=v;\mbox{\hyperlink{classARegistration__HyperSpectral2_a5df7950690fa83e17c71fea57d765a7e}{newRegistrationtype}}(\_M\_reg\_type);\}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a62b1af13ea954df610182a1a1e953adf}{setNbLearningFrames}}(\textcolor{keywordtype}{double}\ v)\ \ \{\_M\_Lnframe=v;\mbox{\hyperlink{classARegistration__HyperSpectral2_a5df7950690fa83e17c71fea57d765a7e}{newRegistrationtype}}(\_M\_reg\_type);\}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a7928e5955178ace23bcb50a68cc75670}{setNbKeyPoints}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \{\_M\_maxkey=v;\mbox{\hyperlink{classARegistration__HyperSpectral2_a5df7950690fa83e17c71fea57d765a7e}{newRegistrationtype}}(\_M\_reg\_type);\}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a887031cd12f9b4de9d4f6d5168d55427}{setSigDyValue}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \{\_M\_dySig=v;\mbox{\hyperlink{classARegistration__HyperSpectral2_a5df7950690fa83e17c71fea57d765a7e}{newRegistrationtype}}(\_M\_reg\_type);\}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a6b02c24a7d4cbda85535c375bcd7a727}{setTransfoModel}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a48c04990391c90f036a024b3fabf15df}{isLearningModelDone}}\ ()\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_learning\_Model\_is\_done;\}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a7195dc5d0d376f84d1af2a55aa9c5d6b}{setTotalNbFrames}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_abc777715f640899853b682f5c4b35fba}{setAnalysisZone}}(QVector<QPoint>\ c);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ QVector<QVector<QVector<float>\ >\ >\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a9b7de94c97cd44804bd9ea7f9f07ba40}{getNCCResults}}()\ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_NCC;\}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_aa6c4fb9e9c6acbf7940c9515ec4723b2}{DataAcquisitionIsReady}}()\ \ \ \{\_M\_soft\_ready\ =\ \textcolor{keyword}{true};\}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a1185394facaca57def492c4798a37ef2}{enableMotionCompensation}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \{\_M\_enable\_motion\_compensation=v;\}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ signals:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_ae557ce7a5189b4b8b8f9c89c813a76a3}{registrationIsFinished}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_ac301dbc426b898917c15837a3db3d603}{newRegisteredImage}}(\mbox{\hyperlink{struct__Processed__img__HS}{\_Processed\_img\_HS}});}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_aebbecf78eda1ed804164503ccb7868a6}{newRegistrationProgress}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_ac5d8d7971977fdec728927d76e813386}{requestParallelThreadProcess}}(\mbox{\hyperlink{struct__Processed__img__HS}{\_Processed\_img\_HS}}\ img);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a6b8d848a74c8c06f8ebf4335a3e6cbf0}{onnewHyperspectralImagesDynamic}}(\textcolor{keywordtype}{int}\ v)\ \{\_M\_HS\_Dyn\ =\ v;\}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classARegistration__HyperSpectral2_a3ad2c88fdddf65e3b69883dc3a210799}{run}}();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//PRIVATE\ FUNCTION}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ initSparseofPCA();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \_RegisterImage(\mbox{\hyperlink{struct__Processed__img__HS}{\_Processed\_img\_HS}}\ );}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \_LearnModel(\mbox{\hyperlink{struct__Processed__img__HS}{\_Processed\_img\_HS}}\ img);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_Lnframe;\ \ \ \ \ \textcolor{comment}{//nb\ of\ frames\ used\ for\ learning}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_tot\_reg\_frames;\ \textcolor{comment}{//Nb\ of\ frames\ to\ register}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_M\_id\_learning\_frame;\ \textcolor{comment}{//id\ learning\ frame}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//Registration\ infos}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_reg\_type;\ \ \ \ \textcolor{comment}{//Registration\ type\ (0\ :\ of;\ 1\ :\ tvl1,\ 2\ :\ ofpca)}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//SparseOfPCA\ registration}}
+\DoxyCodeLine{00131\ \ \ \ \ SparseOFPCA\ \_M\_sparseofPCA;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_maxkey;\ \ \ \ \ \ \textcolor{comment}{//max\ num\ of\ keypoint\ for\ sparse\ reg}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_dySig;\ \ \ \ \textcolor{comment}{//sigma\ for\ init\ weighting\ with\ dy}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_harrisDist;\ \textcolor{comment}{//min\ dist\ between\ harris\ keypoints}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ Reg\ *\ \_M\_reg;\ \ \ \ \ \ \ \textcolor{comment}{//Registration\ objects}}
+\DoxyCodeLine{00137\ \ \ \ \ OFReg\ \_M\_ofreg;}
+\DoxyCodeLine{00138\ \ \ \ \ Reg\ *\ \_M\_lreg;\ \ \ \ \ \ \textcolor{comment}{//Registration\ objects\ of\ learning\ phase}}
+\DoxyCodeLine{00139\ \ \ \ \ OFReg\ \_M\_lofreg;}
+\DoxyCodeLine{00140\ \ \ \ \ Reg\ *\ \_M\_creg;\ \ \ \ \ \ \textcolor{comment}{//\ current\ registration\ object}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//Dynamic\ of\ the\ hyperspectral\ image}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_HS\_Dyn;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ \ \ \ Mat\ \ \ \ \ \_M\_NCCframe0;\ //first\ frame\ for\ NCC\ measure}}
+\DoxyCodeLine{00147\ \ \ \ \ vector<Mat>\ \ \ \ \ \_M\_gframe0;\ \textcolor{comment}{//First\ frame\ for\ learning}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_enable\_process;\ \ \textcolor{comment}{//Flag\ to\ enable\ the\ process}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//Check\ if\ learning\ model\ has\ been\ done}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_learning\_Model\_is\_done;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//Check\ if\ acquisition\ is\ over}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_acquisition\_is\_over;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//Inform\ that\ the\ rest\ of\ the\ software\ is\ ready\ to\ store\ the\ registred\ images}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_soft\_ready;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//Analysis\ zone}}
+\DoxyCodeLine{00161\ \ \ \ \ vector<Point>\ \_M\_analysis\_zone;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{comment}{//NCC\ vector}}
+\DoxyCodeLine{00164\ \ \ \ \ QVector<QVector<QVector<float>\ >\ >\ \_M\_NCC;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//image}}
+\DoxyCodeLine{00167\ \ \ \ \ vector<\_Processed\_img\_HS>\ \ \_M\_img;}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//Mutex}}
+\DoxyCodeLine{00170\ \ \ \ \ QMutex\ \_M\_mutex;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{//Buffer\ empty\ img}}
+\DoxyCodeLine{00173\ \ \ \ \ vector<Mat>\ \_M\_empty\_img\_buffer;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//enable\ motion\ compensation}}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_enable\_motion\_compensation;}
+\DoxyCodeLine{00177\ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ARegistration\_HyperSpectral2\_H}}
+
+\end{DoxyCode}

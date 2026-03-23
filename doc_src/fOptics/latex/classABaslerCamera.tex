@@ -1,0 +1,270 @@
+\doxysection{ABasler\+Camera Class Reference}
+\hypertarget{classABaslerCamera}{}\label{classABaslerCamera}\index{ABaslerCamera@{ABaslerCamera}}
+Inheritance diagram for ABasler\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classABaslerCamera}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classABaslerCamera_adf6e6fc8cc89a761dc18acf2424d1c34}{on\+New\+Acquisition\+Step}} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a962954dbd76550cc49a2d86e700142ac}{set\+FPS}} (double)
+\item 
+\Hypertarget{classABaslerCamera_acdc1ca706e4e71ecf25f768ad9f528e8}\label{classABaslerCamera_acdc1ca706e4e71ecf25f768ad9f528e8} 
+void {\bfseries set\+Gain} (double)
+\item 
+\Hypertarget{classABaslerCamera_ad8f95022b6e238982af7567908faf840}\label{classABaslerCamera_ad8f95022b6e238982af7567908faf840} 
+void {\bfseries set\+Exposure\+Time} (double)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a0616dae5dbe66ca613e6e53be831e405}{on\+New\+White\+Balance}} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_add1ce54aab17f062c28785ba470e9712}{Play\+Stop}} (bool v)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a9959b99685fc20228f091a25168530de}{connect\+Camera}} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_aca530de5802659b3ebae8eaa0c335d4c}{grab\+Img}} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a15375cf5525bbac3526912b4a9d25e88}{on\+Request\+Line}} (QPoint, QPoint)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a748a2b1b31a684e8ddb347efb47eda48}{Init\+ROI}} ()
+\item 
+\Hypertarget{classABaslerCamera_ab7cb997bf6edb7f457ca6faa5bf3eef4}\label{classABaslerCamera_ab7cb997bf6edb7f457ca6faa5bf3eef4} 
+void {\bfseries set\+Rect\+ROI} (QPoint, QPoint)
+\item 
+bool \mbox{\hyperlink{classABaslerCamera_a9562503708d2b089325d8ca32dc24694}{is\+Camera\+Grabbing\+Images}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classABaslerCamera_ac946b84810b2a418fd7e0d1efabdeda1}{new\+Processid}} (QVector$<$ int $>$, double)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_aa9c7ee58a0e15e0ff38a3242b4dd4520}{new\+Img\+Send}} (int, int)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_ae827e4ef6e1d1066a14794360e43a2b9}{Message}} (QString, bool)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_af9179585462bb33f398ebc7f55463c90}{new\+Display\+Image}} (Mat)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a43918100c990e70b5193a9ab2b7441f4}{new\+Image\+Acquired}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}})
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a8e0909f1f8ab3a353d639d8467b8e81d}{gain\+Range}} (double, double)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a6677d9d9b74b56b0fbc3d6b2fefdf3cf}{FPSRange}} (double, double)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a639a2e7f67f7bc2c09908fb1e2cfce72}{exposure\+Time\+Range}} (double, double)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a5f5a5f97170d2d1217b99b19985dcfe0}{new\+Line\+Profile}} (QVector$<$ Vec3b $>$)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a1e2417d28f4b05dfbba3dc9b1e2815fe}{camera\+Is\+Grabbing\+Images}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classABaslerCamera_a4dae03af53019fb308369dccec58a1b8}\label{classABaslerCamera_a4dae03af53019fb308369dccec58a1b8} 
+{\bfseries ABasler\+Camera} (QObject \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+bool \mbox{\hyperlink{classABaslerCamera_a1cf5345fde2ed98ade9b7aa2082b01fb}{is\+Camera\+Connected}} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a604ee377baa089d341231a96a2285d6e}{set\+Reference\+Path}} (QString path)
+\item 
+\Hypertarget{classABaslerCamera_a94107c86fa5edaff009cdac28aa7ab41}\label{classABaslerCamera_a94107c86fa5edaff009cdac28aa7ab41} 
+void {\bfseries set\+Reference\+Img\+Setting} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a17456558269a5e75324c07e7fad42550}{set\+Rec\+Path}} (QString p)
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a74ea36c1560f543753c819a76e581348}{Stop\+Line\+Emission}} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a1292ee90ee84b80406676d417f1466a6}{init\+Acquisition}} ()
+\item 
+float \mbox{\hyperlink{classABaslerCamera_a846da5187e545267506e81d3bf7c55b8}{get\+Frame\+Rate}} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_abf777b943d58e8f50ae59e5917540e07}{set\+Total\+Frame\+To\+Acquire}} (int acquisition\+\_\+duration)
+\item 
+\Hypertarget{classABaslerCamera_a1555f42b68b398ce8ebefae5eba038f7}\label{classABaslerCamera_a1555f42b68b398ce8ebefae5eba038f7} 
+int {\bfseries get\+Total\+Frame\+Number} ()
+\item 
+void \mbox{\hyperlink{classABaslerCamera_a2ef0b1be5a06ec83300d0966994cdc16}{Start\+\_\+\+Video\+\_\+\+Flux\+\_\+and\+\_\+\+Img\+\_\+\+Saving}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classABaslerCamera_aa81929d33dec771023f6802d81952d78}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classABaslerCamera_a1e2417d28f4b05dfbba3dc9b1e2815fe}\index{ABaslerCamera@{ABaslerCamera}!cameraIsGrabbingImages@{cameraIsGrabbingImages}}
+\index{cameraIsGrabbingImages@{cameraIsGrabbingImages}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{cameraIsGrabbingImages}{cameraIsGrabbingImages}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a1e2417d28f4b05dfbba3dc9b1e2815fe} 
+void ABasler\+Camera\+::camera\+Is\+Grabbing\+Images (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Camera is grabbing images \Hypertarget{classABaslerCamera_a9959b99685fc20228f091a25168530de}\index{ABaslerCamera@{ABaslerCamera}!connectCamera@{connectCamera}}
+\index{connectCamera@{connectCamera}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{connectCamera}{connectCamera}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a9959b99685fc20228f091a25168530de} 
+void ABasler\+Camera\+::connect\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Connect camera \Hypertarget{classABaslerCamera_a639a2e7f67f7bc2c09908fb1e2cfce72}\index{ABaslerCamera@{ABaslerCamera}!exposureTimeRange@{exposureTimeRange}}
+\index{exposureTimeRange@{exposureTimeRange}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{exposureTimeRange}{exposureTimeRange}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a639a2e7f67f7bc2c09908fb1e2cfce72} 
+void ABasler\+Camera\+::exposure\+Time\+Range (\begin{DoxyParamCaption}\item[{double}]{}{, }\item[{double}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Exposure time range \Hypertarget{classABaslerCamera_a6677d9d9b74b56b0fbc3d6b2fefdf3cf}\index{ABaslerCamera@{ABaslerCamera}!FPSRange@{FPSRange}}
+\index{FPSRange@{FPSRange}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{FPSRange}{FPSRange}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a6677d9d9b74b56b0fbc3d6b2fefdf3cf} 
+void ABasler\+Camera\+::\+FPSRange (\begin{DoxyParamCaption}\item[{double}]{}{, }\item[{double}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+FPS range \Hypertarget{classABaslerCamera_a8e0909f1f8ab3a353d639d8467b8e81d}\index{ABaslerCamera@{ABaslerCamera}!gainRange@{gainRange}}
+\index{gainRange@{gainRange}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{gainRange}{gainRange}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a8e0909f1f8ab3a353d639d8467b8e81d} 
+void ABasler\+Camera\+::gain\+Range (\begin{DoxyParamCaption}\item[{double}]{}{, }\item[{double}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Gain range \Hypertarget{classABaslerCamera_a846da5187e545267506e81d3bf7c55b8}\index{ABaslerCamera@{ABaslerCamera}!getFrameRate@{getFrameRate}}
+\index{getFrameRate@{getFrameRate}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{getFrameRate()}{getFrameRate()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a846da5187e545267506e81d3bf7c55b8} 
+float ABasler\+Camera\+::get\+Frame\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get frame rate \Hypertarget{classABaslerCamera_aca530de5802659b3ebae8eaa0c335d4c}\index{ABaslerCamera@{ABaslerCamera}!grabImg@{grabImg}}
+\index{grabImg@{grabImg}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{grabImg}{grabImg}}
+{\footnotesize\ttfamily \label{classABaslerCamera_aca530de5802659b3ebae8eaa0c335d4c} 
+void ABasler\+Camera\+::grab\+Img (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Grab img \Hypertarget{classABaslerCamera_a1292ee90ee84b80406676d417f1466a6}\index{ABaslerCamera@{ABaslerCamera}!initAcquisition@{initAcquisition}}
+\index{initAcquisition@{initAcquisition}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{initAcquisition()}{initAcquisition()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a1292ee90ee84b80406676d417f1466a6} 
+void ABasler\+Camera\+::init\+Acquisition (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+init acquisition \Hypertarget{classABaslerCamera_a748a2b1b31a684e8ddb347efb47eda48}\index{ABaslerCamera@{ABaslerCamera}!InitROI@{InitROI}}
+\index{InitROI@{InitROI}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{InitROI}{InitROI}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a748a2b1b31a684e8ddb347efb47eda48} 
+void ABasler\+Camera\+::\+Init\+ROI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+ROI selection \Hypertarget{classABaslerCamera_a1cf5345fde2ed98ade9b7aa2082b01fb}\index{ABaslerCamera@{ABaslerCamera}!isCameraConnected@{isCameraConnected}}
+\index{isCameraConnected@{isCameraConnected}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{isCameraConnected()}{isCameraConnected()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a1cf5345fde2ed98ade9b7aa2082b01fb} 
+bool ABasler\+Camera\+::is\+Camera\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+is camera connected \Hypertarget{classABaslerCamera_a9562503708d2b089325d8ca32dc24694}\index{ABaslerCamera@{ABaslerCamera}!isCameraGrabbingImages@{isCameraGrabbingImages}}
+\index{isCameraGrabbingImages@{isCameraGrabbingImages}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{isCameraGrabbingImages}{isCameraGrabbingImages}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a9562503708d2b089325d8ca32dc24694} 
+bool ABasler\+Camera\+::is\+Camera\+Grabbing\+Images (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+is camera grabbing images \Hypertarget{classABaslerCamera_ae827e4ef6e1d1066a14794360e43a2b9}\index{ABaslerCamera@{ABaslerCamera}!Message@{Message}}
+\index{Message@{Message}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{Message}{Message}}
+{\footnotesize\ttfamily \label{classABaslerCamera_ae827e4ef6e1d1066a14794360e43a2b9} 
+void ABasler\+Camera\+::\+Message (\begin{DoxyParamCaption}\item[{QString}]{}{, }\item[{bool}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Infos \Hypertarget{classABaslerCamera_af9179585462bb33f398ebc7f55463c90}\index{ABaslerCamera@{ABaslerCamera}!newDisplayImage@{newDisplayImage}}
+\index{newDisplayImage@{newDisplayImage}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{newDisplayImage}{newDisplayImage}}
+{\footnotesize\ttfamily \label{classABaslerCamera_af9179585462bb33f398ebc7f55463c90} 
+void ABasler\+Camera\+::new\+Display\+Image (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+image \Hypertarget{classABaslerCamera_a43918100c990e70b5193a9ab2b7441f4}\index{ABaslerCamera@{ABaslerCamera}!newImageAcquired@{newImageAcquired}}
+\index{newImageAcquired@{newImageAcquired}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{newImageAcquired}{newImageAcquired}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a43918100c990e70b5193a9ab2b7441f4} 
+void ABasler\+Camera\+::new\+Image\+Acquired (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+New images for pre processing \Hypertarget{classABaslerCamera_aa9c7ee58a0e15e0ff38a3242b4dd4520}\index{ABaslerCamera@{ABaslerCamera}!newImgSend@{newImgSend}}
+\index{newImgSend@{newImgSend}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{newImgSend}{newImgSend}}
+{\footnotesize\ttfamily \label{classABaslerCamera_aa9c7ee58a0e15e0ff38a3242b4dd4520} 
+void ABasler\+Camera\+::new\+Img\+Send (\begin{DoxyParamCaption}\item[{int}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+img send \Hypertarget{classABaslerCamera_a5f5a5f97170d2d1217b99b19985dcfe0}\index{ABaslerCamera@{ABaslerCamera}!newLineProfile@{newLineProfile}}
+\index{newLineProfile@{newLineProfile}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{newLineProfile}{newLineProfile}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a5f5a5f97170d2d1217b99b19985dcfe0} 
+void ABasler\+Camera\+::new\+Line\+Profile (\begin{DoxyParamCaption}\item[{QVector$<$ Vec3b $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new Line Profile \Hypertarget{classABaslerCamera_ac946b84810b2a418fd7e0d1efabdeda1}\index{ABaslerCamera@{ABaslerCamera}!newProcessid@{newProcessid}}
+\index{newProcessid@{newProcessid}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{newProcessid}{newProcessid}}
+{\footnotesize\ttfamily \label{classABaslerCamera_ac946b84810b2a418fd7e0d1efabdeda1} 
+void ABasler\+Camera\+::new\+Processid (\begin{DoxyParamCaption}\item[{QVector$<$ int $>$}]{}{, }\item[{double}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Send Acquisition steps info \Hypertarget{classABaslerCamera_adf6e6fc8cc89a761dc18acf2424d1c34}\index{ABaslerCamera@{ABaslerCamera}!onNewAcquisitionStep@{onNewAcquisitionStep}}
+\index{onNewAcquisitionStep@{onNewAcquisitionStep}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{onNewAcquisitionStep}{onNewAcquisitionStep}}
+{\footnotesize\ttfamily \label{classABaslerCamera_adf6e6fc8cc89a761dc18acf2424d1c34} 
+void ABasler\+Camera\+::on\+New\+Acquisition\+Step (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New acquisition step \Hypertarget{classABaslerCamera_a0616dae5dbe66ca613e6e53be831e405}\index{ABaslerCamera@{ABaslerCamera}!onNewWhiteBalance@{onNewWhiteBalance}}
+\index{onNewWhiteBalance@{onNewWhiteBalance}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{onNewWhiteBalance}{onNewWhiteBalance}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a0616dae5dbe66ca613e6e53be831e405} 
+void ABasler\+Camera\+::on\+New\+White\+Balance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+process White Balance \Hypertarget{classABaslerCamera_a15375cf5525bbac3526912b4a9d25e88}\index{ABaslerCamera@{ABaslerCamera}!onRequestLine@{onRequestLine}}
+\index{onRequestLine@{onRequestLine}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{onRequestLine}{onRequestLine}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a15375cf5525bbac3526912b4a9d25e88} 
+void ABasler\+Camera\+::on\+Request\+Line (\begin{DoxyParamCaption}\item[{QPoint}]{}{, }\item[{QPoint}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request Line \Hypertarget{classABaslerCamera_add1ce54aab17f062c28785ba470e9712}\index{ABaslerCamera@{ABaslerCamera}!PlayStop@{PlayStop}}
+\index{PlayStop@{PlayStop}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{PlayStop}{PlayStop}}
+{\footnotesize\ttfamily \label{classABaslerCamera_add1ce54aab17f062c28785ba470e9712} 
+void ABasler\+Camera\+::\+Play\+Stop (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Play Stop Function \Hypertarget{classABaslerCamera_aa81929d33dec771023f6802d81952d78}\index{ABaslerCamera@{ABaslerCamera}!run@{run}}
+\index{run@{run}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_aa81929d33dec771023f6802d81952d78} 
+void ABasler\+Camera\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Call parallel thread \Hypertarget{classABaslerCamera_a962954dbd76550cc49a2d86e700142ac}\index{ABaslerCamera@{ABaslerCamera}!setFPS@{setFPS}}
+\index{setFPS@{setFPS}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{setFPS}{setFPS}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a962954dbd76550cc49a2d86e700142ac} 
+void ABasler\+Camera\+::set\+FPS (\begin{DoxyParamCaption}\item[{double}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set camera infos \Hypertarget{classABaslerCamera_a17456558269a5e75324c07e7fad42550}\index{ABaslerCamera@{ABaslerCamera}!setRecPath@{setRecPath}}
+\index{setRecPath@{setRecPath}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{setRecPath()}{setRecPath()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a17456558269a5e75324c07e7fad42550} 
+void ABasler\+Camera\+::set\+Rec\+Path (\begin{DoxyParamCaption}\item[{QString}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Record images path \Hypertarget{classABaslerCamera_a604ee377baa089d341231a96a2285d6e}\index{ABaslerCamera@{ABaslerCamera}!setReferencePath@{setReferencePath}}
+\index{setReferencePath@{setReferencePath}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{setReferencePath()}{setReferencePath()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a604ee377baa089d341231a96a2285d6e} 
+void ABasler\+Camera\+::set\+Reference\+Path (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reference img settings \Hypertarget{classABaslerCamera_abf777b943d58e8f50ae59e5917540e07}\index{ABaslerCamera@{ABaslerCamera}!setTotalFrameToAcquire@{setTotalFrameToAcquire}}
+\index{setTotalFrameToAcquire@{setTotalFrameToAcquire}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{setTotalFrameToAcquire()}{setTotalFrameToAcquire()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_abf777b943d58e8f50ae59e5917540e07} 
+void ABasler\+Camera\+::set\+Total\+Frame\+To\+Acquire (\begin{DoxyParamCaption}\item[{int}]{acquisition\+\_\+duration}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set Total nb of frame to acquire \Hypertarget{classABaslerCamera_a2ef0b1be5a06ec83300d0966994cdc16}\index{ABaslerCamera@{ABaslerCamera}!Start\_Video\_Flux\_and\_Img\_Saving@{Start\_Video\_Flux\_and\_Img\_Saving}}
+\index{Start\_Video\_Flux\_and\_Img\_Saving@{Start\_Video\_Flux\_and\_Img\_Saving}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{Start\_Video\_Flux\_and\_Img\_Saving()}{Start\_Video\_Flux\_and\_Img\_Saving()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a2ef0b1be5a06ec83300d0966994cdc16} 
+void ABasler\+Camera\+::\+Start\+\_\+\+Video\+\_\+\+Flux\+\_\+and\+\_\+\+Img\+\_\+\+Saving (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Start video flux for image processing and save images \Hypertarget{classABaslerCamera_a74ea36c1560f543753c819a76e581348}\index{ABaslerCamera@{ABaslerCamera}!StopLineEmission@{StopLineEmission}}
+\index{StopLineEmission@{StopLineEmission}!ABaslerCamera@{ABaslerCamera}}
+\doxysubsubsection{\texorpdfstring{StopLineEmission()}{StopLineEmission()}}
+{\footnotesize\ttfamily \label{classABaslerCamera_a74ea36c1560f543753c819a76e581348} 
+void ABasler\+Camera\+::\+Stop\+Line\+Emission (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Stop Line emission 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc/\mbox{\hyperlink{ABaslerCamera_8h}{ABasler\+Camera.\+h}}\end{DoxyCompactItemize}

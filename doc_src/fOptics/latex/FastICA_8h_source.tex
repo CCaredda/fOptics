@@ -1,0 +1,46 @@
+\doxysection{Fast\+ICA.\+h}
+\hypertarget{FastICA_8h_source}{}\label{FastICA_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/FastICA.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/FastICA.h}}
+\mbox{\hyperlink{FastICA_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ FASTICA\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ FASTICA\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }FastICA\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ FastICA(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00022\ \ \ \ \ \string~FastICA();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ Mat\ \mbox{\hyperlink{classFastICA_a2bf647b743fdf8c67a6274856fc85eb6}{getUmixingMat}}()\ \ \ \ \ \{\textcolor{keywordflow}{return}\ unMixing\_mat;\}}
+\DoxyCodeLine{00027\ \ \ \ \ Mat\ \mbox{\hyperlink{classFastICA_acb71514928846322759acbd84bf5b76f}{getIndependantMat}}()\ \{\textcolor{keywordflow}{return}\ IC\_mat;\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ Mat\ \mbox{\hyperlink{classFastICA_ac292626ceb3948dc63dfff7a66fda135}{processFastICA}}(\textcolor{keyword}{const}\ Mat\ \&in,\ \textcolor{keywordtype}{int}\ nbIC);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ signals:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFastICA_a3bb9fd9952f745bc24250c063a69ebab}{newProgressStatut}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ runICA(\textcolor{keyword}{const}\ Mat\ \&input,\ \textcolor{keywordtype}{int}\ snum);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ whiten(\textcolor{keyword}{const}\ Mat\ \&input,\ cv::Mat\ \&output,\ cv::Mat\ \&E,\ cv::Mat\ \&D);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ whiten(\textcolor{keyword}{const}\ Mat\ \&input,\ cv::Mat\ \&output);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ remean(\textcolor{keyword}{const}\ Mat\ \&input,\ cv::Mat\ \&\ output);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//Independant\ component\ matrix}}
+\DoxyCodeLine{00046\ \ \ \ \ Mat\ IC\_mat;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//Unmixing\ matrix}}
+\DoxyCodeLine{00049\ \ \ \ \ Mat\ unMixing\_mat;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FASTICA\_H}}
+
+\end{DoxyCode}

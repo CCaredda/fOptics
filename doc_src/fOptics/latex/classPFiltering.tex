@@ -1,0 +1,407 @@
+\doxysection{PFiltering Class Reference}
+\hypertarget{classPFiltering}{}\label{classPFiltering}\index{PFiltering@{PFiltering}}
+Inheritance diagram for PFiltering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPFiltering}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPFiltering_a72d92f42b3eb7eff70f90a7209450821}{onrequest\+Acquisition\+Info}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_ae89fff14d566c49435b4cdef46a950c8}{new\+\_\+\+Filtering}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}} \&mat)
+\item 
+void \mbox{\hyperlink{classPFiltering_a99f6f1d2b7f539ff0ffaa7ca6a860251}{new\+\_\+\+Filtering}} (\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}} \&mat)
+\item 
+void \mbox{\hyperlink{classPFiltering_aa2af9745e08512a3b998a771e46fb122}{set\+Pixel\+Pos}} (QVector$<$ Point $>$ p)
+\item 
+void \mbox{\hyperlink{classPFiltering_ab335232f07b399b0d4fcd0394d40dcff}{on\+New\+RT\+\_\+\+Start\+ID}} (int v)
+\item 
+void \mbox{\hyperlink{classPFiltering_a997b610c14a53d869f13700e46f6378a}{onnew\+Wavelength\+IDX}} (QVector$<$ int $>$)
+\item 
+void \mbox{\hyperlink{classPFiltering_a7c013d7b37bd66630332b03ff709e096}{on\+New\+Result\+Directory}} (QString v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPFiltering_a30235f7940c447ed4e3fd90862640250}{new\+Acquisition\+Info}} (QString)
+\item 
+void \mbox{\hyperlink{classPFiltering_a6bdf408d7bc2e2120f392d871f7879f5}{ready\+For\+Not\+Real\+Time\+Process}} ()
+\item 
+void \mbox{\hyperlink{classPFiltering_a861cf45c44aac438e7a279ace3be2e4b}{ready\+For\+Real\+Time\+Process}} ()
+\item 
+void \mbox{\hyperlink{classPFiltering_a3340f91b9164de394a812a1532f5017b}{new\+Progress\+Statut}} (QString, int)
+\item 
+void \mbox{\hyperlink{classPFiltering_afd30acf75a9f36cf376ed0501c982379}{new\+Mean\+Spectrum}} (QVector$<$ QVector$<$ float $>$ $>$)
+\item 
+void \mbox{\hyperlink{classPFiltering_a283650cb8309da2417aaa088a65cf295}{new\+Filter}} (QVector$<$ float $>$)
+\item 
+void \mbox{\hyperlink{classPFiltering_a6f91f82afc15e8e78b09d28aed6fb0e6}{new\+Cardiac\+Mean\+Values}} (Mat)
+\item 
+void \mbox{\hyperlink{classPFiltering_a21ef7bb08fd7bbad3837b6d4fe2f744a}{new\+Pixel\+Wise\+Cardiac\+Data}} (Mat, int)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPFiltering_a246e4cf69e2de493f45632b91df0fc0a}\label{classPFiltering_a246e4cf69e2de493f45632b91df0fc0a} 
+{\bfseries PFiltering} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \mbox{\hyperlink{classPFiltering_aafc21572d298682c402f84aad10d7811}{require\+Spectral\+Correction}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_ad47bc6b0c5b3d93269d045eda1484e37}{save\+\_\+\+Non\+Filtered\+Signals}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_a90d0d31fcb46dfe4fd1b712e37f73f6a}{set\+Mode\+Resting\+State}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_abefa16b557909b50ae771c7f8fb309de}{set\+Frame\+Rate}} (double v)
+\item 
+void \mbox{\hyperlink{classPFiltering_ae258ed49a841d2b79b1c5810f8426227}{set\+Filtering\+Type}} (int v)
+\item 
+void \mbox{\hyperlink{classPFiltering_a5e595a02eb2a79cfac288b9b07347bf0}{set\+Real\+Time\+Mode}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_a5b9c95b58353725e459069654b411c3b}{set\+New\+\_\+\+HS\+\_\+config}} (int v)
+\item 
+void \mbox{\hyperlink{classPFiltering_a3ab820d3aa3743250c7d3093a507e23b}{set\+Point\+Of\+Interest}} (int i)
+\item 
+void \mbox{\hyperlink{classPFiltering_af005424a9513af1c03b8cd3751028e25}{enable\+Filtering}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_a7e6dc62632ab36811bc2df78f103bf16}{enable\+Low\+Pass\+Filtering}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_aaf627dc117017ff48744ea6c1024bc95}{enable\+Data\+Correction}} (bool v)
+\item 
+void \mbox{\hyperlink{classPFiltering_abbcd4a42340e43a4d4c8ba32844dde00}{init}} (int nb\+Elements, int nb\+Channels, int nb\+\_\+frames)
+\item 
+bool \mbox{\hyperlink{classPFiltering_a2a897adda42413effc89ad29b3d07264}{is\+Filtering\+Enabled}} ()
+\item 
+QVector$<$ float $>$ \mbox{\hyperlink{classPFiltering_a66c1ffdd6541b668924bc8c18eab3076}{get\+Temporal\+Vector}} (int spatial\+\_\+id, int spectral\+\_\+id)
+\item 
+QVector$<$ QVector$<$ float $>$ $>$ \mbox{\hyperlink{classPFiltering_a499348071164f72503279748737cdc06}{get\+Temporal\+Vector}} (int spatial\+\_\+id)
+\item 
+QVector$<$ QVector$<$ float $>$ $>$ \mbox{\hyperlink{classPFiltering_a893da2356f3f779c31c96a1423189cba}{get\+Non\+Filtered\+Temporal\+Vector}} (int spatial\+\_\+id)
+\item 
+QVector$<$ QVector$<$ float $>$ $>$ \mbox{\hyperlink{classPFiltering_aebfb8ee099627fa3aba72c138c22d605}{get\+Temporal\+Vector}} (int spatial\+\_\+id, QVector$<$ int $>$ wavelength)
+\item 
+QVector$<$ QVector$<$ float $>$ $>$ \mbox{\hyperlink{classPFiltering_a6b9013e609abcd5a8d97484c74bc4dc2}{get\+Temporal\+Vector}} (int spatial\+\_\+id, QVector$<$ int $>$ wavelength, int t\+\_\+start, int t\+\_\+end)
+\item 
+int \mbox{\hyperlink{classPFiltering_a1f996e8357953d37918d9852624e174a}{get\+Nb\+Of\+Temporal\+Element}} ()
+\item 
+QVector$<$ QVector$<$ float $>$ $>$ \mbox{\hyperlink{classPFiltering_a7c6c5daa1bda22957e4f6cda5df8a427}{get\+Temporal\+Vector\+\_\+\+RT}} (int spatial\+\_\+id, int data\+\_\+length)
+\item 
+QVector$<$ float $>$ \mbox{\hyperlink{classPFiltering_a917936d5a0d8badb857c7b2c6c2b6e48}{get\+\_\+spectral\+\_\+vector}} (int spatial\+\_\+id)
+\item 
+QVector$<$ QVector$<$ float $>$ $>$ \mbox{\hyperlink{classPFiltering_ac930fc9fdfc6f4c193e72853e7610ff9}{get\+\_\+spectral\+\_\+vectors}} (int spatial\+\_\+id)
+\item 
+QVector$<$ float $>$ \mbox{\hyperlink{classPFiltering_aabcb4395259694b8a17f04e14843f6aa}{get\+First\+Values}} (int id)
+\item 
+float \mbox{\hyperlink{classPFiltering_a74bb549136a3c6d3e99d69c58c890c56}{get\+Value}} (int spatial\+\_\+id, int spectral\+\_\+id, int temporal\+\_\+id)
+\item 
+bool \mbox{\hyperlink{classPFiltering_a72d80d86d1c17442e82ca2de2c7382bb}{is\+Row\+Data\+Valid}} ()
+\item 
+int \mbox{\hyperlink{classPFiltering_a337ebfadaabde43e4de4fc8549148365}{get\+Last\+Filtered\+Id}} ()
+\item 
+QVector$<$ float $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPFiltering_a27c83670723b3a69e96b4024bf4a11fd}{get\+First\+Value\+Pointer}} ()
+\item 
+int \mbox{\hyperlink{classPFiltering_a9fc375282580919f3783fb007f3596ca}{get\+Filtering\+Type}} ()
+\item 
+QVector$<$ float $>$ \mbox{\hyperlink{classPFiltering_ae81d34579ab91359d92b79b56aee91b5}{get\+\_\+\+Cardiac\+\_\+\+Beating\+\_\+\+Indicator}} ()
+\item 
+Mat \mbox{\hyperlink{classPFiltering_ab213d447661fb3336282cb195aa78fbe}{get\+Mean\+Intensity\+Values}} ()
+\item 
+QVector$<$ float $>$ \mbox{\hyperlink{classPFiltering_a241408306e888186da0ae9aec4897abc}{return\+Cardiac\+Filter}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPFiltering_a042c399e7da6c5fdada76c150eb60808}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPFiltering_aaf627dc117017ff48744ea6c1024bc95}\index{PFiltering@{PFiltering}!enableDataCorrection@{enableDataCorrection}}
+\index{enableDataCorrection@{enableDataCorrection}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{enableDataCorrection()}{enableDataCorrection()}}
+{\footnotesize\ttfamily \label{classPFiltering_aaf627dc117017ff48744ea6c1024bc95} 
+void PFiltering\+::enable\+Data\+Correction (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enable or disable Data corection \Hypertarget{classPFiltering_af005424a9513af1c03b8cd3751028e25}\index{PFiltering@{PFiltering}!enableFiltering@{enableFiltering}}
+\index{enableFiltering@{enableFiltering}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{enableFiltering()}{enableFiltering()}}
+{\footnotesize\ttfamily \label{classPFiltering_af005424a9513af1c03b8cd3751028e25} 
+void PFiltering\+::enable\+Filtering (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enable or disable filtering (low pass + cardiac filtering + data correction) \Hypertarget{classPFiltering_a7e6dc62632ab36811bc2df78f103bf16}\index{PFiltering@{PFiltering}!enableLowPassFiltering@{enableLowPassFiltering}}
+\index{enableLowPassFiltering@{enableLowPassFiltering}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{enableLowPassFiltering()}{enableLowPassFiltering()}}
+{\footnotesize\ttfamily \label{classPFiltering_a7e6dc62632ab36811bc2df78f103bf16} 
+void PFiltering\+::enable\+Low\+Pass\+Filtering (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Enable or disable low pass filtering \Hypertarget{classPFiltering_ae81d34579ab91359d92b79b56aee91b5}\index{PFiltering@{PFiltering}!get\_Cardiac\_Beating\_Indicator@{get\_Cardiac\_Beating\_Indicator}}
+\index{get\_Cardiac\_Beating\_Indicator@{get\_Cardiac\_Beating\_Indicator}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{get\_Cardiac\_Beating\_Indicator()}{get\_Cardiac\_Beating\_Indicator()}}
+{\footnotesize\ttfamily \label{classPFiltering_ae81d34579ab91359d92b79b56aee91b5} 
+QVector$<$ float $>$ PFiltering\+::get\+\_\+\+Cardiac\+\_\+\+Beating\+\_\+\+Indicator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get cardiac beating indicator \Hypertarget{classPFiltering_a917936d5a0d8badb857c7b2c6c2b6e48}\index{PFiltering@{PFiltering}!get\_spectral\_vector@{get\_spectral\_vector}}
+\index{get\_spectral\_vector@{get\_spectral\_vector}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{get\_spectral\_vector()}{get\_spectral\_vector()}}
+{\footnotesize\ttfamily \label{classPFiltering_a917936d5a0d8badb857c7b2c6c2b6e48} 
+QVector$<$ float $>$ PFiltering\+::get\+\_\+spectral\+\_\+vector (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{}\end{DoxyParamCaption})}
+
+Get spectral vector \Hypertarget{classPFiltering_ac930fc9fdfc6f4c193e72853e7610ff9}\index{PFiltering@{PFiltering}!get\_spectral\_vectors@{get\_spectral\_vectors}}
+\index{get\_spectral\_vectors@{get\_spectral\_vectors}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{get\_spectral\_vectors()}{get\_spectral\_vectors()}}
+{\footnotesize\ttfamily \label{classPFiltering_ac930fc9fdfc6f4c193e72853e7610ff9} 
+QVector$<$ QVector$<$ float $>$ $>$ PFiltering\+::get\+\_\+spectral\+\_\+vectors (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{}\end{DoxyParamCaption})}
+
+Get spectral vector \Hypertarget{classPFiltering_a9fc375282580919f3783fb007f3596ca}\index{PFiltering@{PFiltering}!getFilteringType@{getFilteringType}}
+\index{getFilteringType@{getFilteringType}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getFilteringType()}{getFilteringType()}}
+{\footnotesize\ttfamily \label{classPFiltering_a9fc375282580919f3783fb007f3596ca} 
+int PFiltering\+::get\+Filtering\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get filtering type (FFT, FIR or IIR) \Hypertarget{classPFiltering_a27c83670723b3a69e96b4024bf4a11fd}\index{PFiltering@{PFiltering}!getFirstValuePointer@{getFirstValuePointer}}
+\index{getFirstValuePointer@{getFirstValuePointer}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getFirstValuePointer()}{getFirstValuePointer()}}
+{\footnotesize\ttfamily \label{classPFiltering_a27c83670723b3a69e96b4024bf4a11fd} 
+QVector$<$ float $>$ \texorpdfstring{$\ast$}{*} PFiltering\+::get\+First\+Value\+Pointer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get first value (for data redressing in real time filtering) \Hypertarget{classPFiltering_aabcb4395259694b8a17f04e14843f6aa}\index{PFiltering@{PFiltering}!getFirstValues@{getFirstValues}}
+\index{getFirstValues@{getFirstValues}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getFirstValues()}{getFirstValues()}}
+{\footnotesize\ttfamily \label{classPFiltering_aabcb4395259694b8a17f04e14843f6aa} 
+QVector$<$ float $>$ PFiltering\+::get\+First\+Values (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+Get Buffer values (used in IIR filtering) \Hypertarget{classPFiltering_a337ebfadaabde43e4de4fc8549148365}\index{PFiltering@{PFiltering}!getLastFilteredId@{getLastFilteredId}}
+\index{getLastFilteredId@{getLastFilteredId}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getLastFilteredId()}{getLastFilteredId()}}
+{\footnotesize\ttfamily \label{classPFiltering_a337ebfadaabde43e4de4fc8549148365} 
+int PFiltering\+::get\+Last\+Filtered\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+get current output value (last filtered value\+: used in IIR filtering) \Hypertarget{classPFiltering_ab213d447661fb3336282cb195aa78fbe}\index{PFiltering@{PFiltering}!getMeanIntensityValues@{getMeanIntensityValues}}
+\index{getMeanIntensityValues@{getMeanIntensityValues}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getMeanIntensityValues()}{getMeanIntensityValues()}}
+{\footnotesize\ttfamily \label{classPFiltering_ab213d447661fb3336282cb195aa78fbe} 
+Mat PFiltering\+::get\+Mean\+Intensity\+Values (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get mean intensity values \Hypertarget{classPFiltering_a1f996e8357953d37918d9852624e174a}\index{PFiltering@{PFiltering}!getNbOfTemporalElement@{getNbOfTemporalElement}}
+\index{getNbOfTemporalElement@{getNbOfTemporalElement}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getNbOfTemporalElement()}{getNbOfTemporalElement()}}
+{\footnotesize\ttfamily \label{classPFiltering_a1f996e8357953d37918d9852624e174a} 
+int PFiltering\+::get\+Nb\+Of\+Temporal\+Element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get number of frames \Hypertarget{classPFiltering_a893da2356f3f779c31c96a1423189cba}\index{PFiltering@{PFiltering}!getNonFilteredTemporalVector@{getNonFilteredTemporalVector}}
+\index{getNonFilteredTemporalVector@{getNonFilteredTemporalVector}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getNonFilteredTemporalVector()}{getNonFilteredTemporalVector()}}
+{\footnotesize\ttfamily \label{classPFiltering_a893da2356f3f779c31c96a1423189cba} 
+QVector$<$ QVector$<$ float $>$ $>$ PFiltering\+::get\+Non\+Filtered\+Temporal\+Vector (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{}\end{DoxyParamCaption})}
+
+Get non filtered temporal vectors \Hypertarget{classPFiltering_a499348071164f72503279748737cdc06}\index{PFiltering@{PFiltering}!getTemporalVector@{getTemporalVector}}
+\index{getTemporalVector@{getTemporalVector}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getTemporalVector()}{getTemporalVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classPFiltering_a499348071164f72503279748737cdc06} 
+QVector$<$ QVector$<$ float $>$ $>$ PFiltering\+::get\+Temporal\+Vector (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{}\end{DoxyParamCaption})}
+
+Get temporal vectors \Hypertarget{classPFiltering_a66c1ffdd6541b668924bc8c18eab3076}\index{PFiltering@{PFiltering}!getTemporalVector@{getTemporalVector}}
+\index{getTemporalVector@{getTemporalVector}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getTemporalVector()}{getTemporalVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classPFiltering_a66c1ffdd6541b668924bc8c18eab3076} 
+QVector$<$ float $>$ PFiltering\+::get\+Temporal\+Vector (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{, }\item[{int}]{spectral\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get temporal vectors \Hypertarget{classPFiltering_aebfb8ee099627fa3aba72c138c22d605}\index{PFiltering@{PFiltering}!getTemporalVector@{getTemporalVector}}
+\index{getTemporalVector@{getTemporalVector}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getTemporalVector()}{getTemporalVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classPFiltering_aebfb8ee099627fa3aba72c138c22d605} 
+QVector$<$ QVector$<$ float $>$ $>$ PFiltering\+::get\+Temporal\+Vector (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{, }\item[{QVector$<$ int $>$}]{wavelength}{}\end{DoxyParamCaption})}
+
+Get temporal vectors \Hypertarget{classPFiltering_a6b9013e609abcd5a8d97484c74bc4dc2}\index{PFiltering@{PFiltering}!getTemporalVector@{getTemporalVector}}
+\index{getTemporalVector@{getTemporalVector}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getTemporalVector()}{getTemporalVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classPFiltering_a6b9013e609abcd5a8d97484c74bc4dc2} 
+QVector$<$ QVector$<$ float $>$ $>$ PFiltering\+::get\+Temporal\+Vector (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{, }\item[{QVector$<$ int $>$}]{wavelength}{, }\item[{int}]{t\+\_\+start}{, }\item[{int}]{t\+\_\+end}{}\end{DoxyParamCaption})}
+
+Get temporal vectors \Hypertarget{classPFiltering_a7c6c5daa1bda22957e4f6cda5df8a427}\index{PFiltering@{PFiltering}!getTemporalVector\_RT@{getTemporalVector\_RT}}
+\index{getTemporalVector\_RT@{getTemporalVector\_RT}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getTemporalVector\_RT()}{getTemporalVector\_RT()}}
+{\footnotesize\ttfamily \label{classPFiltering_a7c6c5daa1bda22957e4f6cda5df8a427} 
+QVector$<$ QVector$<$ float $>$ $>$ PFiltering\+::get\+Temporal\+Vector\+\_\+\+RT (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{, }\item[{int}]{data\+\_\+length}{}\end{DoxyParamCaption})}
+
+Get temporal vectors in Real Time mode \Hypertarget{classPFiltering_a74bb549136a3c6d3e99d69c58c890c56}\index{PFiltering@{PFiltering}!getValue@{getValue}}
+\index{getValue@{getValue}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily \label{classPFiltering_a74bb549136a3c6d3e99d69c58c890c56} 
+float PFiltering\+::get\+Value (\begin{DoxyParamCaption}\item[{int}]{spatial\+\_\+id}{, }\item[{int}]{spectral\+\_\+id}{, }\item[{int}]{temporal\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get intensity at specific point, frame and spectral channel \Hypertarget{classPFiltering_abbcd4a42340e43a4d4c8ba32844dde00}\index{PFiltering@{PFiltering}!init@{init}}
+\index{init@{init}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classPFiltering_abbcd4a42340e43a4d4c8ba32844dde00} 
+void PFiltering\+::init (\begin{DoxyParamCaption}\item[{int}]{nb\+Elements}{, }\item[{int}]{nb\+Channels}{, }\item[{int}]{nb\+\_\+frames}{}\end{DoxyParamCaption})}
+
+init buffer size \Hypertarget{classPFiltering_a2a897adda42413effc89ad29b3d07264}\index{PFiltering@{PFiltering}!isFilteringEnabled@{isFilteringEnabled}}
+\index{isFilteringEnabled@{isFilteringEnabled}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{isFilteringEnabled()}{isFilteringEnabled()}}
+{\footnotesize\ttfamily \label{classPFiltering_a2a897adda42413effc89ad29b3d07264} 
+bool PFiltering\+::is\+Filtering\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+is filtering enabled ? \Hypertarget{classPFiltering_a72d80d86d1c17442e82ca2de2c7382bb}\index{PFiltering@{PFiltering}!isRowDataValid@{isRowDataValid}}
+\index{isRowDataValid@{isRowDataValid}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{isRowDataValid()}{isRowDataValid()}}
+{\footnotesize\ttfamily \label{classPFiltering_a72d80d86d1c17442e82ca2de2c7382bb} 
+bool PFiltering\+::is\+Row\+Data\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Check if Data is valid (non empty vector) \Hypertarget{classPFiltering_ae89fff14d566c49435b4cdef46a950c8}\index{PFiltering@{PFiltering}!new\_Filtering@{new\_Filtering}}
+\index{new\_Filtering@{new\_Filtering}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{new\_Filtering}{new\_Filtering}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classPFiltering_ae89fff14d566c49435b4cdef46a950c8} 
+void PFiltering\+::new\+\_\+\+Filtering (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}} \&}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Send to data for extraction (RGB data) \Hypertarget{classPFiltering_a99f6f1d2b7f539ff0ffaa7ca6a860251}\index{PFiltering@{PFiltering}!new\_Filtering@{new\_Filtering}}
+\index{new\_Filtering@{new\_Filtering}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{new\_Filtering}{new\_Filtering}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classPFiltering_a99f6f1d2b7f539ff0ffaa7ca6a860251} 
+void PFiltering\+::new\+\_\+\+Filtering (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}} \&}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+FSend to data for extraction (hyperspectral data) \Hypertarget{classPFiltering_a30235f7940c447ed4e3fd90862640250}\index{PFiltering@{PFiltering}!newAcquisitionInfo@{newAcquisitionInfo}}
+\index{newAcquisitionInfo@{newAcquisitionInfo}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{newAcquisitionInfo}{newAcquisitionInfo}}
+{\footnotesize\ttfamily \label{classPFiltering_a30235f7940c447ed4e3fd90862640250} 
+void PFiltering\+::new\+Acquisition\+Info (\begin{DoxyParamCaption}\item[{QString}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Send acquisition info \Hypertarget{classPFiltering_a6f91f82afc15e8e78b09d28aed6fb0e6}\index{PFiltering@{PFiltering}!newCardiacMeanValues@{newCardiacMeanValues}}
+\index{newCardiacMeanValues@{newCardiacMeanValues}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{newCardiacMeanValues}{newCardiacMeanValues}}
+{\footnotesize\ttfamily \label{classPFiltering_a6f91f82afc15e8e78b09d28aed6fb0e6} 
+void PFiltering\+::new\+Cardiac\+Mean\+Values (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Emit New cardiac values (intensity averaged over the ROI and filtered with the cardiac filter) \Hypertarget{classPFiltering_a283650cb8309da2417aaa088a65cf295}\index{PFiltering@{PFiltering}!newFilter@{newFilter}}
+\index{newFilter@{newFilter}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{newFilter}{newFilter}}
+{\footnotesize\ttfamily \label{classPFiltering_a283650cb8309da2417aaa088a65cf295} 
+void PFiltering\+::new\+Filter (\begin{DoxyParamCaption}\item[{QVector$<$ float $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Emit new Cardiac filter \Hypertarget{classPFiltering_afd30acf75a9f36cf376ed0501c982379}\index{PFiltering@{PFiltering}!newMeanSpectrum@{newMeanSpectrum}}
+\index{newMeanSpectrum@{newMeanSpectrum}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{newMeanSpectrum}{newMeanSpectrum}}
+{\footnotesize\ttfamily \label{classPFiltering_afd30acf75a9f36cf376ed0501c982379} 
+void PFiltering\+::new\+Mean\+Spectrum (\begin{DoxyParamCaption}\item[{QVector$<$ QVector$<$ float $>$ $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Emit new Spectrum (spectrum of intensities averaged over the ROI) \Hypertarget{classPFiltering_a21ef7bb08fd7bbad3837b6d4fe2f744a}\index{PFiltering@{PFiltering}!newPixelWiseCardiacData@{newPixelWiseCardiacData}}
+\index{newPixelWiseCardiacData@{newPixelWiseCardiacData}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{newPixelWiseCardiacData}{newPixelWiseCardiacData}}
+{\footnotesize\ttfamily \label{classPFiltering_a21ef7bb08fd7bbad3837b6d4fe2f744a} 
+void PFiltering\+::new\+Pixel\+Wise\+Cardiac\+Data (\begin{DoxyParamCaption}\item[{Mat}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Emit pixel-\/wise cardiac values (intensities filtered with the cardiac filter for each pixel of the ROI) \Hypertarget{classPFiltering_a3340f91b9164de394a812a1532f5017b}\index{PFiltering@{PFiltering}!newProgressStatut@{newProgressStatut}}
+\index{newProgressStatut@{newProgressStatut}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{newProgressStatut}{newProgressStatut}}
+{\footnotesize\ttfamily \label{classPFiltering_a3340f91b9164de394a812a1532f5017b} 
+void PFiltering\+::new\+Progress\+Statut (\begin{DoxyParamCaption}\item[{QString}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Inform progress statut \Hypertarget{classPFiltering_a7c013d7b37bd66630332b03ff709e096}\index{PFiltering@{PFiltering}!onNewResultDirectory@{onNewResultDirectory}}
+\index{onNewResultDirectory@{onNewResultDirectory}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{onNewResultDirectory}{onNewResultDirectory}}
+{\footnotesize\ttfamily \label{classPFiltering_a7c013d7b37bd66630332b03ff709e096} 
+void PFiltering\+::on\+New\+Result\+Directory (\begin{DoxyParamCaption}\item[{QString}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New result directory \Hypertarget{classPFiltering_ab335232f07b399b0d4fcd0394d40dcff}\index{PFiltering@{PFiltering}!onNewRT\_StartID@{onNewRT\_StartID}}
+\index{onNewRT\_StartID@{onNewRT\_StartID}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{onNewRT\_StartID}{onNewRT\_StartID}}
+{\footnotesize\ttfamily \label{classPFiltering_ab335232f07b399b0d4fcd0394d40dcff} 
+void PFiltering\+::on\+New\+RT\+\_\+\+Start\+ID (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+on new Real time star id \Hypertarget{classPFiltering_a997b610c14a53d869f13700e46f6378a}\index{PFiltering@{PFiltering}!onnewWavelengthIDX@{onnewWavelengthIDX}}
+\index{onnewWavelengthIDX@{onnewWavelengthIDX}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{onnewWavelengthIDX}{onnewWavelengthIDX}}
+{\footnotesize\ttfamily \label{classPFiltering_a997b610c14a53d869f13700e46f6378a} 
+void PFiltering\+::onnew\+Wavelength\+IDX (\begin{DoxyParamCaption}\item[{QVector$<$ int $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+on New spectral bands idx \Hypertarget{classPFiltering_a72d92f42b3eb7eff70f90a7209450821}\index{PFiltering@{PFiltering}!onrequestAcquisitionInfo@{onrequestAcquisitionInfo}}
+\index{onrequestAcquisitionInfo@{onrequestAcquisitionInfo}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{onrequestAcquisitionInfo}{onrequestAcquisitionInfo}}
+{\footnotesize\ttfamily \label{classPFiltering_a72d92f42b3eb7eff70f90a7209450821} 
+void PFiltering\+::onrequest\+Acquisition\+Info (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request aquisition info \Hypertarget{classPFiltering_a6bdf408d7bc2e2120f392d871f7879f5}\index{PFiltering@{PFiltering}!readyForNotRealTimeProcess@{readyForNotRealTimeProcess}}
+\index{readyForNotRealTimeProcess@{readyForNotRealTimeProcess}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{readyForNotRealTimeProcess}{readyForNotRealTimeProcess}}
+{\footnotesize\ttfamily \label{classPFiltering_a6bdf408d7bc2e2120f392d871f7879f5} 
+void PFiltering\+::ready\+For\+Not\+Real\+Time\+Process (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Start not real time process \Hypertarget{classPFiltering_a861cf45c44aac438e7a279ace3be2e4b}\index{PFiltering@{PFiltering}!readyForRealTimeProcess@{readyForRealTimeProcess}}
+\index{readyForRealTimeProcess@{readyForRealTimeProcess}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{readyForRealTimeProcess}{readyForRealTimeProcess}}
+{\footnotesize\ttfamily \label{classPFiltering_a861cf45c44aac438e7a279ace3be2e4b} 
+void PFiltering\+::ready\+For\+Real\+Time\+Process (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Start real time process \Hypertarget{classPFiltering_aafc21572d298682c402f84aad10d7811}\index{PFiltering@{PFiltering}!requireSpectralCorrection@{requireSpectralCorrection}}
+\index{requireSpectralCorrection@{requireSpectralCorrection}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{requireSpectralCorrection()}{requireSpectralCorrection()}}
+{\footnotesize\ttfamily \label{classPFiltering_aafc21572d298682c402f84aad10d7811} 
+void PFiltering\+::require\+Spectral\+Correction (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+require spectral correction \Hypertarget{classPFiltering_a241408306e888186da0ae9aec4897abc}\index{PFiltering@{PFiltering}!returnCardiacFilter@{returnCardiacFilter}}
+\index{returnCardiacFilter@{returnCardiacFilter}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{returnCardiacFilter()}{returnCardiacFilter()}}
+{\footnotesize\ttfamily \label{classPFiltering_a241408306e888186da0ae9aec4897abc} 
+QVector$<$ float $>$ PFiltering\+::return\+Cardiac\+Filter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get mean filtered intensity values \Hypertarget{classPFiltering_a042c399e7da6c5fdada76c150eb60808}\index{PFiltering@{PFiltering}!run@{run}}
+\index{run@{run}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classPFiltering_a042c399e7da6c5fdada76c150eb60808} 
+void PFiltering\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Call process in parallel thread \Hypertarget{classPFiltering_ad47bc6b0c5b3d93269d045eda1484e37}\index{PFiltering@{PFiltering}!save\_NonFilteredSignals@{save\_NonFilteredSignals}}
+\index{save\_NonFilteredSignals@{save\_NonFilteredSignals}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{save\_NonFilteredSignals()}{save\_NonFilteredSignals()}}
+{\footnotesize\ttfamily \label{classPFiltering_ad47bc6b0c5b3d93269d045eda1484e37} 
+void PFiltering\+::save\+\_\+\+Non\+Filtered\+Signals (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Option for saving non filtered signals \Hypertarget{classPFiltering_ae258ed49a841d2b79b1c5810f8426227}\index{PFiltering@{PFiltering}!setFilteringType@{setFilteringType}}
+\index{setFilteringType@{setFilteringType}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{setFilteringType()}{setFilteringType()}}
+{\footnotesize\ttfamily \label{classPFiltering_ae258ed49a841d2b79b1c5810f8426227} 
+void PFiltering\+::set\+Filtering\+Type (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})}
+
+Set filtering type (FFT filtering\+: 0, FIR filtering\+: 1, IIR filtering\+: 2) \Hypertarget{classPFiltering_abefa16b557909b50ae771c7f8fb309de}\index{PFiltering@{PFiltering}!setFrameRate@{setFrameRate}}
+\index{setFrameRate@{setFrameRate}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{setFrameRate()}{setFrameRate()}}
+{\footnotesize\ttfamily \label{classPFiltering_abefa16b557909b50ae771c7f8fb309de} 
+void PFiltering\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set frame rate value \Hypertarget{classPFiltering_a90d0d31fcb46dfe4fd1b712e37f73f6a}\index{PFiltering@{PFiltering}!setModeRestingState@{setModeRestingState}}
+\index{setModeRestingState@{setModeRestingState}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{setModeRestingState()}{setModeRestingState()}}
+{\footnotesize\ttfamily \label{classPFiltering_a90d0d31fcb46dfe4fd1b712e37f73f6a} 
+void PFiltering\+::set\+Mode\+Resting\+State (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Mode resting state \Hypertarget{classPFiltering_a5b9c95b58353725e459069654b411c3b}\index{PFiltering@{PFiltering}!setNew\_HS\_config@{setNew\_HS\_config}}
+\index{setNew\_HS\_config@{setNew\_HS\_config}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{setNew\_HS\_config()}{setNew\_HS\_config()}}
+{\footnotesize\ttfamily \label{classPFiltering_a5b9c95b58353725e459069654b411c3b} 
+void PFiltering\+::set\+New\+\_\+\+HS\+\_\+config (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set new Hyperspectral cam config \Hypertarget{classPFiltering_aa2af9745e08512a3b998a771e46fb122}\index{PFiltering@{PFiltering}!setPixelPos@{setPixelPos}}
+\index{setPixelPos@{setPixelPos}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{setPixelPos}{setPixelPos}}
+{\footnotesize\ttfamily \label{classPFiltering_aa2af9745e08512a3b998a771e46fb122} 
+void PFiltering\+::set\+Pixel\+Pos (\begin{DoxyParamCaption}\item[{QVector$<$ Point $>$}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Set pixel pos inside the ROI \Hypertarget{classPFiltering_a3ab820d3aa3743250c7d3093a507e23b}\index{PFiltering@{PFiltering}!setPointOfInterest@{setPointOfInterest}}
+\index{setPointOfInterest@{setPointOfInterest}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{setPointOfInterest()}{setPointOfInterest()}}
+{\footnotesize\ttfamily \label{classPFiltering_a3ab820d3aa3743250c7d3093a507e23b} 
+void PFiltering\+::set\+Point\+Of\+Interest (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Point of interest (for debug purpose) \Hypertarget{classPFiltering_a5e595a02eb2a79cfac288b9b07347bf0}\index{PFiltering@{PFiltering}!setRealTimeMode@{setRealTimeMode}}
+\index{setRealTimeMode@{setRealTimeMode}!PFiltering@{PFiltering}}
+\doxysubsubsection{\texorpdfstring{setRealTimeMode()}{setRealTimeMode()}}
+{\footnotesize\ttfamily \label{classPFiltering_a5e595a02eb2a79cfac288b9b07347bf0} 
+void PFiltering\+::set\+Real\+Time\+Mode (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Real time filtering (IIR filtering) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Vision/inc/\mbox{\hyperlink{PFiltering_8h}{PFiltering.\+h}}\end{DoxyCompactItemize}

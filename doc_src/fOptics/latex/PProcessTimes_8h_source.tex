@@ -1,0 +1,129 @@
+\doxysection{PProcess\+Times.\+h}
+\hypertarget{PProcessTimes_8h_source}{}\label{PProcessTimes_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PProcessTimes.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PProcessTimes.h}}
+\mbox{\hyperlink{PProcessTimes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ PPROCESSTIMES\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ PPROCESSTIMES\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }PProcessTimes\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ PProcessTimes(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a5750afeba5813410ba2b8027d212c6f9}{setModeRestingState}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a3c90fde9b18918f533a11e17f1ea5edf}{setFirstLastFrameForAnalysis}}(\textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a4090d97301343b99e3812dc5265a88e9}{setProcessTimes}}(QVector<int>);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a5324d2ce8e372873b39d0223c035c38b}{setNbTotFrames}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a1f7a7dd28d494bdce73d49579eb9f560}{setFrameRate}}(\textcolor{keywordtype}{double}\ Fs);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_aef86cc9d00724a4fbf2c91876280a02b}{setActivationStepsToConsider}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPProcessTimes_a8bb97afa3c8482b0415a6a4ad927013d}{get\_rest\_start\_id}}()\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_rest\_time\_start;\}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPProcessTimes_ad8a7161e90065ca2fe345f738cc70361}{get\_rest\_end\_id}}()\ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_rest\_time\_end;\}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPProcessTimes_ada91b90cdb374a47b6553581f12a67dc}{get\_last\_analyzed\_frame\_for\_Correlation}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPProcessTimes_a1f7abef95a20136fdbf6a820f459ce2d}{get\_first\_analyzed\_frame\_for\_Correlation}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ QVector<int>\ \mbox{\hyperlink{classPProcessTimes_a5065d591e80d3b1693992e5c2ee5db08}{get\_Full\_activity\_start}}();}
+\DoxyCodeLine{00059\ \ \ \ \ QVector<int>\ \mbox{\hyperlink{classPProcessTimes_a8f314fd64be7ba3b6575be68089c5e06}{get\_Full\_activity\_end}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPProcessTimes_a21cc9a1e8b8aee7600dcb4d66a6718e8}{get\_activity\_start}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_activity\_time\_start[0];\}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPProcessTimes_ac597e56d67906f71344c1ac3975ee3b5}{get\_activity\_end}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_activity\_time\_end[0];\}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ QVector<float>\ \mbox{\hyperlink{classPProcessTimes_a7327910e4a4778ca8d25b7bd15a0981b}{get\_Bold\_Signal}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_BOLD\_signal;\}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ QVector<float>\ \mbox{\hyperlink{classPProcessTimes_ae9998726bdcd9b3db8b7f2278137da4f}{get\_Metabolic\_response}}()\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_Metabolic\_response\_signal;\}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ QVector<float>\ \mbox{\hyperlink{classPProcessTimes_a974141ddf1576d1ecd3ce89f31954f38}{get\_Activation\_Signal}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ void\ process\_frame\_indexes\_for\_data\_correction(int\ start,int\ end);}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ signals:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_aca968e2eef4bb56d367540b5c012eddf}{newRealTimeStarId}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a25b5fefea15bd8e51833ed3cfd9a291c}{newReferenceTime}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_aeb723413477c5cb316037f90c53ff2a7}{newCorrelationTimes}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a828cfc965ecab525f0d0a4fa57e793c7}{newActivationtimes}}(QVector<double>);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a7edce95907764b9fc2a7f77199d1c69c}{newBoldSignal}}(QVector<float>);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_af919af27c76038736e70df1cf8d5159c}{newMetabolicResponse}}(QVector<float>);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_aee2815339fea3ef954c6e9a54c7c027b}{newDataCorrectionIdx}}(\textcolor{keywordtype}{int}\ start\_first\_rest,\ \textcolor{keywordtype}{int}\ end\_first\_rest,\textcolor{keywordtype}{int}\ start\_last\_rest,\textcolor{keywordtype}{int}\ end\_last\_rest);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPProcessTimes_a8a2870a5aebd006b1877135633b9d3dd}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_result\_directory\ =\ v;\}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Compute\_Bold\_Signal();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ activity\ step\ to\ consider\ in\ the\ calculation\ of\ correlation\ and\ SPM}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_activity\_step\_to\_consider;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//Global\ aquisiton\ info}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_frames;}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \_M\_FS;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//Paradigm\ infos}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_average\_activity\_period;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_time\_start;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_time\_end;}
+\DoxyCodeLine{00122\ \ \ \ \ QVector<int>\ \ \ \ \_M\_last\_analyzed\_frame\_for\_correlation;}
+\DoxyCodeLine{00123\ \ \ \ \ QVector<int>\ \ \ \ \_M\_first\_analyzed\_frame\_for\_correlation;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ //\ idx\ for\ first\ and\ last\ rest\ of\ the\ task-\/based\ procedure}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ int\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_id\_start\_1st\_tb;}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ int\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_id\_end\_1st\_tb;}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ int\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_id\_start\_last\_tb;}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//\ int\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_id\_end\_last\_tb;}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//\ //real\ time\ calibration}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ int\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_start\_calib;}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ int\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_end\_calib;}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ Activity\ steps\ contained\ in\ the\ .txt\ file}}
+\DoxyCodeLine{00138\ \ \ \ \ QVector<int>\ \ \ \ \_M\_activity\_time\_start;}
+\DoxyCodeLine{00139\ \ \ \ \ QVector<int>\ \ \ \ \_M\_activity\_time\_end;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//BOLD\ Signal}}
+\DoxyCodeLine{00144\ \ \ \ \ QVector<float>\ \ \_M\_BOLD\_signal;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//Metabolic\ response}}
+\DoxyCodeLine{00147\ \ \ \ \ QVector<float>\ \_M\_Metabolic\_response\_signal;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00150\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//mode\ resting\ state}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_mode\_resting\_state;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_nb\_of\_frame\_to\_substract;}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PPROCESSTIMES\_H}}
+
+\end{DoxyCode}

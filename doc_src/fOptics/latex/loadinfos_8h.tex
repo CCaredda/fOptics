@@ -1,0 +1,111 @@
+\doxysection{/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc/loadinfos.h File Reference}
+\hypertarget{loadinfos_8h}{}\label{loadinfos_8h}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/loadinfos.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Acquisition/inc/loadinfos.h}}
+
+
+Set of functions used to load acquisition info from a image dataset.  
+
+
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QText\+Stream$>$}\newline
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include $<$QDir$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QVector$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$QRegular\+Expression$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{loadinfos_8h_a32294b705e1c2bac510328a353faeac7}{Load\+Frame\+Rate\+Info}} (QString path)
+\item 
+QVector$<$ int $>$ \mbox{\hyperlink{loadinfos_8h_ab02b82e17267b0a5cdd29ab84efdf9b9}{Load\+Total\+Frame\+Count\+Info}} (QString path)
+\item 
+void \mbox{\hyperlink{loadinfos_8h_ab325a7a3392217a46340e6560c6fdfd2}{Load\+Time\+Process\+Info}} (QString path, QVector$<$ int $>$ \&process\+\_\+id, int tot\+\_\+frames)
+\item 
+void \mbox{\hyperlink{loadinfos_8h_a37941a0ea36878b692533553a0790a12}{Load\+Start\+End\+Analysis\+Frames}} (QString path, int analysis, int \&start\+\_\+frame, int \&end\+\_\+frame)
+\item 
+QVector$<$ int $>$ \mbox{\hyperlink{loadinfos_8h_aa4365f49475eac8a790e39ce14b00759}{Load\+Analysis\+Type}} (QString path)
+\item 
+int \mbox{\hyperlink{loadinfos_8h_a3953ea0fc54831fe21d307247e46002d}{get\+Hyperspectral\+\_\+\+Dynamic}} (QString path)
+\item 
+int \mbox{\hyperlink{loadinfos_8h_a4990daa9e5a7df7ad776809c7eea1030}{Load\+Camera\+Type}} (QString path)
+\item 
+QString \mbox{\hyperlink{loadinfos_8h_a785c1d1a04e56c22a28493db092df793}{Load\+Camera\+Name}} (QString path)
+\item 
+QString \mbox{\hyperlink{loadinfos_8h_a30d27747b0d8c5534eea39c273cc9ae9}{Load\+Light\+Source\+Type}} (QString path)
+\item 
+QString\+List \mbox{\hyperlink{loadinfos_8h_ab1fd49fe0c43bd8d4bb3553c6187eb20}{check\+\_\+acquisition\+\_\+info\+\_\+file}} (const QString \&path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of functions used to load acquisition info from a image dataset. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact\+: \href{mailto:caredda.c@gmail.com}{\texttt{ caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{loadinfos_8h_ab1fd49fe0c43bd8d4bb3553c6187eb20}\index{loadinfos.h@{loadinfos.h}!check\_acquisition\_info\_file@{check\_acquisition\_info\_file}}
+\index{check\_acquisition\_info\_file@{check\_acquisition\_info\_file}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{check\_acquisition\_info\_file()}{check\_acquisition\_info\_file()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_ab1fd49fe0c43bd8d4bb3553c6187eb20} 
+QString\+List check\+\_\+acquisition\+\_\+info\+\_\+file (\begin{DoxyParamCaption}\item[{const QString \&}]{path}{}\end{DoxyParamCaption})}
+
+Check if acquisition info file contains all required info \Hypertarget{loadinfos_8h_a3953ea0fc54831fe21d307247e46002d}\index{loadinfos.h@{loadinfos.h}!getHyperspectral\_Dynamic@{getHyperspectral\_Dynamic}}
+\index{getHyperspectral\_Dynamic@{getHyperspectral\_Dynamic}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{getHyperspectral\_Dynamic()}{getHyperspectral\_Dynamic()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_a3953ea0fc54831fe21d307247e46002d} 
+int get\+Hyperspectral\+\_\+\+Dynamic (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})}
+
+get Hyperspectral images dynamic \Hypertarget{loadinfos_8h_aa4365f49475eac8a790e39ce14b00759}\index{loadinfos.h@{loadinfos.h}!LoadAnalysisType@{LoadAnalysisType}}
+\index{LoadAnalysisType@{LoadAnalysisType}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadAnalysisType()}{LoadAnalysisType()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_aa4365f49475eac8a790e39ce14b00759} 
+QVector$<$ int $>$ Load\+Analysis\+Type (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})}
+
+Load analysis \Hypertarget{loadinfos_8h_a785c1d1a04e56c22a28493db092df793}\index{loadinfos.h@{loadinfos.h}!LoadCameraName@{LoadCameraName}}
+\index{LoadCameraName@{LoadCameraName}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadCameraName()}{LoadCameraName()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_a785c1d1a04e56c22a28493db092df793} 
+QString Load\+Camera\+Name (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})}
+
+Load camera name \Hypertarget{loadinfos_8h_a4990daa9e5a7df7ad776809c7eea1030}\index{loadinfos.h@{loadinfos.h}!LoadCameraType@{LoadCameraType}}
+\index{LoadCameraType@{LoadCameraType}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadCameraType()}{LoadCameraType()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_a4990daa9e5a7df7ad776809c7eea1030} 
+int Load\+Camera\+Type (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})}
+
+Load camera type (RGB or HSI) \Hypertarget{loadinfos_8h_a32294b705e1c2bac510328a353faeac7}\index{loadinfos.h@{loadinfos.h}!LoadFrameRateInfo@{LoadFrameRateInfo}}
+\index{LoadFrameRateInfo@{LoadFrameRateInfo}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadFrameRateInfo()}{LoadFrameRateInfo()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_a32294b705e1c2bac510328a353faeac7} 
+double Load\+Frame\+Rate\+Info (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})}
+
+Load frame rate \Hypertarget{loadinfos_8h_a30d27747b0d8c5534eea39c273cc9ae9}\index{loadinfos.h@{loadinfos.h}!LoadLightSourceType@{LoadLightSourceType}}
+\index{LoadLightSourceType@{LoadLightSourceType}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadLightSourceType()}{LoadLightSourceType()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_a30d27747b0d8c5534eea39c273cc9ae9} 
+QString Load\+Light\+Source\+Type (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})}
+
+Load light source type \Hypertarget{loadinfos_8h_a37941a0ea36878b692533553a0790a12}\index{loadinfos.h@{loadinfos.h}!LoadStartEndAnalysisFrames@{LoadStartEndAnalysisFrames}}
+\index{LoadStartEndAnalysisFrames@{LoadStartEndAnalysisFrames}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadStartEndAnalysisFrames()}{LoadStartEndAnalysisFrames()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_a37941a0ea36878b692533553a0790a12} 
+void Load\+Start\+End\+Analysis\+Frames (\begin{DoxyParamCaption}\item[{QString}]{path}{, }\item[{int}]{analysis}{, }\item[{int \&}]{start\+\_\+frame}{, }\item[{int \&}]{end\+\_\+frame}{}\end{DoxyParamCaption})}
+
+Load start and end of the analysis -\/1\+: no analysis 0 \+: task-\/based 1\+: resting state 2\+: Impulsion \Hypertarget{loadinfos_8h_ab325a7a3392217a46340e6560c6fdfd2}\index{loadinfos.h@{loadinfos.h}!LoadTimeProcessInfo@{LoadTimeProcessInfo}}
+\index{LoadTimeProcessInfo@{LoadTimeProcessInfo}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadTimeProcessInfo()}{LoadTimeProcessInfo()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_ab325a7a3392217a46340e6560c6fdfd2} 
+void Load\+Time\+Process\+Info (\begin{DoxyParamCaption}\item[{QString}]{path}{, }\item[{QVector$<$ int $>$ \&}]{process\+\_\+id}{, }\item[{int}]{tot\+\_\+frames}{}\end{DoxyParamCaption})}
+
+Load time process \Hypertarget{loadinfos_8h_ab02b82e17267b0a5cdd29ab84efdf9b9}\index{loadinfos.h@{loadinfos.h}!LoadTotalFrameCountInfo@{LoadTotalFrameCountInfo}}
+\index{LoadTotalFrameCountInfo@{LoadTotalFrameCountInfo}!loadinfos.h@{loadinfos.h}}
+\doxysubsubsection{\texorpdfstring{LoadTotalFrameCountInfo()}{LoadTotalFrameCountInfo()}}
+{\footnotesize\ttfamily \label{loadinfos_8h_ab02b82e17267b0a5cdd29ab84efdf9b9} 
+QVector$<$ int $>$ Load\+Total\+Frame\+Count\+Info (\begin{DoxyParamCaption}\item[{QString}]{path}{}\end{DoxyParamCaption})}
+
+Load number of frames 

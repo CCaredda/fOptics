@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HMainDisplay</class>
+ <widget class="QWidget" name="HMainDisplay">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>995</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="_main_tab">
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Tab 1</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_6" rowstretch="1,0,0" columnstretch="100,1">
+       <item row="0" column="0" rowspan="3">
+        <widget class="HdisplayResult" name="_displayResult" native="true">
+         <property name="font">
+          <font>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" rowspan="2">
+        <widget class="QWidget" name="_retractable_widget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
+          <item>
+           <widget class="QTabWidget" name="_parameters_tab">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="tab_3">
+             <attribute name="title">
+              <string>Tab 1</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <widget class="HAcquisitionDisplay" name="_params_acquisition" native="true"/>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_4">
+             <attribute name="title">
+              <string>Tab 2</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="HAnalysisParams" name="_params_analysis" native="true"/>
+              </item>
+             </layout>
+            </widget>
+            <widget class="HSaveData" name="_save_widget">
+             <attribute name="title">
+              <string>Page</string>
+             </attribute>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget" native="true">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Data acquisiton</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="_label_analysis">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Add datas</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QProgressBar" name="_progressBarDataAcquisition">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="value">
+                <number>24</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="_label_acquisition_process">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Process</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QProgressBar" name="_progressBarAcquisitionProcess">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="value">
+                <number>24</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QCheckBox" name="_HMI_mode">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Advanced settings</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QProgressBar" name="_progressBarAnalysis">
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="value">
+                <number>24</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Tab 2</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="HPlot" name="_plot" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HAcquisitionDisplay</class>
+   <extends>QWidget</extends>
+   <header>HAcquisitionDisplay.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HAnalysisParams</class>
+   <extends>QWidget</extends>
+   <header>HAnalysisParams.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HdisplayResult</class>
+   <extends>QWidget</extends>
+   <header>HdisplayResult.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HPlot</class>
+   <extends>QWidget</extends>
+   <header>HPlot.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HSaveData</class>
+   <extends>QWidget</extends>
+   <header>HSaveData.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

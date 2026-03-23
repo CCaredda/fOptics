@@ -1,0 +1,244 @@
+\doxysection{PCoeff Class Reference}
+\hypertarget{classPCoeff}{}\label{classPCoeff}\index{PCoeff@{PCoeff}}
+Inheritance diagram for PCoeff\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPCoeff}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPCoeff_a3d3c9104247728778ffa7c2fe8d0d266}{onnew\+Reference\+Time}} (int start, int end)
+\item 
+void \mbox{\hyperlink{classPCoeff_a351b4897c38f8e32234f8d5daf0fbce6}{onnew\+Correlation\+Times}} (int start, int end)
+\item 
+void \mbox{\hyperlink{classPCoeff_a8bd2bc0dc21a865540631f839088070f}{Process\+\_\+\+Pixel\+\_\+\+Wise\+\_\+\+Cardiac\+\_\+\+Coeff}} (Mat data, int id)
+\item 
+void \mbox{\hyperlink{classPCoeff_ae4a06d885082b590c469340333b4ce29}{on\+New\+Result\+Directory}} (QString v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPCoeff_a26bb662e72f8694db84ace868d289067}{new\+Progress\+Statut}} (QString, int)
+\item 
+void \mbox{\hyperlink{classPCoeff_a3963dd3cb82216a60f8ae7243cb7b7a4}{Auto\+\_\+\+Method\+\_\+is\+\_\+finished}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPCoeff_a0077f454ed8a7c00a48e05abc7507230}\label{classPCoeff_a0077f454ed8a7c00a48e05abc7507230} 
+{\bfseries PCoeff} (QObject \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+int \mbox{\hyperlink{classPCoeff_a8c868a7f213ce14063bc48db24579bb9}{get\+Method\+Type}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_a460dd47563f62573b36b0b42bd6a485c}{Process\+ICA}} (const QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$ \&data, const double Fs, QVector$<$ float $>$ \&filter, QVector$<$ QVector$<$ float $>$ $>$ \&mean\+\_\+temporal\+\_\+vec, QString msg)
+\item 
+void \mbox{\hyperlink{classPCoeff_a9fc6053acdd96d5c3b316113fc93ed63}{Launch\+\_\+\+Auto\+\_\+\+Method}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_a8f7d923ba3b7dce787ee8d27a9eaa958}{Process\+PCA}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_ac6c81f2482dfffc5dd8f8ac71ab73abb}{Process\+ICACoeff}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_ad62ca7dfcf8892052b897fcf07eaadf7}{Process\+NMF\+\_\+sep}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_a3c8180e9394f33db0e195ff9dd19067f}{Process\+PARAFAC}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_ae03330beec528518f455d11b852bf7cb}{set\+Data}} (Mat data)
+\item 
+void \mbox{\hyperlink{classPCoeff_a14c0ddaa561a28a36f48984cdd9f947a}{set\+Cardiac\+Filter}} (QVector$<$ float $>$ v)
+\item 
+int \mbox{\hyperlink{classPCoeff_a49d65d33e2cdafc6399e0bbe78db6a27}{get\+Nb\+Principal\+Component}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_aaee685136b0d2a3356e58ded28152492}{Set\+Auto\+Method}} (int v)
+\item 
+Mat \mbox{\hyperlink{classPCoeff_a3daf87171fdbbebbcab707b3742eb9a2}{get\+\_\+cardiac\+\_\+coeff}} ()
+\item 
+void \mbox{\hyperlink{classPCoeff_a550664ff81e2672f6daadf07c113757d}{set\+Reference\+IDX}} (int start, int end)
+\item 
+void \mbox{\hyperlink{classPCoeff_a7c1c142d57e968004bbf4869f8712f29}{set\+Activity\+IDX}} (int start, int end)
+\item 
+void \mbox{\hyperlink{classPCoeff_a4611e05faf7eed8611b521f1e41f6e55}{set\+Correlation\+IDX}} (int start, int end)
+\item 
+void \mbox{\hyperlink{classPCoeff_a561d7b42d431dd1b241395e776071943}{get\+\_\+\+Auto\+\_\+\+Coeff\+\_\+\+Projection\+\_\+\+Time\+\_\+courses}} (const QVector$<$ QVector$<$ float $>$ $>$ \&temporal\+\_\+vec, int rest\+\_\+start, int rest\+\_\+end, int correlation\+\_\+start, int correlation\+\_\+end, QVector$<$ QVector$<$ float $>$ $>$ \&contrast, int id)
+\item 
+void \mbox{\hyperlink{classPCoeff_a7957cf6b0adbc7cd4aad266381881fc1}{get\+\_\+\+Auto\+\_\+\+Coeff\+\_\+\+Projection\+\_\+\+Averaged\+\_\+\+Values}} (const QVector$<$ QVector$<$ float $>$ $>$ \&temporal\+\_\+vec, QVector$<$ float $>$ \&results, int start\+\_\+activity, int end\+\_\+activity, int id, int start\+\_\+ref=-\/1, int end\+\_\+ref=-\/1, int start\+\_\+id=-\/1, int end\+\_\+id=-\/1)
+\item 
+void \mbox{\hyperlink{classPCoeff_af3169d4dcb6830eccc27d8135eed5e0a}{init}} (int nb\+\_\+pixels)
+\item 
+void \mbox{\hyperlink{classPCoeff_a4dcaa9ea4e3c45facb038f6b70c29940}{set\+Mode\+Pixel\+Wise}} (bool b)
+\item 
+void \mbox{\hyperlink{classPCoeff_aaeb21863d591628f2beddb6dc2752630}{set\+Frame\+Rate}} (double v)
+\item 
+bool \mbox{\hyperlink{classPCoeff_aa85a14119f2bb980e004e8f7d14068c1}{coeff\+\_\+have\+\_\+been\+\_\+calculated}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPCoeff_a3963dd3cb82216a60f8ae7243cb7b7a4}\index{PCoeff@{PCoeff}!Auto\_Method\_is\_finished@{Auto\_Method\_is\_finished}}
+\index{Auto\_Method\_is\_finished@{Auto\_Method\_is\_finished}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{Auto\_Method\_is\_finished}{Auto\_Method\_is\_finished}}
+{\footnotesize\ttfamily \label{classPCoeff_a3963dd3cb82216a60f8ae7243cb7b7a4} 
+void PCoeff\+::\+Auto\+\_\+\+Method\+\_\+is\+\_\+finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+New coeff has been calculated \Hypertarget{classPCoeff_aa85a14119f2bb980e004e8f7d14068c1}\index{PCoeff@{PCoeff}!coeff\_have\_been\_calculated@{coeff\_have\_been\_calculated}}
+\index{coeff\_have\_been\_calculated@{coeff\_have\_been\_calculated}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{coeff\_have\_been\_calculated()}{coeff\_have\_been\_calculated()}}
+{\footnotesize\ttfamily \label{classPCoeff_aa85a14119f2bb980e004e8f7d14068c1} 
+bool PCoeff\+::coeff\+\_\+have\+\_\+been\+\_\+calculated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if auto-\/calib method has been computed \Hypertarget{classPCoeff_a7957cf6b0adbc7cd4aad266381881fc1}\index{PCoeff@{PCoeff}!get\_Auto\_Coeff\_Projection\_Averaged\_Values@{get\_Auto\_Coeff\_Projection\_Averaged\_Values}}
+\index{get\_Auto\_Coeff\_Projection\_Averaged\_Values@{get\_Auto\_Coeff\_Projection\_Averaged\_Values}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{get\_Auto\_Coeff\_Projection\_Averaged\_Values()}{get\_Auto\_Coeff\_Projection\_Averaged\_Values()}}
+{\footnotesize\ttfamily \label{classPCoeff_a7957cf6b0adbc7cd4aad266381881fc1} 
+void PCoeff\+::get\+\_\+\+Auto\+\_\+\+Coeff\+\_\+\+Projection\+\_\+\+Averaged\+\_\+\+Values (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{temporal\+\_\+vec}{, }\item[{QVector$<$ float $>$ \&}]{results}{, }\item[{int}]{start\+\_\+activity}{, }\item[{int}]{end\+\_\+activity}{, }\item[{int}]{id}{, }\item[{int}]{start\+\_\+ref}{ = {\ttfamily -\/1}, }\item[{int}]{end\+\_\+ref}{ = {\ttfamily -\/1}, }\item[{int}]{start\+\_\+id}{ = {\ttfamily -\/1}, }\item[{int}]{end\+\_\+id}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+Get PCA projection averaged values \Hypertarget{classPCoeff_a561d7b42d431dd1b241395e776071943}\index{PCoeff@{PCoeff}!get\_Auto\_Coeff\_Projection\_Time\_courses@{get\_Auto\_Coeff\_Projection\_Time\_courses}}
+\index{get\_Auto\_Coeff\_Projection\_Time\_courses@{get\_Auto\_Coeff\_Projection\_Time\_courses}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{get\_Auto\_Coeff\_Projection\_Time\_courses()}{get\_Auto\_Coeff\_Projection\_Time\_courses()}}
+{\footnotesize\ttfamily \label{classPCoeff_a561d7b42d431dd1b241395e776071943} 
+void PCoeff\+::get\+\_\+\+Auto\+\_\+\+Coeff\+\_\+\+Projection\+\_\+\+Time\+\_\+courses (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{temporal\+\_\+vec}{, }\item[{int}]{rest\+\_\+start}{, }\item[{int}]{rest\+\_\+end}{, }\item[{int}]{correlation\+\_\+start}{, }\item[{int}]{correlation\+\_\+end}{, }\item[{QVector$<$ QVector$<$ float $>$ $>$ \&}]{contrast}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+Get PCA projection time courses Get PCA projection time courses \Hypertarget{classPCoeff_a3daf87171fdbbebbcab707b3742eb9a2}\index{PCoeff@{PCoeff}!get\_cardiac\_coeff@{get\_cardiac\_coeff}}
+\index{get\_cardiac\_coeff@{get\_cardiac\_coeff}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{get\_cardiac\_coeff()}{get\_cardiac\_coeff()}}
+{\footnotesize\ttfamily \label{classPCoeff_a3daf87171fdbbebbcab707b3742eb9a2} 
+Mat PCoeff\+::get\+\_\+cardiac\+\_\+coeff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get PCA results \Hypertarget{classPCoeff_a8c868a7f213ce14063bc48db24579bb9}\index{PCoeff@{PCoeff}!getMethodType@{getMethodType}}
+\index{getMethodType@{getMethodType}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{getMethodType()}{getMethodType()}}
+{\footnotesize\ttfamily \label{classPCoeff_a8c868a7f213ce14063bc48db24579bb9} 
+int PCoeff\+::get\+Method\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get method type (ICA, PCA, NMF) \Hypertarget{classPCoeff_a49d65d33e2cdafc6399e0bbe78db6a27}\index{PCoeff@{PCoeff}!getNbPrincipalComponent@{getNbPrincipalComponent}}
+\index{getNbPrincipalComponent@{getNbPrincipalComponent}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{getNbPrincipalComponent()}{getNbPrincipalComponent()}}
+{\footnotesize\ttfamily \label{classPCoeff_a49d65d33e2cdafc6399e0bbe78db6a27} 
+int PCoeff\+::get\+Nb\+Principal\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get principal component number \Hypertarget{classPCoeff_af3169d4dcb6830eccc27d8135eed5e0a}\index{PCoeff@{PCoeff}!init@{init}}
+\index{init@{init}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classPCoeff_af3169d4dcb6830eccc27d8135eed5e0a} 
+void PCoeff\+::init (\begin{DoxyParamCaption}\item[{int}]{nb\+\_\+pixels}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+init private data \Hypertarget{classPCoeff_a9fc6053acdd96d5c3b316113fc93ed63}\index{PCoeff@{PCoeff}!Launch\_Auto\_Method@{Launch\_Auto\_Method}}
+\index{Launch\_Auto\_Method@{Launch\_Auto\_Method}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{Launch\_Auto\_Method()}{Launch\_Auto\_Method()}}
+{\footnotesize\ttfamily \label{classPCoeff_a9fc6053acdd96d5c3b316113fc93ed63} 
+void PCoeff\+::\+Launch\+\_\+\+Auto\+\_\+\+Method (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Launch automatic method \Hypertarget{classPCoeff_a26bb662e72f8694db84ace868d289067}\index{PCoeff@{PCoeff}!newProgressStatut@{newProgressStatut}}
+\index{newProgressStatut@{newProgressStatut}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{newProgressStatut}{newProgressStatut}}
+{\footnotesize\ttfamily \label{classPCoeff_a26bb662e72f8694db84ace868d289067} 
+void PCoeff\+::new\+Progress\+Statut (\begin{DoxyParamCaption}\item[{QString}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+progressbar \Hypertarget{classPCoeff_a351b4897c38f8e32234f8d5daf0fbce6}\index{PCoeff@{PCoeff}!onnewCorrelationTimes@{onnewCorrelationTimes}}
+\index{onnewCorrelationTimes@{onnewCorrelationTimes}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{onnewCorrelationTimes}{onnewCorrelationTimes}}
+{\footnotesize\ttfamily \label{classPCoeff_a351b4897c38f8e32234f8d5daf0fbce6} 
+void PCoeff\+::onnew\+Correlation\+Times (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New correlation times \Hypertarget{classPCoeff_a3d3c9104247728778ffa7c2fe8d0d266}\index{PCoeff@{PCoeff}!onnewReferenceTime@{onnewReferenceTime}}
+\index{onnewReferenceTime@{onnewReferenceTime}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{onnewReferenceTime}{onnewReferenceTime}}
+{\footnotesize\ttfamily \label{classPCoeff_a3d3c9104247728778ffa7c2fe8d0d266} 
+void PCoeff\+::onnew\+Reference\+Time (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New reference times \Hypertarget{classPCoeff_ae4a06d885082b590c469340333b4ce29}\index{PCoeff@{PCoeff}!onNewResultDirectory@{onNewResultDirectory}}
+\index{onNewResultDirectory@{onNewResultDirectory}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{onNewResultDirectory}{onNewResultDirectory}}
+{\footnotesize\ttfamily \label{classPCoeff_ae4a06d885082b590c469340333b4ce29} 
+void PCoeff\+::on\+New\+Result\+Directory (\begin{DoxyParamCaption}\item[{QString}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Set indexes of first and last rest steps New result directory \Hypertarget{classPCoeff_a8bd2bc0dc21a865540631f839088070f}\index{PCoeff@{PCoeff}!Process\_Pixel\_Wise\_Cardiac\_Coeff@{Process\_Pixel\_Wise\_Cardiac\_Coeff}}
+\index{Process\_Pixel\_Wise\_Cardiac\_Coeff@{Process\_Pixel\_Wise\_Cardiac\_Coeff}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{Process\_Pixel\_Wise\_Cardiac\_Coeff}{Process\_Pixel\_Wise\_Cardiac\_Coeff}}
+{\footnotesize\ttfamily \label{classPCoeff_a8bd2bc0dc21a865540631f839088070f} 
+void PCoeff\+::\+Process\+\_\+\+Pixel\+\_\+\+Wise\+\_\+\+Cardiac\+\_\+\+Coeff (\begin{DoxyParamCaption}\item[{Mat}]{data}{, }\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Process Pixel wise cardiac coeff \Hypertarget{classPCoeff_a460dd47563f62573b36b0b42bd6a485c}\index{PCoeff@{PCoeff}!ProcessICA@{ProcessICA}}
+\index{ProcessICA@{ProcessICA}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{ProcessICA()}{ProcessICA()}}
+{\footnotesize\ttfamily \label{classPCoeff_a460dd47563f62573b36b0b42bd6a485c} 
+void PCoeff\+::\+Process\+ICA (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$ \&}]{data}{, }\item[{const double}]{Fs}{, }\item[{QVector$<$ float $>$ \&}]{filter}{, }\item[{QVector$<$ QVector$<$ float $>$ $>$ \&}]{mean\+\_\+temporal\+\_\+vec}{, }\item[{QString}]{msg}{}\end{DoxyParamCaption})}
+
+Process ICA \Hypertarget{classPCoeff_ac6c81f2482dfffc5dd8f8ac71ab73abb}\index{PCoeff@{PCoeff}!ProcessICACoeff@{ProcessICACoeff}}
+\index{ProcessICACoeff@{ProcessICACoeff}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{ProcessICACoeff()}{ProcessICACoeff()}}
+{\footnotesize\ttfamily \label{classPCoeff_ac6c81f2482dfffc5dd8f8ac71ab73abb} 
+void PCoeff\+::\+Process\+ICACoeff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Process ICA coeff \Hypertarget{classPCoeff_ad62ca7dfcf8892052b897fcf07eaadf7}\index{PCoeff@{PCoeff}!ProcessNMF\_sep@{ProcessNMF\_sep}}
+\index{ProcessNMF\_sep@{ProcessNMF\_sep}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{ProcessNMF\_sep()}{ProcessNMF\_sep()}}
+{\footnotesize\ttfamily \label{classPCoeff_ad62ca7dfcf8892052b897fcf07eaadf7} 
+void PCoeff\+::\+Process\+NMF\+\_\+sep (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Process separable NMF \Hypertarget{classPCoeff_a3c8180e9394f33db0e195ff9dd19067f}\index{PCoeff@{PCoeff}!ProcessPARAFAC@{ProcessPARAFAC}}
+\index{ProcessPARAFAC@{ProcessPARAFAC}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{ProcessPARAFAC()}{ProcessPARAFAC()}}
+{\footnotesize\ttfamily \label{classPCoeff_a3c8180e9394f33db0e195ff9dd19067f} 
+void PCoeff\+::\+Process\+PARAFAC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Process non negative PARAFAC \Hypertarget{classPCoeff_a8f7d923ba3b7dce787ee8d27a9eaa958}\index{PCoeff@{PCoeff}!ProcessPCA@{ProcessPCA}}
+\index{ProcessPCA@{ProcessPCA}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{ProcessPCA()}{ProcessPCA()}}
+{\footnotesize\ttfamily \label{classPCoeff_a8f7d923ba3b7dce787ee8d27a9eaa958} 
+void PCoeff\+::\+Process\+PCA (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Process PCA \Hypertarget{classPCoeff_a7c1c142d57e968004bbf4869f8712f29}\index{PCoeff@{PCoeff}!setActivityIDX@{setActivityIDX}}
+\index{setActivityIDX@{setActivityIDX}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{setActivityIDX()}{setActivityIDX()}}
+{\footnotesize\ttfamily \label{classPCoeff_a7c1c142d57e968004bbf4869f8712f29} 
+void PCoeff\+::set\+Activity\+IDX (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set activity idx \Hypertarget{classPCoeff_aaee685136b0d2a3356e58ded28152492}\index{PCoeff@{PCoeff}!SetAutoMethod@{SetAutoMethod}}
+\index{SetAutoMethod@{SetAutoMethod}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{SetAutoMethod()}{SetAutoMethod()}}
+{\footnotesize\ttfamily \label{classPCoeff_aaee685136b0d2a3356e58ded28152492} 
+void PCoeff\+::\+Set\+Auto\+Method (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+New auto method (0\+: ICA, 1\+: PCA) \Hypertarget{classPCoeff_a14c0ddaa561a28a36f48984cdd9f947a}\index{PCoeff@{PCoeff}!setCardiacFilter@{setCardiacFilter}}
+\index{setCardiacFilter@{setCardiacFilter}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{setCardiacFilter()}{setCardiacFilter()}}
+{\footnotesize\ttfamily \label{classPCoeff_a14c0ddaa561a28a36f48984cdd9f947a} 
+void PCoeff\+::set\+Cardiac\+Filter (\begin{DoxyParamCaption}\item[{QVector$<$ float $>$}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set cardiac filter \Hypertarget{classPCoeff_a4611e05faf7eed8611b521f1e41f6e55}\index{PCoeff@{PCoeff}!setCorrelationIDX@{setCorrelationIDX}}
+\index{setCorrelationIDX@{setCorrelationIDX}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{setCorrelationIDX()}{setCorrelationIDX()}}
+{\footnotesize\ttfamily \label{classPCoeff_a4611e05faf7eed8611b521f1e41f6e55} 
+void PCoeff\+::set\+Correlation\+IDX (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set correlation time \Hypertarget{classPCoeff_ae03330beec528518f455d11b852bf7cb}\index{PCoeff@{PCoeff}!setData@{setData}}
+\index{setData@{setData}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily \label{classPCoeff_ae03330beec528518f455d11b852bf7cb} 
+void PCoeff\+::set\+Data (\begin{DoxyParamCaption}\item[{Mat}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set Data \Hypertarget{classPCoeff_aaeb21863d591628f2beddb6dc2752630}\index{PCoeff@{PCoeff}!setFrameRate@{setFrameRate}}
+\index{setFrameRate@{setFrameRate}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{setFrameRate()}{setFrameRate()}}
+{\footnotesize\ttfamily \label{classPCoeff_aaeb21863d591628f2beddb6dc2752630} 
+void PCoeff\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set Frame rate \Hypertarget{classPCoeff_a4dcaa9ea4e3c45facb038f6b70c29940}\index{PCoeff@{PCoeff}!setModePixelWise@{setModePixelWise}}
+\index{setModePixelWise@{setModePixelWise}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{setModePixelWise()}{setModePixelWise()}}
+{\footnotesize\ttfamily \label{classPCoeff_a4dcaa9ea4e3c45facb038f6b70c29940} 
+void PCoeff\+::set\+Mode\+Pixel\+Wise (\begin{DoxyParamCaption}\item[{bool}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set Mode pixel wise (process PCA for each pixel individually) \Hypertarget{classPCoeff_a550664ff81e2672f6daadf07c113757d}\index{PCoeff@{PCoeff}!setReferenceIDX@{setReferenceIDX}}
+\index{setReferenceIDX@{setReferenceIDX}!PCoeff@{PCoeff}}
+\doxysubsubsection{\texorpdfstring{setReferenceIDX()}{setReferenceIDX()}}
+{\footnotesize\ttfamily \label{classPCoeff_a550664ff81e2672f6daadf07c113757d} 
+void PCoeff\+::set\+Reference\+IDX (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set reference idx 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Vision/inc/\mbox{\hyperlink{PCoeff_8h}{PCoeff.\+h}}\end{DoxyCompactItemize}

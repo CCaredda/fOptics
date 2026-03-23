@@ -1,0 +1,56 @@
+\doxysection{HSave\+Data.\+h}
+\hypertarget{HSaveData_8h_source}{}\label{HSaveData_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HSaveData.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HSaveData.h}}
+\mbox{\hyperlink{HSaveData_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ HSAVEDATA\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ HSAVEDATA\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }HSaveData;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }HSaveData\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{explicit}\ HSaveData(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00029\ \ \ \ \ \string~HSaveData();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_aa6ffedcf9a9ecffcddd42922a9c8d483}{onDataAcquisitionIsReady}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_afbc7591095fec5d7a93b033ac3b1c494}{AnalysisChoice}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \_requestSaveResults();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ onEnableMeanROI(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ signals:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_a9062bc493c6b1e118ee83f363f1e09d3}{requestSaveResults}}(\mbox{\hyperlink{struct__data__saving__info}{\_data\_saving\_info}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_a40ea519266d13ccad737fb94830980d1}{requestNonFilteredDataSaving}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_a9742d0e66babb5c493f48d9ee7dd1b15}{newMeanROIRadius}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_a3ecc241cc905c473ad77e39b55929c27}{requestMeanROIMeasure}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_a4194cfb856b91dab66b88cf3a7661ab4}{VideoCreationRequired}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_a1dae6360c48fedeebb1f4adcc8dbea07}{newVideo\_nb\_Frames}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHSaveData_a0d823623c490db98740a8899f22af528}{newVideoFramerate}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ Ui::HSaveData\ *ui;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HSAVEDATA\_H}}
+
+\end{DoxyCode}

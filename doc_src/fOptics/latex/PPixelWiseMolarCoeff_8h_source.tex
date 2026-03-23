@@ -1,0 +1,256 @@
+\doxysection{PPixel\+Wise\+Molar\+Coeff.\+h}
+\hypertarget{PPixelWiseMolarCoeff_8h_source}{}\label{PPixelWiseMolarCoeff_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PPixelWiseMolarCoeff.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PPixelWiseMolarCoeff.h}}
+\mbox{\hyperlink{PPixelWiseMolarCoeff_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ PPIXELWISEMOLARCOEFF\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ PPIXELWISEMOLARCOEFF\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{molarcoefffunctions_8h}{molarcoefffunctions.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ Reso\_MeanPath\_mm\ 0.1}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }PPixelWiseMolarCoeff\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{explicit}\ PPixelWiseMolarCoeff(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00032\ \ \ \ \ \string~PPixelWiseMolarCoeff();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a873ec203816cf162344117734d39bca5}{IsInitHasBeenDone}}()\ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ !\_M\_init\_or\_process;\}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a7623355f155ea39e032632560ee96cff}{setResolution}}(\textcolor{keywordtype}{float}\ reso)\ \ \{\_M\_reso\_in\_mm\ =\ reso;\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_ae4c00788901ad3a77a5432711dc817be}{setImgSurfaceBlood}}(Mat\ img)\ \ \ \ \{img.copyTo(\_M\_img\_Surface\_blood\_in);\}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_adb7e7a0a9cea037a0bbbc1f92a831724}{setImgBuriedBlood}}(Mat\ img)\ \ \ \ \ \{img.copyTo(\_M\_img\_Buried\_Blood\_in);\}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a66961f4a67649159f16dfca9c81978ed}{setImgNonUsedPixels}}(Mat\ img)\ \ \ \{img.copyTo(\_M\_non\_used);\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a8d8bdc820ae164533733e046f5872377}{setPixelsPos}}(QVector<Point>\ \&pixel\_pos)\ \ \ \ \{\_M\_pixels\_pos.clear();\ \_M\_pixels\_pos\ =\ pixel\_pos;\}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a002748c96247a9522e0cb3930ca0a530}{initMolarCoeff}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a4b7767dd4f2eb648980b9320beb44711}{processMolarCoeff}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ QVector<float>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a7dca5ee872d01904db25f2aaedda55ea}{getDistanceMap\_GreyMatter\_BloodVessel}}()\ \ \{\textcolor{keywordflow}{return}\ \_M\_distance\_map;\}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a4739e649c2156d601b987855f7e701a5}{getDistanceMap\_GreyMatter\_BloodVessel}}(\textcolor{keywordtype}{int}\ pos);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ \ \ \ //get\ GM\ matrix\ for\ Hb\ and\ HbO2\ or\ Hb,\ HbO2\ and\ oxCCO\ deconvolution}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ \ \ \ Mat\ getMolarCoeff(int\ pos,bool\ Hb\_HbO2\_deconvolution,QVector<int>\ wavelength\_grp);}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ \ \ \ //Get\ buried\ blood\ matrix}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ \ \ \ Mat\ getBuriedBloodMatrix();}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ \ \ \ //get\ Surface\ Blood\ matrix}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ \ \ \ Mat\ getSurfaceBloodMatrix();}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ \ \ \ //is\ blood\ vessel\ Matrix}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ \ \ \ bool\ isBloodVesselMatrix(int\ id);}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ QVector<double>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a444cb787ed75b05526f7b4a6dbd208f5}{getMeanPathMG}}()\ \{\textcolor{keywordflow}{return}\ \_M\_Mean\_path\_Surface\_Blood[0];\}}
+\DoxyCodeLine{00084\ \ \ \ \ QVector<double>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a25336e058df68ed601b568ab423cc842}{getMeanPathSBV}}()\ \{\textcolor{keywordflow}{return}\ \_M\_Mean\_path\_Surface\_Blood[\_M\_Mean\_path\_Surface\_Blood.size()-\/1];\}}
+\DoxyCodeLine{00086\ \ \ \ \ QVector<double>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_ae1998a582d0673d2a413d5b4b818b07d}{getMeanPathBBV}}()\ \{\textcolor{keywordflow}{return}\ \_M\_Mean\_path\_Buried\_Blood[\_M\_Mean\_path\_Buried\_Blood.size()-\/1];\}}
+\DoxyCodeLine{00088\ \ \ \ \ QVector<double>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_aff15d6e7cfce4dd9a4631ece78c2f933}{getMeanPath}}(\textcolor{keywordtype}{int}\ pos);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a957741e1d5ec29c8f1db26c5f286c38a}{getMolarCoeff}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},QVector<Mat>\ \&coeff);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ QVector<Mat>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_aab422ac8331ccd094a61533c3fb0f432}{getGreyMatterMatrix}}()\ \ \{\textcolor{keywordflow}{return}\ \_M\_Molar\_coeff\_GM;\}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a3b33454939839b5d03aee432cb8980a6}{isEmptyMatrix}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a3729e38aa674abb0e48a21c94c22e03e}{setOpticalConfigIDx}}(\textcolor{keywordtype}{int}\ camera\_id,\ \textcolor{keywordtype}{int}\ light\_source\_id);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ QVector<int>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a8a743d0394edb2ae8e9207f22ec9a0a4}{get\_GM\_id}}()\ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_id\_GM;\}}
+\DoxyCodeLine{00112\ \ \ \ \ QVector<int>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_aa059b35e40498a238a60de896d205640}{get\_BuriedBlood\_id}}()\ \ \ \{\textcolor{keywordflow}{return}\ \_M\_id\_BuriedBlood;\}}
+\DoxyCodeLine{00114\ \ \ \ \ QVector<int>\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a5cd5898cd9ef4f1b63f71e76127f90cb}{get\_SurfaceBlood\_id}}()\ \ \{\textcolor{keywordflow}{return}\ \_M\_id\_SurfaceBlood;\}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_ab5b8dfc7b1a4a2f5084181989d9f884e}{setHSOptimizedQuantification}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a2fee06813292680f77518e3d4ebaadfc}{setSpectralRange}}(\textcolor{keywordtype}{int}\ lambda\_min,\textcolor{keywordtype}{int}\ lambda\_max);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \ \ \ \ QVector<QVector<int>\ >\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_ace7a3104fc0f5d4f1e8c148cc0ceeaf8}{get\_HS\_optimal\_cam\_idx}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_ab8cc46ef33f131bfebcfc9e3e52d2d3d}{setnewHSImg}}(vector<Mat>\ v)\ \ \ \ \ \{\_M\_first\_HS\_img.clear();\_M\_first\_HS\_img\ =\ v;\}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a9dc8baa73fa215ca5d465ad63f16b977}{Quantify\_oxCCO}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a8ce6f77b237f85afe7c4e1e0383821f6}{getChromophoreNumber}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_ade16ef1d2d48ba632dc6a5352813bedb}{run}}();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ signals:}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a7d0c91c35b8ab9b1f027837ca77c3bf0}{processFinished}}();}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_abbe45c3d9221f5df0c467937c24adef6}{newHyperspectralSegmentation}}(QVector<int>);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ \ \ \ void\ newHyperspectralWavelengthConfig(QVector<QVector<int>\ >);}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_a121035a5eace9937c6657d210454f0b5}{newWavelengthIDX}}(QVector<int>);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_acd04d6b53f1db7e3a6cbc9626535c607}{ConsiderBloodVesselDistance}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPPixelWiseMolarCoeff_ae0ba4844a507c0decbb8372f86024f5b}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_result\_directory\ =\ v;\}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//Compute\ MBLL\ matrix}}
+\DoxyCodeLine{00162\ \ \ \ \ QVector<Mat>\ \_Compute\_MBLL\_Matrix(QVector<double>\ \&mean\_path);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{//Load\ spectral\ resultant}}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Load\_spectral\_resultant();}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//Load\ Mean\ path\ length}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Load\_Mean\_path\_Length();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//Hyperspectral\ camera\ config\ (combination\ of\ wavelength)}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Init\_Hyperspectral\_wavelength\_config();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//Process\ segmentation\ using\ simulated\ spectra}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ \ \ \ void\ \_Process\_Hyperspectral\_Segmentation();}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//Pre\ processing}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_PreProcessing();}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//init\ data}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \_initData();}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//Display\ Matrix}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \_DisplayMatrix(Mat);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//Segmentation}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_Segmentation();}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{//Set\ molar\ coeff\ according\ to\ the\ cluster\ id}}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ClusterMethod();}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{comment}{//Set\ molar\ coeff\ according\ to\ the\ distance\ to\ blood\ vessel}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \_PixelWiseMethod();}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//Choose\ GM\ mean\ path\ length\ according\ to\ the\ distance\ of\ the\ current\ pixel\ to\ the\ nearest\ blood\ vessel}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ChooseMeanPathGM(QVector<double>\ \&mean\_path\_GM,\ \textcolor{keywordtype}{double}\ dist,\ \textcolor{keywordtype}{int}\ tissue\_type);}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{comment}{//Consider\ blood\ vessel\ distance}}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \_M\_consider\_blood\_vessel\_distance;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//bool\ init\ MolarCoeff}}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \_M\_init\_or\_process;\ \textcolor{comment}{//true:\ init,\ false:\ process}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \_M\_reso\_in\_mm;}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \_M\_vessel\_lim\_in\_px;}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \_M\_area\_lim\_in\_px;}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//Extinction\ coefficients\ (in\ cm-\/1.mol-\/1.L)}}
+\DoxyCodeLine{00210\ \ \ \ \ QVector<double>\ \_M\_epsilon\_Hb;}
+\DoxyCodeLine{00211\ \ \ \ \ QVector<double>\ \_M\_epsilon\_HbO2;}
+\DoxyCodeLine{00212\ \ \ \ \ QVector<double>\ \_M\_epsilon\_oxCCO;}
+\DoxyCodeLine{00213\ \ \ \ \ QVector<double>\ \_M\_wavelength\_epsilon;}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//Light\ source\ spectra\ (in\ a.u)}}
+\DoxyCodeLine{00216\ \ \ \ \ QVector<QVector<double\ >\ >\ \_M\_light\_source\_spectra;\ \textcolor{comment}{//device.lambda}}
+\DoxyCodeLine{00217\ \ \ \ \ QVector<QVector<double>\ >\ \ \_M\_wavelength\_light;\ \textcolor{comment}{//device.lambda}}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_id\_light\_source;}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{comment}{//Camera\ spectral\ sensitivities\ (in\ a.u)}}
+\DoxyCodeLine{00221\ \ \ \ \ QVector<QVector<QVector<double>\ >\ >\_M\_camera\_spectral\_sensitivities;\ \textcolor{comment}{//device.detector.lambda}}
+\DoxyCodeLine{00222\ \ \ \ \ QVector<QVector<double>\ >\ \_M\_wavelength\_camera;\ \textcolor{comment}{//Device.lambda}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_id\_camera;}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//eps\ x\ spectral\ resultant\ (detector.lambda)}}
+\DoxyCodeLine{00227\ \ \ \ \ QVector<QVector<double>\ >\ \_M\_eps\_Hb\_x\_res\_spectral;}
+\DoxyCodeLine{00228\ \ \ \ \ QVector<QVector<double>\ >\ \_M\_eps\_HbO2\_x\_res\_spectral;}
+\DoxyCodeLine{00229\ \ \ \ \ QVector<QVector<double>\ >\ \_M\_eps\_oxCCO\_x\_res\_spectral;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{//Mean\ path\ (in\ cm)}}
+\DoxyCodeLine{00232\ \ \ \ \ QVector<QVector<double>\ >\ \_M\_Mean\_path\_Surface\_Blood;}
+\DoxyCodeLine{00233\ \ \ \ \ QVector<QVector<double>\ >\ \_M\_Mean\_path\_Buried\_Blood;}
+\DoxyCodeLine{00234\ \ \ \ \ QVector<double>\ \_M\_wavelength\_mean\_path;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{comment}{//Preprocessing}}
+\DoxyCodeLine{00238\ \ \ \ \ Mat\ \_M\_img\_Surface\_blood\_in;}
+\DoxyCodeLine{00239\ \ \ \ \ Mat\ \_M\_img\_Buried\_Blood\_in;}
+\DoxyCodeLine{00240\ \ \ \ \ Mat\ \_M\_non\_used;}
+\DoxyCodeLine{00241\ \ \ \ \ Mat\ \_M\_img\_Surface\_blood\_preprocessed;}
+\DoxyCodeLine{00242\ \ \ \ \ Mat\ \_M\_img\_Buried\_Blood\_preprocessed;}
+\DoxyCodeLine{00243\ \ \ \ \ vector<Mat>\ \_M\_first\_HS\_img;}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//Blood\ vessel\ contours}}
+\DoxyCodeLine{00246\ \ \ \ \ vector<vector<Point>\ >\ \_M\_contours\_SBV;}
+\DoxyCodeLine{00247\ \ \ \ \ vector<vector<Point>\ >\ \_M\_contours\_BBV;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{comment}{//Pixels\ pos}}
+\DoxyCodeLine{00250\ \ \ \ \ QVector<Point>\ \ \_M\_pixels\_pos;}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{comment}{//Distance\ map\ between\ grey\ matter\ points\ and\ the\ nearest\ blood\ vessel}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{comment}{//\ for\ blood\ vessel\ points\ (surface\ and\ buried\ blood\ vessel:\ distance\ is\ null}}
+\DoxyCodeLine{00255\ \ \ \ \ QVector<float>\ \_M\_distance\_map;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{comment}{//Molar\ coeffs}}
+\DoxyCodeLine{00258\ \ \ \ \ QVector<QVector<Mat>\ >\ \ \_M\_Molar\_coeff;\ \textcolor{comment}{//Size\ (nb\ pixel,nb\ deconvolution\ systems)}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ QVector<Mat>\ \ \ \ \ \ \ \ \ \ \ \ \_M\_Molar\_coeff\_BuriedBlood;}
+\DoxyCodeLine{00261\ \ \ \ \ QVector<Mat>\ \ \ \ \ \ \ \ \ \ \ \ \_M\_Molar\_coeff\_SurfaceBlood;}
+\DoxyCodeLine{00262\ \ \ \ \ QVector<Mat>\ \ \ \ \ \ \ \ \ \ \ \ \_M\_Molar\_coeff\_GM;}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{comment}{//id\ of\ segmented\ elements}}
+\DoxyCodeLine{00265\ \ \ \ \ QVector<int>\ \_M\_id\_GM;}
+\DoxyCodeLine{00266\ \ \ \ \ QVector<int>\ \_M\_id\_BuriedBlood;}
+\DoxyCodeLine{00267\ \ \ \ \ QVector<int>\ \_M\_id\_SurfaceBlood;}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{comment}{//HS\ wavelength}}
+\DoxyCodeLine{00270\ \ \ \ \ QVector<QVector<int>\ >\ \_M\_HbO2\_Hb\_HS\_cam\_idx;}
+\DoxyCodeLine{00271\ \ \ \ \ QVector<QVector<int>\ >\ \_M\_HbO2\_Hb\_oxCCO\_HS\_cam\_idx;}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{comment}{//quantify\ oxCCO}}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_quantify\_oxCCO;}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{comment}{//optimize\ HS\ quantification\ using\ optimal\ wavelength}}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_optimize\_HS\_quantification;}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{comment}{//Hyperspectral\ spectral\ range}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_HS\_lambda\_min;}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_HS\_lambda\_max;}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{comment}{//spectral\ idx}}
+\DoxyCodeLine{00285\ \ \ \ \ QVector<int>\ \_M\_spectral\_idx;}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00289\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00290\ \};}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PPIXELWISEMOLARCOEFF\_H}}
+
+\end{DoxyCode}

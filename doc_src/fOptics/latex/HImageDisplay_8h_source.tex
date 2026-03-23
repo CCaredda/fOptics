@@ -1,0 +1,275 @@
+\doxysection{HImage\+Display.\+h}
+\hypertarget{HImageDisplay_8h_source}{}\label{HImageDisplay_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HImageDisplay.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HImageDisplay.h}}
+\mbox{\hyperlink{HImageDisplay_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ HIMAGEDISPLAY\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ HIMAGEDISPLAY\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\#include\ <QtSvg/QSvgGenerator>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QImage>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WClusteingContainer_8h}{WClusteingContainer.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QPainterPath>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }HImageDisplay\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ HImageDisplay(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00033\ \ \ \ \ \string~HImageDisplay();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a7e2d8b80534a4d4d04bb3a1c72306f0d}{setAnalysisZone}}(QVector<QPoint>,cv::Size);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_aa174661c64be57eebad8a7e0f806b6c6}{setInialImage}}(Mat\ img);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a478c3bb9a7a2f7c57a9cb34a22d352cd}{onNewInfosBulle}}(QStringList\ list);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classHImageDisplay_a15a6225fb5fbc687ec582cf12f6c8f1f}{ismodeRestingState}}()\ \{\textcolor{keywordflow}{return}\ \_M\_enable\_resting\_state;\}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ \ \ /******************************/}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ \ \ /*****Clustering\ params********/}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ \ /******************************/}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ae4eea7acd4642db14465051c6f3bc2a3}{EnableImgClustering}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \{\_M\_enable\_img\_clustering=v;\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_add2980ab92b1741c28b81cdc7f0ff7cf}{newLabelImg}}(Mat\ img)\ \ \ \ \ \ \ \ \ \ \ \{\_M\_img\_clustering.newLabelImg(img);\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a7f3843855e33364b7ea4be8e13833760}{onnewClusterImg}}(Mat\ img)\ \ \ \ \ \ \ \{\_M\_img\_clustering.onnewClusterImg(img);\}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a48084dc08f741a61e91e3b7a9d916b28}{setROI}}(vector<Point>\ roi)\ \ \ \ \ \ \{\_M\_img\_clustering.setROI(roi);\}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a746064c09af577ac608c2e3516b7a5b3}{setPixelPos}}(QVector<Point>\ p)\ \ \{\_M\_img\_clustering.setPixelPos(p);\}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a9679d172ca4268f8e356d06f54d1273d}{setNbOfClusters}}(\textcolor{keywordtype}{int}\ n)\ \ \ \ \ \ \ \ \{\_M\_img\_clustering.setNbOfClusters(n);\}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a0560cddbc21a564d21d78050dc4d5940}{setClusterSelection}}(QVector<int>\ a,QVector<int>\ b,QVector<int>\ c)\ \ \{\_M\_img\_clustering.setClusterSelection(a,b,c);\}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ \ \ /******************************/}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ /*********Resting\ state********/}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ /******************************/}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \ \ QVector<Mat>\ \mbox{\hyperlink{classHImageDisplay_a78b600a6b069692fa3f09fcf3205a00b}{getSeeds}}();}
+\DoxyCodeLine{00080\ \ \ \ \ QVector<Point>\ \mbox{\hyperlink{classHImageDisplay_a35de0b83e655420ec273242335c241ad}{getSeeds\_Point}}\ ();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a4ab5efb64f224cd90ed0c37ead6edcf9}{setNewRestingStateMethod}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00084\ \ \ \ \ Scalar\ \mbox{\hyperlink{classHImageDisplay_a997076dd8678c668aeeece3354ac5729}{getSeedColor}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ protected\ :}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a87e3d41443acfb2c623ae16b9102baac}{paintEvent}}(QPaintEvent\ *);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ab397a06f65086c3a0b038e6d7dec11e9}{mousePressEvent}}(QMouseEvent*);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ad692349ef9812f1e7bbfcad707bad0bf}{mouseMoveEvent}}(QMouseEvent*);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_adcca151fe7bcd8fa78af07484d6170a2}{mouseReleaseEvent}}(QMouseEvent*);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_afe6dd88fe96dcfa1745f92dc0c1653ca}{mouseDoubleClickEvent}}(QMouseEvent*);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ onupdateImage(\textcolor{keyword}{const}\ Mat\&\ img);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ onSeedsrequested();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a371d9e47e0a7ae578e143372c01c93f6}{onDrawAnalysisZone}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_draw\_analysis\_zone\ =\ v;\ repaint();\}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a9a77119239af6db1e51095d89a3fcbcb}{onnewHyperspectralImagesDynamic}}(\textcolor{keywordtype}{int}\ d)\ \ \ \ \ \{\_M\_HS\_Dyn\ =\ d;\}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_aeb140d856300c44da1d26795233ae9a3}{onGreyOutsideContourIsRequested}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \{\_M\_grey\_outside\ =\ v;repaint();\}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a41893c2c0eabbd861a909fdee1744f97}{onnewMeanROIRadius}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_MeanROI\_radius\ =\ (int)v;repaint();\}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a230f0305246c220e50df62a7b3398a22}{onrequestMeanROI}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_requestMeanROI\ =\ v;repaint();\}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ab63c24459eaac9afacf418298063d5f4}{onnewSettingStatisticZone}}(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ \ \ \ void\ onnewStatisticZoneRequested(bool\ v)\ \ \ \ \ \ \ \ \{\_M\_plot\_stat\_zone\ =\ v;\ \_getStatisticZones();\}//onrequestStatsZoneInit();\}}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ab55389c531aa13c6ac87c7943029423b}{onnewStatType}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_stat\_zone\_type\ =\ v;\ \_getStatisticZones();\}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_aa384838ca82d39f824129855677dc475}{onnewActivationMap}}(QVector<bool>\ activation\_map);}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a7def8f59010c6d414e80705c5c233c17}{onnewActivationMap}}(QVector<bool>\ activation\_map,\textcolor{keywordtype}{int}\ proc\_id);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a5f231b7f995954faf1d89e6e1ca259c5}{onnewActivationMap}}(Mat\ map);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//resting\ state}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a087d4b4c8f5d63e1abdfb2ef8c3d5734}{onenableRestingState}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_enable\_resting\_state\ =\ v;\}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_af4c4b9475e85f3ba544b165cd24e9d7c}{onrequestSeedInit}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a5650e884b95770ead05c9fc8eaefee5b}{onnewSeedRadius}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_radius\_seed\ =\ (int)v;\}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a619880e5339867ab5e34bafc75ae987a}{onnewGridSeeds}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ab2d4606fede6615f98433670c23031cc}{onnewROI\_Extraction\_Type}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_aebd58b380bea0444c7068d7cfb6b338b}{newImage}}(\textcolor{keyword}{const}\ Mat\&\ img);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_afcd24e64aca1fc5b8b626f367dd98109}{RequestLineDrawing}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_acc35692dd26a83123fdc867c03006cde}{onRectROIRequested}}();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a2ea5970e6dc973bfe36ed199463bce36}{onNewAutoROI}}(Point,Point);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a9bb9b35065617d91e0a06f8c527c1fce}{onAnalysisZoneRequested}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ad6dad55e49a4309b3630d02305aa0ba9}{onrequestSaveResults}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \{\_M\_save\_img\_results\ =\ v;\_M\_img\_saved=0;\}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a64d3b98b81ec43fcea8282b9fa800237}{onNewAlphaValue}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \{\_M\_alpha\ =\ v;\ repaint();\}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a89f8a545923c4790b01930b2c31198ee}{ClearImg}}();}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ad6e2ee33714b3c31dfbe215391bbe694}{onNewContrastImage}}(Mat);}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a5b426eb81b4cccdd447e025f8e0b7ee9}{onNewContrastImage}}(Mat,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a3c4ee37dc8674626611111534786e18c}{saveImg}}(Mat\ img,\textcolor{keywordtype}{int}\ proc\_index,QString\ path);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a07a9d79347b8602ea570a9d9ce6791c4}{onMedianFilterON}}(\textcolor{keywordtype}{bool}\ v)\ \ \ \ \ \ \ \{\_M\_median\_Filter=v;\ repaint();\}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a29e0977283135950e3ed16be3d8765de}{onWindowSizeChanged}}(\textcolor{keywordtype}{double}\ v)\ \ \{\_M\_window\_Median\_filter=(int)v;\}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a5941bcf68b98d80d1624194136b6bb79}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_result\_directory\ =\ v;\}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ signals:}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a4a20560c167c2017d8c5c70a50641569}{analysisZoneisDrawn}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a2e7f950c6f60fc417726593f47da354e}{newLine}}(QPoint,QPoint);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a58b8e3440caa0ff997a9a5676cf3f7ae}{newRectROI}}(QPoint,QPoint);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a08548f2bca30599a33b07e454ffc2084}{newAnalysisZone}}(QVector<QPoint>,cv::Size);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_aa2f9b935c36c0a9706ab6ddc9e47a676}{PointSelected}}(Point);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a4424dcc7a91052dc7c73f9a47772fbe5}{newClusterImg}}(Mat);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a920ea15aa972ddabb4b29b7913bc7580}{newCorticalAreaDefinition}}(Rect,QVector<Rect>,QVector<Mat>);}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_a9fc36b21956652b0dfc423a150cb45d9}{newCorticalAreaDefinition}}(QVector<Rect>,QVector<Mat>);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_aeb472a14e09a0b0c9185b64ad57c32ba}{newRestingStateSeeds}}(QVector<Mat>);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHImageDisplay_ad44c9a688f4fd2d3e6cec17ec3a34eb7}{newInitialImg}}(Mat);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ private\ :}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//Hyperspectral\ image\ dynamic}}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \_M\_HS\_Dyn;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{comment}{//Original\ image}}
+\DoxyCodeLine{00229\ \ \ \ \ Mat\ \ \ \ \ \_M\_initial\_image;}
+\DoxyCodeLine{00230\ \ \ \ \ Mat\ \ \ \ \ \_M\_Matimage;}
+\DoxyCodeLine{00231\ \ \ \ \ Mat\ \ \ \ \ \_M\_display\_img;}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//\ Image\ size}}
+\DoxyCodeLine{00234\ \ \ \ \ cv::Size\ \_M\_img\_size;}
+\DoxyCodeLine{00235\ \ \ \ \ cv::Size\ \_M\_undersampled\_img\_size;}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{comment}{//resize\ coefficient}}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_x\_coeff;}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_y\_coeff;}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_x\_undersampling\_coeff;}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_y\_undersampling\_coeff;}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{comment}{//Draw\ Line}}
+\DoxyCodeLine{00245\ \ \ \ \ QPoint\ \ \_M\_Point1;}
+\DoxyCodeLine{00246\ \ \ \ \ QPoint\ \ \_M\_Point2;}
+\DoxyCodeLine{00247\ \ \ \ \ QPoint\ \ \_M\_Point1\_displayed;}
+\DoxyCodeLine{00248\ \ \ \ \ QPoint\ \ \_M\_Point2\_displayed;}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_draw\_Line;}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_mouse\_click;}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_mouse\_move;}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{comment}{//User\ action}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_enable\_user\_action;}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{comment}{//Draw\ rect\ Roi}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_draw\_Rect\_ROI;}
+\DoxyCodeLine{00258\ \ \ \ \ QPoint\ \ \_M\_Pre\_ROI\_firstPoint;}
+\DoxyCodeLine{00259\ \ \ \ \ QPoint\ \ \_M\_Pre\_ROI\_LastPoint;}
+\DoxyCodeLine{00260\ \ \ \ \ QPoint\ \ \_M\_Pre\_ROI\_firstPoint\_display;}
+\DoxyCodeLine{00261\ \ \ \ \ QPoint\ \ \_M\_Pre\_ROI\_LastPoint\_display;}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{comment}{//Draw\ Analysis\ zone}}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_ROI\_closed;}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_draw\_analysis\_zone;}
+\DoxyCodeLine{00266\ \ \ \ \ QVector<QPoint>\ \_M\_ROI;}
+\DoxyCodeLine{00267\ \ \ \ \ QVector<QPoint>\ \_M\_ROI\_display\_img;}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{comment}{//Save\ img\ results}}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_save\_img\_results;}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_img\_saved;}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \_M\_alpha;}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{comment}{//Contrast\ image}}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_draw\_contrast\_img;}
+\DoxyCodeLine{00277\ \ \ \ \ Mat\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_contrast\_img;}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{comment}{//Median\ filter}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_median\_Filter;}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_window\_Median\_filter;}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{comment}{//Draw\ Info\ Bulle}}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_draw\_info\_bulle;}
+\DoxyCodeLine{00285\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_list\_info\_bulle;}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordtype}{void}\ drawInfobulle(QPainter\ *\ m\_painter\ ,\textcolor{keyword}{const}\ QStringList\&\ names\ ,\textcolor{keyword}{const}\ QPoint\&\ \_pos);}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{comment}{//Draw\ Point}}
+\DoxyCodeLine{00289\ \ \ \ \ QPoint\ \ \ \ \ \ \ \ \ \ \_M\_selected\_Point;}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_draw\_Point;}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_point\_is\_drawn;}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{comment}{//ROI\ type}}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_ROI\_type;}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{comment}{//Clustering\ img}}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_enable\_img\_clustering;}
+\DoxyCodeLine{00299\ \ \ \ \ \mbox{\hyperlink{classWClusteingContainer}{WClusteingContainer}}\ \_M\_img\_clustering;}
+\DoxyCodeLine{00300\ \ \ \ \ Mat\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_blood\_mask;}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{comment}{//Statistic\ zone}}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{comment}{//Get\ stat\ zone}}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{void}\ \_getStatisticZones();}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{void}\ \_findResidualContours(Mat\ dst,\ Rect\ roi\_rect,\ QVector<Mat>\ \&residual\_cortical\_areas);}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_setting\_stat\_zone;}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_stat\_zone\_type;}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_request\_reference\_area;}
+\DoxyCodeLine{00310\ \ \ \ \ QPoint\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reference\_area\_Point;}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ QVector<Rect>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_cortical\_areas;}
+\DoxyCodeLine{00313\ \ \ \ \ QVector<QVector<QPoint>\ >\ \ \ \_M\_residual\_cortical\_areas\_display;}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ vector<vector<Point>\ >\ \ \ \ \ \ \_M\_residual\_cortical\_areas;}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ Rect\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reference\_cortical\_area;}
+\DoxyCodeLine{00319\ \ \ \ \ QVector<bool>\ \ \ \ \ \ \ \_M\_activated\_functional\_areas;}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{comment}{//Resting\ state}}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_grid\_seeds;}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_enable\_resting\_state;}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_radius\_seed;}
+\DoxyCodeLine{00326\ \ \ \ \ QVector<QPoint>\ \ \ \ \ \_M\_seeds\_pos;}
+\DoxyCodeLine{00327\ \ \ \ \ QVector<Scalar>\ \ \ \ \ \_M\_seeds\_colors;}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_resting\_state\_method;}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{comment}{//MEAN\ ROI}}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_MeanROI\_radius;}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_requestMeanROI;}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{comment}{//grey\ outside\ of\ the\ contour}}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_grey\_outside;}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00338\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \};}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HIMAGEDISPLAY\_H}}
+
+\end{DoxyCode}

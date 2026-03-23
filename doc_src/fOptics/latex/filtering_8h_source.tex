@@ -1,0 +1,56 @@
+\doxysection{filtering.\+h}
+\hypertarget{filtering_8h_source}{}\label{filtering_8h_source}\index{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/filtering.h@{/home/caredda/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/filtering.h}}
+\mbox{\hyperlink{filtering_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ FILTERING\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ FILTERING\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{polyfit_8hpp}{polyfit.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <fftw3.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <omp.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Statistic__functions_8h}{Statistic\_functions.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QtMath>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PI\ 3.141592653589793}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{filtering_8h_ab766792d8416a3784674952340e50770}{Auto\_Process\_Filtering}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&Low\_pass\_data,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ fftwf\_plan\ \&p,\ \textcolor{keyword}{const}\ fftwf\_plan\ \&q,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QVector<float>\ \&filterLowPass);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{filtering_8h_a9a513f36c4c6a8004adfbd15b5886e30}{Auto\_Process\_Filtering\_whithout\_redress}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&Low\_pass\_data,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ fftwf\_plan\ \&p,\ \textcolor{keyword}{const}\ fftwf\_plan\ \&q,\ \textcolor{keyword}{const}\ QVector<float>\ \&filterLowPass);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{filtering_8h_a9f26e19b6f2270a1dd255a4b9934abf0}{Blackman\_Window}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Fs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Fc,\ QVector<float>\ \&filter,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{filtering_8h_a8c0e2539a10f32d7b3d5f4773c128137}{Singleconvolve}}(\textcolor{keyword}{const}\ QVector<float>\ \&v1,\textcolor{keyword}{const}\ QVector<float>\ \&v2);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ QVector<float>\ \mbox{\hyperlink{filtering_8h_ad7859dd6c6c64b0b6213b50de2e87568}{get\_Cardia\_Filter}}(\textcolor{keywordtype}{float}\ half\_width,\ \textcolor{keywordtype}{float}\ mean\_val,\ \textcolor{keywordtype}{float}\ F\_min,\ \textcolor{keywordtype}{float}\ dF,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{filtering_8h_a3a582d8774ca9849ff6a6c5f240a33e2}{Apply\_Filtering}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&data,\textcolor{keyword}{const}\ fftwf\_plan\ \&p,\ \textcolor{keyword}{const}\ fftwf\_plan\ \&q,\ \textcolor{keyword}{const}\ QVector<float>\ \&filter);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{filtering_8h_a57a69b858e3da649a92274305822f443}{Apply\_Data\_Correction}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&data);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ QVector<float>\ \mbox{\hyperlink{filtering_8h_a57a69b858e3da649a92274305822f443}{Apply\_Data\_Correction}}(\textcolor{keyword}{const}\ QVector<float>\ \&data,\ \textcolor{keywordtype}{int}\ start\_acquis,\ \textcolor{keywordtype}{int}\ end\_acquis,\ \textcolor{keywordtype}{int}\ rest1\_start,\ \textcolor{keywordtype}{int}\ rest1\_end,\ \textcolor{keywordtype}{int}\ rest\_last\_start,\ \textcolor{keywordtype}{int}\ rest\_last\_end);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{filtering_8h_ac9fe384cd7bdc476f7e1dba4f052882e}{Apply\_Low\_Pass\_Filtering}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&data,\textcolor{keyword}{const}\ fftwf\_plan\ \&p,\ \textcolor{keyword}{const}\ fftwf\_plan\ \&q,\ \textcolor{keyword}{const}\ QVector<float>\ \&filter);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ QVector<float>\ \mbox{\hyperlink{filtering_8h_ac9e8838e48ec49b1b309c033e9d07d60}{calculatePhaseShift\_Hilbert}}(\textcolor{keyword}{const}\ QVector<float>\ in1,\ \textcolor{keyword}{const}\ QVector<float>\ in2,fftwf\_plan\ plan\_forward,\ fftwf\_plan\ plan\_backward);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ fftwf\_complex*\ \mbox{\hyperlink{filtering_8h_a0f34779eb37cdce9665a44b699d0b4dc}{hilbert}}(\textcolor{keyword}{const}\ QVector<float>\ \&data,\ fftwf\_plan\ plan\_forward,\ fftwf\_plan\ plan\_backward);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ QVector<float>\ \mbox{\hyperlink{filtering_8h_a300528901dc0155b1996b15a975e2ea7}{calculate\_correlation\_Phase}}(\textcolor{keyword}{const}\ QVector<float>\ in1,\ \textcolor{keyword}{const}\ QVector<float>\ in2,fftwf\_plan\ plan\_forward,\ fftwf\_plan\ plan\_backward);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{double}\ calculatePhaseShift\_xCorr(QVector<float>\&\ signal1,QVector<float>\&\ signal2);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILTERING\_H}}
+
+\end{DoxyCode}

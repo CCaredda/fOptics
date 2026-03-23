@@ -1,0 +1,239 @@
+\doxysection{Aload\+Datas Class Reference}
+\hypertarget{classAloadDatas}{}\label{classAloadDatas}\index{AloadDatas@{AloadDatas}}
+Inheritance diagram for Aload\+Datas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAloadDatas}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAloadDatas_aaae96c34bd4f666461e399bcb6f8338c}{set\+Video\+Path}} (QString)
+\item 
+void \mbox{\hyperlink{classAloadDatas_aa3b5fa670e8771cac6224daa3e27bd66}{Load\+Datas}} ()
+\item 
+void \mbox{\hyperlink{classAloadDatas_a989f766f5f16adf1dd78af376dfa7db1}{on\+Simulate\+Real\+Camera}} (bool v)
+\item 
+void \mbox{\hyperlink{classAloadDatas_a1a7402c0e79ec72f724f53639ef28d66}{on\+Request\+New\+Image}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAloadDatas_a9569114a8f18cfff84c517a8a27dd0d2}{new\+First\+Last\+Analysis\+Frames}} (int, int)
+\item 
+void \mbox{\hyperlink{classAloadDatas_a631fb141f9810562f73ad0992c19288c}{new\+Image\+Acquired}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}})
+\item 
+void \mbox{\hyperlink{classAloadDatas_af0bc5309f8a95669d78fcf0a7d934bda}{new\+Message}} (QString)
+\item 
+void \mbox{\hyperlink{classAloadDatas_a8610160b4e687101484c524a036ca826}{new\+Statut}} (bool)
+\item 
+void \mbox{\hyperlink{classAloadDatas_ab543e62a5e4e836adbda69a0fab5c6af}{new\+Processid}} (QVector$<$ int $>$, double)
+\item 
+void \mbox{\hyperlink{classAloadDatas_a49c6d9a025646123ba8bd84020ff6310}{new\+Frame\+Rate}} (double)
+\item 
+void \mbox{\hyperlink{classAloadDatas_a0ab25fef9bec09b8d59a63ee18a0bb2b}{new\+Img\+Send}} (int, int)
+\item 
+void \mbox{\hyperlink{classAloadDatas_a9b15cf29ec1759ecdddb2086c0af97dd}{new\+RGBCamera\+Mode}} (bool)
+\item 
+void \mbox{\hyperlink{classAloadDatas_acc72faa58c52003be0ba0b7debaecd00}{new\+Hyperspectral\+Images\+Dynamic}} (int)
+\item 
+void \mbox{\hyperlink{classAloadDatas_a589a1d642f53d90bdb6e733fc4f7d29b}{require\+Resolution\+Measurement}} (QString)
+\item 
+void \mbox{\hyperlink{classAloadDatas_ae3189210270d34cf0cbe8ec66dd680c5}{request\+Pre\+Processing}} (Mat)
+\item 
+void \mbox{\hyperlink{classAloadDatas_adf4aad4a6a7caf3a53348f4272743826}{request\+Analysis\+Choose}} (QVector$<$ int $>$)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAloadDatas_a7d46814be37322b6c1897390bccc58e4}\label{classAloadDatas_a7d46814be37322b6c1897390bccc58e4} 
+{\bfseries Aload\+Datas} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+bool \mbox{\hyperlink{classAloadDatas_a32d79ee83c71c034f564faa9612d7823}{is\+Path\+Loaded}} ()
+\item 
+Mat \mbox{\hyperlink{classAloadDatas_aa35a9ad0539d694bf66f370c185fca1b}{Request\+First\+Img}} ()
+\item 
+int \mbox{\hyperlink{classAloadDatas_a7acc0eec9382b804c58e9d7b2a292dcf}{get\+Total\+Frame\+Number}} ()
+\item 
+int \mbox{\hyperlink{classAloadDatas_afed77d4f8cac52d78dcb01278b7e18e4}{get\+Start\+Frame\+Number}} ()
+\item 
+int \mbox{\hyperlink{classAloadDatas_ac8fa6ad9c532b7015c7f1a10fcf5e4a0}{get\+Last\+Frame\+Number}} ()
+\item 
+double \mbox{\hyperlink{classAloadDatas_a6cedc28887040c8192fff8d7e9ae0c81}{get\+FPS}} ()
+\item 
+void \mbox{\hyperlink{classAloadDatas_a0dad3ebed2848e82a204bfd969082ea1}{get\+Start\+End\+Analysis\+Frames}} (int analysis)
+\item 
+QString \mbox{\hyperlink{classAloadDatas_a75c4a1a9d6242c9b614005fbca152418}{get\+\_\+\+Camera\+\_\+name}} ()
+\item 
+QString \mbox{\hyperlink{classAloadDatas_a07d7b57427f16a499eec46f01425acb4}{get\+\_\+\+Light\+\_\+source\+\_\+type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAloadDatas_ade6a036bf68453663d46937dd00ae4f0}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAloadDatas_a75c4a1a9d6242c9b614005fbca152418}\index{AloadDatas@{AloadDatas}!get\_Camera\_name@{get\_Camera\_name}}
+\index{get\_Camera\_name@{get\_Camera\_name}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{get\_Camera\_name()}{get\_Camera\_name()}}
+{\footnotesize\ttfamily \label{classAloadDatas_a75c4a1a9d6242c9b614005fbca152418} 
+QString Aload\+Datas\+::get\+\_\+\+Camera\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get camera name \Hypertarget{classAloadDatas_a07d7b57427f16a499eec46f01425acb4}\index{AloadDatas@{AloadDatas}!get\_Light\_source\_type@{get\_Light\_source\_type}}
+\index{get\_Light\_source\_type@{get\_Light\_source\_type}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{get\_Light\_source\_type()}{get\_Light\_source\_type()}}
+{\footnotesize\ttfamily \label{classAloadDatas_a07d7b57427f16a499eec46f01425acb4} 
+QString Aload\+Datas\+::get\+\_\+\+Light\+\_\+source\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get light source type \Hypertarget{classAloadDatas_a6cedc28887040c8192fff8d7e9ae0c81}\index{AloadDatas@{AloadDatas}!getFPS@{getFPS}}
+\index{getFPS@{getFPS}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{getFPS()}{getFPS()}}
+{\footnotesize\ttfamily \label{classAloadDatas_a6cedc28887040c8192fff8d7e9ae0c81} 
+double Aload\+Datas\+::get\+FPS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get FPS \Hypertarget{classAloadDatas_ac8fa6ad9c532b7015c7f1a10fcf5e4a0}\index{AloadDatas@{AloadDatas}!getLastFrameNumber@{getLastFrameNumber}}
+\index{getLastFrameNumber@{getLastFrameNumber}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{getLastFrameNumber()}{getLastFrameNumber()}}
+{\footnotesize\ttfamily \label{classAloadDatas_ac8fa6ad9c532b7015c7f1a10fcf5e4a0} 
+int Aload\+Datas\+::get\+Last\+Frame\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get Last Frame number \Hypertarget{classAloadDatas_a0dad3ebed2848e82a204bfd969082ea1}\index{AloadDatas@{AloadDatas}!getStartEndAnalysisFrames@{getStartEndAnalysisFrames}}
+\index{getStartEndAnalysisFrames@{getStartEndAnalysisFrames}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{getStartEndAnalysisFrames()}{getStartEndAnalysisFrames()}}
+{\footnotesize\ttfamily \label{classAloadDatas_a0dad3ebed2848e82a204bfd969082ea1} 
+void Aload\+Datas\+::get\+Start\+End\+Analysis\+Frames (\begin{DoxyParamCaption}\item[{int}]{analysis}{}\end{DoxyParamCaption})}
+
+Request start and last acquisition frames depending on the analysis -\/1\+: no analysis 0 \+: task-\/based 1\+: resting state 2\+: Impulsion \Hypertarget{classAloadDatas_afed77d4f8cac52d78dcb01278b7e18e4}\index{AloadDatas@{AloadDatas}!getStartFrameNumber@{getStartFrameNumber}}
+\index{getStartFrameNumber@{getStartFrameNumber}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{getStartFrameNumber()}{getStartFrameNumber()}}
+{\footnotesize\ttfamily \label{classAloadDatas_afed77d4f8cac52d78dcb01278b7e18e4} 
+int Aload\+Datas\+::get\+Start\+Frame\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get start Frame number \Hypertarget{classAloadDatas_a7acc0eec9382b804c58e9d7b2a292dcf}\index{AloadDatas@{AloadDatas}!getTotalFrameNumber@{getTotalFrameNumber}}
+\index{getTotalFrameNumber@{getTotalFrameNumber}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{getTotalFrameNumber()}{getTotalFrameNumber()}}
+{\footnotesize\ttfamily \label{classAloadDatas_a7acc0eec9382b804c58e9d7b2a292dcf} 
+int Aload\+Datas\+::get\+Total\+Frame\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the total number of frames \Hypertarget{classAloadDatas_a32d79ee83c71c034f564faa9612d7823}\index{AloadDatas@{AloadDatas}!isPathLoaded@{isPathLoaded}}
+\index{isPathLoaded@{isPathLoaded}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{isPathLoaded()}{isPathLoaded()}}
+{\footnotesize\ttfamily \label{classAloadDatas_a32d79ee83c71c034f564faa9612d7823} 
+bool Aload\+Datas\+::is\+Path\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if path is loaded \Hypertarget{classAloadDatas_aa3b5fa670e8771cac6224daa3e27bd66}\index{AloadDatas@{AloadDatas}!LoadDatas@{LoadDatas}}
+\index{LoadDatas@{LoadDatas}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{LoadDatas}{LoadDatas}}
+{\footnotesize\ttfamily \label{classAloadDatas_aa3b5fa670e8771cac6224daa3e27bd66} 
+void Aload\+Datas\+::\+Load\+Datas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Load datas \Hypertarget{classAloadDatas_a9569114a8f18cfff84c517a8a27dd0d2}\index{AloadDatas@{AloadDatas}!newFirstLastAnalysisFrames@{newFirstLastAnalysisFrames}}
+\index{newFirstLastAnalysisFrames@{newFirstLastAnalysisFrames}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newFirstLastAnalysisFrames}{newFirstLastAnalysisFrames}}
+{\footnotesize\ttfamily \label{classAloadDatas_a9569114a8f18cfff84c517a8a27dd0d2} 
+void Aload\+Datas\+::new\+First\+Last\+Analysis\+Frames (\begin{DoxyParamCaption}\item[{int}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+First and last analysis frames \Hypertarget{classAloadDatas_a49c6d9a025646123ba8bd84020ff6310}\index{AloadDatas@{AloadDatas}!newFrameRate@{newFrameRate}}
+\index{newFrameRate@{newFrameRate}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newFrameRate}{newFrameRate}}
+{\footnotesize\ttfamily \label{classAloadDatas_a49c6d9a025646123ba8bd84020ff6310} 
+void Aload\+Datas\+::new\+Frame\+Rate (\begin{DoxyParamCaption}\item[{double}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Frame rate \Hypertarget{classAloadDatas_acc72faa58c52003be0ba0b7debaecd00}\index{AloadDatas@{AloadDatas}!newHyperspectralImagesDynamic@{newHyperspectralImagesDynamic}}
+\index{newHyperspectralImagesDynamic@{newHyperspectralImagesDynamic}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newHyperspectralImagesDynamic}{newHyperspectralImagesDynamic}}
+{\footnotesize\ttfamily \label{classAloadDatas_acc72faa58c52003be0ba0b7debaecd00} 
+void Aload\+Datas\+::new\+Hyperspectral\+Images\+Dynamic (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+New Hyperspectral images dynamic \Hypertarget{classAloadDatas_a631fb141f9810562f73ad0992c19288c}\index{AloadDatas@{AloadDatas}!newImageAcquired@{newImageAcquired}}
+\index{newImageAcquired@{newImageAcquired}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newImageAcquired}{newImageAcquired}}
+{\footnotesize\ttfamily \label{classAloadDatas_a631fb141f9810562f73ad0992c19288c} 
+void Aload\+Datas\+::new\+Image\+Acquired (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+New images for pre processing \Hypertarget{classAloadDatas_a0ab25fef9bec09b8d59a63ee18a0bb2b}\index{AloadDatas@{AloadDatas}!newImgSend@{newImgSend}}
+\index{newImgSend@{newImgSend}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newImgSend}{newImgSend}}
+{\footnotesize\ttfamily \label{classAloadDatas_a0ab25fef9bec09b8d59a63ee18a0bb2b} 
+void Aload\+Datas\+::new\+Img\+Send (\begin{DoxyParamCaption}\item[{int}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+img send \Hypertarget{classAloadDatas_af0bc5309f8a95669d78fcf0a7d934bda}\index{AloadDatas@{AloadDatas}!newMessage@{newMessage}}
+\index{newMessage@{newMessage}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newMessage}{newMessage}}
+{\footnotesize\ttfamily \label{classAloadDatas_af0bc5309f8a95669d78fcf0a7d934bda} 
+void Aload\+Datas\+::new\+Message (\begin{DoxyParamCaption}\item[{QString}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Message \Hypertarget{classAloadDatas_ab543e62a5e4e836adbda69a0fab5c6af}\index{AloadDatas@{AloadDatas}!newProcessid@{newProcessid}}
+\index{newProcessid@{newProcessid}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newProcessid}{newProcessid}}
+{\footnotesize\ttfamily \label{classAloadDatas_ab543e62a5e4e836adbda69a0fab5c6af} 
+void Aload\+Datas\+::new\+Processid (\begin{DoxyParamCaption}\item[{QVector$<$ int $>$}]{}{, }\item[{double}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Process times \Hypertarget{classAloadDatas_a9b15cf29ec1759ecdddb2086c0af97dd}\index{AloadDatas@{AloadDatas}!newRGBCameraMode@{newRGBCameraMode}}
+\index{newRGBCameraMode@{newRGBCameraMode}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newRGBCameraMode}{newRGBCameraMode}}
+{\footnotesize\ttfamily \label{classAloadDatas_a9b15cf29ec1759ecdddb2086c0af97dd} 
+void Aload\+Datas\+::new\+RGBCamera\+Mode (\begin{DoxyParamCaption}\item[{bool}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new RGB mode or HS mode \Hypertarget{classAloadDatas_a8610160b4e687101484c524a036ca826}\index{AloadDatas@{AloadDatas}!newStatut@{newStatut}}
+\index{newStatut@{newStatut}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{newStatut}{newStatut}}
+{\footnotesize\ttfamily \label{classAloadDatas_a8610160b4e687101484c524a036ca826} 
+void Aload\+Datas\+::new\+Statut (\begin{DoxyParamCaption}\item[{bool}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Error \Hypertarget{classAloadDatas_a1a7402c0e79ec72f724f53639ef28d66}\index{AloadDatas@{AloadDatas}!onRequestNewImage@{onRequestNewImage}}
+\index{onRequestNewImage@{onRequestNewImage}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{onRequestNewImage}{onRequestNewImage}}
+{\footnotesize\ttfamily \label{classAloadDatas_a1a7402c0e79ec72f724f53639ef28d66} 
+void Aload\+Datas\+::on\+Request\+New\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+request new Image \Hypertarget{classAloadDatas_a989f766f5f16adf1dd78af376dfa7db1}\index{AloadDatas@{AloadDatas}!onSimulateRealCamera@{onSimulateRealCamera}}
+\index{onSimulateRealCamera@{onSimulateRealCamera}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{onSimulateRealCamera}{onSimulateRealCamera}}
+{\footnotesize\ttfamily \label{classAloadDatas_a989f766f5f16adf1dd78af376dfa7db1} 
+void Aload\+Datas\+::on\+Simulate\+Real\+Camera (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+simulate a real camera \Hypertarget{classAloadDatas_adf4aad4a6a7caf3a53348f4272743826}\index{AloadDatas@{AloadDatas}!requestAnalysisChoose@{requestAnalysisChoose}}
+\index{requestAnalysisChoose@{requestAnalysisChoose}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{requestAnalysisChoose}{requestAnalysisChoose}}
+{\footnotesize\ttfamily \label{classAloadDatas_adf4aad4a6a7caf3a53348f4272743826} 
+void Aload\+Datas\+::request\+Analysis\+Choose (\begin{DoxyParamCaption}\item[{QVector$<$ int $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+request analysis choose \Hypertarget{classAloadDatas_aa35a9ad0539d694bf66f370c185fca1b}\index{AloadDatas@{AloadDatas}!RequestFirstImg@{RequestFirstImg}}
+\index{RequestFirstImg@{RequestFirstImg}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{RequestFirstImg()}{RequestFirstImg()}}
+{\footnotesize\ttfamily \label{classAloadDatas_aa35a9ad0539d694bf66f370c185fca1b} 
+Mat Aload\+Datas\+::\+Request\+First\+Img (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Request first img \Hypertarget{classAloadDatas_ae3189210270d34cf0cbe8ec66dd680c5}\index{AloadDatas@{AloadDatas}!requestPreProcessing@{requestPreProcessing}}
+\index{requestPreProcessing@{requestPreProcessing}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{requestPreProcessing}{requestPreProcessing}}
+{\footnotesize\ttfamily \label{classAloadDatas_ae3189210270d34cf0cbe8ec66dd680c5} 
+void Aload\+Datas\+::request\+Pre\+Processing (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+request pre processing \Hypertarget{classAloadDatas_a589a1d642f53d90bdb6e733fc4f7d29b}\index{AloadDatas@{AloadDatas}!requireResolutionMeasurement@{requireResolutionMeasurement}}
+\index{requireResolutionMeasurement@{requireResolutionMeasurement}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{requireResolutionMeasurement}{requireResolutionMeasurement}}
+{\footnotesize\ttfamily \label{classAloadDatas_a589a1d642f53d90bdb6e733fc4f7d29b} 
+void Aload\+Datas\+::require\+Resolution\+Measurement (\begin{DoxyParamCaption}\item[{QString}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Get resolution \Hypertarget{classAloadDatas_ade6a036bf68453663d46937dd00ae4f0}\index{AloadDatas@{AloadDatas}!run@{run}}
+\index{run@{run}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classAloadDatas_ade6a036bf68453663d46937dd00ae4f0} 
+void Aload\+Datas\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Call parallel thread \Hypertarget{classAloadDatas_aaae96c34bd4f666461e399bcb6f8338c}\index{AloadDatas@{AloadDatas}!setVideoPath@{setVideoPath}}
+\index{setVideoPath@{setVideoPath}!AloadDatas@{AloadDatas}}
+\doxysubsubsection{\texorpdfstring{setVideoPath}{setVideoPath}}
+{\footnotesize\ttfamily \label{classAloadDatas_aaae96c34bd4f666461e399bcb6f8338c} 
+void Aload\+Datas\+::set\+Video\+Path (\begin{DoxyParamCaption}\item[{QString}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set Video path 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc/\mbox{\hyperlink{AloadDatas_8h}{Aload\+Datas.\+h}}\end{DoxyCompactItemize}

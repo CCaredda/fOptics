@@ -1,0 +1,250 @@
+\doxysection{APost\+Acquisition Class Reference}
+\hypertarget{classAPostAcquisition}{}\label{classAPostAcquisition}\index{APostAcquisition@{APostAcquisition}}
+Inheritance diagram for APost\+Acquisition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAPostAcquisition}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_acc045286920efdf25376f05a0fa6531c}{on\+\_\+\+New\+\_\+\+Maximum\+\_\+number\+\_\+\+Analyzed\+\_\+pixels}} (double v)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a4252945fc066615f7f7ffc689b8ed842}{new\+Image}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}})
+\item 
+\Hypertarget{classAPostAcquisition_a1bd1aa90c4be1aa5cd574d4227663945}\label{classAPostAcquisition_a1bd1aa90c4be1aa5cd574d4227663945} 
+void {\bfseries new\+Image} (Mat, int)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_aac77d05fa2c376861d5599a2fbeb4961}{set\+Mode\+RGB\+\_\+\+HS}} (bool v)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_aa611c582f017576040c62ae2b9c191f5}{get\+Resolution\+Reference}} (QString video\+\_\+dir)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_ab1fc41af7af95abb307a0f6124a5531f}{Init\+ROI}} ()
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_ae75439d6cb8bc28eeaa408b7314c9aec}{request\+Pre\+Processing}} (Mat mat)
+\item 
+vector$<$ Mat $>$ \mbox{\hyperlink{classAPostAcquisition_a69e14656b2d0ee1de0e221326e681af2}{request\+Pre\+Processing\+\_\+\+HS}} (Mat \&in)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a0645e2a37ffde5da85fcd73057881616}{onnew\+Hyperspectral\+Images\+Dynamic}} (int v)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a8f8f1852bae380edde7071d7d5b2598d}{on\+New\+Result\+Directory}} (QString v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_ad8818d672d2648fad9588bfb7a38d6ee}{new\+Pre\+Processed\+Img}} (\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}})
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a03df15c338dc7faa5e48cdf16a6cdac8}{new\+Pre\+Processed\+Img}} (\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}})
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_aed44d99dbb845f6a89626a113878c952}{new\+Resolution\+Reference\+Image}} (Mat)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_ab8982e7fdd418bb2baefa910970209cc}{new\+Display\+Image}} (Mat)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_ae5b43af5c69ae25357fb4d5229d2927e}{new\+Initial\+Img}} (Mat)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_adf1acc1fd4312f06e4d78fa7aa6f065b}{request\+\_\+\+Initial\+\_\+\+Image}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAPostAcquisition_ab5f72680f8541ca575b6d386b1d38e28}\label{classAPostAcquisition_ab5f72680f8541ca575b6d386b1d38e28} 
+{\bfseries APost\+Acquisition} (QObject \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a364326a3f1dfbc90c23e24705053ba58}{set\+\_\+\+HS\+\_\+visualization\+\_\+spectral\+\_\+band}} (int v)
+\item 
+double \mbox{\hyperlink{classAPostAcquisition_a2aff4ae1e3bc5de1a1c1342118be0e97}{get\+Spatial\+Sampling}} ()
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a54ce882ad770491f4bc0dd967fd845dc}{set\+Spatial\+Sampling}} (double v)
+\item 
+Mat \mbox{\hyperlink{classAPostAcquisition_accedca9cfb100ca0e9a9734f635ed67a}{get\+Pre\+Processed\+Img}} ()
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a93ec06cba39579a8edabecb4106c478b}{set\+Rect\+ROI}} (QPoint p1, QPoint p2)
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_ab77b676a015fd1a8e4dd066be5e83544}{set\+Rect\+ROI}} (QPoint p1, QPoint p2, double spatial\+\_\+sampling)
+\item 
+Size \mbox{\hyperlink{classAPostAcquisition_a2d7e7cb22e75905e52f2a58311b33e54}{get\+Initial\+Img\+Size}} ()
+\item 
+Size \mbox{\hyperlink{classAPostAcquisition_a17aa5f84af0b522d3c95f1a314a3f67a}{get\+Pre\+Processed\+Img\+Size}} ()
+\item 
+bool \mbox{\hyperlink{classAPostAcquisition_a86cd71d848f496d7037a77f5d13aba34}{is\+\_\+\+Acquisition\+\_\+\+Mode\+\_\+\+RGB}} ()
+\item 
+Rect \mbox{\hyperlink{classAPostAcquisition_a9588e6af94a5ec61f2c346809cea216d}{get\+Pre\+ROIRect}} ()
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a930d8072a341b8a96d7020c80b1f9180}{Write\+Infos}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAPostAcquisition_a9ff0e4739942d267d5da8400114d8581}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAPostAcquisition_a2d7e7cb22e75905e52f2a58311b33e54}\index{APostAcquisition@{APostAcquisition}!getInitialImgSize@{getInitialImgSize}}
+\index{getInitialImgSize@{getInitialImgSize}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{getInitialImgSize()}{getInitialImgSize()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a2d7e7cb22e75905e52f2a58311b33e54} 
+Size APost\+Acquisition\+::get\+Initial\+Img\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get initial image size \Hypertarget{classAPostAcquisition_accedca9cfb100ca0e9a9734f635ed67a}\index{APostAcquisition@{APostAcquisition}!getPreProcessedImg@{getPreProcessedImg}}
+\index{getPreProcessedImg@{getPreProcessedImg}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{getPreProcessedImg()}{getPreProcessedImg()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_accedca9cfb100ca0e9a9734f635ed67a} 
+Mat APost\+Acquisition\+::get\+Pre\+Processed\+Img (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get preprocessed img \Hypertarget{classAPostAcquisition_a17aa5f84af0b522d3c95f1a314a3f67a}\index{APostAcquisition@{APostAcquisition}!getPreProcessedImgSize@{getPreProcessedImgSize}}
+\index{getPreProcessedImgSize@{getPreProcessedImgSize}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{getPreProcessedImgSize()}{getPreProcessedImgSize()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a17aa5f84af0b522d3c95f1a314a3f67a} 
+Size APost\+Acquisition\+::get\+Pre\+Processed\+Img\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get pre processed image size \Hypertarget{classAPostAcquisition_a9588e6af94a5ec61f2c346809cea216d}\index{APostAcquisition@{APostAcquisition}!getPreROIRect@{getPreROIRect}}
+\index{getPreROIRect@{getPreROIRect}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{getPreROIRect()}{getPreROIRect()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a9588e6af94a5ec61f2c346809cea216d} 
+Rect APost\+Acquisition\+::get\+Pre\+ROIRect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get Pre ROI Rect \Hypertarget{classAPostAcquisition_aa611c582f017576040c62ae2b9c191f5}\index{APostAcquisition@{APostAcquisition}!getResolutionReference@{getResolutionReference}}
+\index{getResolutionReference@{getResolutionReference}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{getResolutionReference}{getResolutionReference}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_aa611c582f017576040c62ae2b9c191f5} 
+void APost\+Acquisition\+::get\+Resolution\+Reference (\begin{DoxyParamCaption}\item[{QString}]{video\+\_\+dir}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+get resolution \Hypertarget{classAPostAcquisition_a2aff4ae1e3bc5de1a1c1342118be0e97}\index{APostAcquisition@{APostAcquisition}!getSpatialSampling@{getSpatialSampling}}
+\index{getSpatialSampling@{getSpatialSampling}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{getSpatialSampling()}{getSpatialSampling()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a2aff4ae1e3bc5de1a1c1342118be0e97} 
+double APost\+Acquisition\+::get\+Spatial\+Sampling (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get spatial sampling \Hypertarget{classAPostAcquisition_ab1fc41af7af95abb307a0f6124a5531f}\index{APostAcquisition@{APostAcquisition}!InitROI@{InitROI}}
+\index{InitROI@{InitROI}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{InitROI}{InitROI}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_ab1fc41af7af95abb307a0f6124a5531f} 
+void APost\+Acquisition\+::\+Init\+ROI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Init Pre-\/\+ROI \Hypertarget{classAPostAcquisition_a86cd71d848f496d7037a77f5d13aba34}\index{APostAcquisition@{APostAcquisition}!is\_Acquisition\_Mode\_RGB@{is\_Acquisition\_Mode\_RGB}}
+\index{is\_Acquisition\_Mode\_RGB@{is\_Acquisition\_Mode\_RGB}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{is\_Acquisition\_Mode\_RGB()}{is\_Acquisition\_Mode\_RGB()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a86cd71d848f496d7037a77f5d13aba34} 
+bool APost\+Acquisition\+::is\+\_\+\+Acquisition\+\_\+\+Mode\+\_\+\+RGB (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get RGB or HS mode \Hypertarget{classAPostAcquisition_ab8982e7fdd418bb2baefa910970209cc}\index{APostAcquisition@{APostAcquisition}!newDisplayImage@{newDisplayImage}}
+\index{newDisplayImage@{newDisplayImage}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{newDisplayImage}{newDisplayImage}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_ab8982e7fdd418bb2baefa910970209cc} 
+void APost\+Acquisition\+::new\+Display\+Image (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new image for display \Hypertarget{classAPostAcquisition_a4252945fc066615f7f7ffc689b8ed842}\index{APostAcquisition@{APostAcquisition}!newImage@{newImage}}
+\index{newImage@{newImage}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{newImage}{newImage}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a4252945fc066615f7f7ffc689b8ed842} 
+void APost\+Acquisition\+::new\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Require image pre processing \Hypertarget{classAPostAcquisition_ae5b43af5c69ae25357fb4d5229d2927e}\index{APostAcquisition@{APostAcquisition}!newInitialImg@{newInitialImg}}
+\index{newInitialImg@{newInitialImg}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{newInitialImg}{newInitialImg}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_ae5b43af5c69ae25357fb4d5229d2927e} 
+void APost\+Acquisition\+::new\+Initial\+Img (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new image to save results \Hypertarget{classAPostAcquisition_ad8818d672d2648fad9588bfb7a38d6ee}\index{APostAcquisition@{APostAcquisition}!newPreProcessedImg@{newPreProcessedImg}}
+\index{newPreProcessedImg@{newPreProcessedImg}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{newPreProcessedImg}{newPreProcessedImg}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_ad8818d672d2648fad9588bfb7a38d6ee} 
+void APost\+Acquisition\+::new\+Pre\+Processed\+Img (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img}{\+\_\+\+Processed\+\_\+img}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Send processed img (RGB) \Hypertarget{classAPostAcquisition_a03df15c338dc7faa5e48cdf16a6cdac8}\index{APostAcquisition@{APostAcquisition}!newPreProcessedImg@{newPreProcessedImg}}
+\index{newPreProcessedImg@{newPreProcessedImg}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{newPreProcessedImg}{newPreProcessedImg}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a03df15c338dc7faa5e48cdf16a6cdac8} 
+void APost\+Acquisition\+::new\+Pre\+Processed\+Img (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__Processed__img__HS}{\+\_\+\+Processed\+\_\+img\+\_\+\+HS}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Send processed img (HS) \Hypertarget{classAPostAcquisition_aed44d99dbb845f6a89626a113878c952}\index{APostAcquisition@{APostAcquisition}!newResolutionReferenceImage@{newResolutionReferenceImage}}
+\index{newResolutionReferenceImage@{newResolutionReferenceImage}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{newResolutionReferenceImage}{newResolutionReferenceImage}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_aed44d99dbb845f6a89626a113878c952} 
+void APost\+Acquisition\+::new\+Resolution\+Reference\+Image (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+resolution reference img \Hypertarget{classAPostAcquisition_acc045286920efdf25376f05a0fa6531c}\index{APostAcquisition@{APostAcquisition}!on\_New\_Maximum\_number\_Analyzed\_pixels@{on\_New\_Maximum\_number\_Analyzed\_pixels}}
+\index{on\_New\_Maximum\_number\_Analyzed\_pixels@{on\_New\_Maximum\_number\_Analyzed\_pixels}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{on\_New\_Maximum\_number\_Analyzed\_pixels}{on\_New\_Maximum\_number\_Analyzed\_pixels}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_acc045286920efdf25376f05a0fa6531c} 
+void APost\+Acquisition\+::on\+\_\+\+New\+\_\+\+Maximum\+\_\+number\+\_\+\+Analyzed\+\_\+pixels (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set maximum number of analyzed pixels \Hypertarget{classAPostAcquisition_a0645e2a37ffde5da85fcd73057881616}\index{APostAcquisition@{APostAcquisition}!onnewHyperspectralImagesDynamic@{onnewHyperspectralImagesDynamic}}
+\index{onnewHyperspectralImagesDynamic@{onnewHyperspectralImagesDynamic}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{onnewHyperspectralImagesDynamic}{onnewHyperspectralImagesDynamic}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a0645e2a37ffde5da85fcd73057881616} 
+void APost\+Acquisition\+::onnew\+Hyperspectral\+Images\+Dynamic (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New dynamic of hyperspectral images \Hypertarget{classAPostAcquisition_a8f8f1852bae380edde7071d7d5b2598d}\index{APostAcquisition@{APostAcquisition}!onNewResultDirectory@{onNewResultDirectory}}
+\index{onNewResultDirectory@{onNewResultDirectory}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{onNewResultDirectory}{onNewResultDirectory}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a8f8f1852bae380edde7071d7d5b2598d} 
+void APost\+Acquisition\+::on\+New\+Result\+Directory (\begin{DoxyParamCaption}\item[{QString}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New result directory \Hypertarget{classAPostAcquisition_adf1acc1fd4312f06e4d78fa7aa6f065b}\index{APostAcquisition@{APostAcquisition}!request\_Initial\_Image@{request\_Initial\_Image}}
+\index{request\_Initial\_Image@{request\_Initial\_Image}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{request\_Initial\_Image}{request\_Initial\_Image}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_adf1acc1fd4312f06e4d78fa7aa6f065b} 
+void APost\+Acquisition\+::request\+\_\+\+Initial\+\_\+\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+request initial image \Hypertarget{classAPostAcquisition_ae75439d6cb8bc28eeaa408b7314c9aec}\index{APostAcquisition@{APostAcquisition}!requestPreProcessing@{requestPreProcessing}}
+\index{requestPreProcessing@{requestPreProcessing}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{requestPreProcessing}{requestPreProcessing}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_ae75439d6cb8bc28eeaa408b7314c9aec} 
+void APost\+Acquisition\+::request\+Pre\+Processing (\begin{DoxyParamCaption}\item[{Mat}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request pre processing for a single img (RGB) \Hypertarget{classAPostAcquisition_a69e14656b2d0ee1de0e221326e681af2}\index{APostAcquisition@{APostAcquisition}!requestPreProcessing\_HS@{requestPreProcessing\_HS}}
+\index{requestPreProcessing\_HS@{requestPreProcessing\_HS}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{requestPreProcessing\_HS}{requestPreProcessing\_HS}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a69e14656b2d0ee1de0e221326e681af2} 
+vector$<$ Mat $>$ APost\+Acquisition\+::request\+Pre\+Processing\+\_\+\+HS (\begin{DoxyParamCaption}\item[{Mat \&}]{in}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Request pre processing for a single img (HS) \Hypertarget{classAPostAcquisition_a9ff0e4739942d267d5da8400114d8581}\index{APostAcquisition@{APostAcquisition}!run@{run}}
+\index{run@{run}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a9ff0e4739942d267d5da8400114d8581} 
+void APost\+Acquisition\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Call parallel thread \Hypertarget{classAPostAcquisition_a364326a3f1dfbc90c23e24705053ba58}\index{APostAcquisition@{APostAcquisition}!set\_HS\_visualization\_spectral\_band@{set\_HS\_visualization\_spectral\_band}}
+\index{set\_HS\_visualization\_spectral\_band@{set\_HS\_visualization\_spectral\_band}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{set\_HS\_visualization\_spectral\_band()}{set\_HS\_visualization\_spectral\_band()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a364326a3f1dfbc90c23e24705053ba58} 
+void APost\+Acquisition\+::set\+\_\+\+HS\+\_\+visualization\+\_\+spectral\+\_\+band (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set HS visualization band \Hypertarget{classAPostAcquisition_aac77d05fa2c376861d5599a2fbeb4961}\index{APostAcquisition@{APostAcquisition}!setModeRGB\_HS@{setModeRGB\_HS}}
+\index{setModeRGB\_HS@{setModeRGB\_HS}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{setModeRGB\_HS}{setModeRGB\_HS}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_aac77d05fa2c376861d5599a2fbeb4961} 
+void APost\+Acquisition\+::set\+Mode\+RGB\+\_\+\+HS (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Set acquisition mode (RGB\+: true, HS\+: false) \Hypertarget{classAPostAcquisition_a93ec06cba39579a8edabecb4106c478b}\index{APostAcquisition@{APostAcquisition}!setRectROI@{setRectROI}}
+\index{setRectROI@{setRectROI}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{setRectROI()}{setRectROI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a93ec06cba39579a8edabecb4106c478b} 
+void APost\+Acquisition\+::set\+Rect\+ROI (\begin{DoxyParamCaption}\item[{QPoint}]{p1}{, }\item[{QPoint}]{p2}{}\end{DoxyParamCaption})}
+
+Set Pre-\/\+ROI rect \Hypertarget{classAPostAcquisition_ab77b676a015fd1a8e4dd066be5e83544}\index{APostAcquisition@{APostAcquisition}!setRectROI@{setRectROI}}
+\index{setRectROI@{setRectROI}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{setRectROI()}{setRectROI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_ab77b676a015fd1a8e4dd066be5e83544} 
+void APost\+Acquisition\+::set\+Rect\+ROI (\begin{DoxyParamCaption}\item[{QPoint}]{p1}{, }\item[{QPoint}]{p2}{, }\item[{double}]{spatial\+\_\+sampling}{}\end{DoxyParamCaption})}
+
+Set Pre-\/\+ROI rect \Hypertarget{classAPostAcquisition_a54ce882ad770491f4bc0dd967fd845dc}\index{APostAcquisition@{APostAcquisition}!setSpatialSampling@{setSpatialSampling}}
+\index{setSpatialSampling@{setSpatialSampling}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{setSpatialSampling()}{setSpatialSampling()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a54ce882ad770491f4bc0dd967fd845dc} 
+void APost\+Acquisition\+::set\+Spatial\+Sampling (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set spatial sampling \Hypertarget{classAPostAcquisition_a930d8072a341b8a96d7020c80b1f9180}\index{APostAcquisition@{APostAcquisition}!WriteInfos@{WriteInfos}}
+\index{WriteInfos@{WriteInfos}!APostAcquisition@{APostAcquisition}}
+\doxysubsubsection{\texorpdfstring{WriteInfos()}{WriteInfos()}}
+{\footnotesize\ttfamily \label{classAPostAcquisition_a930d8072a341b8a96d7020c80b1f9180} 
+void APost\+Acquisition\+::\+Write\+Infos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Write infos 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/\+DVP/intraoperative-\/functional-\/brain-\/mapping/\+Acquisition/inc/\mbox{\hyperlink{APostAcquisition_8h}{APost\+Acquisition.\+h}}\end{DoxyCompactItemize}
