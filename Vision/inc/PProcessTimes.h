@@ -80,8 +80,6 @@ public:
 
 
 signals:
-    /** Inform the index of the frame for real time processing */
-    void newRealTimeStarId(int);
     /** Send the indexes of the rest periods used as reference */
     void newReferenceTime(int,int);
     /** Send indexes of frames used for correlation analysis */

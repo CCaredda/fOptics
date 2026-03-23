@@ -133,10 +133,6 @@ public slots:
     /** Contrast image changed */
     void onContrastImgchanged();
 
-    /** New RT cartography */
-    void onNewRTCartography(Mat,int);
-
-    /** set Methode Auto or Beer Lambert */
 
 
     /** on New Img */

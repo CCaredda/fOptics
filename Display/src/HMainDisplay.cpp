@@ -135,8 +135,6 @@ HMainDisplay::HMainDisplay(QWidget *parent) :
     //Contrast image
     connect(ui->_params_analysis,SIGNAL(newContrastImage(QVector<Mat>)),ui->_displayResult,SLOT(onnewContrastImg(QVector<Mat>)));
 
-    //RT cartography
-    connect(ui->_params_analysis,SIGNAL(newRTCartography(Mat,int)),ui->_displayResult,SLOT(onNewRTCartography(Mat,int)));
 
     //Activation maps
     connect(ui->_params_analysis,SIGNAL(newActivationMap(QVector<bool>)),ui->_displayResult,SIGNAL(newActivationMap(QVector<bool>)));

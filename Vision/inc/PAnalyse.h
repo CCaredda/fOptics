@@ -241,9 +241,6 @@ public slots:
     /*********Camera config*******/
     /*****************************/
 
-    /** Set new Hyperspectral camera configuration */
-    void onnew_HS_config(int);
-
     /** On new hyperspectral spectral range */
     void onnewSpectralRange(int lambda_min,int lambda_max)    {_M_PixelWise_Molar_Coeff.setSpectralRange(lambda_min,lambda_max);}
 

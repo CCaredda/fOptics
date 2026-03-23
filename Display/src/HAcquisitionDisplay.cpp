@@ -34,12 +34,9 @@ HAcquisitionDisplay::HAcquisitionDisplay(QWidget *parent) :
 
     //Image acquired
     connect(&_M_load_datas_hard_drive,SIGNAL(newImageAcquired(_Processed_img)),&_M_post_acquis,SLOT(newImage(_Processed_img)));
-    // connect(&_M_load_datas_hard_drive,SIGNAL(newImageAcquired(Mat,int)),&_M_post_acquis,SLOT(newImage(Mat,int)));
-
 
     //Send image to registration class
     connect(&_M_post_acquis,SIGNAL(newPreProcessedImg(_Processed_img)),&_M_reg,SLOT(requestParallelThreadProcess(_Processed_img)));
-    connect(&_M_post_acquis,SIGNAL(newPreProcessedImg(_Processed_img_HS)),&_M_reg,SLOT(requestParallelThreadProcess(_Processed_img_HS)));
 
     //Request first image pre processing
     connect(&_M_load_datas_hard_drive,SIGNAL(requestPreProcessing(Mat)),&_M_post_acquis,SLOT(requestPreProcessing(Mat)));
@@ -59,8 +56,6 @@ HAcquisitionDisplay::HAcquisitionDisplay(QWidget *parent) :
     //Request analysis zone definition
     connect(ui->_ROI,SIGNAL(requestAnalysisZoneDrawing(int)),this,SIGNAL(requestAnalysisZoneDrawing(int)));
 
-    //_ROI_extraction_method
-    connect(ui->_ROI,SIGNAL(newROIExtractionMethod(int)),this,SLOT(onNewROIExtractionMethod()));
 
     /*********************************/
     /*******Registration**************/

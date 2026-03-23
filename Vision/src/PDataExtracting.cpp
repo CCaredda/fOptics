@@ -18,8 +18,6 @@ PDataExtracting::PDataExtracting(QObject *parent) : QThread(parent)
 
     _M_in_thread = false;
 
-    setNew_HS_config(Filter_675_975nm);
-
     connect(this,SIGNAL(finished()),this,SLOT(onThreadFinished()));
 }
 
@@ -61,33 +59,6 @@ void PDataExtracting::init()
     _M_empty_img_buffer_HS.clear();
     _M_buffer_img.clear();
     _M_acquisition_is_over  = false;
-}
-
-
-//Hyperspectral cam config
-void PDataExtracting::setNew_HS_config(int v)
-{
-    _M_Spectral_Corr_Matrix = Mat::zeros(25,25,CV_64F);
-
-    // QString filename = (v==Filter_675_975nm) ? QString(PROPATH)+"/../files/Cameras/HS_Ximea/Correction_Matrices/XCorr_675_975nm.txt" : QString(PROPATH)+"/../files/Cameras/HS_Ximea/Correction_Matrices/XCorr_600_875nm.txt";
-    QString filename = (v==Filter_675_975nm) ? QString(QCoreApplication::applicationDirPath())+"/../share/files/Cameras/HS_Ximea/Correction_Matrices/XCorr_675_975nm.txt" : QString(QCoreApplication::applicationDirPath())+"/../share/files/Cameras/HS_Ximea/Correction_Matrices/XCorr_600_875nm.txt";
-
-    QFile file_coeff_corr(filename);
-    // Read Coefficient files
-    if(file_coeff_corr.open(QIODevice::ReadOnly))
-    {
-        QTextStream in(&file_coeff_corr);
-        int l=0;
-        while(!in.atEnd())
-        {
-            QStringList list = in.readLine().split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
-            for(int c=0;c<list.size();c++)
-                _M_Spectral_Corr_Matrix.ptr<double>(l)[c] = list[c].toDouble();
-            l++;
-        }
-    }
-    else
-        qDebug()<<"[PDataExtracting] Can't open spectral correction coefficient file";
 }
 
 

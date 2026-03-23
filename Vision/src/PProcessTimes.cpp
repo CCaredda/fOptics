@@ -312,7 +312,6 @@ void PProcessTimes::setNbTotFrames(int v)
 
     //Send signal
     emit newActivationtimes(activation_steps);
-    emit newRealTimeStarId(_M_activity_time_start[0]);
     emit newReferenceTime(_M_rest_time_start,_M_rest_time_end);
     emit newCorrelationTimes(_M_first_analyzed_frame_for_correlation[_M_nb_activity_step_to_consider],_M_last_analyzed_frame_for_correlation[_M_nb_activity_step_to_consider]);
 

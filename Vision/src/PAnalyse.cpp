@@ -80,7 +80,6 @@ PAnalyse::PAnalyse(QObject *parent):
 
 
     //process times
-    connect(&_M_paradigm_times,SIGNAL(newRealTimeStarId(int)),&_M_filtering,SLOT(onNewRT_StartID(int)));
     connect(&_M_paradigm_times,SIGNAL(newReferenceTime(int,int)),&_M_MBLL,SLOT(onnewReferenceTime(int,int)));
     connect(&_M_paradigm_times,SIGNAL(newCorrelationTimes(int,int)),&_M_MBLL,SLOT(onnewCorrelationTimes(int,int)));
     connect(&_M_paradigm_times,SIGNAL(newActivationtimes(QVector<double>)),this,SIGNAL(newActivationtimes(QVector<double>)));
@@ -1799,13 +1798,6 @@ void PAnalyse::setAnalysisZone(QVector<QPoint> c,Size img_size,int nbChannels,in
 }
 
 
-/*************************************************
- **************** Hyperspectral cam config********
- *************************************************/
-void PAnalyse::onnew_HS_config(int v)
-{
-    _M_filtering.setNew_HS_config(v);
-}
 
 /*************************************************
  **************** AddD atas **********************

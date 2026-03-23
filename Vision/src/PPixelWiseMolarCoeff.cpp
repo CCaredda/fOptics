@@ -71,26 +71,6 @@ PPixelWiseMolarCoeff::PPixelWiseMolarCoeff(QObject *parent) : QThread(parent)
 
 
 
-
-    //HS Ximea with spectral correction
-    matrix_temp.clear();
-    load_Matrix(QString(QCoreApplication::applicationDirPath())+"/../share/files/Cameras/HS_Ximea/HS_cam_Ximea_675_975nm_corr.txt",matrix_temp);
-    _M_camera_spectral_sensitivities.push_back(matrix_temp);
-    temp.clear();
-    ReadVector(QString(QCoreApplication::applicationDirPath())+"/../share/files/Cameras/HS_Ximea/wavelength_HS_cam_Ximea_675_975nm.txt",temp);
-    _M_wavelength_camera.push_back(temp);
-
-    //HS Ximea without spectral correction
-    matrix_temp.clear();
-    load_Matrix(QString(QCoreApplication::applicationDirPath())+"/../share/files/Cameras/HS_Ximea/HS_cam_Ximea_675_975nm_no_corr.txt",matrix_temp);
-    _M_camera_spectral_sensitivities.push_back(matrix_temp);
-    temp.clear();
-    ReadVector(QString(QCoreApplication::applicationDirPath())+"/../share/files/Cameras/HS_Ximea/wavelength_HS_cam_Ximea_675_975nm.txt",temp);
-    _M_wavelength_camera.push_back(temp);
-
-
-
-
     //init spectral channel idx
     _M_spectral_idx.clear();
     for(int i=0;i<_M_camera_spectral_sensitivities[_M_id_camera].size();i++)

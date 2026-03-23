@@ -66,9 +66,6 @@ public:
     void setFilteringType(int v);
 
 
-    /** Set new Hyperspectral cam config */
-    void setNew_HS_config(int v)            {_M_data_extract.setNew_HS_config(v);}
-
     /** Set Point of interest (for debug purpose) */
     void setPointOfInterest(int i)          {_M_Point_Of_Interest.push_back(i);}
 

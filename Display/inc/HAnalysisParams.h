@@ -185,13 +185,9 @@ signals:
 
     /** new Progress value */
     void newProgressValue(QString,int);
-    /** new RT progress value */
-    void newRTProgressValue(QString,int);
 
     /** new contrast image */
     void newContrastImage(QVector<Mat>);
-    /** RT cartography */
-    void newRTCartography(Mat,int);
 
     /** New Activation map */
     void newActivationMap(QVector<bool>);
@@ -215,11 +211,6 @@ signals:
     /** new contrast point */
     void newContrastplot(QVector<QVector<float> >);
 
-    /** new FFT vectors */
-    void newFFTVectors(QVector<QVector<float> >);
-
-    /** new filter */
-    void newFilter(QVector<float>);
 
     /** new correlation threshold */
     void newCorrelationThreshold(double);

@@ -64,9 +64,6 @@ HAnalysisParams::HAnalysisParams(QWidget *parent) :
     //Contrast image
     connect(&_M_analyse,SIGNAL(newContrastImage(QVector<Mat>)),this,SIGNAL(newContrastImage(QVector<Mat>)));
 
-    //RT cartography
-    connect(&_M_analyse,SIGNAL(newRTCartography(Mat,int)),this,SIGNAL(newRTCartography(Mat,int)));
-
     //Activation maps
     connect(&_M_analyse,SIGNAL(newActivationMap(QVector<bool>)),this,SIGNAL(newActivationMap(QVector<bool>)));
     connect(&_M_analyse,SIGNAL(newActivationMap(QVector<bool>,int)),this,SIGNAL(newActivationMap(QVector<bool>,int)));
@@ -97,8 +94,6 @@ HAnalysisParams::HAnalysisParams(QWidget *parent) :
 
     //progress bar
     connect(&_M_analyse,SIGNAL(newProgressStatut(QString,int)),this,SIGNAL(newProgressValue(QString,int)));
-    connect(&_M_analyse,SIGNAL(newRTProgressStatut(QString,int)),this,SIGNAL(newRTProgressValue(QString,int)));
-
 
     //Elapsed times
     connect(&_M_analyse,SIGNAL(Elapsed_ProcessingTime(int)),this,SLOT(SetElapsed_ProcessTime(int)));
@@ -219,8 +214,6 @@ HAnalysisParams::HAnalysisParams(QWidget *parent) :
    ********************Mode Hyperspectral**********************************
    ************************************************************************/
 
-  //Hyperspectral cam config
-  connect(this,SIGNAL(new_HS_config(int)),&_M_analyse,SLOT(onnew_HS_config(int)));
 
   //Hyperspectral spectral range
   connect(this,SIGNAL(newSpectralRange(int,int)),&_M_analyse,SLOT(onnewSpectralRange(int,int)));
@@ -241,13 +234,6 @@ HAnalysisParams::HAnalysisParams(QWidget *parent) :
     connect(this,SIGNAL(VideoCreationRequired()),&_M_analyse,SLOT(onCreateNewVideo()));
     connect(this,SIGNAL(newVideo_nb_Frames(double)),&_M_analyse,SLOT(onnewVideo_nb_Frames(double)));
     connect(this,SIGNAL(newVideoFramerate(double)),&_M_analyse,SLOT(onnewVideoFramerate(double)));
-
-
-    /***********************************************************************
-    ************************************************************************
-    ********************Phase analysis**************************************
-    ************************************************************************/
-    connect(ui->_stats,SIGNAL(newcontrastIndexes_Phase_Analysis(int,int)),&_M_analyse,SLOT(onNewcontrastIndexes_Phase_Analysis(int,int)));
 
 }
 

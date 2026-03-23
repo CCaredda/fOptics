@@ -1009,15 +1009,7 @@ void HdisplayResult::onnewContrastImg(QVector<Mat> img)
     onContrastImgchanged();
 }
 
-//New RT cartography
-void HdisplayResult::onNewRTCartography(Mat img,int last_processed_id)
-{
-    _M_last_processed_id = last_processed_id;
-    _M_contrast_img.clear();
-    _M_contrast_img.push_back(img);
 
-    onContrastImgchanged();
-}
 
 void HdisplayResult::updateCartographyMode()
 {

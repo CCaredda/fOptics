@@ -23,27 +23,6 @@ APostAcquisition::APostAcquisition(QObject *parent) : QThread(parent)
     _M_Pre_ROI_Rect.width = 0;
     _M_Pre_ROI_Rect.height =0;
 
-    // //Get RAM size
-    // qDebug()<<"Appdir: "<<QString(QCoreApplication::applicationDirPath());
-    // QProcess p;
-    // p.start(QString(QCoreApplication::applicationDirPath())+"/../share/script/get_Ram_size.sh");
-    // p.waitForFinished();
-    // QString output(p.readAllStandardOutput());
-    // int pos = output.lastIndexOf(QChar('\\'));
-    // int Ram_size = (output.left(pos)).toInt();
-    // qDebug()<<" Ram_size: "<<Ram_size;
-
-    // //Define max data amount that can be stored in RAM depending on the RAM size
-    // if(Ram_size>40*1e6)
-    // {
-    //     qDebug()<<"Do not apply underspampling";
-    //     _M_max_data_amount = 100000;
-    // }
-    // else
-    // {
-    //     qDebug()<<"Apply underspampling";
-    //     _M_max_data_amount = 50000;
-    // }
 
     _M_max_data_amount = 50000;
 
