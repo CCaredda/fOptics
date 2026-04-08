@@ -1,4 +1,0 @@
-Camera sensitivity (a.u)
-Light spectra (a.u)
-Extinction coefficients (cm-1.mol-1.L)
-Mean path length (cm)
