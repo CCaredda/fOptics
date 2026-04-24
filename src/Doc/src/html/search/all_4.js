@@ -4,6 +4,5 @@ var searchData=
   ['datafinishloading_1',['DataFinishLoading',['../classPAnalyse.html#a913efa5f9cf1c3716d705c1eea6fc5be',1,'PAnalyse']]],
   ['decode_5fcamera_5fname_2',['decode_Camera_name',['../acquisition_8h.html#afbe8d48365f0e1b4859bfde988eaef12',1,'acquisition.h']]],
   ['decode_5flight_5fsource_5ftype_3',['decode_Light_source_type',['../acquisition_8h.html#a85c300ce7015580c4aa572a2677ac4c5',1,'acquisition.h']]],
-  ['deployment_20on_20fedora_4',['Deployment on Fedora',['../index.html#sec_deployment_Fedora',1,'']]],
-  ['deployment_20on_20windows_5',['Deployment on Windows',['../index.html#sec_deployment_Windows',1,'']]]
+  ['deployment_20on_20windows_4',['Deployment on Windows',['../index.html#sec_deployment_Windows',1,'']]]
 ];

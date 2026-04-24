@@ -76,45 +76,8 @@ $(function() {
 <div class="contents">
 <div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_sec"></a>
 Introduction</h1>
-<p>This software allows to acquire RGB or Hyperspectral images, record theses images in an hardrive and process it in order to identify activated functional brain areas during a neurosurgical operation.</p>
-<p>Papers related to this work are located in the directory papers.</p>
-<p>Note that if you want to use other cameras than one used in this project you have to change th class ABaslerCamera. The best practice should be to add a new class that should refer to the new camera. Make sure to use the same names public functions, public slots and signals than the ones used in ABaslerCamera.</p>
-<p>If no camera is detected, a video dataset (set of images or video) can be loaded. These images are then processed in a standard way.</p>
-<p>The code developed during the Pulsalys project "NEUROIMAGERIE" is contained in the PCoeff class.</p>
-<h1 class="doxsection"><a class="anchor" id="install_sec"></a>
-Installation on Fedora</h1>
-<p>This program is coded in C++ with the framework Qt and the compiler g++.</p>
-<p>First Qt should be installed (&gt;=6.10.1)</p><ul>
-<li>Download the Qt online installer : <a href="https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4">https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4</a></li>
-<li>Install Qt with its additional libraries (custom installation) : Qt5 Compatibility mode, Qt charts, Qt multimedia, Qt Sensors, Qt serial bus, Qt serial port, Qt Shader tools</li>
-</ul>
-<p>Different libraries and framework should be installed in order to use the softwares properly.</p><ul>
-<li>Opencv (latest version): sudo dnf install opencv opencv-contrib opencv-doc python3-opencv python3-matplotlib python3-numpy</li>
-<li>Boost (latest version): sudo dnf install boost boost-devel</li>
-<li>fftw (latest version): sudo dnf install fftw fftw-devel</li>
-<li>The Pylon framework has to be installed to acquire images from a Basler camera. Please download the installation guidelines here: <a href="https://www.baslerweb.com/en/sales-support/downloads/software-downloads/pylon-5-1-0-linux-x86-64-bit-debian/">https://www.baslerweb.com/en/sales-support/downloads/software-downloads/pylon-5-1-0-linux-x86-64-bit-debian/</a></li>
-</ul>
-<p>The file has a .deb extension and need to be converted into .rpm to be installed under fedora:</p>
-<ul>
-<li>First install alien: sudo dnf intall alien</li>
-<li>Convert the deb file into rpm: alien -r pylon*.deb</li>
-<li>Install the rpm file: sudo rpm -i pylon*.rpm</li>
-</ul>
-<p>Depending on the version of Pylon, symbolic links need to be created:</p><ul>
-<li>cd /opt/pylon5/lib64</li>
-<li>sudo ln -s libGCBase_gcc_v3_1_Basler_pylon_v5_1.so libGCBase.so</li>
-<li>sudo ln -s libGenApi_gcc_v3_1_Basler_pylon_v5_1.so libGenApi.so</li>
-</ul>
-<h1 class="doxsection"><a class="anchor" id="sec_deployment_Fedora"></a>
-Deployment on Fedora</h1>
-<p>Deployment scripts are located in the folder script.</p>
-<ul>
-<li>To deploy the soft on Fedora, please download the last release of the appimage of linuxdeploy-x86_64.AppImage (<a href="https://github.com/linuxdeploy/linuxdeploy/releases/tag/1-alpha-20251107-1">https://github.com/linuxdeploy/linuxdeploy/releases/tag/1-alpha-20251107-1</a>) and linuxdeploy-plugin-qt-x86_64.AppImage (<a href="https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/tag/1-alpha-20250213-1">https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/tag/1-alpha-20250213-1</a>)</li>
-<li>Place it in the following directory: ~/Soft/ and make it executable (chmod +x linuxdeploy*)</li>
-<li>In .bashrc file add the line: PATH: export PATH="~/Soft:$PATH"</li>
-<li>[If necessary] In the script script/linux_deploy_app.sh, adapt the path of the current Qt version</li>
-<li>Run the script linux_deploy.sh to create an appimage of the soft: ./linux_deploy.sh ~/Soft It will create the an appImage of the soft (standalone) that could be use on other computers having the same fedora distribs.</li>
-</ul>
+<p><b>fOptics</b> is a software tool for processing intraoperative RGB video or RGB image data to identify activated functional brain areas during neurosurgical operations. <br  />
+</p>
 <h1 class="doxsection"><a class="anchor" id="install_sec_win"></a>
 Installation on Windows</h1>
 <p>This program is coded in C++ with the framework Qt and the Microsoft Visual Studio 2022.</p>
@@ -193,22 +156,7 @@ Deployment on Windows</h1>
 <p>Execute the bat script windows_create_venv.bat. [If necessary] In the script, adapt the path of the current Qt version.</p>
 <h1 class="doxsection"><a class="anchor" id="sec_soft_architecture"></a>
 Software architecture</h1>
-<p>The software architecture is roughly represented by the next figure (to simplify the reading, not all classes are represented in this schematic). The following steps describe how the software works :</p>
-<ul>
-<li>1) The software automatically tries to connect an available Basler camera. If a camera is connected the graphical interface contained in HCameraPamars is displayed, otherwise, a video dataset (set of images or video) can be loaded and the graphical interface contained in <a class="el" href="classHLoadDatas.html">HLoadDatas</a> is displayed.</li>
-<li>1) The user uses the graphical interface to launch data acquisition or to load dataset.</li>
-<li>2) Acquired or loaded images are sent to the class <a class="el" href="classAPostAcquisition.html">APostAcquisition</a> to compute pre processing (image cropping and undersampling).</li>
-<li>3) Pre processed images are sent to the class <a class="el" href="classARegistration.html">ARegistration</a> to compensate the motionin the images using the algorithm developped by Michaël Sdika <a href="https://doi.org/10.1016/j.media.2018.12.005">https://doi.org/10.1016/j.media.2018.12.005</a></li>
-<li>4) Images with motion compensated are sent to the class PExtractData for data extraction. The images are formatted in a single table according to the region of interest defined by the user (or automatically calculated, see PAutomatic_ROI_Detection).</li>
-<li>5) Formated images are stored into the computer RAM.</li>
-<li>6) When all images have been stored into the computer RAM, temporal filtering is computed (low-pass fitering, data correction, cardiac filtering)</li>
-<li>7) Data filtered with the cardiac filter are sent to the PCoeff class. In this class, the automatic calibration procedure is executed in order to get a matrix of coefficient to automatically quantify hemodynamics in tissue.</li>
-<li>8) The autocalibration matrix is sent to the PAnalysis class for quantifying hemodynamics in tissue using low-pass filtered data (filtered in <a class="el" href="classPFiltering.html">PFiltering</a>).</li>
-<li>9) The hemodynamic contrasts are obtained by projecting the absorbance changes measured at the surface of the tissue on the orthonormal basis calculated in step 7).</li>
-<li>10) The <a class="el" href="classP__SPM.html">P_SPM</a> class is used to calculate statistic inferences. It allows to obtain t-stats matrix and a binary mask that indicates the extent of the activated functional brain areas.</li>
-<li>11) The activation masks are merged with the initial image in <a class="el" href="classHdisplayResult.html">HdisplayResult</a> class. Then the class <a class="el" href="classHImageDisplay.html">HImageDisplay</a> is used to display results.</li>
-</ul>
-<div class="image">
+<p>The software architecture is roughly represented by the next figure (to simplify the reading, not all classes are represented in this schematic). </p><div class="image">
 <img src="software_architecture_RT_process.png" alt="" width="1500px"/>
 <div class="caption">
 Software architecture</div></div>
