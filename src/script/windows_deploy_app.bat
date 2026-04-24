@@ -20,6 +20,7 @@ set "QT_BIN=C:\Qt\6.11.0\msvc2022_64\bin"
 
 set "OPENCV_BIN=C:\opencv\install\x64\vc17\bin"
 set "FFTW_BIN=C:\fftw\lib"
+set "FFMPEG_BIN=C:\vcpkg\installed\x64-windows\bin"
 
 
 
@@ -89,6 +90,9 @@ xcopy "%OPENCV_BIN%\opencv_videoio_*.dll" "%DEPLOY_DIR%\" /Y
 
 REM Copy FFTW dll
 xcopy "%FFTW_BIN%\fftw3*.lib" "%DEPLOY_DIR%\" /Y
+
+REM Copy ffmpeg dll
+xcopy "%FFMPEG_BIN%\*.dll" "%DEPLOY_DIR%\" /Y
 
 
 xcopy "C:\Windows\System32\vcomp140.dll" "%DEPLOY_DIR%\" /Y

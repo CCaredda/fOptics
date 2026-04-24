@@ -42,6 +42,7 @@ To build the app, please refer to the compilation instructions here: [Documentat
 ---
 
 ## Usage Notes
+
 To ensure optimal performance:
 
 Close other programs before running **fOptics**.  
@@ -50,7 +51,9 @@ The software uses a multi-threaded approach to accelerate data computation. Runn
 ---
 
 ## License
+
 This project is licensed under the GNU GPL v3. See the `LICENSE` file for details.
+
 ---
 
 ## Contact

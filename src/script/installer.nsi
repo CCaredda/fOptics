@@ -54,9 +54,9 @@ Section "Install" SEC_INSTALL
 	
 	; --- 3) Create Desktop shortcut ---
     CreateShortCut "$DESKTOP\foptics.lnk"        \
-                   "$INSTDIR\fOptics\Software\bin\Process_multi_thread_RT.exe" \
+                   "$INSTDIR\fOptics\Software\bin\fOptics.exe" \
                    ""                          \
-                   "$INSTDIR\fOptics\Software\bin\Process_multi_thread_RT.exe" \
+                   "$INSTDIR\fOptics\Software\bin\fOptics.exe" \
                    0
 				   
 				   ; Bundle the icon file inside the installer
@@ -64,7 +64,7 @@ Section "Install" SEC_INSTALL
 
 	; Create desktop shortcut with icon
 	CreateShortCut "$DESKTOP\foptics.lnk"         \
-				   "$INSTDIR\fOptics\Software\bin\Process_multi_thread_RT.exe" \
+				   "$INSTDIR\fOptics\Software\bin\fOptics.exe" \
 				   ""                            \
 				   "$INSTDIR\icone_qkP_icon.ico"          \
 				   0
