@@ -5,6 +5,9 @@
 Related research papers are available in the `papers/` directory.
 If you use this software in your work, please cite the following publication:  **XXXX**
 
+
+**For research use only — not for diagnostic or clinical use.**
+
 ---
 
 ## Features
@@ -47,8 +50,7 @@ The software uses a multi-threaded approach to accelerate data computation. Runn
 ---
 
 ## License
-This project is licensed under the 3-Clause BSD License. See the `LICENSE` file for details.
-
+This project is licensed under the GNU GPL v3. See the `LICENSE` file for details.
 ---
 
 ## Contact
