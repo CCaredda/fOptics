@@ -1,0 +1,23 @@
+Camera Frame Rate (FPS) : 60.0
+Theorical Frame Rate (FPS) : 60.0
+Exposure time (us) : -1
+Camera Gain : -1
+Red ratio : -1
+Green ratio : -1
+Blue ratio : -1
+RGB_camera : 1
+Camera_name : Basler
+Light_source_type : Halogen
+Step 0 : 4228
+Step 1 : 5434
+Step 2 : 6616
+Step 3 : 7855
+Step 4 : 9007
+Step 5 : 10211
+Step 6 : 11357
+Step 7 : 12595
+Step 8 : 14451
+Start task-based : 0
+End task-based : 14451
+Frame count 1 : 14452
+Comments : Put your comment here
