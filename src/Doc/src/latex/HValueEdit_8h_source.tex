@@ -1,0 +1,50 @@
+\doxysection{HValue\+Edit.\+h}
+\hypertarget{HValueEdit_8h_source}{}\label{HValueEdit_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Widget/inc/HValueEdit.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Widget/inc/HValueEdit.h}}
+\doxymbox{\hyperlink{HValueEdit_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ HVALUEEDIT\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ HVALUEEDIT\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{HKeypad_8h}{HKeypad.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }HValueEdit\ :\ \textcolor{keyword}{public}\ QLineEdit}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{explicit}\ HValueEdit(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~HValueEdit();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ setRange(\textcolor{keywordtype}{double}\ min,\textcolor{keywordtype}{double}\ max,QString\ unite=QString());}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(\textcolor{keywordtype}{double}\ );}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ value();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntegerMode(\textcolor{keywordtype}{bool}\ integerMode=\textcolor{keyword}{true})\ \ \{m\_integer\_mode=integerMode;\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ signals:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ valueEdited(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}\ slots\ :}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ onEditingFinished();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ private\ :}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_current\_value;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_integer\_mode;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_min;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_max;}
+\DoxyCodeLine{00048\ \ \ \ \ QString\ m\_unite;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HVALUEEDIT\_H}}
+
+\end{DoxyCode}

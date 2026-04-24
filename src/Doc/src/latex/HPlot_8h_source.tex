@@ -1,0 +1,57 @@
+\doxysection{HPlot.\+h}
+\hypertarget{HPlot_8h_source}{}\label{HPlot_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HPlot.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HPlot.h}}
+\doxymbox{\hyperlink{HPlot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ HPLOT\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ HPLOT\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }HPlot;}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }HPlot\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{explicit}\ HPlot(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00028\ \ \ \ \ \string~HPlot();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_ae3a6ce0ef1102c35b97c72498745d923}{setPlotNames}}(QVector<QString>\ n);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a16f7b15f874f3cfa03025ec4bc8413cb}{setYName}}(QString);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_ad5aacd3822db6a6f4fd950be7dbacbf5}{setXName}}(QString\ n);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a33f01210fede9b2262402e1c21631728}{Plot\_HS\_registration\_results}}(QVector<QVector<QVector<float>\ >\ >);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a934c750237f82989bd12c07b14745f2a}{setYInterval}}(\textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_af704685632b99bd770bac10b3bb9ecf7}{setXInterval}}(\textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a838327b9192ea7aac9ec8697d1dd15d2}{setXStart}}(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a82d4a3f7e9b2677310536eb83b34f8f7}{setYValue}}(QVector<QVector<float>\ >\ v);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a493c9aa8f67ff95e97e18dd860b6c7c0}{setFrameRate}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \{\_M\_FS=v;\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a9d35c4ceb8abcb3f5bf258b3ead23c00}{onNewActivationTimes}}(QVector<double>\ v);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHPlot_a6e1d37adb4a5fb25f3be614e77f588da}{onnewBoldSignal}}(QVector<float>\ v);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ Ui::HPlot\ *ui;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ QVector<QVector<float>\ >\ \_M\_plot1;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_FS;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HPLOT\_H}}
+
+\end{DoxyCode}

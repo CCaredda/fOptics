@@ -1,0 +1,55 @@
+\doxysection{oxygenation.\+h}
+\hypertarget{oxygenation_8h_source}{}\label{oxygenation_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/oxygenation.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/oxygenation.h}}
+\doxymbox{\hyperlink{oxygenation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ OXYGENATION\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ OXYGENATION\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc/imgproc.hpp>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc/imgproc\_c.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc/types\_c.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <opencv2/core/core.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <opencv2/core/core.hpp>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{vblobForeach_8h}{vblobForeach.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ \#include\ "{}filtering.h"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Statistic__functions_8h}{Statistic\_functions.h}}"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{using\ namespace\ }cv;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*****************************************************}}
+\DoxyCodeLine{00038\ \textcolor{comment}{***************Mesure\ quantitative********************}}
+\DoxyCodeLine{00039\ \textcolor{comment}{***************\ **************************************/}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*****************************************************}}
+\DoxyCodeLine{00042\ \textcolor{comment}{***************Mesure\ probabiliste********************}}
+\DoxyCodeLine{00043\ \textcolor{comment}{***************\ **************************************/}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{oxygenation_8h_a4c3e9b1315775d3963e5810a2ea796e1}{Compare\_Bold\_Vs\_Oxy}}(QVector<QVector<float>\ >\ \&contrast,\ QVector<QVector<float>\ >\ \&model,\ QVector<double>\ \&stat\_vec);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*****************************************************}}
+\DoxyCodeLine{00049\ \textcolor{comment}{***************MBLL\ functions*************************}}
+\DoxyCodeLine{00050\ \textcolor{comment}{***************\ **************************************/}}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{oxygenation_8h_a724dfdf7301b61b85123b6251df356de}{getReference\_Single\_Deconvolution}}(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end,\textcolor{keywordtype}{int}\ NbChannels,QVector<float>\ \&mean\_val);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{oxygenation_8h_a914f24748dd30539304b21d84cd6325d}{process\_Single\_Deconvolution}}(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\ \textcolor{keywordtype}{int}\ t,\ QVector<float>\ \&OD,\ QVector<float>\ \&mean\_val,\ \textcolor{keywordtype}{int}\ NbChannels,\ \textcolor{keywordtype}{int}\ nb\_chromophore,\ \textcolor{keyword}{const}\ Mat\ \&Molar\_coeff,\ QVector<float>\ \&measure);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//OXYGENATION\_H}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+
+\end{DoxyCode}

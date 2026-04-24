@@ -1,0 +1,134 @@
+\doxysection{acquisition.\+h}
+\hypertarget{acquisition_8h_source}{}\label{acquisition_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/acquisition.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/acquisition.h}}
+\doxymbox{\hyperlink{acquisition_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ ACQUISITION\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ACQUISITION\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{vblobForeach_8h}{vblobForeach.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{oxygenation_8h}{oxygenation.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{filtering_8h}{filtering.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QRegularExpression>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{loadinfos_8h}{loadinfos.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <boost/math/interpolators/cardinal\_cubic\_b\_spline.hpp>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <fftw3.h>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ Cluster\_Grey\_Matter\ 1}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ Cluster\_Blood\_Surface\ 2}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ Cluster\_Burried\_Blood\ 3}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ Activation\_GLM\_Pixel\_wise\ 0}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ Activation\_GLM\_auto\_thesh\ 1}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ Process\_Mean\_Delta\_C\ 2}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ Process\_Correlation\ 3}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ Camera\_RGB\_Basler\ 0}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ Light\_source\_Halogen\ 0}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\#define\ Activation\_stat\_2\_Samples\_T\_Tests\ 3}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//STRUCTURES}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ QVector<QVector<QVector<float>\ >\ >\ \ *data;}
+\DoxyCodeLine{00052\ \ \ \ \ QVector<Point>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *pixels\_pos;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Mat\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *img;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *spatial\_sampling;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *id;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *img\_id;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \}\doxymbox{\hyperlink{struct__Datas__infos}{\_Datas\_infos}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Mat\ \ \ *imgref;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Mat\ \ \ *img2;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ *sum\_ref;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ *sum\_squared\_ref;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ *sum\_cp;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ *sum\_squared\_cp;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ *sum\_prod;}
+\DoxyCodeLine{00070\ \}\doxymbox{\hyperlink{struct__Datas__NCC}{\_Datas\_NCC}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ *id;}
+\DoxyCodeLine{00075\ \ \ \ \ Mat\ \ \ *raw\_data;}
+\DoxyCodeLine{00076\ \ \ \ \ Mat\ \ \ *img;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ *spatial\_sampling;}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ \doxymbox{\hyperlink{struct__Raw__Datas}{\_Raw\_Datas}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{acquisition_8h_a85c300ce7015580c4aa572a2677ac4c5}{decode\_Light\_source\_type}}(QString\ code);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{acquisition_8h_afbe8d48365f0e1b4859bfde988eaef12}{decode\_Camera\_name}}(QString\ code);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a7959d220197cc9462391b939cf2f67e5}{addData}}(\textcolor{keyword}{const}\ Mat\ \&mat,std::vector<cv::Point>\ \&ROI\_contour,QVector<QVector<QVector<float>\ >\ >\ \&\_data,\textcolor{keywordtype}{int}\ spatial\_sampling,\textcolor{keywordtype}{int}\ img\_id);}
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a7959d220197cc9462391b939cf2f67e5}{addData}}(\textcolor{keyword}{const}\ Mat\ \&mat,\ std::vector<cv::Point>\ \&ROI\_contour,\ QVector<QVector<QVector<float>\ >\ >\ \&\_data,\ \textcolor{keywordtype}{int}\ spatial\_sampling);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_ab1720e7ef63f7907942d755384b2d614}{getPixelPos}}(QVector<cv::Point>\ \&pixels\_pos,\ std::vector<cv::Point>\ \&ROI\_contour,\ cv::Size\ size,\ \textcolor{keywordtype}{int}\ spatial\_sampling);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a29cd5d4484c2b8df9c51321d868f4248}{reConstructImg}}(\textcolor{keyword}{const}\ QVector<int>\ \&labels,\ Mat\ \&img\_out,\ \textcolor{keyword}{const}\ QVector<Point>\ \&pixels\_pos,\ cv::Size\ size,\ \textcolor{keywordtype}{int}\ Sampling);}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a29cd5d4484c2b8df9c51321d868f4248}{reConstructImg}}(\textcolor{keyword}{const}\ Mat\ \&labels,\ Mat\ \&img\_out,\ \textcolor{keyword}{const}\ QVector<Point>\ \&\ pixels\_pos,\ cv::Size\ size,\ \textcolor{keywordtype}{int}\ Sampling);}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_afabb67946aed6c99fb19633c56070250}{CreateRawDataVector}}(Mat\ \&datas\_row,std::vector<cv::Point>\ \&ROI\_contour,Mat\ \&img,\textcolor{keywordtype}{int}\ spatial\_sampling);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}{WriteTemporalVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&tempoal\_vec);}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}{WriteTemporalVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<float>\ \&tempoal\_vec);}
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}{WriteTemporalVector}}(\textcolor{keyword}{const}\ QString\ path,fftwf\_complex\ \ *tempoal\_vec,\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}{WriteTemporalVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<double>\ \&tempoal\_vec);}
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}{WriteTemporalVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<int>\ \&tempoal\_vec);}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}{WriteTemporalVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<QVector<double>\ >\ \&tempoal\_vec);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a79118a1cd561190ad194071529ea247b}{WritePointVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<Point>\ \&P);}
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a79118a1cd561190ad194071529ea247b}{WritePointVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<QPoint>\ \&P);}
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a98a071bb362164b8652b72bb77bdbbd3}{WriteBGRVector}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ QVector<Scalar>\ \&bgr);}
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a7c1a56be0cc9e765dd34d8c22b239f06}{WriteFloatImg}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ Mat\ img);}
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ WriteFloatImg\_bin(\textcolor{keyword}{const}\ QString\ path,\ \textcolor{keyword}{const}\ Mat\ img);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a0c157039cd365709568aca5e1c075d3b}{WriteDoubleImg}}(\textcolor{keyword}{const}\ QString\ path,\textcolor{keyword}{const}\ Mat\ img);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_a88c08a10d15d3da3409fcb77d0d6262c}{ReadFloatImg}}(\textcolor{keyword}{const}\ QString\ path,Mat\ \&img);}
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_af02ec550867e195f4a3ce43170e2f572}{ReadVector}}(\textcolor{keyword}{const}\ QString\ path,QVector<double>\ \&out);}
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_af02ec550867e195f4a3ce43170e2f572}{ReadVector}}(\textcolor{keyword}{const}\ QString\ path,QVector<float>\ \&out);}
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_af02ec550867e195f4a3ce43170e2f572}{ReadVector}}(\textcolor{keyword}{const}\ QString\ path,QVector<QVector\ <float>\ >\ \&out);}
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ ReadDoubleVector(\textcolor{keyword}{const}\ QString\ path,QVector<QVector\ <double>\ >\ \&out);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_adf013c792312d600defa6bccf3176654}{load\_Matrix}}(QString\ path,\ QVector<QVector<double>\ >\ \&matrix);}
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_adf013c792312d600defa6bccf3176654}{load\_Matrix}}(QString\ path,QVector<QVector<int>\ >\ \&matrix);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{acquisition_8h_a89c3d33cb18462d1904e02f9ad2f3331}{NormalizeCrossCorrelation}}(\textcolor{keyword}{const}\ Mat\ \&matref,\textcolor{keyword}{const}\ Mat\ \&mat2,std::vector<cv::Point>\ \&ROI\_contour);}
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_aaaf25ea13c608dc52b5e758a9ea83f91}{CreateContrastImg}}(Mat\ \&img\_contrast,\ \textcolor{keywordtype}{int}\ spatialSampling,\ QVector<Point>\ \&Pixel\_pos,\ QVector<double>\ \&contrast);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ Mat\ \doxymbox{\hyperlink{acquisition_8h_a436b69a07af3e5d6d7d48489cd5aed02}{mergeImg}}(\textcolor{keyword}{const}\ Mat\ \&in,Mat\ \&mask,\textcolor{keywordtype}{double}\ alpha);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{acquisition_8h_aef514ce7f606f91711de8e518adfb007}{computeConvolvedSignals}}(\textcolor{keyword}{const}\ QVector<float>\&\ bold,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QVector<float>\&\ yParadigm,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Fs,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QVector<float>\&\ \ \ \ \ \ \ \ resConvolve);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ACQUISITION\_H}}
+
+\end{DoxyCode}

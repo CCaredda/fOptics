@@ -1,0 +1,271 @@
+\doxysection{C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Vision/\+inc/\+acquisition.h File Reference}
+\hypertarget{acquisition_8h}{}\label{acquisition_8h}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/acquisition.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/acquisition.h}}
+
+
+Set of functions used to extract data from images. Definition of global variables to facilitate the reading of the code.  
+
+
+{\ttfamily \+\#include $<$QObject$>$}\newline
+{\ttfamily \+\#include $<$QVector$>$}\newline
+{\ttfamily \+\#include "{}pobject.\+h"{}}\newline
+{\ttfamily \+\#include $<$QDebug$>$}\newline
+{\ttfamily \+\#include "{}vblob\+Foreach.\+h"{}}\newline
+{\ttfamily \+\#include "{}oxygenation.\+h"{}}\newline
+{\ttfamily \+\#include "{}filtering.\+h"{}}\newline
+{\ttfamily \+\#include $<$QRegular\+Expression$>$}\newline
+{\ttfamily \+\#include $<$QDir$>$}\newline
+{\ttfamily \+\#include $<$QCore\+Application$>$}\newline
+{\ttfamily \+\#include "{}loadinfos.\+h"{}}\newline
+{\ttfamily \+\#include $<$cmath$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$boost/\+math/\+interpolators/\+cardinal\+\_\+cubic\+\_\+b\+\_\+spline.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$fftw3.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct__Datas__infos}{\+\_\+\+Datas\+\_\+infos}}
+\item 
+struct \doxymbox{\hyperlink{struct__Datas__NCC}{\+\_\+\+Datas\+\_\+\+NCC}}
+\item 
+struct \doxymbox{\hyperlink{struct__Raw__Datas}{\+\_\+\+Raw\+\_\+\+Datas}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{acquisition_8h_ae964483e5db46b621ecfe58865bc83e1}\label{acquisition_8h_ae964483e5db46b621ecfe58865bc83e1} 
+\+\#define {\bfseries Cluster\+\_\+\+Grey\+\_\+\+Matter}~1
+\item 
+\Hypertarget{acquisition_8h_a637de409b9e647b0112becbb02265223}\label{acquisition_8h_a637de409b9e647b0112becbb02265223} 
+\+\#define {\bfseries Cluster\+\_\+\+Blood\+\_\+\+Surface}~2
+\item 
+\Hypertarget{acquisition_8h_af7fbd2d0bc361b2217316379f6160104}\label{acquisition_8h_af7fbd2d0bc361b2217316379f6160104} 
+\+\#define {\bfseries Cluster\+\_\+\+Burried\+\_\+\+Blood}~3
+\item 
+\Hypertarget{acquisition_8h_a1f068e486ab0f123bce55ef299f8121c}\label{acquisition_8h_a1f068e486ab0f123bce55ef299f8121c} 
+\+\#define {\bfseries Activation\+\_\+\+GLM\+\_\+\+Pixel\+\_\+wise}~0
+\item 
+\Hypertarget{acquisition_8h_a49763768323f3bf3fa19f55868bf7cfd}\label{acquisition_8h_a49763768323f3bf3fa19f55868bf7cfd} 
+\+\#define {\bfseries Activation\+\_\+\+GLM\+\_\+auto\+\_\+thesh}~1
+\item 
+\Hypertarget{acquisition_8h_a7db46fd6898af095f06176536074b500}\label{acquisition_8h_a7db46fd6898af095f06176536074b500} 
+\+\#define {\bfseries Process\+\_\+\+Mean\+\_\+\+Delta\+\_\+C}~2
+\item 
+\Hypertarget{acquisition_8h_a8b8c5beac58afe57ebae67f03706c715}\label{acquisition_8h_a8b8c5beac58afe57ebae67f03706c715} 
+\+\#define {\bfseries Process\+\_\+\+Correlation}~3
+\item 
+\Hypertarget{acquisition_8h_a61bc79dc3477ced5ce6fcad48cdd27a9}\label{acquisition_8h_a61bc79dc3477ced5ce6fcad48cdd27a9} 
+\+\#define {\bfseries Camera\+\_\+\+RGB\+\_\+\+Basler}~0
+\item 
+\Hypertarget{acquisition_8h_a358fab4846304405c08177209ddcd5e4}\label{acquisition_8h_a358fab4846304405c08177209ddcd5e4} 
+\+\#define {\bfseries Light\+\_\+source\+\_\+\+Halogen}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{acquisition_8h_a85c300ce7015580c4aa572a2677ac4c5}{decode\+\_\+\+Light\+\_\+source\+\_\+type}} (QString code)
+\item 
+int \doxymbox{\hyperlink{acquisition_8h_afbe8d48365f0e1b4859bfde988eaef12}{decode\+\_\+\+Camera\+\_\+name}} (QString code)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a7959d220197cc9462391b939cf2f67e5}{add\+Data}} (const Mat \&mat, std::\+vector$<$ cv::\+\+Point $>$ \&ROI\+\_\+contour, QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$ \&\+\_\+data, int spatial\+\_\+sampling, int img\+\_\+id)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a55ae9d518cc810450771b50b5aaebb34}{add\+Data}} (const Mat \&mat, std::\+vector$<$ cv::\+\+Point $>$ \&ROI\+\_\+contour, QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$ \&\+\_\+data, int spatial\+\_\+sampling)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_ab1720e7ef63f7907942d755384b2d614}{get\+Pixel\+Pos}} (QVector$<$ cv::\+\+Point $>$ \&pixels\+\_\+pos, std::\+vector$<$ cv::\+\+Point $>$ \&ROI\+\_\+contour, cv::\+\+Size size, int spatial\+\_\+sampling)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a29cd5d4484c2b8df9c51321d868f4248}{re\+Construct\+Img}} (const QVector$<$ int $>$ \&labels, Mat \&img\+\_\+out, const QVector$<$ Point $>$ \&pixels\+\_\+pos, cv::\+\+Size size, int Sampling)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_afeae36a18fd6c095c01edd3c4b3860cb}{re\+Construct\+Img}} (const Mat \&labels, Mat \&img\+\_\+out, const QVector$<$ Point $>$ \&pixels\+\_\+pos, cv::\+\+Size size, int Sampling)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_afabb67946aed6c99fb19633c56070250}{Create\+Raw\+Data\+Vector}} (Mat \&datas\+\_\+row, std::\+vector$<$ cv::\+\+Point $>$ \&ROI\+\_\+contour, Mat \&img, int spatial\+\_\+sampling)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}{Write\+Temporal\+Vector}} (const QString path, const QVector$<$ QVector$<$ float $>$ $>$ \&tempoal\+\_\+vec)
+\item 
+\Hypertarget{acquisition_8h_a0d716f12d191ff0008e4040212977171}\label{acquisition_8h_a0d716f12d191ff0008e4040212977171} 
+void {\bfseries Write\+Temporal\+Vector} (const QString path, const QVector$<$ float $>$ \&tempoal\+\_\+vec)
+\item 
+\Hypertarget{acquisition_8h_aef7d3cc6633f47be652f83c3a413eff3}\label{acquisition_8h_aef7d3cc6633f47be652f83c3a413eff3} 
+void {\bfseries Write\+Temporal\+Vector} (const QString path, fftwf\+\_\+complex \texorpdfstring{$\ast$}{*}tempoal\+\_\+vec, int N)
+\item 
+\Hypertarget{acquisition_8h_a26b6b798bd9095d1ece7fd98218b98e8}\label{acquisition_8h_a26b6b798bd9095d1ece7fd98218b98e8} 
+void {\bfseries Write\+Temporal\+Vector} (const QString path, const QVector$<$ double $>$ \&tempoal\+\_\+vec)
+\item 
+\Hypertarget{acquisition_8h_a539766a3a63c60ace352f2483c51d580}\label{acquisition_8h_a539766a3a63c60ace352f2483c51d580} 
+void {\bfseries Write\+Temporal\+Vector} (const QString path, const QVector$<$ int $>$ \&tempoal\+\_\+vec)
+\item 
+\Hypertarget{acquisition_8h_ae834b35446e2de804a8e18caad7eac69}\label{acquisition_8h_ae834b35446e2de804a8e18caad7eac69} 
+void {\bfseries Write\+Temporal\+Vector} (const QString path, const QVector$<$ QVector$<$ double $>$ $>$ \&tempoal\+\_\+vec)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a79118a1cd561190ad194071529ea247b}{Write\+Point\+Vector}} (const QString path, const QVector$<$ Point $>$ \&P)
+\item 
+\Hypertarget{acquisition_8h_aa91c09729cfaad6b26e83b172d08aeb4}\label{acquisition_8h_aa91c09729cfaad6b26e83b172d08aeb4} 
+void {\bfseries Write\+Point\+Vector} (const QString path, const QVector$<$ QPoint $>$ \&P)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a98a071bb362164b8652b72bb77bdbbd3}{Write\+BGRVector}} (const QString path, const QVector$<$ Scalar $>$ \&bgr)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a7c1a56be0cc9e765dd34d8c22b239f06}{Write\+Float\+Img}} (const QString path, const Mat img)
+\item 
+\Hypertarget{acquisition_8h_ab333f0075ce87a26c37a4ae9441b7674}\label{acquisition_8h_ab333f0075ce87a26c37a4ae9441b7674} 
+void {\bfseries Write\+Float\+Img\+\_\+bin} (const QString path, const Mat img)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a0c157039cd365709568aca5e1c075d3b}{Write\+Double\+Img}} (const QString path, const Mat img)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_a88c08a10d15d3da3409fcb77d0d6262c}{Read\+Float\+Img}} (const QString path, Mat \&img)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_af02ec550867e195f4a3ce43170e2f572}{Read\+Vector}} (const QString path, QVector$<$ double $>$ \&out)
+\item 
+\Hypertarget{acquisition_8h_a960277a908708c89b0fac73f13316211}\label{acquisition_8h_a960277a908708c89b0fac73f13316211} 
+void {\bfseries Read\+Vector} (const QString path, QVector$<$ float $>$ \&out)
+\item 
+\Hypertarget{acquisition_8h_a0b5b8c287432a0fa1973831284a8e4d0}\label{acquisition_8h_a0b5b8c287432a0fa1973831284a8e4d0} 
+void {\bfseries Read\+Vector} (const QString path, QVector$<$ QVector$<$ float $>$ $>$ \&out)
+\item 
+\Hypertarget{acquisition_8h_aecc8f408941d252050c5ec111e116c15}\label{acquisition_8h_aecc8f408941d252050c5ec111e116c15} 
+void {\bfseries Read\+Double\+Vector} (const QString path, QVector$<$ QVector$<$ double $>$ $>$ \&out)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_adf013c792312d600defa6bccf3176654}{load\+\_\+\+Matrix}} (QString path, QVector$<$ QVector$<$ double $>$ $>$ \&matrix)
+\item 
+\Hypertarget{acquisition_8h_a202c799ef40a7b9fb0eaa5ca11173219}\label{acquisition_8h_a202c799ef40a7b9fb0eaa5ca11173219} 
+void {\bfseries load\+\_\+\+Matrix} (QString path, QVector$<$ QVector$<$ int $>$ $>$ \&matrix)
+\item 
+float \doxymbox{\hyperlink{acquisition_8h_a89c3d33cb18462d1904e02f9ad2f3331}{Normalize\+Cross\+Correlation}} (const Mat \&matref, const Mat \&mat2, std::\+vector$<$ cv::\+\+Point $>$ \&ROI\+\_\+contour)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_aaaf25ea13c608dc52b5e758a9ea83f91}{Create\+Contrast\+Img}} (Mat \&img\+\_\+contrast, int spatial\+Sampling, QVector$<$ Point $>$ \&Pixel\+\_\+pos, QVector$<$ double $>$ \&contrast)
+\item 
+Mat \doxymbox{\hyperlink{acquisition_8h_a436b69a07af3e5d6d7d48489cd5aed02}{merge\+Img}} (const Mat \&in, Mat \&mask, double alpha)
+\item 
+void \doxymbox{\hyperlink{acquisition_8h_aef514ce7f606f91711de8e518adfb007}{compute\+Convolved\+Signals}} (const QVector$<$ float $>$ \&bold, const QVector$<$ float $>$ \&y\+Paradigm, float Fs, QVector$<$ float $>$ \&res\+Convolve)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of functions used to extract data from images. Definition of global variables to facilitate the reading of the code. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact:\+ \href{mailto:caredda.c@gmail.com}{\texttt{caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{acquisition_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{acquisition_8h_a55ae9d518cc810450771b50b5aaebb34}\index{acquisition.h@{acquisition.h}!addData@{addData}}
+\index{addData@{addData}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{acquisition_8h_a55ae9d518cc810450771b50b5aaebb34} 
+void add\+Data (\begin{DoxyParamCaption}\item[{const Mat \&}]{mat}{, }\item[{std::\+vector$<$ cv::\+\+Point $>$ \&}]{ROI\+\_\+contour}{, }\item[{QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$ \&}]{\+\_\+data}{, }\item[{int}]{spatial\+\_\+sampling}{}\end{DoxyParamCaption})}
+
+Add image intensities to Datas vectors \Hypertarget{acquisition_8h_a7959d220197cc9462391b939cf2f67e5}\index{acquisition.h@{acquisition.h}!addData@{addData}}
+\index{addData@{addData}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{acquisition_8h_a7959d220197cc9462391b939cf2f67e5} 
+void add\+Data (\begin{DoxyParamCaption}\item[{const Mat \&}]{mat}{, }\item[{std::\+vector$<$ cv::\+\+Point $>$ \&}]{ROI\+\_\+contour}{, }\item[{QVector$<$ QVector$<$ QVector$<$ float $>$ $>$ $>$ \&}]{\+\_\+data}{, }\item[{int}]{spatial\+\_\+sampling}{, }\item[{int}]{img\+\_\+id}{}\end{DoxyParamCaption})}
+
+Add image intensities to Datas vectors \Hypertarget{acquisition_8h_aef514ce7f606f91711de8e518adfb007}\index{acquisition.h@{acquisition.h}!computeConvolvedSignals@{computeConvolvedSignals}}
+\index{computeConvolvedSignals@{computeConvolvedSignals}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{computeConvolvedSignals()}{computeConvolvedSignals()}}
+{\footnotesize\ttfamily \label{acquisition_8h_aef514ce7f606f91711de8e518adfb007} 
+void compute\+Convolved\+Signals (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{bold}{, }\item[{const QVector$<$ float $>$ \&}]{y\+Paradigm}{, }\item[{float}]{Fs}{, }\item[{QVector$<$ float $>$ \&}]{res\+Convolve}{}\end{DoxyParamCaption})}
+
+Convolution \Hypertarget{acquisition_8h_aaaf25ea13c608dc52b5e758a9ea83f91}\index{acquisition.h@{acquisition.h}!CreateContrastImg@{CreateContrastImg}}
+\index{CreateContrastImg@{CreateContrastImg}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{CreateContrastImg()}{CreateContrastImg()}}
+{\footnotesize\ttfamily \label{acquisition_8h_aaaf25ea13c608dc52b5e758a9ea83f91} 
+void Create\+Contrast\+Img (\begin{DoxyParamCaption}\item[{Mat \&}]{img\+\_\+contrast}{, }\item[{int}]{spatial\+Sampling}{, }\item[{QVector$<$ Point $>$ \&}]{Pixel\+\_\+pos}{, }\item[{QVector$<$ double $>$ \&}]{contrast}{}\end{DoxyParamCaption})}
+
+Create contrast image \Hypertarget{acquisition_8h_afabb67946aed6c99fb19633c56070250}\index{acquisition.h@{acquisition.h}!CreateRawDataVector@{CreateRawDataVector}}
+\index{CreateRawDataVector@{CreateRawDataVector}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{CreateRawDataVector()}{CreateRawDataVector()}}
+{\footnotesize\ttfamily \label{acquisition_8h_afabb67946aed6c99fb19633c56070250} 
+void Create\+Raw\+Data\+Vector (\begin{DoxyParamCaption}\item[{Mat \&}]{datas\+\_\+row}{, }\item[{std::\+vector$<$ cv::\+\+Point $>$ \&}]{ROI\+\_\+contour}{, }\item[{Mat \&}]{img}{, }\item[{int}]{spatial\+\_\+sampling}{}\end{DoxyParamCaption})}
+
+Construct an inline image from a 2D image \Hypertarget{acquisition_8h_afbe8d48365f0e1b4859bfde988eaef12}\index{acquisition.h@{acquisition.h}!decode\_Camera\_name@{decode\_Camera\_name}}
+\index{decode\_Camera\_name@{decode\_Camera\_name}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{decode\_Camera\_name()}{decode\_Camera\_name()}}
+{\footnotesize\ttfamily \label{acquisition_8h_afbe8d48365f0e1b4859bfde988eaef12} 
+int decode\+\_\+\+Camera\+\_\+name (\begin{DoxyParamCaption}\item[{QString}]{code}{}\end{DoxyParamCaption})}
+
+Decode camera name \Hypertarget{acquisition_8h_a85c300ce7015580c4aa572a2677ac4c5}\index{acquisition.h@{acquisition.h}!decode\_Light\_source\_type@{decode\_Light\_source\_type}}
+\index{decode\_Light\_source\_type@{decode\_Light\_source\_type}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{decode\_Light\_source\_type()}{decode\_Light\_source\_type()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a85c300ce7015580c4aa572a2677ac4c5} 
+int decode\+\_\+\+Light\+\_\+source\+\_\+type (\begin{DoxyParamCaption}\item[{QString}]{code}{}\end{DoxyParamCaption})}
+
+Decode Light source type \Hypertarget{acquisition_8h_ab1720e7ef63f7907942d755384b2d614}\index{acquisition.h@{acquisition.h}!getPixelPos@{getPixelPos}}
+\index{getPixelPos@{getPixelPos}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{getPixelPos()}{getPixelPos()}}
+{\footnotesize\ttfamily \label{acquisition_8h_ab1720e7ef63f7907942d755384b2d614} 
+void get\+Pixel\+Pos (\begin{DoxyParamCaption}\item[{QVector$<$ cv::\+\+Point $>$ \&}]{pixels\+\_\+pos}{, }\item[{std::\+vector$<$ cv::\+\+Point $>$ \&}]{ROI\+\_\+contour}{, }\item[{cv::\+\+Size}]{size}{, }\item[{int}]{spatial\+\_\+sampling}{}\end{DoxyParamCaption})}
+
+Get pixel pos vector \Hypertarget{acquisition_8h_adf013c792312d600defa6bccf3176654}\index{acquisition.h@{acquisition.h}!load\_Matrix@{load\_Matrix}}
+\index{load\_Matrix@{load\_Matrix}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{load\_Matrix()}{load\_Matrix()}}
+{\footnotesize\ttfamily \label{acquisition_8h_adf013c792312d600defa6bccf3176654} 
+void load\+\_\+\+Matrix (\begin{DoxyParamCaption}\item[{QString}]{path}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{matrix}{}\end{DoxyParamCaption})}
+
+Load matrix \Hypertarget{acquisition_8h_a436b69a07af3e5d6d7d48489cd5aed02}\index{acquisition.h@{acquisition.h}!mergeImg@{mergeImg}}
+\index{mergeImg@{mergeImg}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{mergeImg()}{mergeImg()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a436b69a07af3e5d6d7d48489cd5aed02} 
+Mat merge\+Img (\begin{DoxyParamCaption}\item[{const Mat \&}]{in}{, }\item[{Mat \&}]{mask}{, }\item[{double}]{alpha}{}\end{DoxyParamCaption})}
+
+Merge two images with transparency \Hypertarget{acquisition_8h_a89c3d33cb18462d1904e02f9ad2f3331}\index{acquisition.h@{acquisition.h}!NormalizeCrossCorrelation@{NormalizeCrossCorrelation}}
+\index{NormalizeCrossCorrelation@{NormalizeCrossCorrelation}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{NormalizeCrossCorrelation()}{NormalizeCrossCorrelation()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a89c3d33cb18462d1904e02f9ad2f3331} 
+float Normalize\+Cross\+Correlation (\begin{DoxyParamCaption}\item[{const Mat \&}]{matref}{, }\item[{const Mat \&}]{mat2}{, }\item[{std::\+vector$<$ cv::\+\+Point $>$ \&}]{ROI\+\_\+contour}{}\end{DoxyParamCaption})}
+
+Compute Normalized cross correlation \Hypertarget{acquisition_8h_a88c08a10d15d3da3409fcb77d0d6262c}\index{acquisition.h@{acquisition.h}!ReadFloatImg@{ReadFloatImg}}
+\index{ReadFloatImg@{ReadFloatImg}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{ReadFloatImg()}{ReadFloatImg()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a88c08a10d15d3da3409fcb77d0d6262c} 
+void Read\+Float\+Img (\begin{DoxyParamCaption}\item[{const QString}]{path}{, }\item[{Mat \&}]{img}{}\end{DoxyParamCaption})}
+
+Read float image \Hypertarget{acquisition_8h_af02ec550867e195f4a3ce43170e2f572}\index{acquisition.h@{acquisition.h}!ReadVector@{ReadVector}}
+\index{ReadVector@{ReadVector}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{ReadVector()}{ReadVector()}}
+{\footnotesize\ttfamily \label{acquisition_8h_af02ec550867e195f4a3ce43170e2f572} 
+void Read\+Vector (\begin{DoxyParamCaption}\item[{const QString}]{path}{, }\item[{QVector$<$ double $>$ \&}]{out}{}\end{DoxyParamCaption})}
+
+Read vector \Hypertarget{acquisition_8h_afeae36a18fd6c095c01edd3c4b3860cb}\index{acquisition.h@{acquisition.h}!reConstructImg@{reConstructImg}}
+\index{reConstructImg@{reConstructImg}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{reConstructImg()}{reConstructImg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{acquisition_8h_afeae36a18fd6c095c01edd3c4b3860cb} 
+void re\+Construct\+Img (\begin{DoxyParamCaption}\item[{const Mat \&}]{labels}{, }\item[{Mat \&}]{img\+\_\+out}{, }\item[{const QVector$<$ Point $>$ \&}]{pixels\+\_\+pos}{, }\item[{cv::\+\+Size}]{size}{, }\item[{int}]{Sampling}{}\end{DoxyParamCaption})}
+
+Reconstruct a 2D image from an inline image \Hypertarget{acquisition_8h_a29cd5d4484c2b8df9c51321d868f4248}\index{acquisition.h@{acquisition.h}!reConstructImg@{reConstructImg}}
+\index{reConstructImg@{reConstructImg}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{reConstructImg()}{reConstructImg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{acquisition_8h_a29cd5d4484c2b8df9c51321d868f4248} 
+void re\+Construct\+Img (\begin{DoxyParamCaption}\item[{const QVector$<$ int $>$ \&}]{labels}{, }\item[{Mat \&}]{img\+\_\+out}{, }\item[{const QVector$<$ Point $>$ \&}]{pixels\+\_\+pos}{, }\item[{cv::\+\+Size}]{size}{, }\item[{int}]{Sampling}{}\end{DoxyParamCaption})}
+
+Reconstruct a 2D image from an inline image \Hypertarget{acquisition_8h_a98a071bb362164b8652b72bb77bdbbd3}\index{acquisition.h@{acquisition.h}!WriteBGRVector@{WriteBGRVector}}
+\index{WriteBGRVector@{WriteBGRVector}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{WriteBGRVector()}{WriteBGRVector()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a98a071bb362164b8652b72bb77bdbbd3} 
+void Write\+BGRVector (\begin{DoxyParamCaption}\item[{const QString}]{path}{, }\item[{const QVector$<$ Scalar $>$ \&}]{bgr}{}\end{DoxyParamCaption})}
+
+Write BGR intensities \Hypertarget{acquisition_8h_a0c157039cd365709568aca5e1c075d3b}\index{acquisition.h@{acquisition.h}!WriteDoubleImg@{WriteDoubleImg}}
+\index{WriteDoubleImg@{WriteDoubleImg}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{WriteDoubleImg()}{WriteDoubleImg()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a0c157039cd365709568aca5e1c075d3b} 
+void Write\+Double\+Img (\begin{DoxyParamCaption}\item[{const QString}]{path}{, }\item[{const Mat}]{img}{}\end{DoxyParamCaption})}
+
+Write Double image \Hypertarget{acquisition_8h_a7c1a56be0cc9e765dd34d8c22b239f06}\index{acquisition.h@{acquisition.h}!WriteFloatImg@{WriteFloatImg}}
+\index{WriteFloatImg@{WriteFloatImg}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{WriteFloatImg()}{WriteFloatImg()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a7c1a56be0cc9e765dd34d8c22b239f06} 
+void Write\+Float\+Img (\begin{DoxyParamCaption}\item[{const QString}]{path}{, }\item[{const Mat}]{img}{}\end{DoxyParamCaption})}
+
+Write float image \Hypertarget{acquisition_8h_a79118a1cd561190ad194071529ea247b}\index{acquisition.h@{acquisition.h}!WritePointVector@{WritePointVector}}
+\index{WritePointVector@{WritePointVector}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{WritePointVector()}{WritePointVector()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a79118a1cd561190ad194071529ea247b} 
+void Write\+Point\+Vector (\begin{DoxyParamCaption}\item[{const QString}]{path}{, }\item[{const QVector$<$ Point $>$ \&}]{P}{}\end{DoxyParamCaption})}
+
+Write Point info \Hypertarget{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c}\index{acquisition.h@{acquisition.h}!WriteTemporalVector@{WriteTemporalVector}}
+\index{WriteTemporalVector@{WriteTemporalVector}!acquisition.h@{acquisition.h}}
+\doxysubsubsection{\texorpdfstring{WriteTemporalVector()}{WriteTemporalVector()}}
+{\footnotesize\ttfamily \label{acquisition_8h_a34efdd26577651a7f0db609b1f855f5c} 
+void Write\+Temporal\+Vector (\begin{DoxyParamCaption}\item[{const QString}]{path}{, }\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{tempoal\+\_\+vec}{}\end{DoxyParamCaption})}
+
+Write temporal vector 

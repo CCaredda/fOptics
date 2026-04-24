@@ -1,0 +1,80 @@
+\doxysection{Statistic\+\_\+functions.\+h}
+\hypertarget{Statistic__functions_8h_source}{}\label{Statistic__functions_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/Statistic\_functions.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/Statistic\_functions.h}}
+\doxymbox{\hyperlink{Statistic__functions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ STATISTIC\_FUNCTIONS\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ STATISTIC\_FUNCTIONS\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include<QVariant>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <omp.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QProcess>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <boost/math/distributions/students\_t.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ \#include\ "{}acquisition.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc/imgproc.hpp>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc/imgproc\_c.h>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc/types\_c.h>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <opencv2/highgui/highgui.hpp>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <opencv2/core/core.hpp>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <opencv2/core/core.hpp>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ PI\ 3.141592653589793}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{using\ namespace\ }cv;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ namespace\ }boost::math;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{Statistic__functions_8h_ab25a81624126ba7f65a1cbb4297f1316}{get\_Mean}}(\textcolor{keyword}{const}\ QVector<float>\ \&vec,\textcolor{keywordtype}{int}\ id\_start=-\/1,\textcolor{keywordtype}{int}\ id\_end=-\/1);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{Statistic__functions_8h_adcefa9c3b3b2bbe47383c897e7082d59}{get\_Max}}(\textcolor{keyword}{const}\ QVector<float>\ \&vec);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{Statistic__functions_8h_adcefa9c3b3b2bbe47383c897e7082d59}{get\_Max}}(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&vec);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{Statistic__functions_8h_a0c23ea6496239659054ffd82dbe5937d}{get\_Vector\_sum}}(\textcolor{keyword}{const}\ QVector<double>\ \&vec);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{Statistic__functions_8h_ae51754b3374c5d241e6580a8ee0805bd}{NormalizeMaxVector}}(QVector<double>\ \&vector);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{Statistic__functions_8h_a1a95b28e121eaf6bd6c706e97796f95b}{pearsoncoeff}}(\textcolor{keyword}{const}\ QVector<float>\ \&X,\ \textcolor{keyword}{const}\ QVector<float>\ \&Y);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{Statistic__functions_8h_a1a95b28e121eaf6bd6c706e97796f95b}{pearsoncoeff}}(\textcolor{keyword}{const}\ QVector<float>\ \&X,\textcolor{keyword}{const}\ QVector<float>\ \&Y,\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&process\_duration);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ QVector<float>\ \doxymbox{\hyperlink{Statistic__functions_8h_a48385361a4018f8be533d92ed25c459a}{operator+}}(\textcolor{keyword}{const}\ QVector<float>\ \&a,\textcolor{keyword}{const}\ QVector<float>\ \&b);}
+\DoxyCodeLine{00072\ QVector<float>\ \doxymbox{\hyperlink{Statistic__functions_8h_a3716a6d1580a0e80051483d8f83244b8}{operator-\/}}(\textcolor{keyword}{const}\ QVector<float>\ \&a,\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&b);}
+\DoxyCodeLine{00074\ QVector<float>\ \doxymbox{\hyperlink{Statistic__functions_8h_a418cc59aedb531f16c3866ebd7486205}{operator/}}(\textcolor{keyword}{const}\ QVector<float>\ \&a,\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00076\ QVector<double>\ \doxymbox{\hyperlink{Statistic__functions_8h_a418cc59aedb531f16c3866ebd7486205}{operator/}}(\textcolor{keyword}{const}\ QVector<double>\ \&a,\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ b);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ Mat\ \doxymbox{\hyperlink{Statistic__functions_8h_ac4360face50f7444ed83bb6426bda5ba}{autocorrelation}}(\textcolor{keyword}{const}\ Mat\ \&in);}
+\DoxyCodeLine{00082\ Mat\ \doxymbox{\hyperlink{Statistic__functions_8h_ac4360face50f7444ed83bb6426bda5ba}{autocorrelation}}(\textcolor{keyword}{const}\ Mat\ \&in,\textcolor{keywordtype}{int}\ spatial\_id);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{Statistic__functions_8h_a4ccc92cad804111d0831f64f0326f334}{extractVarianceFromMat}}(\textcolor{keyword}{const}\ Mat\&\ in,Mat\ \&out);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{Statistic__functions_8h_a1cea4da1749a3b2893f31e35c638dd7e}{getTrace\_of\_product}}(\textcolor{keyword}{const}\ Mat\ \&a,\textcolor{keyword}{const}\ Mat\ \&b);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{Statistic__functions_8h_a5311e3c20e1dc6213c81e5e1fc3ed89e}{fisher\_r\_to\_z\_transform}}(\textcolor{keywordtype}{float}\ r);}
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{Statistic__functions_8h_a39121ed5cbb7aa8d310522346490f294}{convert\_T\_to\_Z\_stats}}(\textcolor{keywordtype}{float}\ t);}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{Statistic__functions_8h_a7b14defdca23811b31416ae11fe5c641}{convert\_Corr\_to\_T\_stats}}(\textcolor{keywordtype}{float}\ R,\textcolor{keywordtype}{int}\ df);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STATISTIC\_FUNCTIONS\_H}}
+
+\end{DoxyCode}

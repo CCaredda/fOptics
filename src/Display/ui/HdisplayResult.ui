@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HdisplayResult</class>
+ <widget class="QWidget" name="HdisplayResult">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>932</width>
+    <height>408</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" rowstretch="0,1" columnstretch="100,1">
+   <property name="sizeConstraint">
+    <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+   </property>
+   <item row="1" column="0">
+    <widget class="HImageDisplay" name="_display" native="true"/>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="1" column="0">
+       <widget class="QWidget" name="_widget_advanced_settings" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QWidget" name="widget_4" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>alpha</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="HValueEdit" name="_alpha_val"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QWidget" name="widget_2" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
+         <item>
+          <widget class="QGroupBox" name="groupBox_Acquis_type">
+           <property name="font">
+            <font>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QGroupBox {
+
+     border: 2px solid gray;
+     border-radius: 5px;
+     margin-top: 5ex; /* leave space at the top for the title */
+ }
+ QGroupBox::title {
+     subcontrol-origin: margin;
+     subcontrol-position: top center; /* position at the top center */
+     padding: 0 5px;
+    color : black;
+ }
+
+ QGroupBox::title:disabled {
+     subcontrol-origin: margin;
+     subcontrol-position: top center; /* position at the top center */
+     padding: 0 5px;
+    color : gray;
+ }
+
+QGroupBox::indicator {
+     width: 50px;
+     height: 30px;
+ }
+
+
+ QGroupBox::indicator:unchecked {
+     image: url(:/IMenuAnalyse/analyseOff.png);
+ }
+ QGroupBox::indicator:checked {
+          image: url(:/IMenuAnalyse/analyseOn.png);
+ }
+
+
+ QGroupBox::indicator:checked:disabled {
+          image: url(:/IMenuAnalyse/analyseDisabled.png);
+ }
+</string>
+           </property>
+           <property name="title">
+            <string>Biomarker</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QWidget" name="widget" native="true">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QComboBox" name="_display_type">
+                 <property name="font">
+                  <font>
+                   <pointsize>8</pointsize>
+                  </font>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_Filter">
+           <property name="styleSheet">
+            <string notr="true"> QGroupBox {
+
+     border: 2px solid gray;
+     border-radius: 5px;
+     margin-top: 5ex; /* leave space at the top for the title */
+ }
+ QGroupBox::title {
+     subcontrol-origin: margin;
+     subcontrol-position: top center; /* position at the top center */
+     padding: 0 5px;
+    color : black;
+ }
+
+ QGroupBox::title:disabled {
+     subcontrol-origin: margin;
+     subcontrol-position: top center; /* position at the top center */
+     padding: 0 5px;
+    color : gray;
+ }
+
+QGroupBox::indicator {
+     width: 50px;
+     height: 30px;
+ }
+
+
+ QGroupBox::indicator:unchecked {
+     image: url(:/IMenuAnalyse/analyseOff.png);
+ }
+ QGroupBox::indicator:checked {
+          image: url(:/IMenuAnalyse/analyseOn.png);
+ }
+
+
+ QGroupBox::indicator:checked:disabled {
+          image: url(:/IMenuAnalyse/analyseDisabled.png);
+ }
+</string>
+           </property>
+           <property name="title">
+            <string>Median filter</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Window size (px)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="HValueEdit" name="_window_size">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QPushButton" name="_Median_Filter">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>PushButton</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QWidget" name="_widget_Colorbar" native="true">
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,1,0" columnstretch="0,0">
+      <item row="1" column="0">
+       <widget class="HImageDisplay" name="_colorBar" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="_min_value">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSlider" name="_cutoff">
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="HValueEdit" name="_max_value">
+        <property name="text">
+         <string>255</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="_units">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HValueEdit</class>
+   <extends>QLineEdit</extends>
+   <header>HValueEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HImageDisplay</class>
+   <extends>QWidget</extends>
+   <header>HImageDisplay.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,89 @@
+\doxysection{PArduino.\+h}
+\hypertarget{PArduino_8h_source}{}\label{PArduino_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Arduino/inc/PArduino.h@{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Arduino/inc/PArduino.h}}
+\doxymbox{\hyperlink{PArduino_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ PARDUINO\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ PARDUINO\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \#include\ <QTextCodec>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QSerialPort>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QSerialPortInfo>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ Laser\_pointer\_on\ "{}a"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ Laser\_pointer\_off\ "{}b"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ Light\_on\ "{}c"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ Light\_off\ "{}d"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ devices\_off\ "{}e"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ Start\_servo\ "{}f"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ Stop\_servo\ "{}g"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }PArduino\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{explicit}\ PArduino(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00044\ \ \ \ \ \string~PArduino();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPArduino_a8f79c87b42b02aae628a273eae40d5b7}{connectArduino}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPArduino_a181f40a2c52077adf2f1324597a5db19}{initAcquisitionStep}}()\ \ \{\_M\_acquisition\_step\_a=0;\ \_M\_acquisition\_step\_b=0;\}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ signals:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPArduino_a6e8dea6f6f051d82367c2e96082a6153}{ArduinoisConnected}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPArduino_ab370637ce3979db442852e88fc6e8526}{newArduinoMessage}}(QString);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPArduino_a9bc4a13eaddcf2041108d04986205287}{newCmdReceivedFromArduino}}(QString);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPArduino_a3bf949eb637b2c9cf347c139700fdd22}{onApplyArduinoCommand}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPArduino_ac24388e7d21064adb91355e2903323d8}{onApplyArduinoCommand}}(QVector<QString>\ cmd);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ handleReadyRead();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ handleError(QSerialPort::SerialPortError\ error);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ onNewArduinoCmd(QString\ v);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//Arduino}}
+\DoxyCodeLine{00080\ \ \ \ \ QSerialPort\ \ \ \ \ \ \ \ \ \ \ \ \ *\_M\_arduino;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//Arduino\ info}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ quint16\ \ \ \ \_M\_vendor\_id\ =\ 9025;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ quint16\ \ \ \ \_M\_product\_id\ =\ 67;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_arduino\_port\_name;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_is\_arduino\_connected;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//Arduino\ command}}
+\DoxyCodeLine{00090\ \ \ \ \ QVector<QString>\ \ \ \ \ \ \ \ \_M\_arduino\_command;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//Timer}}
+\DoxyCodeLine{00093\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\_M\_timer;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//Acquisition\ step}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_acquisition\_step\_a;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_acquisition\_step\_b;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARDUINO\_H}}
+
+\end{DoxyCode}

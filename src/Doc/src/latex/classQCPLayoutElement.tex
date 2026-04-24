@@ -1,0 +1,369 @@
+\hypertarget{classQCPLayoutElement}{}\doxysection{QCPLayout\+Element Class Reference}
+\label{classQCPLayoutElement}\index{QCPLayoutElement@{QCPLayoutElement}}
+Inheritance diagram for QCPLayout\+Element\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.376884cm]{classQCPLayoutElement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}{up\+Preparation}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a8947f0ada17e672aaba3d424cbbb67e3}\label{classQCPLayoutElement_a8947f0ada17e672aaba3d424cbbb67e3}} 
+{\bfseries QCPLayout\+Element} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}\label{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}} 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} $\ast$ {\bfseries layout} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}\label{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}} 
+QRect {\bfseries rect} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}\label{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}} 
+QRect {\bfseries outer\+Rect} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_af4ac9450aa2d60863bf3a8ea0c940c9d}\label{classQCPLayoutElement_af4ac9450aa2d60863bf3a8ea0c940c9d}} 
+QMargins {\bfseries margins} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a5eae30e28f28d73fd1c56409c011393e}\label{classQCPLayoutElement_a5eae30e28f28d73fd1c56409c011393e}} 
+QMargins {\bfseries minimum\+Margins} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a2585bc8c5cc70ee712909751a2fc8909}\label{classQCPLayoutElement_a2585bc8c5cc70ee712909751a2fc8909}} 
+QCP\+::\+Margin\+Sides {\bfseries auto\+Margins} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a60d4295468a2b57fe91f6f68e20c3993}\label{classQCPLayoutElement_a60d4295468a2b57fe91f6f68e20c3993}} 
+QSize {\bfseries minimum\+Size} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_afb9503858d4aa0f3b9f1794b084fb40a}\label{classQCPLayoutElement_afb9503858d4aa0f3b9f1794b084fb40a}} 
+QSize {\bfseries maximum\+Size} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a66136f121ee3e1c933b748761203cab4}\label{classQCPLayoutElement_a66136f121ee3e1c933b748761203cab4}} 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries size\+Constraint\+Rect} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_aa5513622910f31d9309f87886bee597a}\label{classQCPLayoutElement_aa5513622910f31d9309f87886bee597a}} 
+\mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} $\ast$ {\bfseries margin\+Group} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_acdd2c6b2ffb1c712e3bb3014fdec2e1b}\label{classQCPLayoutElement_acdd2c6b2ffb1c712e3bb3014fdec2e1b}} 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} $\ast$ $>$ {\bfseries margin\+Groups} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a38975ea13e36de8e53391ce41d94bc0f}\label{classQCPLayoutElement_a38975ea13e36de8e53391ce41d94bc0f}} 
+void {\bfseries set\+Outer\+Rect} (const QRect \&rect)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a8f450b1f3f992ad576fce2c63d8b79cf}\label{classQCPLayoutElement_a8f450b1f3f992ad576fce2c63d8b79cf}} 
+void {\bfseries set\+Margins} (const QMargins \&margins)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a0a8a17abc16b7923159fcc7608f94673}\label{classQCPLayoutElement_a0a8a17abc16b7923159fcc7608f94673}} 
+void {\bfseries set\+Minimum\+Margins} (const QMargins \&margins)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}\label{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}} 
+void {\bfseries set\+Auto\+Margins} (QCP\+::\+Margin\+Sides sides)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}\label{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}} 
+void {\bfseries set\+Minimum\+Size} (const QSize \&size)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a8e0447614a0bf92de9a7304588c6b96e}\label{classQCPLayoutElement_a8e0447614a0bf92de9a7304588c6b96e}} 
+void {\bfseries set\+Minimum\+Size} (int width, int height)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}\label{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}} 
+void {\bfseries set\+Maximum\+Size} (const QSize \&size)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a03e0e9c48f230217c529b0819f832d84}\label{classQCPLayoutElement_a03e0e9c48f230217c529b0819f832d84}} 
+void {\bfseries set\+Maximum\+Size} (int width, int height)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a361666cdcc6fbfd37344cc44be746b0f}\label{classQCPLayoutElement_a361666cdcc6fbfd37344cc44be746b0f}} 
+void {\bfseries set\+Size\+Constraint\+Rect} (\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a516e56f76b6bc100e8e71d329866847d}\label{classQCPLayoutElement_a516e56f76b6bc100e8e71d329866847d}} 
+void {\bfseries set\+Margin\+Group} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} $\ast$group)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_ad6884e89825dbe06f198f659120799e6}\label{classQCPLayoutElement_ad6884e89825dbe06f198f659120799e6}} 
+virtual void {\bfseries update} (\mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_ab6d7299a8f62128ab664dd1c8adf067b}\label{classQCPLayoutElement_ab6d7299a8f62128ab664dd1c8adf067b}} 
+virtual QSize {\bfseries minimum\+Outer\+Size\+Hint} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a92147584a1a967f9049a7f3b407dbaa5}\label{classQCPLayoutElement_a92147584a1a967f9049a7f3b407dbaa5}} 
+virtual QSize {\bfseries maximum\+Outer\+Size\+Hint} () const
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_adeb9064330dcf403c8cd546894dd4808}\label{classQCPLayoutElement_adeb9064330dcf403c8cd546894dd4808}} 
+virtual QList$<$ \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}} $\ast$ $>$ {\bfseries elements} (bool recursive) const
+\item 
+virtual double \mbox{\hyperlink{classQCPLayoutElement_a9e264e2033d3c136707792cd77932783}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a74c0fa237f29bf0e49565013fc5d1ec0}\label{classQCPLayerable_a74c0fa237f29bf0e49565013fc5d1ec0}} 
+{\bfseries QCPLayerable} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $\ast$parent\+Layerable=0)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_af0297b944b6192b6d67d00bff41b6b70}\label{classQCPLayerable_af0297b944b6192b6d67d00bff41b6b70}} 
+bool {\bfseries visible} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a36ed5b292b90934b524a4e5866a3526c}\label{classQCPLayerable_a36ed5b292b90934b524a4e5866a3526c}} 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}\label{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}} 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $\ast$ {\bfseries parent\+Layerable} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a9d4e121a7f1d2314f906fe698209cac9}\label{classQCPLayerable_a9d4e121a7f1d2314f906fe698209cac9}} 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$ {\bfseries layer} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a71cbd212fde2703cee076e204a475709}\label{classQCPLayerable_a71cbd212fde2703cee076e204a475709}} 
+bool {\bfseries antialiased} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}\label{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}} 
+void {\bfseries set\+Visible} (bool on)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aea8c061ee8a1aa7ea88ee9ca9cbaa773}\label{classQCPLayerable_aea8c061ee8a1aa7ea88ee9ca9cbaa773}} 
+Q\+\_\+\+SLOT bool {\bfseries set\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$layer)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}\label{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}} 
+bool {\bfseries set\+Layer} (const QString \&layer\+Name)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}\label{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}} 
+void {\bfseries set\+Antialiased} (bool enabled)
+\item 
+virtual double \mbox{\hyperlink{classQCPLayerable_a15bfc6b8990b1fd6b8c9541a920d07f4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}\label{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}} 
+bool {\bfseries real\+Visibility} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a76b2b2f6a68d337b2faa3a9e96c87c9e}\label{classQCPLayoutElement_a76b2b2f6a68d337b2faa3a9e96c87c9e}} 
+virtual int {\bfseries calculate\+Auto\+Margin} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side)
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a11d34c67076e500041dd5448f573bbd5}\label{classQCPLayoutElement_a11d34c67076e500041dd5448f573bbd5}} 
+virtual void {\bfseries layout\+Changed} ()
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_a0a8f18141bcf46cf40ad4c13324ff346}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_ad1c597b1d608cfdd86e7b76819a94cfb}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_aa4e9a1488b6929588829846a46243dc6}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ac504c8a0075c2fefbf941c4e599d218c}\label{classQCPLayerable_ac504c8a0075c2fefbf941c4e599d218c}} 
+virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ae6857c38a001ba0c0c7fcdd99714ae51}\label{classQCPLayerable_ae6857c38a001ba0c0c7fcdd99714ae51}} 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} {\bfseries selection\+Category} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_afe2a5078cf08b63f94a1d614f6380bc2}\label{classQCPLayerable_afe2a5078cf08b63f94a1d614f6380bc2}} 
+virtual QRect {\bfseries clip\+Rect} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a1168944abbf9fa6731b0f4a2d0d67e8b}\label{classQCPLayerable_a1168944abbf9fa6731b0f4a2d0d67e8b}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter) const =0
+\item 
+\mbox{\Hypertarget{classQCPLayerable_adf62b4bac3ca934db80290792fc897e1}\label{classQCPLayerable_adf62b4bac3ca934db80290792fc897e1}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter)=0
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a0ff16be287fca7c237070ed821e921db}\label{classQCPLayerable_a0ff16be287fca7c237070ed821e921db}} 
+virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a86e627b6b03aea7202b65328bd150936}\label{classQCPLayerable_a86e627b6b03aea7202b65328bd150936}} 
+virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a0295d5eb32e429bd1a9845e4fe889a93}\label{classQCPLayerable_a0295d5eb32e429bd1a9845e4fe889a93}} 
+virtual void {\bfseries mouse\+Press\+Event} (QMouse\+Event $\ast$event, const QVariant \&details)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_afd4d5359773fc5f479bcd6c5bb7d9711}\label{classQCPLayerable_afd4d5359773fc5f479bcd6c5bb7d9711}} 
+virtual void {\bfseries mouse\+Move\+Event} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a2f1b906a2cf286bc492b4600c369b28c}\label{classQCPLayerable_a2f1b906a2cf286bc492b4600c369b28c}} 
+virtual void {\bfseries mouse\+Release\+Event} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_afedfd6f29df0297deba2812f4497810c}\label{classQCPLayerable_afedfd6f29df0297deba2812f4497810c}} 
+virtual void {\bfseries mouse\+Double\+Click\+Event} (QMouse\+Event $\ast$event, const QVariant \&details)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ae8ec992ac0d81d65c70048fa3e8bd454}\label{classQCPLayerable_ae8ec992ac0d81d65c70048fa3e8bd454}} 
+virtual void {\bfseries wheel\+Event} (QWheel\+Event $\ast$event)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{classQCPLayerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa23c893671f1f6744ac235cf2204cf3a}\label{classQCPLayerable_aa23c893671f1f6744ac235cf2204cf3a}} 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $\ast$parent\+Layerable)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_af94484cfb7cbbddb7de522e9be71d9a4}\label{classQCPLayerable_af94484cfb7cbbddb7de522e9be71d9a4}} 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$layer, bool prepend)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_acb663e375d2d36dc5c55021ee5a2119b}\label{classQCPLayerable_acb663e375d2d36dc5c55021ee5a2119b}} 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_ae7c75c25549608bd688bdb65d4c38066}\label{classQCPLayoutElement_ae7c75c25549608bd688bdb65d4c38066}} 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} $\ast$ {\bfseries m\+Parent\+Layout}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_affef747c81632de33f08483b7fd10d01}\label{classQCPLayoutElement_affef747c81632de33f08483b7fd10d01}} 
+QSize {\bfseries m\+Minimum\+Size}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a64a387973fd4addac842028c89088998}\label{classQCPLayoutElement_a64a387973fd4addac842028c89088998}} 
+QSize {\bfseries m\+Maximum\+Size}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_acc012635b1ae178ff3c4da8a3af303a2}\label{classQCPLayoutElement_acc012635b1ae178ff3c4da8a3af303a2}} 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries m\+Size\+Constraint\+Rect}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_ad8896f05550389f7b9e92c9e6cdf6e01}\label{classQCPLayoutElement_ad8896f05550389f7b9e92c9e6cdf6e01}} 
+QRect {\bfseries m\+Rect}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a07bb4973379e75cb0fa5b032c1d24afd}\label{classQCPLayoutElement_a07bb4973379e75cb0fa5b032c1d24afd}} 
+QRect {\bfseries m\+Outer\+Rect}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_ac2a32b99ee527ca5dfff9da03628fe94}\label{classQCPLayoutElement_ac2a32b99ee527ca5dfff9da03628fe94}} 
+QMargins {\bfseries m\+Margins}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a5ba71f25d1af4bb092b28df618538e63}\label{classQCPLayoutElement_a5ba71f25d1af4bb092b28df618538e63}} 
+QMargins {\bfseries m\+Minimum\+Margins}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_af61c70354d1275778d68206b2a1b2d36}\label{classQCPLayoutElement_af61c70354d1275778d68206b2a1b2d36}} 
+QCP\+::\+Margin\+Sides {\bfseries m\+Auto\+Margins}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_aeafbbc1130e02eee663c5326761fc963}\label{classQCPLayoutElement_aeafbbc1130e02eee663c5326761fc963}} 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} $\ast$ $>$ {\bfseries m\+Margin\+Groups}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a62e3aed8427d6ce3ccf716f285106cb3}\label{classQCPLayerable_a62e3aed8427d6ce3ccf716f285106cb3}} 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa2a528433e44db02b8aef23c1f9f90ed}\label{classQCPLayerable_aa2a528433e44db02b8aef23c1f9f90ed}} 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$ {\bfseries m\+Parent\+Plot}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a3291445a980053e2d17a21d15957624e}\label{classQCPLayerable_a3291445a980053e2d17a21d15957624e}} 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa38ec5891aff0f50b36fd63e9372a0cd}\label{classQCPLayerable_aa38ec5891aff0f50b36fd63e9372a0cd}} 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$ {\bfseries m\+Layer}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a3ab45a4c76a3333ce42eb217a81733ec}\label{classQCPLayerable_a3ab45a4c76a3333ce42eb217a81733ec}} 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPLayoutElement_a1cdf9df76adcfae45261690aa0ca2198}} 
+class {\bfseries QCustom\+Plot}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_a588aac0a0d721f6c5f10126d8596a20f}\label{classQCPLayoutElement_a588aac0a0d721f6c5f10126d8596a20f}} 
+class {\bfseries QCPLayout}
+\item 
+\mbox{\Hypertarget{classQCPLayoutElement_ad077a686e85ab6fa03dcb2fd37fc499a}\label{classQCPLayoutElement_ad077a686e85ab6fa03dcb2fd37fc499a}} 
+class {\bfseries QCPMargin\+Group}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}\label{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}} 
+void {\bfseries layer\+Changed} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$new\+Layer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}\label{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}} 
+\index{QCPLayoutElement@{QCPLayoutElement}!SizeConstraintRect@{SizeConstraintRect}}
+\index{SizeConstraintRect@{SizeConstraintRect}!QCPLayoutElement@{QCPLayoutElement}}
+\doxysubsubsection{\texorpdfstring{SizeConstraintRect}{SizeConstraintRect}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{QCPLayout\+Element\+::\+Size\+Constraint\+Rect}}}
+
+Defines to which rect of a layout element the size constraints that can be set via set\+Minimum\+Size and set\+Maximum\+Size apply. The outer rect (outer\+Rect) includes the margins (e.\+g. in the case of a \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} the axis labels), whereas the inner rect (rect) does not.
+
+\begin{DoxySeeAlso}{See also}
+set\+Size\+Constraint\+Rect 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{scrInnerRect@{scrInnerRect}!QCPLayoutElement@{QCPLayoutElement}}\index{QCPLayoutElement@{QCPLayoutElement}!scrInnerRect@{scrInnerRect}}}\mbox{\Hypertarget{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}\label{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}} 
+scr\+Inner\+Rect&Minimum/\+Maximum size constraints apply to inner rect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{scrOuterRect@{scrOuterRect}!QCPLayoutElement@{QCPLayoutElement}}\index{QCPLayoutElement@{QCPLayoutElement}!scrOuterRect@{scrOuterRect}}}\mbox{\Hypertarget{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}\label{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}} 
+scr\+Outer\+Rect&Minimum/\+Maximum size constraints apply to outer rect, thus include layout element margins. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}\label{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}} 
+\index{QCPLayoutElement@{QCPLayoutElement}!UpdatePhase@{UpdatePhase}}
+\index{UpdatePhase@{UpdatePhase}!QCPLayoutElement@{QCPLayoutElement}}
+\doxysubsubsection{\texorpdfstring{UpdatePhase}{UpdatePhase}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{QCPLayout\+Element\+::\+Update\+Phase}}}
+
+Defines the phases of the update process, that happens just before a replot. At each phase, update is called with the according Update\+Phase value. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{upPreparation@{upPreparation}!QCPLayoutElement@{QCPLayoutElement}}\index{QCPLayoutElement@{QCPLayoutElement}!upPreparation@{upPreparation}}}\mbox{\Hypertarget{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}\label{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}} 
+up\+Preparation&Phase used for any type of preparation that needs to be done before margin calculation and layout. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{upMargins@{upMargins}!QCPLayoutElement@{QCPLayoutElement}}\index{QCPLayoutElement@{QCPLayoutElement}!upMargins@{upMargins}}}\mbox{\Hypertarget{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}\label{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}} 
+up\+Margins&Phase in which the margins are calculated and set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{upLayout@{upLayout}!QCPLayoutElement@{QCPLayoutElement}}\index{QCPLayoutElement@{QCPLayoutElement}!upLayout@{upLayout}}}\mbox{\Hypertarget{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}\label{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}} 
+up\+Layout&Final phase in which the layout system places the rects of the elements. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCPLayoutElement_a0a8f18141bcf46cf40ad4c13324ff346}\label{classQCPLayoutElement_a0a8f18141bcf46cf40ad4c13324ff346}} 
+\index{QCPLayoutElement@{QCPLayoutElement}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPLayoutElement@{QCPLayoutElement}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily virtual void QCPLayout\+Element\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPLayoutElement_ad1c597b1d608cfdd86e7b76819a94cfb}\label{classQCPLayoutElement_ad1c597b1d608cfdd86e7b76819a94cfb}} 
+\index{QCPLayoutElement@{QCPLayoutElement}!draw@{draw}}
+\index{draw@{draw}!QCPLayoutElement@{QCPLayoutElement}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void QCPLayout\+Element\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPLayoutElement_aa4e9a1488b6929588829846a46243dc6}\label{classQCPLayoutElement_aa4e9a1488b6929588829846a46243dc6}} 
+\index{QCPLayoutElement@{QCPLayoutElement}!parentPlotInitialized@{parentPlotInitialized}}
+\index{parentPlotInitialized@{parentPlotInitialized}!QCPLayoutElement@{QCPLayoutElement}}
+\doxysubsubsection{\texorpdfstring{parentPlotInitialized()}{parentPlotInitialized()}}
+{\footnotesize\ttfamily virtual void QCPLayout\+Element\+::parent\+Plot\+Initialized (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$}]{parent\+Plot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPLayoutElement_a9e264e2033d3c136707792cd77932783}\label{classQCPLayoutElement_a9e264e2033d3c136707792cd77932783}} 
+\index{QCPLayoutElement@{QCPLayoutElement}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPLayoutElement@{QCPLayoutElement}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily virtual double QCPLayout\+Element\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/temp/intraoperative-\/functional-\/brain-\/mapping/\+Widget/inc/\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\end{DoxyCompactItemize}

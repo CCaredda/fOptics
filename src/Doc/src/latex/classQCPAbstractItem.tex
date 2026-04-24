@@ -1,0 +1,312 @@
+\hypertarget{classQCPAbstractItem}{}\doxysection{QCPAbstract\+Item Class Reference}
+\label{classQCPAbstractItem}\index{QCPAbstractItem@{QCPAbstractItem}}
+Inheritance diagram for QCPAbstract\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classQCPAbstractItem}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_aa5cffb034fc65dbb91c77e02c1c14251}\label{classQCPAbstractItem_aa5cffb034fc65dbb91c77e02c1c14251}} 
+void {\bfseries selection\+Changed} (bool selected)
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a5b266c11aac61cb511901f3911dac2a3}\label{classQCPAbstractItem_a5b266c11aac61cb511901f3911dac2a3}} 
+void {\bfseries selectable\+Changed} (bool selectable)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}\label{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}} 
+void {\bfseries layer\+Changed} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$new\+Layer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a9922507d8b4503a1fe1ed0b1030e23b6}\label{classQCPAbstractItem_a9922507d8b4503a1fe1ed0b1030e23b6}} 
+{\bfseries QCPAbstract\+Item} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a42715ad5f3d7fca6854025fa5636f436}\label{classQCPAbstractItem_a42715ad5f3d7fca6854025fa5636f436}} 
+bool {\bfseries clip\+To\+Axis\+Rect} () const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_ae162314efd3fe1a6d4df11da1d275d52}\label{classQCPAbstractItem_ae162314efd3fe1a6d4df11da1d275d52}} 
+\mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} $\ast$ {\bfseries clip\+Axis\+Rect} () const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_ae29aa489767352b40c4aaa7ea50c5582}\label{classQCPAbstractItem_ae29aa489767352b40c4aaa7ea50c5582}} 
+bool {\bfseries selectable} () const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_aa069fba320a13639f119f82ad29ead96}\label{classQCPAbstractItem_aa069fba320a13639f119f82ad29ead96}} 
+bool {\bfseries selected} () const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06}\label{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06}} 
+void {\bfseries set\+Clip\+To\+Axis\+Rect} (bool clip)
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347}\label{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347}} 
+void {\bfseries set\+Clip\+Axis\+Rect} (\mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} $\ast$rect)
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_ab36e93c24bc9817f08260e34a38a8759}\label{classQCPAbstractItem_ab36e93c24bc9817f08260e34a38a8759}} 
+Q\+\_\+\+SLOT void {\bfseries set\+Selectable} (bool selectable)
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_aa3d44aec4395fb95ee00e77dd13d8a39}\label{classQCPAbstractItem_aa3d44aec4395fb95ee00e77dd13d8a39}} 
+Q\+\_\+\+SLOT void {\bfseries set\+Selected} (bool selected)
+\item 
+virtual double \mbox{\hyperlink{classQCPAbstractItem_ae41d0349d68bb802c49104afd100ba2a}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a709f655ac3f7f22d452714134662b454}\label{classQCPAbstractItem_a709f655ac3f7f22d452714134662b454}} 
+QList$<$ \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} $\ast$ $>$ {\bfseries positions} () const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a81d1ecfea3368b836cf9675a0045e659}\label{classQCPAbstractItem_a81d1ecfea3368b836cf9675a0045e659}} 
+QList$<$ \mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} $\ast$ $>$ {\bfseries anchors} () const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d}\label{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d}} 
+\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} $\ast$ {\bfseries position} (const QString \&name) const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb}\label{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb}} 
+\mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} $\ast$ {\bfseries anchor} (const QString \&name) const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a84914f4516f9b38ef0bd89eafe3dbda7}\label{classQCPAbstractItem_a84914f4516f9b38ef0bd89eafe3dbda7}} 
+bool {\bfseries has\+Anchor} (const QString \&name) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a74c0fa237f29bf0e49565013fc5d1ec0}\label{classQCPLayerable_a74c0fa237f29bf0e49565013fc5d1ec0}} 
+{\bfseries QCPLayerable} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $\ast$parent\+Layerable=0)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_af0297b944b6192b6d67d00bff41b6b70}\label{classQCPLayerable_af0297b944b6192b6d67d00bff41b6b70}} 
+bool {\bfseries visible} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a36ed5b292b90934b524a4e5866a3526c}\label{classQCPLayerable_a36ed5b292b90934b524a4e5866a3526c}} 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}\label{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}} 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $\ast$ {\bfseries parent\+Layerable} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a9d4e121a7f1d2314f906fe698209cac9}\label{classQCPLayerable_a9d4e121a7f1d2314f906fe698209cac9}} 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$ {\bfseries layer} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a71cbd212fde2703cee076e204a475709}\label{classQCPLayerable_a71cbd212fde2703cee076e204a475709}} 
+bool {\bfseries antialiased} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}\label{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}} 
+void {\bfseries set\+Visible} (bool on)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aea8c061ee8a1aa7ea88ee9ca9cbaa773}\label{classQCPLayerable_aea8c061ee8a1aa7ea88ee9ca9cbaa773}} 
+Q\+\_\+\+SLOT bool {\bfseries set\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$layer)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}\label{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}} 
+bool {\bfseries set\+Layer} (const QString \&layer\+Name)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}\label{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}} 
+void {\bfseries set\+Antialiased} (bool enabled)
+\item 
+virtual double \mbox{\hyperlink{classQCPLayerable_a15bfc6b8990b1fd6b8c9541a920d07f4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}\label{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}} 
+bool {\bfseries real\+Visibility} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{classQCPAbstractItem_af1e8300bcca1524f8602038d78492571}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QRect \mbox{\hyperlink{classQCPAbstractItem_a193ce2d0aea9466623d5a7de88596527}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_a85dfa6ccd355c86d44e784a75042cca1}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_afe12c077663d07233a1b06608783ae41}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_ada0abcc22693f5fc224c0acd5bd568ea}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_ac6257547cbfde82121c396d9ed1951af}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a5312a56ca6982bab248fdeb98778299e}\label{classQCPAbstractItem_a5312a56ca6982bab248fdeb98778299e}} 
+virtual QPointF {\bfseries anchor\+Pixel\+Position} (int anchor\+Id) const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a7dfc2007e36d09b8b5c988a9f06d6a7e}\label{classQCPAbstractItem_a7dfc2007e36d09b8b5c988a9f06d6a7e}} 
+double {\bfseries rect\+Distance} (const QRectF \&rect, const QPointF \&pos, bool filled\+Rect) const
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a75036d39c4d4e2e1a7dd145fff915d32}\label{classQCPAbstractItem_a75036d39c4d4e2e1a7dd145fff915d32}} 
+\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} $\ast$ {\bfseries create\+Position} (const QString \&name)
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_af3fc92527802078ca395138748b629a7}\label{classQCPAbstractItem_af3fc92527802078ca395138748b629a7}} 
+\mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} $\ast$ {\bfseries create\+Anchor} (const QString \&name, int anchor\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ac504c8a0075c2fefbf941c4e599d218c}\label{classQCPLayerable_ac504c8a0075c2fefbf941c4e599d218c}} 
+virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ae6857c38a001ba0c0c7fcdd99714ae51}\label{classQCPLayerable_ae6857c38a001ba0c0c7fcdd99714ae51}} 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} {\bfseries selection\+Category} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_afe2a5078cf08b63f94a1d614f6380bc2}\label{classQCPLayerable_afe2a5078cf08b63f94a1d614f6380bc2}} 
+virtual QRect {\bfseries clip\+Rect} () const
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a1168944abbf9fa6731b0f4a2d0d67e8b}\label{classQCPLayerable_a1168944abbf9fa6731b0f4a2d0d67e8b}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter) const =0
+\item 
+\mbox{\Hypertarget{classQCPLayerable_adf62b4bac3ca934db80290792fc897e1}\label{classQCPLayerable_adf62b4bac3ca934db80290792fc897e1}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter)=0
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a0ff16be287fca7c237070ed821e921db}\label{classQCPLayerable_a0ff16be287fca7c237070ed821e921db}} 
+virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a86e627b6b03aea7202b65328bd150936}\label{classQCPLayerable_a86e627b6b03aea7202b65328bd150936}} 
+virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a0295d5eb32e429bd1a9845e4fe889a93}\label{classQCPLayerable_a0295d5eb32e429bd1a9845e4fe889a93}} 
+virtual void {\bfseries mouse\+Press\+Event} (QMouse\+Event $\ast$event, const QVariant \&details)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_afd4d5359773fc5f479bcd6c5bb7d9711}\label{classQCPLayerable_afd4d5359773fc5f479bcd6c5bb7d9711}} 
+virtual void {\bfseries mouse\+Move\+Event} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a2f1b906a2cf286bc492b4600c369b28c}\label{classQCPLayerable_a2f1b906a2cf286bc492b4600c369b28c}} 
+virtual void {\bfseries mouse\+Release\+Event} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_afedfd6f29df0297deba2812f4497810c}\label{classQCPLayerable_afedfd6f29df0297deba2812f4497810c}} 
+virtual void {\bfseries mouse\+Double\+Click\+Event} (QMouse\+Event $\ast$event, const QVariant \&details)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_ae8ec992ac0d81d65c70048fa3e8bd454}\label{classQCPLayerable_ae8ec992ac0d81d65c70048fa3e8bd454}} 
+virtual void {\bfseries wheel\+Event} (QWheel\+Event $\ast$event)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{classQCPLayerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa23c893671f1f6744ac235cf2204cf3a}\label{classQCPLayerable_aa23c893671f1f6744ac235cf2204cf3a}} 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $\ast$parent\+Layerable)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_af94484cfb7cbbddb7de522e9be71d9a4}\label{classQCPLayerable_af94484cfb7cbbddb7de522e9be71d9a4}} 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$layer, bool prepend)
+\item 
+\mbox{\Hypertarget{classQCPLayerable_acb663e375d2d36dc5c55021ee5a2119b}\label{classQCPLayerable_acb663e375d2d36dc5c55021ee5a2119b}} 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_ad2a70ff6b658fcb84a9427f69d3f587d}\label{classQCPAbstractItem_ad2a70ff6b658fcb84a9427f69d3f587d}} 
+bool {\bfseries m\+Clip\+To\+Axis\+Rect}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a3e57cfe7da4b1ac3d6fa7281ea437361}\label{classQCPAbstractItem_a3e57cfe7da4b1ac3d6fa7281ea437361}} 
+QPointer$<$ \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} $>$ {\bfseries m\+Clip\+Axis\+Rect}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_af94ff71b6a15ea6d028ab8bd8eccd012}\label{classQCPAbstractItem_af94ff71b6a15ea6d028ab8bd8eccd012}} 
+QList$<$ \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} $\ast$ $>$ {\bfseries m\+Positions}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a909a3abab783de302ebf0a0e6f2bbc15}\label{classQCPAbstractItem_a909a3abab783de302ebf0a0e6f2bbc15}} 
+QList$<$ \mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} $\ast$ $>$ {\bfseries m\+Anchors}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_ad81eb35c8726a0f458db9df9732e0e41}\label{classQCPAbstractItem_ad81eb35c8726a0f458db9df9732e0e41}} 
+bool {\bfseries m\+Selectable}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a4bdb3457dad1d268c0f78a44152b9645}\label{classQCPAbstractItem_a4bdb3457dad1d268c0f78a44152b9645}} 
+bool {\bfseries m\+Selected}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a62e3aed8427d6ce3ccf716f285106cb3}\label{classQCPLayerable_a62e3aed8427d6ce3ccf716f285106cb3}} 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa2a528433e44db02b8aef23c1f9f90ed}\label{classQCPLayerable_aa2a528433e44db02b8aef23c1f9f90ed}} 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} $\ast$ {\bfseries m\+Parent\+Plot}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a3291445a980053e2d17a21d15957624e}\label{classQCPLayerable_a3291445a980053e2d17a21d15957624e}} 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_aa38ec5891aff0f50b36fd63e9372a0cd}\label{classQCPLayerable_aa38ec5891aff0f50b36fd63e9372a0cd}} 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} $\ast$ {\bfseries m\+Layer}
+\item 
+\mbox{\Hypertarget{classQCPLayerable_a3ab45a4c76a3333ce42eb217a81733ec}\label{classQCPLayerable_a3ab45a4c76a3333ce42eb217a81733ec}} 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPAbstractItem_a1cdf9df76adcfae45261690aa0ca2198}} 
+class {\bfseries QCustom\+Plot}
+\item 
+\mbox{\Hypertarget{classQCPAbstractItem_a61767d414fd57af9eb1741b34268c7fc}\label{classQCPAbstractItem_a61767d414fd57af9eb1741b34268c7fc}} 
+class {\bfseries QCPItem\+Anchor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQCPAbstractItem_a85dfa6ccd355c86d44e784a75042cca1}\label{classQCPAbstractItem_a85dfa6ccd355c86d44e784a75042cca1}} 
+\index{QCPAbstractItem@{QCPAbstractItem}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily virtual void QCPAbstract\+Item\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPAbstractItem_a193ce2d0aea9466623d5a7de88596527}\label{classQCPAbstractItem_a193ce2d0aea9466623d5a7de88596527}} 
+\index{QCPAbstractItem@{QCPAbstractItem}!clipRect@{clipRect}}
+\index{clipRect@{clipRect}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{clipRect()}{clipRect()}}
+{\footnotesize\ttfamily virtual QRect QCPAbstract\+Item\+::clip\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPAbstractItem_ac6257547cbfde82121c396d9ed1951af}\label{classQCPAbstractItem_ac6257547cbfde82121c396d9ed1951af}} 
+\index{QCPAbstractItem@{QCPAbstractItem}!deselectEvent@{deselectEvent}}
+\index{deselectEvent@{deselectEvent}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{deselectEvent()}{deselectEvent()}}
+{\footnotesize\ttfamily virtual void QCPAbstract\+Item\+::deselect\+Event (\begin{DoxyParamCaption}\item[{bool $\ast$}]{selection\+State\+Changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPAbstractItem_afe12c077663d07233a1b06608783ae41}\label{classQCPAbstractItem_afe12c077663d07233a1b06608783ae41}} 
+\index{QCPAbstractItem@{QCPAbstractItem}!draw@{draw}}
+\index{draw@{draw}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void QCPAbstract\+Item\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPAbstractItem_ada0abcc22693f5fc224c0acd5bd568ea}\label{classQCPAbstractItem_ada0abcc22693f5fc224c0acd5bd568ea}} 
+\index{QCPAbstractItem@{QCPAbstractItem}!selectEvent@{selectEvent}}
+\index{selectEvent@{selectEvent}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{selectEvent()}{selectEvent()}}
+{\footnotesize\ttfamily virtual void QCPAbstract\+Item\+::select\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event,  }\item[{bool}]{additive,  }\item[{const QVariant \&}]{details,  }\item[{bool $\ast$}]{selection\+State\+Changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPAbstractItem_af1e8300bcca1524f8602038d78492571}\label{classQCPAbstractItem_af1e8300bcca1524f8602038d78492571}} 
+\index{QCPAbstractItem@{QCPAbstractItem}!selectionCategory@{selectionCategory}}
+\index{selectionCategory@{selectionCategory}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{selectionCategory()}{selectionCategory()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} QCPAbstract\+Item\+::selection\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\mbox{\Hypertarget{classQCPAbstractItem_ae41d0349d68bb802c49104afd100ba2a}\label{classQCPAbstractItem_ae41d0349d68bb802c49104afd100ba2a}} 
+\index{QCPAbstractItem@{QCPAbstractItem}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily virtual double QCPAbstract\+Item\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/caredda/temp/intraoperative-\/functional-\/brain-\/mapping/\+Widget/inc/\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\end{DoxyCompactItemize}

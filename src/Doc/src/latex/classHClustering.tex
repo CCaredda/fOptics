@@ -1,0 +1,134 @@
+\doxysection{HClustering Class Reference}
+\hypertarget{classHClustering}{}\label{classHClustering}\index{HClustering@{HClustering}}
+Inheritance diagram for HClustering:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHClustering}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classHClustering_a9b283741b2f73566250de50fe14a90fc}{onrequest\+Save\+Results}} (\doxymbox{\hyperlink{struct__data__saving__info}{\+\_\+data\+\_\+saving\+\_\+info}})
+\item 
+void \doxymbox{\hyperlink{classHClustering_a4a26bf18b01930d4b8c1a87bfbed9e84}{new\+Image\+Cluser}} (Mat)
+\item 
+void \doxymbox{\hyperlink{classHClustering_a36f307643a2784a9fc6753fecb318f9f}{new\+Image}} (Mat)
+\item 
+void \doxymbox{\hyperlink{classHClustering_a405adcaf086323ec3414f446659385e6}{new\+Image}} (vector$<$ Mat $>$ img)
+\item 
+void \doxymbox{\hyperlink{classHClustering_a58bd06614728dd17eb324a2936119cba}{on\+New\+Clustering}} (QVector$<$ QPoint $>$, cv::\+\+Size)
+\item 
+void \doxymbox{\hyperlink{classHClustering_af11b86c0a3eb2fc316cbad3742bcb315}{onnew\+Pixel\+Pos}} (QVector$<$ Point $>$)
+\item 
+void \doxymbox{\hyperlink{classHClustering_aa674f17b944eb902b426598209548b0b}{on\+New\+Auto\+Detection}} (int)
+\item 
+void \doxymbox{\hyperlink{classHClustering_af1f5d46a72ae54d45c00cdddfcf3bcd9}{on\+New\+Hyperspectral\+Segmentation}} (QVector$<$ int $>$)
+\item 
+void \doxymbox{\hyperlink{classHClustering_a937b9cd0f7dd2f4846a9d242fa707e2e}{onnew\+Hyperspectral\+Images\+Dynamic}} (int v)
+\item 
+void \doxymbox{\hyperlink{classHClustering_a27cd0a5e13a5ca3923ad174d1cca2f3c}{on\+New\+Result\+Directory}} (QString v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classHClustering_aba6f3d2e18696d2134196a33309fc471}{new\+Segmentation\+Layers}} (Mat Surface\+Blood, Mat Buried\+Blood, Mat nonused)
+\item 
+void \doxymbox{\hyperlink{classHClustering_ae3bb3c15ef8f56548755f492c27d63a1}{Consider\+Blood\+Vessel\+Distance}} (bool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classHClustering_a4a11b006292d79a9007e0b5f14ddedde}\label{classHClustering_a4a11b006292d79a9007e0b5f14ddedde} 
+{\bfseries HClustering} (QWidget \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+void \doxymbox{\hyperlink{classHClustering_a045c77fdb1f153221276917f8ce9b4a6}{set\+Nb\+Spectral\+Channels}} (int n)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classHClustering_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHClustering_ae3bb3c15ef8f56548755f492c27d63a1}\index{HClustering@{HClustering}!ConsiderBloodVesselDistance@{ConsiderBloodVesselDistance}}
+\index{ConsiderBloodVesselDistance@{ConsiderBloodVesselDistance}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{ConsiderBloodVesselDistance}{ConsiderBloodVesselDistance}}
+{\footnotesize\ttfamily \label{classHClustering_ae3bb3c15ef8f56548755f492c27d63a1} 
+void HClustering::\+\+Consider\+Blood\+Vessel\+Distance (\begin{DoxyParamCaption}\item[{bool}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Consider Blood vessel distance \Hypertarget{classHClustering_a36f307643a2784a9fc6753fecb318f9f}\index{HClustering@{HClustering}!newImage@{newImage}}
+\index{newImage@{newImage}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{newImage}{newImage}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classHClustering_a36f307643a2784a9fc6753fecb318f9f} 
+void HClustering::\+new\+Image (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+new RGB Image \Hypertarget{classHClustering_a405adcaf086323ec3414f446659385e6}\index{HClustering@{HClustering}!newImage@{newImage}}
+\index{newImage@{newImage}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{newImage}{newImage}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classHClustering_a405adcaf086323ec3414f446659385e6} 
+void HClustering::\+new\+Image (\begin{DoxyParamCaption}\item[{vector$<$ Mat $>$}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New Hyperspectral image \Hypertarget{classHClustering_a4a26bf18b01930d4b8c1a87bfbed9e84}\index{HClustering@{HClustering}!newImageCluser@{newImageCluser}}
+\index{newImageCluser@{newImageCluser}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{newImageCluser}{newImageCluser}}
+{\footnotesize\ttfamily \label{classHClustering_a4a26bf18b01930d4b8c1a87bfbed9e84} 
+void HClustering::\+new\+Image\+Cluser (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New Image cluster \Hypertarget{classHClustering_aba6f3d2e18696d2134196a33309fc471}\index{HClustering@{HClustering}!newSegmentationLayers@{newSegmentationLayers}}
+\index{newSegmentationLayers@{newSegmentationLayers}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{newSegmentationLayers}{newSegmentationLayers}}
+{\footnotesize\ttfamily \label{classHClustering_aba6f3d2e18696d2134196a33309fc471} 
+void HClustering::\+new\+Segmentation\+Layers (\begin{DoxyParamCaption}\item[{Mat}]{Surface\+Blood}{, }\item[{Mat}]{Buried\+Blood}{, }\item[{Mat}]{nonused}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new segmentation layers \Hypertarget{classHClustering_aa674f17b944eb902b426598209548b0b}\index{HClustering@{HClustering}!onNewAutoDetection@{onNewAutoDetection}}
+\index{onNewAutoDetection@{onNewAutoDetection}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{onNewAutoDetection}{onNewAutoDetection}}
+{\footnotesize\ttfamily \label{classHClustering_aa674f17b944eb902b426598209548b0b} 
+void HClustering::\+on\+New\+Auto\+Detection (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+ROI auto detection \Hypertarget{classHClustering_a58bd06614728dd17eb324a2936119cba}\index{HClustering@{HClustering}!onNewClustering@{onNewClustering}}
+\index{onNewClustering@{onNewClustering}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{onNewClustering}{onNewClustering}}
+{\footnotesize\ttfamily \label{classHClustering_a58bd06614728dd17eb324a2936119cba} 
+void HClustering::\+on\+New\+Clustering (\begin{DoxyParamCaption}\item[{QVector$<$ QPoint $>$}]{}{, }\item[{cv::\+\+Size}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Process KMeans clustering \Hypertarget{classHClustering_a937b9cd0f7dd2f4846a9d242fa707e2e}\index{HClustering@{HClustering}!onnewHyperspectralImagesDynamic@{onnewHyperspectralImagesDynamic}}
+\index{onnewHyperspectralImagesDynamic@{onnewHyperspectralImagesDynamic}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{onnewHyperspectralImagesDynamic}{onnewHyperspectralImagesDynamic}}
+{\footnotesize\ttfamily \label{classHClustering_a937b9cd0f7dd2f4846a9d242fa707e2e} 
+void HClustering::\+onnew\+Hyperspectral\+Images\+Dynamic (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New dynamic of hyperspectral images \Hypertarget{classHClustering_af1f5d46a72ae54d45c00cdddfcf3bcd9}\index{HClustering@{HClustering}!onNewHyperspectralSegmentation@{onNewHyperspectralSegmentation}}
+\index{onNewHyperspectralSegmentation@{onNewHyperspectralSegmentation}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{onNewHyperspectralSegmentation}{onNewHyperspectralSegmentation}}
+{\footnotesize\ttfamily \label{classHClustering_af1f5d46a72ae54d45c00cdddfcf3bcd9} 
+void HClustering::\+on\+New\+Hyperspectral\+Segmentation (\begin{DoxyParamCaption}\item[{QVector$<$ int $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New Hyperspectral segmentation \Hypertarget{classHClustering_af11b86c0a3eb2fc316cbad3742bcb315}\index{HClustering@{HClustering}!onnewPixelPos@{onnewPixelPos}}
+\index{onnewPixelPos@{onnewPixelPos}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{onnewPixelPos}{onnewPixelPos}}
+{\footnotesize\ttfamily \label{classHClustering_af11b86c0a3eb2fc316cbad3742bcb315} 
+void HClustering::\+onnew\+Pixel\+Pos (\begin{DoxyParamCaption}\item[{QVector$<$ Point $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+new pixel pos \Hypertarget{classHClustering_a27cd0a5e13a5ca3923ad174d1cca2f3c}\index{HClustering@{HClustering}!onNewResultDirectory@{onNewResultDirectory}}
+\index{onNewResultDirectory@{onNewResultDirectory}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{onNewResultDirectory}{onNewResultDirectory}}
+{\footnotesize\ttfamily \label{classHClustering_a27cd0a5e13a5ca3923ad174d1cca2f3c} 
+void HClustering::\+on\+New\+Result\+Directory (\begin{DoxyParamCaption}\item[{QString}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New result directory \Hypertarget{classHClustering_a9b283741b2f73566250de50fe14a90fc}\index{HClustering@{HClustering}!onrequestSaveResults@{onrequestSaveResults}}
+\index{onrequestSaveResults@{onrequestSaveResults}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{onrequestSaveResults}{onrequestSaveResults}}
+{\footnotesize\ttfamily \label{classHClustering_a9b283741b2f73566250de50fe14a90fc} 
+void HClustering::\+onrequest\+Save\+Results (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct__data__saving__info}{\+\_\+data\+\_\+saving\+\_\+info}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+on request results saving \Hypertarget{classHClustering_a045c77fdb1f153221276917f8ce9b4a6}\index{HClustering@{HClustering}!setNbSpectralChannels@{setNbSpectralChannels}}
+\index{setNbSpectralChannels@{setNbSpectralChannels}!HClustering@{HClustering}}
+\doxysubsubsection{\texorpdfstring{setNbSpectralChannels()}{setNbSpectralChannels()}}
+{\footnotesize\ttfamily \label{classHClustering_a045c77fdb1f153221276917f8ce9b4a6} 
+void HClustering::\+set\+Nb\+Spectral\+Channels (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set nb of spectral channels 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+intraoperative-\/functional-\/brain-\/mapping/\+\+Display/\+inc/\+\doxymbox{\hyperlink{HClustering_8h}{HClustering.\+h}}\end{DoxyCompactItemize}

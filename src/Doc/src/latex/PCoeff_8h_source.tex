@@ -1,0 +1,147 @@
+\doxysection{PCoeff.\+h}
+\hypertarget{PCoeff_8h_source}{}\label{PCoeff_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PCoeff.h@{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PCoeff.h}}
+\doxymbox{\hyperlink{PCoeff_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ PCOEFF\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ PCOEFF\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QFileDialog>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{oxygenation_8h}{oxygenation.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ F\_max\ 1.4}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ F\_min\ 0.8}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ Delta\_F\ 0.25}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ ICA\_Method\ 0}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PCA\_Method\ 1}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ NMF\_Method\ 2}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ NN\_PARAFAC\ 3}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }PCoeff\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{explicit}\ PCoeff(QObject\ *parent\ =\ 0);}
+\DoxyCodeLine{00040\ \ \ \ \ \string~PCoeff();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPCoeff_a8c868a7f213ce14063bc48db24579bb9}{getMethodType}}()\ \{\textcolor{keywordflow}{return}\ \_M\_auto\_method;\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a460dd47563f62573b36b0b42bd6a485c}{ProcessICA}}(\textcolor{keyword}{const}\ QVector<QVector<QVector<float>\ >\ >\ \&data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Fs,\ QVector<float>\ \&filter,\ QVector<QVector<float>\ >\ \&mean\_temporal\_vec,\ QString\ msg);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a9fc6053acdd96d5c3b316113fc93ed63}{Launch\_Auto\_Method}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a8f7d923ba3b7dce787ee8d27a9eaa958}{ProcessPCA}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_ac6c81f2482dfffc5dd8f8ac71ab73abb}{ProcessICACoeff}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_ad62ca7dfcf8892052b897fcf07eaadf7}{ProcessNMF\_sep}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a3c8180e9394f33db0e195ff9dd19067f}{ProcessPARAFAC}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_ae03330beec528518f455d11b852bf7cb}{setData}}(Mat\ data)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{data.copyTo(\_M\_data);\}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a14c0ddaa561a28a36f48984cdd9f947a}{setCardiacFilter}}(QVector<float>\ v)\ \{\_M\_cardiac\_filter\ =\ v;\}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPCoeff_a49d65d33e2cdafc6399e0bbe78db6a27}{getNbPrincipalComponent}}()\ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_principal\_component\_nb;\}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_aaee685136b0d2a3356e58ded28152492}{SetAutoMethod}}(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_auto\_method\ =\ v;\}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ Mat\ \doxymbox{\hyperlink{classPCoeff_a3daf87171fdbbebbcab707b3742eb9a2}{get\_cardiac\_coeff}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_Molar\_coeff\_cardiac;\}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a550664ff81e2672f6daadf07c113757d}{setReferenceIDX}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \{\_M\_start\_ref=start;\ \_M\_end\_ref=end;\}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a7c1c142d57e968004bbf4869f8712f29}{setActivityIDX}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \ \{\_M\_start\_activity\ =\ start;\ \_M\_end\_activity=end;\}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a4611e05faf7eed8611b521f1e41f6e55}{setCorrelationIDX}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\{\_M\_start\_correlation=start;\_M\_end\_correlation=end;\}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ void\ get\_Auto\_Coeff\_Projection\_Time\_courses(const\ QVector<QVector<float>\ >\ \&temporal\_vec,\ QVector<QVector<float>\ >\ \&contrast,\ int\ id);}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a561d7b42d431dd1b241395e776071943}{get\_Auto\_Coeff\_Projection\_Time\_courses}}(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\ \textcolor{keywordtype}{int}\ rest\_start,\ \textcolor{keywordtype}{int}\ rest\_end,\ \textcolor{keywordtype}{int}\ correlation\_start,\ \textcolor{keywordtype}{int}\ correlation\_end,\ QVector<QVector<float>\ >\ \&contrast,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a7957cf6b0adbc7cd4aad266381881fc1}{get\_Auto\_Coeff\_Projection\_Averaged\_Values}}(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\ QVector<float>\ \&results,\ \textcolor{keywordtype}{int}\ start\_activity,\ \textcolor{keywordtype}{int}\ end\_activity,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ start\_ref=-\/1,\ \textcolor{keywordtype}{int}\ end\_ref=-\/1,\ \textcolor{keywordtype}{int}\ start\_id=-\/1,\ \textcolor{keywordtype}{int}\ end\_id=-\/1);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_af3169d4dcb6830eccc27d8135eed5e0a}{init}}(\textcolor{keywordtype}{int}\ nb\_pixels)\ \ \ \ \{\_M\_Pixel\_Wise\_cardiac\_coeff.clear();\ \_M\_Pixel\_Wise\_cardiac\_coeff.resize(nb\_pixels);\}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a4dcaa9ea4e3c45facb038f6b70c29940}{setModePixelWise}}(\textcolor{keywordtype}{bool}\ b)\ \ \ \{\_M\_mode\_pixel\_wise\ =\ b;\}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_aaeb21863d591628f2beddb6dc2752630}{setFrameRate}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \{\_M\_frame\_rate\ =v;\}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classPCoeff_aa85a14119f2bb980e004e8f7d14068c1}{coeff\_have\_been\_calculated}}()\ \ \ \{\textcolor{keywordflow}{return}\ \_M\_coeff\_computed;\}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ signals:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a26bb662e72f8694db84ace868d289067}{newProgressStatut}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a3963dd3cb82216a60f8ae7243cb7b7a4}{Auto\_Method\_is\_finished}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a3d3c9104247728778ffa7c2fe8d0d266}{onnewReferenceTime}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \ \ \ \ \ \{\_M\_start\_ref=start;\_M\_end\_ref=end;\}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a351b4897c38f8e32234f8d5daf0fbce6}{onnewCorrelationTimes}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \ \ \{\_M\_start\_correlation=start;\_M\_end\_correlation=end;\}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_a8bd2bc0dc21a865540631f839088070f}{Process\_Pixel\_Wise\_Cardiac\_Coeff}}(Mat\ data,\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ void\ on\_newDataCorrectionIdx(int\ start\_first\_rest,\ int\ end\_first\_rest,int\ start\_last\_rest,int\ end\_last\_rest)\ \{\_M\_start\_first\_rest=start\_first\_rest;\ \_M\_end\_first\_rest=end\_first\_rest;\ \_M\_start\_last\_rest=start\_last\_rest;\ \_M\_end\_last\_rest=end\_last\_rest;\}}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPCoeff_ae4a06d885082b590c469340333b4ce29}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_result\_directory\ =\ v;\}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//data}}
+\DoxyCodeLine{00133\ \ \ \ \ Mat\ \_M\_data;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//Cardiac\ filter}}
+\DoxyCodeLine{00136\ \ \ \ \ QVector<float>\ \_M\_cardiac\_filter;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//set\ principal\ component\ number}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_principal\_component\_nb;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//Normalize\ data}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_normalize\_data;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//Check\ if\ coeff\ have\ been\ computed}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_coeff\_computed;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//Cardiac\ Coeff}}
+\DoxyCodeLine{00148\ \ \ \ \ Mat\ \_M\_Molar\_coeff\_cardiac;}
+\DoxyCodeLine{00149\ \ \ \ \ QVector<Mat>\ \_M\_Pixel\_Wise\_cardiac\_coeff;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//Reference\ time}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_start\_ref;}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_end\_ref;}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//Correlation\ time}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_start\_correlation;}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_end\_correlation;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//Activity\ time}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_start\_activity;}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_end\_activity;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//Pixel\ wise\ mode}}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_mode\_pixel\_wise;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{//Auto\ methof\ (0:\ ICA,\ 0:\ PCA)}}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_auto\_method;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//Frame\ rate}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \_M\_frame\_rate;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//Indexes\ last\ and\ first\ rest\ steps\ (for\ data\ correction)}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_start\_first\_rest;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_end\_first\_rest;}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_start\_last\_rest;}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_end\_last\_rest;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00177\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PCOEFF\_H}}
+
+\end{DoxyCode}

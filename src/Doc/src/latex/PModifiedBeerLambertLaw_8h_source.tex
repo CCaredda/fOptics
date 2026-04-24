@@ -1,0 +1,80 @@
+\doxysection{PModified\+Beer\+Lambert\+Law.\+h}
+\hypertarget{PModifiedBeerLambertLaw_8h_source}{}\label{PModifiedBeerLambertLaw_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/PModifiedBeerLambertLaw.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/PModifiedBeerLambertLaw.h}}
+\doxymbox{\hyperlink{PModifiedBeerLambertLaw_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ PMODIFIEDBEERLAMBERTLAW\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ PMODIFIEDBEERLAMBERTLAW\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{oxygenation_8h}{oxygenation.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{molarcoefffunctions_8h}{molarcoefffunctions.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }PModifiedBeerLambertLaw\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ PModifiedBeerLambertLaw(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ \ \ \ \ \string~PModifiedBeerLambertLaw();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a31330fdb1f27d563e5856b74a276b092}{setReferenceIDX}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \{\_M\_start\_ref=start;\ \_M\_end\_ref=end;\}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_aa130d6ebc17c3ada14b548fdecb75a8b}{setActivityIDX}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \ \{\_M\_start\_activity\ =\ start;\ \_M\_end\_activity=end;\}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a4f7dc1d3e9aaaaa6b21252fc62701ac4}{setCorrelationIDX}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\{\_M\_start\_correlation=start;\_M\_end\_correlation=end;\}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ \ \ \ void\ getAveragedConcentrationChanges(const\ QVector<QVector<float>\ >\ \&temporal\_vec,\ const\ QVector<Mat>\ \&coeff,\ const\ QVector<int>\ \&mask,\ QVector<float>\ \&results);}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a2d4bf1d82b1434a4206f8595c450f079}{getAveragedConcentrationChanges}}(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\ \textcolor{keyword}{const}\ QVector<Mat>\ \&coeff,\ QVector<float>\ \&results,\ \textcolor{keywordtype}{int}\ start\_act=-\/1,\ \textcolor{keywordtype}{int}\ end\_act=-\/1,\textcolor{keywordtype}{int}\ start\_ref=-\/1,\ \textcolor{keywordtype}{int}\ end\_ref=-\/1,\ \textcolor{keywordtype}{int}\ start\_id=-\/1,\ \textcolor{keywordtype}{int}\ end\_id=-\/1);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_ac8c1b49802b3a85ca4363e706c56ad1f}{get\_Chromophore\_Time\_courses}}(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\ \textcolor{keyword}{const}\ QVector<Mat>\ \&coeff,\ QVector<QVector<float>\ >\ \&contrast,\textcolor{keywordtype}{int}\ start\_ref=-\/1,\ \textcolor{keywordtype}{int}\ end\_ref=-\/1,\ \textcolor{keywordtype}{int}\ start\_id=-\/1,\ \textcolor{keywordtype}{int}\ end\_id=-\/1);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ signals:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_aa0eec209560886c92b14d4d2381c1478}{onnewReferenceTime}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \ \ \ \ \ \{\_M\_start\_ref=start;\_M\_end\_ref=end;\}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a78e83667784d9cb4c2a7a5ee187b77a3}{onnewCorrelationTimes}}(\textcolor{keywordtype}{int}\ start,\textcolor{keywordtype}{int}\ end)\ \ \ \{\_M\_start\_correlation=start;\_M\_end\_correlation=end;\}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//Concentration\ changes\ averaged}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//temporal\_vec\ size(Nb\ Channels,time)}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Single\_Deconvolution(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\ \textcolor{keyword}{const}\ Mat\ \&coeff,\ QVector<float>\ \&results,\ \textcolor{keywordtype}{int}\ start\_act\_id=-\/1,\ \textcolor{keywordtype}{int}\ end\_act\_id=-\/1,\ \textcolor{keywordtype}{int}\ start\_ref=-\/1,\ \textcolor{keywordtype}{int}\ end\_ref=-\/1);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//Concentration\ changes\ time\ courses}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Single\_Deconvolution\_Time\_courses(\textcolor{keyword}{const}\ QVector<QVector<float>\ >\ \&temporal\_vec,\ \textcolor{keyword}{const}\ Mat\ \&coeff,\ QVector<QVector<float>\ >\ \&contrast,\ \textcolor{keywordtype}{int}\ start\_ref,\ \textcolor{keywordtype}{int}\ end\_ref,\ \textcolor{keywordtype}{int}\ start\_id,\ \textcolor{keywordtype}{int}\ end\_id);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//Reference\ time}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_start\_ref;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_end\_ref;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//Correlation\ time}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_start\_correlation;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_end\_correlation;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//Activity\ time}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_start\_activity;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_end\_activity;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//Task-\/based\ frame\ indexes}}
+\DoxyCodeLine{00079\ \ \ \ \ QVector<float>\ \_M\_frames\_idx;}
+\DoxyCodeLine{00080\ \ \ \ \ QVector<float>\ \_M\_first\_last\_rest\_frames\_idx;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//Indexes\ last\ and\ first\ rest\ steps\ (for\ data\ correction)}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_start\_first\_rest;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_end\_first\_rest;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_start\_last\_rest;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_end\_last\_rest;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PMODIFIEDBEERLAMBERTLAW\_H}}
+
+\end{DoxyCode}

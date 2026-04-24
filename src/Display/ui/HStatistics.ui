@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HStatistics</class>
+ <widget class="QWidget" name="HStatistics">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1286</width>
+    <height>666</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" rowstretch="0" columnstretch="1,0">
+   <item row="0" column="0" colspan="2">
+    <widget class="QGroupBox" name="_stats">
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> QGroupBox {
+
+     border: 2px solid gray;
+     border-radius: 5px;
+     margin-top: 5ex; /* leave space at the top for the title */
+ }
+ QGroupBox::title {
+     subcontrol-origin: margin;
+     subcontrol-position: top center; /* position at the top center */
+     padding: 0 5px;
+ }
+
+
+</string>
+     </property>
+     <property name="title">
+      <string>Activated cortical area definition</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,0">
+      <item row="0" column="0">
+       <widget class="QComboBox" name="_stats_type">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QWidget" name="_widget_stat" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
+         <item>
+          <widget class="QLabel" name="_label_setting">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="HValueEdit" name="_setting">
+           <property name="font">
+            <font>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HValueEdit</class>
+   <extends>QLineEdit</extends>
+   <header>HValueEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

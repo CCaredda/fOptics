@@ -1,0 +1,40 @@
+\doxysection{filtering.\+h}
+\hypertarget{filtering_8h_source}{}\label{filtering_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/filtering.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/filtering.h}}
+\doxymbox{\hyperlink{filtering_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ FILTERING\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ FILTERING\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{polyfit_8hpp}{polyfit.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <fftw3.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <omp.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Statistic__functions_8h}{Statistic\_functions.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QtMath>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PI\ 3.141592653589793}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{filtering_8h_a9f26e19b6f2270a1dd255a4b9934abf0}{Blackman\_Window}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Fs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Fc,\ QVector<float>\ \&filter,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{filtering_8h_a3a582d8774ca9849ff6a6c5f240a33e2}{Apply\_Filtering}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&data,\textcolor{keyword}{const}\ fftwf\_plan\ \&p,\ \textcolor{keyword}{const}\ fftwf\_plan\ \&q,\ \textcolor{keyword}{const}\ QVector<float>\ \&filter);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{filtering_8h_a57a69b858e3da649a92274305822f443}{Apply\_Data\_Correction}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&data);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ QVector<float>\ \doxymbox{\hyperlink{filtering_8h_a57a69b858e3da649a92274305822f443}{Apply\_Data\_Correction}}(\textcolor{keyword}{const}\ QVector<float>\ \&data,\ \textcolor{keywordtype}{int}\ start\_acquis,\ \textcolor{keywordtype}{int}\ end\_acquis,\ \textcolor{keywordtype}{int}\ rest1\_start,\ \textcolor{keywordtype}{int}\ rest1\_end,\ \textcolor{keywordtype}{int}\ rest\_last\_start,\ \textcolor{keywordtype}{int}\ rest\_last\_end);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{filtering_8h_ac9fe384cd7bdc476f7e1dba4f052882e}{Apply\_Low\_Pass\_Filtering}}(\textcolor{keyword}{const}\ QVector<float>\ \&x,\ QVector<float>\ \&data,\textcolor{keyword}{const}\ fftwf\_plan\ \&p,\ \textcolor{keyword}{const}\ fftwf\_plan\ \&q,\ \textcolor{keyword}{const}\ QVector<float>\ \&filter);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILTERING\_H}}
+
+\end{DoxyCode}

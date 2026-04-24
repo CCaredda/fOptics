@@ -1,0 +1,130 @@
+\doxysection{HImage\+Clustering.\+h}
+\hypertarget{HImageClustering_8h_source}{}\label{HImageClustering_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HImageClustering.h@{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Display/inc/HImageClustering.h}}
+\doxymbox{\hyperlink{HImageClustering_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ HImageClustering\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ HImageClustering\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QImage>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{acquisition_8h}{acquisition.h}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{vblobForeach_8h}{vblobForeach.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QPainterPath>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ Mat\ \ \ \ \ \ \ \ \ *img;}
+\DoxyCodeLine{00030\ \ \ \ \ \doxymbox{\hyperlink{struct__Mycolor}{\_Mycolor}}\ \ \ \ *selected\_color;}
+\DoxyCodeLine{00031\ \ \ \ \ \doxymbox{\hyperlink{struct__Mycolor}{\_Mycolor}}\ \ \ \ *desired\_color;}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ \doxymbox{\hyperlink{struct__Color__Datas}{\_Color\_Datas}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }HImageClustering\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ HImageClustering(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00042\ \ \ \ \ \string~HImageClustering();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_a9f697cb655491712a85818ec746d8a08}{newDisplayImage}}(Mat\ display);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_a3c7200f87555681f6912ea84b79cf6b6}{newLabelsImg}}(Mat\ img);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_a5770928f8786c769c638e11b46585a2f}{setRoi}}(vector<Point>\ roi);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_adf210fb15526f1c75566c8662f4efd30}{setPixelPos}}(QVector<Point>\ p);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_afe656978db31cc32f8516b6831ab8de0}{setClusterSelection}}(QVector<int>\ MG,QVector<int>\ surf\_blood,QVector<int>\ emb\_blood);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classHImageClustering_a213cf1bf21c340a53a22a4ec48927171}{isimgLoaded}}()\ \ \{\textcolor{keywordflow}{return}\ \_M\_loaded;\}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_ad282f4233ed527648d6ea4ae182c62e5}{setNbOfClusters}}(\textcolor{keywordtype}{int}\ n)\ \{\_M\_nb\_clusters=n;\}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_a04883f775714ee9921515e4785560575}{onSelectedContourChanged}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_a26ee638ee79e9ba7a2029dda9d341934}{onKernelSizeChanged}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_a96e75b650e685f4247b5a1af896a39ea}{paintEvent}}(QPaintEvent\ *);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_a72a5dcb8c917c00bf7b28a2afd6578cb}{mousePressEvent}}(QMouseEvent*);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ signals:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_ae869f2625990d8afb1d6941f022cefe7}{newClusterImg}}(Mat);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHImageClustering_af3c08692c8adf3e8d0968094eb8ec187}{TissuechoiceEnable}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ private\ :}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//process\ threshold\ to\ get\ all\ cluster\ pos}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ProcessThreshold();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//Color\ selected\ contour\ with\ choose\ color}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ColorSelectedContour(\doxymbox{\hyperlink{struct__Mycolor}{\_Mycolor}}\ desired\_color);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//Reconstruct\ image}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ReconstructImg(Mat\&);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//images}}
+\DoxyCodeLine{00099\ \ \ \ \ Mat\ \ \ \ \ \_M\_Matimage;}
+\DoxyCodeLine{00100\ \ \ \ \ Mat\ \ \ \ \ \_M\_img\_display;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//Labels}}
+\DoxyCodeLine{00103\ \ \ \ \ Mat\ \_M\_labels;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Image\ size}}
+\DoxyCodeLine{00106\ \ \ \ \ cv::Size\ \_M\_img\_size;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//resize\ coefficient}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_x\_coeff;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \_M\_y\_coeff;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//ROI}}
+\DoxyCodeLine{00113\ \ \ \ \ vector<Point>\ \_M\_ROI;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//pixel\ pos}}
+\DoxyCodeLine{00116\ \ \ \ \ QVector<Point>\ \_M\_pixel\_pos;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//Spatial\ sampling}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_spatial\_sampling;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//User\ action}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_enable\_user\_action;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//Selected\ contour}}
+\DoxyCodeLine{00126\ \ \ \ \ QVector<QPoint>\ \_M\_selected\_Contour;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_draw\_Contour;}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_Contour\_is\_drawn;}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//6\ clusters\ and\ multiple\ contour\ per\ cluster}}
+\DoxyCodeLine{00130\ \ \ \ \ vector<vector<vector<Point>\ >\ >\ \_M\_cluster\_pos;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_id\_cluster\_selected;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_id\_contour\_selected;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{comment}{//Image\ loaded}}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_loaded;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//Nb\ of\ clusters}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_clusters;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//Morphological\ kernel\ size}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_ksize;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HImageClustering\_H}}
+
+\end{DoxyCode}

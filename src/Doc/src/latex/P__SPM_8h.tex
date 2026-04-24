@@ -1,0 +1,28 @@
+\doxysection{C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Vision/\+inc/\+\+P\+\_\+\+SPM.h File Reference}
+\hypertarget{P__SPM_8h}{}\label{P__SPM_8h}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/P\_SPM.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/P\_SPM.h}}
+
+
+This class aims to apply the Statistical Parametric Mapping methodology (f\+MRI standard for identifying functional brain areas) on images of chromophore\textquotesingle{}s concentration changes. This output of this class is a T-\/\+Stat matrix that indicates at which point the measured data reject the null hypothesis (no cortical activation).  
+
+
+{\ttfamily \+\#include $<$opencv2/\+core/\+cuda.\+hpp$>$}\newline
+{\ttfamily \+\#include "{}Statistic\+\_\+functions.\+h"{}}\newline
+{\ttfamily \+\#include "{}acquisition.\+h"{}}\newline
+{\ttfamily \+\#include $<$QObject$>$}\newline
+{\ttfamily \+\#include $<$QCore\+Application$>$}\newline
+{\ttfamily \+\#include "{}loadinfos.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classP__SPM}{P\+\_\+\+SPM}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class aims to apply the Statistical Parametric Mapping methodology (f\+MRI standard for identifying functional brain areas) on images of chromophore\textquotesingle{}s concentration changes. This output of this class is a T-\/\+Stat matrix that indicates at which point the measured data reject the null hypothesis (no cortical activation). 
+
+In this class, the random field theory is also implemented and aims to threshold the T-\/\+Stats matrix in order to get the extent of the activated cortical areas.
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact:\+ \href{mailto:caredda.c@gmail.com}{\texttt{caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}

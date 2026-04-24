@@ -1,0 +1,50 @@
+\doxysection{WClickable\+Label.\+h}
+\hypertarget{WClickableLabel_8h_source}{}\label{WClickableLabel_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Widget/inc/WClickableLabel.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Widget/inc/WClickableLabel.h}}
+\doxymbox{\hyperlink{WClickableLabel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ WCLICKABLELABEL\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ WCLICKABLELABEL\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{HKeypad_8h}{HKeypad.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QMouseEvent>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }WClickableLabel\ :\ \textcolor{keyword}{public}\ QLabel}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ Q\_OBJECT}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ WClickableLabel(QWidget*\ parent=0\ );}
+\DoxyCodeLine{00023\ \ \ \ \ \string~WClickableLabel();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ setRange(\textcolor{keywordtype}{double}\ min,\textcolor{keywordtype}{double}\ max,QString\ unite);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ getValue();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntegerMode(\textcolor{keywordtype}{bool}\ v=\textcolor{keyword}{true});}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setDisplayTxtUnit(\textcolor{keywordtype}{bool}\ v)\ \ \{m\_display\_unit=v;\}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setLabel(QString\ v)\ \ \ \ \ \ \ \ \{m\_label=v;\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ onValueChanged(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00033\ signals:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ newLabelValue(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ mousePressEvent(QMouseEvent*);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ closeEvent(QCloseEvent\ *);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \doxymbox{\hyperlink{classHKeypad}{HKeypad}}\ \ \ \ \ m\_clavier;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ m\_current\_value;}
+\DoxyCodeLine{00043\ \ \ \ \ QString\ \ \ \ \ m\_unit;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ m\_min;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ m\_max;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ m\_display\_unit;}
+\DoxyCodeLine{00047\ \ \ \ \ QString\ \ \ \ \ m\_label;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WCLICKABLELABEL\_H}}
+
+\end{DoxyCode}

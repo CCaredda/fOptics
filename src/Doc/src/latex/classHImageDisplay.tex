@@ -1,0 +1,273 @@
+\doxysection{HImage\+Display Class Reference}
+\hypertarget{classHImageDisplay}{}\label{classHImageDisplay}\index{HImageDisplay@{HImageDisplay}}
+Inheritance diagram for HImage\+Display:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHImageDisplay}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a371d9e47e0a7ae578e143372c01c93f6}{on\+Draw\+Analysis\+Zone}} (bool v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a41893c2c0eabbd861a909fdee1744f97}{onnew\+Mean\+ROIRadius}} (double v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a230f0305246c220e50df62a7b3398a22}{onrequest\+Mean\+ROI}} (bool v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_ab63c24459eaac9afacf418298063d5f4}{onnew\+Setting\+Statistic\+Zone}} (double v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_ab55389c531aa13c6ac87c7943029423b}{onnew\+Stat\+Type}} (int v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_aebd58b380bea0444c7068d7cfb6b338b}{new\+Image}} (const Mat \&img)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_acc35692dd26a83123fdc867c03006cde}{on\+Rect\+ROIRequested}} ()
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a2ea5970e6dc973bfe36ed199463bce36}{on\+New\+Auto\+ROI}} (Point, Point)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a6250da801ad2f8c106c10f4cdff09915}{on\+Analysis\+Zone\+Requested}} ()
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_ad6dad55e49a4309b3630d02305aa0ba9}{onrequest\+Save\+Results}} (bool v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a64d3b98b81ec43fcea8282b9fa800237}{on\+New\+Alpha\+Value}} (double v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a89f8a545923c4790b01930b2c31198ee}{Clear\+Img}} ()
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_ad6e2ee33714b3c31dfbe215391bbe694}{on\+New\+Contrast\+Image}} (Mat)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a5b426eb81b4cccdd447e025f8e0b7ee9}{on\+New\+Contrast\+Image}} (Mat, int)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a3c4ee37dc8674626611111534786e18c}{save\+Img}} (Mat img, int proc\+\_\+index, QString path)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a07a9d79347b8602ea570a9d9ce6791c4}{on\+Median\+Filter\+ON}} (bool v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a29e0977283135950e3ed16be3d8765de}{on\+Window\+Size\+Changed}} (double v)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a5941bcf68b98d80d1624194136b6bb79}{on\+New\+Result\+Directory}} (QString v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a4a20560c167c2017d8c5c70a50641569}{analysis\+Zoneis\+Drawn}} (bool)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a58b8e3440caa0ff997a9a5676cf3f7ae}{new\+Rect\+ROI}} (QPoint, QPoint)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a08548f2bca30599a33b07e454ffc2084}{new\+Analysis\+Zone}} (QVector$<$ QPoint $>$, cv::\+\+Size)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_aa2f9b935c36c0a9706ab6ddc9e47a676}{Point\+Selected}} (Point)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_ad44c9a688f4fd2d3e6cec17ec3a34eb7}{new\+Initial\+Img}} (Mat)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a52ed30ec5fa52511a7a7402b39c604fb}{new\+Resel\+Number}} (int)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classHImageDisplay_a9355724aea60dd049d263128033ec240}\label{classHImageDisplay_a9355724aea60dd049d263128033ec240} 
+{\bfseries HImage\+Display} (QWidget \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_a7e2d8b80534a4d4d04bb3a1c72306f0d}{set\+Analysis\+Zone}} (QVector$<$ QPoint $>$, cv::\+\+Size)
+\item 
+void \doxymbox{\hyperlink{classHImageDisplay_aa174661c64be57eebad8a7e0f806b6c6}{set\+Inial\+Image}} (Mat img)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{classHImageDisplay_a87e3d41443acfb2c623ae16b9102baac}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \doxymbox{\hyperlink{classHImageDisplay_ab397a06f65086c3a0b038e6d7dec11e9}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \doxymbox{\hyperlink{classHImageDisplay_ad692349ef9812f1e7bbfcad707bad0bf}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \doxymbox{\hyperlink{classHImageDisplay_adcca151fe7bcd8fa78af07484d6170a2}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classHImageDisplay_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHImageDisplay_a4a20560c167c2017d8c5c70a50641569}\index{HImageDisplay@{HImageDisplay}!analysisZoneisDrawn@{analysisZoneisDrawn}}
+\index{analysisZoneisDrawn@{analysisZoneisDrawn}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{analysisZoneisDrawn}{analysisZoneisDrawn}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a4a20560c167c2017d8c5c70a50641569} 
+void HImage\+Display::\+analysis\+Zoneis\+Drawn (\begin{DoxyParamCaption}\item[{bool}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+ROI is drawn \Hypertarget{classHImageDisplay_a89f8a545923c4790b01930b2c31198ee}\index{HImageDisplay@{HImageDisplay}!ClearImg@{ClearImg}}
+\index{ClearImg@{ClearImg}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{ClearImg}{ClearImg}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a89f8a545923c4790b01930b2c31198ee} 
+void HImage\+Display::\+\+Clear\+Img (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Clear img \Hypertarget{classHImageDisplay_ad692349ef9812f1e7bbfcad707bad0bf}\index{HImageDisplay@{HImageDisplay}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily \label{classHImageDisplay_ad692349ef9812f1e7bbfcad707bad0bf} 
+virtual void HImage\+Display::\+mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Event when mouse is moved \Hypertarget{classHImageDisplay_ab397a06f65086c3a0b038e6d7dec11e9}\index{HImageDisplay@{HImageDisplay}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily \label{classHImageDisplay_ab397a06f65086c3a0b038e6d7dec11e9} 
+virtual void HImage\+Display::\+mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Event when mouse is pressed \Hypertarget{classHImageDisplay_adcca151fe7bcd8fa78af07484d6170a2}\index{HImageDisplay@{HImageDisplay}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily \label{classHImageDisplay_adcca151fe7bcd8fa78af07484d6170a2} 
+virtual void HImage\+Display::\+mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Event when mouse is released \Hypertarget{classHImageDisplay_a08548f2bca30599a33b07e454ffc2084}\index{HImageDisplay@{HImageDisplay}!newAnalysisZone@{newAnalysisZone}}
+\index{newAnalysisZone@{newAnalysisZone}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{newAnalysisZone}{newAnalysisZone}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a08548f2bca30599a33b07e454ffc2084} 
+void HImage\+Display::\+new\+Analysis\+Zone (\begin{DoxyParamCaption}\item[{QVector$<$ QPoint $>$}]{}{, }\item[{cv::\+\+Size}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+New analysis zone emission \Hypertarget{classHImageDisplay_aebd58b380bea0444c7068d7cfb6b338b}\index{HImageDisplay@{HImageDisplay}!newImage@{newImage}}
+\index{newImage@{newImage}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{newImage}{newImage}}
+{\footnotesize\ttfamily \label{classHImageDisplay_aebd58b380bea0444c7068d7cfb6b338b} 
+void HImage\+Display::\+new\+Image (\begin{DoxyParamCaption}\item[{const Mat \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Receive new Image \Hypertarget{classHImageDisplay_ad44c9a688f4fd2d3e6cec17ec3a34eb7}\index{HImageDisplay@{HImageDisplay}!newInitialImg@{newInitialImg}}
+\index{newInitialImg@{newInitialImg}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{newInitialImg}{newInitialImg}}
+{\footnotesize\ttfamily \label{classHImageDisplay_ad44c9a688f4fd2d3e6cec17ec3a34eb7} 
+void HImage\+Display::\+new\+Initial\+Img (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Init initial image \Hypertarget{classHImageDisplay_a58b8e3440caa0ff997a9a5676cf3f7ae}\index{HImageDisplay@{HImageDisplay}!newRectROI@{newRectROI}}
+\index{newRectROI@{newRectROI}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{newRectROI}{newRectROI}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a58b8e3440caa0ff997a9a5676cf3f7ae} 
+void HImage\+Display::\+new\+Rect\+ROI (\begin{DoxyParamCaption}\item[{QPoint}]{}{, }\item[{QPoint}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new Rect ROI emission \Hypertarget{classHImageDisplay_a52ed30ec5fa52511a7a7402b39c604fb}\index{HImageDisplay@{HImageDisplay}!newReselNumber@{newReselNumber}}
+\index{newReselNumber@{newReselNumber}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{newReselNumber}{newReselNumber}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a52ed30ec5fa52511a7a7402b39c604fb} 
+void HImage\+Display::\+new\+Resel\+Number (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Send new number of resels \Hypertarget{classHImageDisplay_a6250da801ad2f8c106c10f4cdff09915}\index{HImageDisplay@{HImageDisplay}!onAnalysisZoneRequested@{onAnalysisZoneRequested}}
+\index{onAnalysisZoneRequested@{onAnalysisZoneRequested}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onAnalysisZoneRequested}{onAnalysisZoneRequested}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a6250da801ad2f8c106c10f4cdff09915} 
+void HImage\+Display::\+on\+Analysis\+Zone\+Requested (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Analysis zone requested \Hypertarget{classHImageDisplay_a371d9e47e0a7ae578e143372c01c93f6}\index{HImageDisplay@{HImageDisplay}!onDrawAnalysisZone@{onDrawAnalysisZone}}
+\index{onDrawAnalysisZone@{onDrawAnalysisZone}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onDrawAnalysisZone}{onDrawAnalysisZone}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a371d9e47e0a7ae578e143372c01c93f6} 
+void HImage\+Display::\+on\+Draw\+Analysis\+Zone (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Draw analysis zone \Hypertarget{classHImageDisplay_a07a9d79347b8602ea570a9d9ce6791c4}\index{HImageDisplay@{HImageDisplay}!onMedianFilterON@{onMedianFilterON}}
+\index{onMedianFilterON@{onMedianFilterON}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onMedianFilterON}{onMedianFilterON}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a07a9d79347b8602ea570a9d9ce6791c4} 
+void HImage\+Display::\+on\+Median\+Filter\+ON (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Set on/\+off the median filter \Hypertarget{classHImageDisplay_a64d3b98b81ec43fcea8282b9fa800237}\index{HImageDisplay@{HImageDisplay}!onNewAlphaValue@{onNewAlphaValue}}
+\index{onNewAlphaValue@{onNewAlphaValue}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onNewAlphaValue}{onNewAlphaValue}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a64d3b98b81ec43fcea8282b9fa800237} 
+void HImage\+Display::\+on\+New\+Alpha\+Value (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+on new alpha value (for transparency when merging results with initial image) \Hypertarget{classHImageDisplay_a2ea5970e6dc973bfe36ed199463bce36}\index{HImageDisplay@{HImageDisplay}!onNewAutoROI@{onNewAutoROI}}
+\index{onNewAutoROI@{onNewAutoROI}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onNewAutoROI}{onNewAutoROI}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a2ea5970e6dc973bfe36ed199463bce36} 
+void HImage\+Display::\+on\+New\+Auto\+ROI (\begin{DoxyParamCaption}\item[{Point}]{}{, }\item[{Point}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New Auto rect ROI \Hypertarget{classHImageDisplay_ad6e2ee33714b3c31dfbe215391bbe694}\index{HImageDisplay@{HImageDisplay}!onNewContrastImage@{onNewContrastImage}}
+\index{onNewContrastImage@{onNewContrastImage}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onNewContrastImage}{onNewContrastImage}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classHImageDisplay_ad6e2ee33714b3c31dfbe215391bbe694} 
+void HImage\+Display::\+on\+New\+Contrast\+Image (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New contrast image \Hypertarget{classHImageDisplay_a5b426eb81b4cccdd447e025f8e0b7ee9}\index{HImageDisplay@{HImageDisplay}!onNewContrastImage@{onNewContrastImage}}
+\index{onNewContrastImage@{onNewContrastImage}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onNewContrastImage}{onNewContrastImage}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a5b426eb81b4cccdd447e025f8e0b7ee9} 
+void HImage\+Display::\+on\+New\+Contrast\+Image (\begin{DoxyParamCaption}\item[{Mat}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+New contrast image \Hypertarget{classHImageDisplay_a41893c2c0eabbd861a909fdee1744f97}\index{HImageDisplay@{HImageDisplay}!onnewMeanROIRadius@{onnewMeanROIRadius}}
+\index{onnewMeanROIRadius@{onnewMeanROIRadius}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onnewMeanROIRadius}{onnewMeanROIRadius}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a41893c2c0eabbd861a909fdee1744f97} 
+void HImage\+Display::\+onnew\+Mean\+ROIRadius (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+set MEAN ROI radius \Hypertarget{classHImageDisplay_a5941bcf68b98d80d1624194136b6bb79}\index{HImageDisplay@{HImageDisplay}!onNewResultDirectory@{onNewResultDirectory}}
+\index{onNewResultDirectory@{onNewResultDirectory}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onNewResultDirectory}{onNewResultDirectory}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a5941bcf68b98d80d1624194136b6bb79} 
+void HImage\+Display::\+on\+New\+Result\+Directory (\begin{DoxyParamCaption}\item[{QString}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New result directory \Hypertarget{classHImageDisplay_ab63c24459eaac9afacf418298063d5f4}\index{HImageDisplay@{HImageDisplay}!onnewSettingStatisticZone@{onnewSettingStatisticZone}}
+\index{onnewSettingStatisticZone@{onnewSettingStatisticZone}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onnewSettingStatisticZone}{onnewSettingStatisticZone}}
+{\footnotesize\ttfamily \label{classHImageDisplay_ab63c24459eaac9afacf418298063d5f4} 
+void HImage\+Display::\+onnew\+Setting\+Statistic\+Zone (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set SPM setting (FHWM of the gaussian kernel) \Hypertarget{classHImageDisplay_ab55389c531aa13c6ac87c7943029423b}\index{HImageDisplay@{HImageDisplay}!onnewStatType@{onnewStatType}}
+\index{onnewStatType@{onnewStatType}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onnewStatType}{onnewStatType}}
+{\footnotesize\ttfamily \label{classHImageDisplay_ab55389c531aa13c6ac87c7943029423b} 
+void HImage\+Display::\+onnew\+Stat\+Type (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+New statistic zone is requested New stastical analysis \Hypertarget{classHImageDisplay_acc35692dd26a83123fdc867c03006cde}\index{HImageDisplay@{HImageDisplay}!onRectROIRequested@{onRectROIRequested}}
+\index{onRectROIRequested@{onRectROIRequested}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onRectROIRequested}{onRectROIRequested}}
+{\footnotesize\ttfamily \label{classHImageDisplay_acc35692dd26a83123fdc867c03006cde} 
+void HImage\+Display::\+on\+Rect\+ROIRequested (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Rectangle ROI requested \Hypertarget{classHImageDisplay_a230f0305246c220e50df62a7b3398a22}\index{HImageDisplay@{HImageDisplay}!onrequestMeanROI@{onrequestMeanROI}}
+\index{onrequestMeanROI@{onrequestMeanROI}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onrequestMeanROI}{onrequestMeanROI}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a230f0305246c220e50df62a7b3398a22} 
+void HImage\+Display::\+onrequest\+Mean\+ROI (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Request mean ROI drawing \Hypertarget{classHImageDisplay_ad6dad55e49a4309b3630d02305aa0ba9}\index{HImageDisplay@{HImageDisplay}!onrequestSaveResults@{onrequestSaveResults}}
+\index{onrequestSaveResults@{onrequestSaveResults}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onrequestSaveResults}{onrequestSaveResults}}
+{\footnotesize\ttfamily \label{classHImageDisplay_ad6dad55e49a4309b3630d02305aa0ba9} 
+void HImage\+Display::\+onrequest\+Save\+Results (\begin{DoxyParamCaption}\item[{bool}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+save img results \Hypertarget{classHImageDisplay_a29e0977283135950e3ed16be3d8765de}\index{HImageDisplay@{HImageDisplay}!onWindowSizeChanged@{onWindowSizeChanged}}
+\index{onWindowSizeChanged@{onWindowSizeChanged}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{onWindowSizeChanged}{onWindowSizeChanged}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a29e0977283135950e3ed16be3d8765de} 
+void HImage\+Display::\+on\+Window\+Size\+Changed (\begin{DoxyParamCaption}\item[{double}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Size of window for median filter \Hypertarget{classHImageDisplay_a87e3d41443acfb2c623ae16b9102baac}\index{HImageDisplay@{HImageDisplay}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a87e3d41443acfb2c623ae16b9102baac} 
+virtual void HImage\+Display::\+paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Paint event \Hypertarget{classHImageDisplay_aa2f9b935c36c0a9706ab6ddc9e47a676}\index{HImageDisplay@{HImageDisplay}!PointSelected@{PointSelected}}
+\index{PointSelected@{PointSelected}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{PointSelected}{PointSelected}}
+{\footnotesize\ttfamily \label{classHImageDisplay_aa2f9b935c36c0a9706ab6ddc9e47a676} 
+void HImage\+Display::\+\+Point\+Selected (\begin{DoxyParamCaption}\item[{Point}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+new Point selected \Hypertarget{classHImageDisplay_a3c4ee37dc8674626611111534786e18c}\index{HImageDisplay@{HImageDisplay}!saveImg@{saveImg}}
+\index{saveImg@{saveImg}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{saveImg}{saveImg}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a3c4ee37dc8674626611111534786e18c} 
+void HImage\+Display::\+save\+Img (\begin{DoxyParamCaption}\item[{Mat}]{img}{, }\item[{int}]{proc\+\_\+index}{, }\item[{QString}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Save img \Hypertarget{classHImageDisplay_a7e2d8b80534a4d4d04bb3a1c72306f0d}\index{HImageDisplay@{HImageDisplay}!setAnalysisZone@{setAnalysisZone}}
+\index{setAnalysisZone@{setAnalysisZone}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{setAnalysisZone()}{setAnalysisZone()}}
+{\footnotesize\ttfamily \label{classHImageDisplay_a7e2d8b80534a4d4d04bb3a1c72306f0d} 
+void HImage\+Display::\+set\+Analysis\+Zone (\begin{DoxyParamCaption}\item[{QVector$<$ QPoint $>$}]{}{, }\item[{cv::\+\+Size}]{}{}\end{DoxyParamCaption})}
+
+Set analysis zone \Hypertarget{classHImageDisplay_aa174661c64be57eebad8a7e0f806b6c6}\index{HImageDisplay@{HImageDisplay}!setInialImage@{setInialImage}}
+\index{setInialImage@{setInialImage}!HImageDisplay@{HImageDisplay}}
+\doxysubsubsection{\texorpdfstring{setInialImage()}{setInialImage()}}
+{\footnotesize\ttfamily \label{classHImageDisplay_aa174661c64be57eebad8a7e0f806b6c6} 
+void HImage\+Display::\+set\+Inial\+Image (\begin{DoxyParamCaption}\item[{Mat}]{img}{}\end{DoxyParamCaption})}
+
+On new initial image 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Display/\+inc/\+\doxymbox{\hyperlink{HImageDisplay_8h}{HImage\+Display.\+h}}\end{DoxyCompactItemize}

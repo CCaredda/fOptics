@@ -1,0 +1,61 @@
+\doxysection{AVideo\+Processor.\+h}
+\hypertarget{AVideoProcessor_8h_source}{}\label{AVideoProcessor_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/AVideoProcessor.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/AVideoProcessor.h}}
+\doxymbox{\hyperlink{AVideoProcessor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ AVIDEOPROCESSOR\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ AVIDEOPROCESSOR\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QMediaPlayer>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QVideoSink>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QVideoFrame>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }AVideoProcessor\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{explicit}\ AVideoProcessor(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00028\ \ \ \ \ \string~AVideoProcessor();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ loadVideo(\textcolor{keyword}{const}\ QString\ \&filePath);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ startReadingFrames();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_Total\_frame\_number(\textcolor{keywordtype}{int}\ v)\ \ \{\_M\_tot\_frames\ =\ v;\}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ init\_frame\_count()\ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_video\_framecount\ =\ 0;\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_Start\_pos\_ms(qint64\ v)\ \ \ \ \ \{\_M\_start\_pos\_ms\ =\ v;\}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_Start\_frame(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \{\_M\_start\_frame\ =\ v;\}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_Last\_frame(\textcolor{keywordtype}{int}\ v)\ \ \ \ \ \ \ \ \ \ \{\_M\_last\_frame\ =\ v;\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ signals:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ allFramesProcessed();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ newImageAcquired(\doxymbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ newImgSend(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ onVideoFrameChanged(\textcolor{keyword}{const}\ QVideoFrame\ \&frame);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ QMediaPlayer\ *\_M\_mediaPlayer;}
+\DoxyCodeLine{00050\ \ \ \ \ QVideoSink\ *\_M\_videoSink;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_frameCount;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_video\_framecount;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_starting\_frame\_count;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_last\_frame;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_start\_frame;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_tot\_frames;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ qint64\ \_M\_start\_pos\_ms;}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AVIDEOPROCESSOR\_H}}
+
+\end{DoxyCode}

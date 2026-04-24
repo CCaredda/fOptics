@@ -1,0 +1,57 @@
+\doxysection{AImage\+Registration.\+h}
+\hypertarget{AImageRegistration_8h_source}{}\label{AImageRegistration_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/AImageRegistration.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/AImageRegistration.h}}
+\doxymbox{\hyperlink{AImageRegistration_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ AIMAGEREGISTRATION\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ AIMAGEREGISTRATION\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ARegistration_8h}{ARegistration.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }AImageRegistration\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ AImageRegistration(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00023\ \ \ \ \ \string~AImageRegistration();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a8472e8da30db84666e1d2066e683f3c5}{DataAcquisitionIsReady}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a0544a4ea043ee3ba28550bb74846c1d6}{setAnalysisZone}}(QVector<QPoint>\ c);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a4a244b44a3403d0cd64677d5f6eca665}{setTotalNbFrames}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a7c5461f743e11f686b8f41cf6612275f}{setTransfoModel}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a3d83d02c95279308075287ec32e5d728}{newRegistrationtype}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_adb3362808e0ae3073fefbeb9eb1c62b9}{setFirstImg}}(Mat\ \&img);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ signals:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a28d796b5902210c53dc627c1838c3bf4}{registrationIsFinished}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a3c32ebeed90639ea3e4b4e1119187bf2}{newRegisteredImage}}(\doxymbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a52a4d96218091fba8de7d01454f60a5b}{newRegistrationProgress}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_a3074198c16a561ffa270f194997305e1}{requestParallelThreadProcess}}(\doxymbox{\hyperlink{struct__Processed__img}{\_Processed\_img}}\ img);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_acdcfb417a50796a8f29e5b89c38a87e9}{enableMotionCompensation}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAImageRegistration_aeaef2c894c7f512ded42b43f277a4565}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_reg\_RGB.onNewResultDirectory(v);\}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//Registration\ class}}
+\DoxyCodeLine{00068\ \ \ \ \ \doxymbox{\hyperlink{classARegistration}{ARegistration}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_reg\_RGB;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AIMAGEREGISTRATION\_H}}
+
+\end{DoxyCode}

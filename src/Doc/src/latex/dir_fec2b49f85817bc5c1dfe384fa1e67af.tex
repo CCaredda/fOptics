@@ -1,0 +1,43 @@
+\hypertarget{dir_fec2b49f85817bc5c1dfe384fa1e67af}{}\section{/home/caredda/\+D\+V\+P/\+C++/imagerie\+\_\+fonctionnelle\+\_\+cerveau/git/intraoperative-\/functional-\/brain-\/mapping/\+Vision/inc Directory Reference}
+\label{dir_fec2b49f85817bc5c1dfe384fa1e67af}\index{/home/caredda/\+D\+V\+P/\+C++/imagerie\+\_\+fonctionnelle\+\_\+cerveau/git/intraoperative-\/functional-\/brain-\/mapping/\+Vision/inc Directory Reference@{/home/caredda/\+D\+V\+P/\+C++/imagerie\+\_\+fonctionnelle\+\_\+cerveau/git/intraoperative-\/functional-\/brain-\/mapping/\+Vision/inc Directory Reference}}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{acquisition_8h}{acquisition.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions used to extract data from images. Definition of global variables to facilitate the reading of the code. \end{DoxyCompactList}\item 
+file \hyperlink{FastICA_8h}{Fast\+I\+C\+A.\+h}
+\begin{DoxyCompactList}\small\item\em Implementation of the Independant Component Analysis (I\+CA) function for a blind source separation problem. \end{DoxyCompactList}\item 
+file \hyperlink{filtering_8h}{filtering.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions used to process temporal filtering in the Fourier domain. \end{DoxyCompactList}\item 
+file \hyperlink{molarcoefffunctions_8h}{molarcoefffunctions.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions used to compute matrices of coefficients used in the modified Beer Lambert law. These matrices and then used to get chromophore\textquotesingle{}s concentration changes. \end{DoxyCompactList}\item 
+file \hyperlink{oxygenation_8h}{oxygenation.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions used to calculate chromophore\textquotesingle{}s concentration changes using the modified Beer Lambert law and to compute the Pearson correlation coefficient between expected and measure time curves. \end{DoxyCompactList}\item 
+file \hyperlink{P__SPM_8h}{P\+\_\+\+S\+P\+M.\+h}
+\begin{DoxyCompactList}\small\item\em This class aims to apply the Statistical Parametric Mapping methodology (f\+M\+RI standard for identifying functional brain areas) on images of chromophore\textquotesingle{}s concentration changes. This output of this class is a T-\/\+Stat matrix that indicates at which point the measured data reject the null hypothesis (no cortical activation). \end{DoxyCompactList}\item 
+file \hyperlink{PAnalyse_8h}{P\+Analyse.\+h}
+\begin{DoxyCompactList}\small\item\em Main class that schedules all signal and image processing classes. \end{DoxyCompactList}\item 
+file \hyperlink{PAutomatic__ROI__Detection_8h}{P\+Automatic\+\_\+\+R\+O\+I\+\_\+\+Detection.\+h}
+\begin{DoxyCompactList}\small\item\em Main class that schedules all signal and image processing classes. \end{DoxyCompactList}\item 
+file \hyperlink{PCoeff_8h}{P\+Coeff.\+h}
+\begin{DoxyCompactList}\small\item\em Class that aims to compute matrix of coefficient using the autocalibration method. This matrix is then used to project input data and to thus to get signals directly correlated to the tissue\textquotesingle{}s blood volume changes and the oxy-\/hemoglobin concentration changes. \end{DoxyCompactList}\item 
+file \hyperlink{PDataExtracting_8h}{P\+Data\+Extracting.\+h}
+\begin{DoxyCompactList}\small\item\em Class that aims to store a 3D image (N.\+M pixels .K spectral channels) into an array. This array has dimension P.\+T.\+K, with P the number of pixels, T the number of frames of the video and K the number of spectral channels. \end{DoxyCompactList}\item 
+file \hyperlink{PFiltering_8h}{P\+Filtering.\+h}
+\begin{DoxyCompactList}\small\item\em Class that aims to apply a temporal filtering of data extracted using the \hyperlink{classPDataExtracting}{P\+Data\+Extracting} class. \end{DoxyCompactList}\item 
+file \hyperlink{PModifiedBeerLambertLaw_8h}{P\+Modified\+Beer\+Lambert\+Law.\+h}
+\begin{DoxyCompactList}\small\item\em Class that aimsused to compute matrices of coefficients used in the modified Beer Lambert law. These matrices and then used to get chromophore\textquotesingle{}s concentration changes. \end{DoxyCompactList}\item 
+file \hyperlink{pobject_8h}{pobject.\+h}
+\begin{DoxyCompactList}\small\item\em File containing structures used in the whole project. \end{DoxyCompactList}\item 
+file \hyperlink{polyfit_8hpp}{polyfit.\+hpp}
+\begin{DoxyCompactList}\small\item\em File containing functions to find the coefficients of a polynomial p(x) of degree n that fits the data, p(x(i)) to y(i), in a least squares sense. The result p is a row vector of length n+1 containing the polynomial coefficients in incremental powers. \end{DoxyCompactList}\item 
+file \hyperlink{PPixelWiseMolarCoeff_8h}{P\+Pixel\+Wise\+Molar\+Coeff.\+h}
+\begin{DoxyCompactList}\small\item\em Class that aims to compute matrices of coefficients used in the modified Beer Lambert law. These matrices are calculated in a pixel-\/wise manner accordingly to the image segmentation provided by the Clustering classes. \end{DoxyCompactList}\item 
+file \hyperlink{PProcessTimes_8h}{P\+Process\+Times.\+h}
+\begin{DoxyCompactList}\small\item\em Class that aims to extract rest and activation time temporal indexes stored in the acquisition info files generated during data acquisition. This class also aims to compute the expected heodynamic response function. \end{DoxyCompactList}\item 
+file \hyperlink{PrealTimeProcess_8h}{Preal\+Time\+Process.\+h}
+\begin{DoxyCompactList}\small\item\em Class that aims to get cortical activation maps in a real time manner. For more information see this paper\+: \href{https://www.sciencedirect.com/science/article/abs/pii/S195903182030083X}{\tt https\+://www.\+sciencedirect.\+com/science/article/abs/pii/\+S195903182030083X} (present in the paper folder) \end{DoxyCompactList}\item 
+file \hyperlink{Statistic__functions_8h}{Statistic\+\_\+functions.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions used to compute statistical tests (T tests, person correlation ...) \end{DoxyCompactList}\item 
+file \hyperlink{vblobForeach_8h}{vblob\+Foreach.\+h}
+\begin{DoxyCompactList}\small\item\em Set of functions used to apply a function line by line inside a contour. \end{DoxyCompactList}\end{DoxyCompactItemize}

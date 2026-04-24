@@ -1,0 +1,156 @@
+\doxysection{Hdisplay\+Result.\+h}
+\hypertarget{HdisplayResult_8h_source}{}\label{HdisplayResult_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HdisplayResult.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HdisplayResult.h}}
+\doxymbox{\hyperlink{HdisplayResult_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ HDISPLAYRESULT\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ HDISPLAYRESULT\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{conversion_8h}{conversion.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ Max\_Img\_Definition\ 575000}\textcolor{comment}{//598000}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Max\ height\ and\ width\ are\ defined\ with\ max\ img\ definition\ according\ width-\/height\ img\ ratio\ (w\ =\ 1.878453039\ x\ h)}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Max\_Img\_Definition\ =\ 1.878453039\ x\ h²}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ Max\_Height\ 564}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ Max\_Width\ 1059}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }HdisplayResult;}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }HdisplayResult\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ HdisplayResult(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00034\ \ \ \ \ \string~HdisplayResult();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a3590e2ef5d0a1f49ef957a9056417d65}{setAnalysisZone}}(QVector<QPoint>\ v,cv::Size\ s);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ signals:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_ac60045c9773caab6753cdcb8d2619bec}{newDisplayValue}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_aa4c9896586eabcdf8092f53d9e859f8c}{newInitialImg}}(Mat);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a84267671611a23b11e900534bc51aed1}{newSettingStatisticZone}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_aaa52d4b11def67cfad4b95da51b8a0b4}{newReselNumber}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_ab1324dc06a82b16d4c5f8dad17f264a1}{newRectROI}}(QPoint,QPoint);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a1adc90a9b73b53f729b95bbe02db9a0f}{RectROIRequested}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a64efd8428d19538ce328f8615134700c}{onAnalysisZoneRequested}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a6d8cb0b3260eb2d86e29e8d397706d7d}{newAnalysisZone}}(QVector<QPoint>,cv::Size);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a7040329d9e68ac26dd2e4832f478a8cf}{ClearImg}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a0f258df26f39e61764afcef14df33c7a}{LaunchProcess}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a94645d7b383c1dfb532c9c0345a254d1}{PointSelected}}(Point);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_afa2cc9c3a4f0ae6de300c6cd1e4b9364}{newMeanROIRadius}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_abda1ca89ce9fe18e876ec4b2417f2a71}{requestMeanROI}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a376cecc0b3cdc4ca7e7b1052e37e6358}{newChromophoreID}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a2056dfdfd0a359fff662abe59c356557}{onnewStatType}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a28243e62ce8676b926de411b36ece1de}{onnewContrastImg}}(QVector<Mat>);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a7a018c7fb58844d1a4dbdcd56e4fdccc}{onContrastImgchanged}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_ab4510ca3c1016bd418d3297695bc67d1}{onNewImage}}(Mat);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_ab172bcdbfd9c2c63d247590f695d41cb}{onNewInitialImg}}(Mat);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a9e2a0ddc893b6cc196bc9f23a0a34db1}{onNewRectROI}}(QPoint,QPoint);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_a55c967e2c0bb068b512e3d0fcbc7de3f}{onNew\_Guru\_Mode}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHdisplayResult_ac77158412249b800c4b18b6e0f6add70}{onNewResultDirectory}}(QString);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ onnewAnalysisZone(QVector<QPoint>,cv::Size);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ onnewCutoffValue();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ onMinMaxDisplayValueChanged();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ onMedianFilterON(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ onWindowSizeChanged(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ onNewZThresh(\textcolor{keywordtype}{double}\ v)\ \{\_M\_z\_thresh\ =\ v;\}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00146\ \ \ \ \ Ui::HdisplayResult\ *ui;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//Contrast\ img\ calculation\ functions}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ContrastImg\_Mode\_Correlation();}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ContrastImg\_Mode\_Mean(\textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double}\ cutoff);}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ContrastImg\_Mode\_SPM(\textcolor{keywordtype}{double}\ min,\textcolor{keywordtype}{double}\ max,\textcolor{keywordtype}{double}\ cutoff);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ Mat\ \_Process\_Color\_Maps(Mat\ img\_contrast);}
+\DoxyCodeLine{00154\ \ \ \ \ Mat\ \_Process\_ActivationMap(Mat\ map);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{comment}{//Processing\ type}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_processing\_type;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//Update\ color\ bar\ display}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \_UpdateColorBar();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{comment}{//Contrast\ image}}
+\DoxyCodeLine{00163\ \ \ \ \ QVector<Mat>\ \_M\_contrast\_img;}
+\DoxyCodeLine{00164\ \ \ \ \ Mat\ \ \ \ \ \ \ \ \ \ \_M\_mask\_contrast\_img;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//\ Cartography\ type\ changed}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_carto\_changed;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//Display\ cutoff\ value}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_cutoff;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//Corr\ coeff}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_corr\_coef;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//last\ processed\ id}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \_M\_last\_processed\_id;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//mode\ RGB\ or\ Hyperspectral}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \_M\_RGB\_mode;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//Z\ threshold\ (RFT\ threhsold)}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_z\_thresh;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HDISPLAYRESULT\_H}}
+
+\end{DoxyCode}

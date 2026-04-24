@@ -1,0 +1,46 @@
+\doxysection{conversion.\+h}
+\hypertarget{conversion_8h_source}{}\label{conversion_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/conversion.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/conversion.h}}
+\doxymbox{\hyperlink{conversion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ CONVERSION\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ CONVERSION\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QImage>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}opencv2/imgproc/imgproc.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}opencv2/imgproc/types\_c.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}opencv2/highgui/highgui.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}opencv2/core/core.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}opencv2/opencv.hpp"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}opencv2/imgproc/imgproc\_c.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ Row\_offset\ 3}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ Col\_offset\ 0}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ Size\_filter\ 5}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{using\ namespace\ }cv;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ Mat\ \ \ \ \ img;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ index;}
+\DoxyCodeLine{00036\ \}\doxymbox{\hyperlink{struct__HS__img}{\_HS\_img}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ Mat\ \doxymbox{\hyperlink{conversion_8h_a68a80ab9701de2b8cf4b92b6aa9a5e4d}{qimage\_to\_mat\_ref}}(QImage\ \&img,\ \textcolor{keywordtype}{int}\ format);}
+\DoxyCodeLine{00043\ QImage\ \doxymbox{\hyperlink{conversion_8h_a6167ec190470822d1e98ac0b969e5bfb}{mat\_to\_qimage\_ref}}(cv::Mat\ \&mat,\ QImage::Format\ format);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{conversion_8h_a3996dbc064b36b8f7bb679b15bc930f7}{vector2QVector}}(\textcolor{keyword}{const}\ vector<vector<Point>\ >\ \&c,\ QVector<QVector<QPoint>\ >\ \&C,\ Point\ offset);}
+\DoxyCodeLine{00047\ QString\ \doxymbox{\hyperlink{conversion_8h_a1db414b6a89ba07eb23641564dea6d5c}{type2str}}(\textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ Mat\ \doxymbox{\hyperlink{conversion_8h_a10679cd6d6e9e83c4ed64e2b6f164e32}{QVector2Mat}}(QVector<QVector<float>\ >\ \&c);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONVERSION\_H}}
+
+\end{DoxyCode}

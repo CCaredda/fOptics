@@ -1,0 +1,83 @@
+\doxysection{WClusteing\+Container Class Reference}
+\hypertarget{classWClusteingContainer}{}\label{classWClusteingContainer}\index{WClusteingContainer@{WClusteingContainer}}
+Inheritance diagram for WClusteing\+Container:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWClusteingContainer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classWClusteingContainer_a677e04d9321572a48cac56babab43d39}{new\+Cluster\+Img}} (Mat)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classWClusteingContainer_aeb01be6fca3fe8bd92c754a2e184a0e9}\label{classWClusteingContainer_aeb01be6fca3fe8bd92c754a2e184a0e9} 
+{\bfseries WClusteing\+Container} (QWidget \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+void \doxymbox{\hyperlink{classWClusteingContainer_a7efddf4d8f9df2946800fca5115ddb4c}{new\+Label\+Img}} (Mat img)
+\item 
+void \doxymbox{\hyperlink{classWClusteingContainer_a81955f3935a8232d749bb3146bf99107}{onnew\+Cluster\+Img}} (Mat img)
+\item 
+void \doxymbox{\hyperlink{classWClusteingContainer_acd841877e19266dabb90a112b9d469c2}{set\+ROI}} (vector$<$ Point $>$ roi)
+\item 
+void \doxymbox{\hyperlink{classWClusteingContainer_a44ae0ce5654bb64c4f8ca16457053592}{set\+Pixel\+Pos}} (QVector$<$ Point $>$ p)
+\item 
+void \doxymbox{\hyperlink{classWClusteingContainer_afa9a28697b8a47a5cbb76ce6c8279df7}{set\+Cluster\+Selection}} (QVector$<$ int $>$ a, QVector$<$ int $>$ b, QVector$<$ int $>$ c)
+\item 
+void \doxymbox{\hyperlink{classWClusteingContainer_adda48bbd5b6f12eee9bd86108ea3f16d}{set\+Nb\+Of\+Clusters}} (int n)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classWClusteingContainer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWClusteingContainer_a677e04d9321572a48cac56babab43d39}\index{WClusteingContainer@{WClusteingContainer}!newClusterImg@{newClusterImg}}
+\index{newClusterImg@{newClusterImg}!WClusteingContainer@{WClusteingContainer}}
+\doxysubsubsection{\texorpdfstring{newClusterImg}{newClusterImg}}
+{\footnotesize\ttfamily \label{classWClusteingContainer_a677e04d9321572a48cac56babab43d39} 
+void WClusteing\+Container::\+new\+Cluster\+Img (\begin{DoxyParamCaption}\item[{Mat}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+New result cluster img \Hypertarget{classWClusteingContainer_a7efddf4d8f9df2946800fca5115ddb4c}\index{WClusteingContainer@{WClusteingContainer}!newLabelImg@{newLabelImg}}
+\index{newLabelImg@{newLabelImg}!WClusteingContainer@{WClusteingContainer}}
+\doxysubsubsection{\texorpdfstring{newLabelImg()}{newLabelImg()}}
+{\footnotesize\ttfamily \label{classWClusteingContainer_a7efddf4d8f9df2946800fca5115ddb4c} 
+void WClusteing\+Container::\+new\+Label\+Img (\begin{DoxyParamCaption}\item[{Mat}]{img}{}\end{DoxyParamCaption})}
+
+Label img (for clustering params) \Hypertarget{classWClusteingContainer_a81955f3935a8232d749bb3146bf99107}\index{WClusteingContainer@{WClusteingContainer}!onnewClusterImg@{onnewClusterImg}}
+\index{onnewClusterImg@{onnewClusterImg}!WClusteingContainer@{WClusteingContainer}}
+\doxysubsubsection{\texorpdfstring{onnewClusterImg()}{onnewClusterImg()}}
+{\footnotesize\ttfamily \label{classWClusteingContainer_a81955f3935a8232d749bb3146bf99107} 
+void WClusteing\+Container::\+onnew\+Cluster\+Img (\begin{DoxyParamCaption}\item[{Mat}]{img}{}\end{DoxyParamCaption})}
+
+New clustered image \Hypertarget{classWClusteingContainer_afa9a28697b8a47a5cbb76ce6c8279df7}\index{WClusteingContainer@{WClusteingContainer}!setClusterSelection@{setClusterSelection}}
+\index{setClusterSelection@{setClusterSelection}!WClusteingContainer@{WClusteingContainer}}
+\doxysubsubsection{\texorpdfstring{setClusterSelection()}{setClusterSelection()}}
+{\footnotesize\ttfamily \label{classWClusteingContainer_afa9a28697b8a47a5cbb76ce6c8279df7} 
+void WClusteing\+Container::\+set\+Cluster\+Selection (\begin{DoxyParamCaption}\item[{QVector$<$ int $>$}]{a}{, }\item[{QVector$<$ int $>$}]{b}{, }\item[{QVector$<$ int $>$}]{c}{}\end{DoxyParamCaption})}
+
+set clustering selection \Hypertarget{classWClusteingContainer_adda48bbd5b6f12eee9bd86108ea3f16d}\index{WClusteingContainer@{WClusteingContainer}!setNbOfClusters@{setNbOfClusters}}
+\index{setNbOfClusters@{setNbOfClusters}!WClusteingContainer@{WClusteingContainer}}
+\doxysubsubsection{\texorpdfstring{setNbOfClusters()}{setNbOfClusters()}}
+{\footnotesize\ttfamily \label{classWClusteingContainer_adda48bbd5b6f12eee9bd86108ea3f16d} 
+void WClusteing\+Container::\+set\+Nb\+Of\+Clusters (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+Set nb of clusters \Hypertarget{classWClusteingContainer_a44ae0ce5654bb64c4f8ca16457053592}\index{WClusteingContainer@{WClusteingContainer}!setPixelPos@{setPixelPos}}
+\index{setPixelPos@{setPixelPos}!WClusteingContainer@{WClusteingContainer}}
+\doxysubsubsection{\texorpdfstring{setPixelPos()}{setPixelPos()}}
+{\footnotesize\ttfamily \label{classWClusteingContainer_a44ae0ce5654bb64c4f8ca16457053592} 
+void WClusteing\+Container::\+set\+Pixel\+Pos (\begin{DoxyParamCaption}\item[{QVector$<$ Point $>$}]{p}{}\end{DoxyParamCaption})}
+
+Set Pixel pos (for clustering params) \Hypertarget{classWClusteingContainer_acd841877e19266dabb90a112b9d469c2}\index{WClusteingContainer@{WClusteingContainer}!setROI@{setROI}}
+\index{setROI@{setROI}!WClusteingContainer@{WClusteingContainer}}
+\doxysubsubsection{\texorpdfstring{setROI()}{setROI()}}
+{\footnotesize\ttfamily \label{classWClusteingContainer_acd841877e19266dabb90a112b9d469c2} 
+void WClusteing\+Container::\+set\+ROI (\begin{DoxyParamCaption}\item[{vector$<$ Point $>$}]{roi}{}\end{DoxyParamCaption})}
+
+Set ROI (for clustering params) 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+intraoperative-\/functional-\/brain-\/mapping/\+\+Display/\+inc/\+\doxymbox{\hyperlink{WClusteingContainer_8h}{WClusteing\+Container.\+h}}\end{DoxyCompactItemize}

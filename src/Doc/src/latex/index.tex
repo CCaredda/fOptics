@@ -1,0 +1,173 @@
+\chapter{Intraoperative neuroimaging }
+\hypertarget{index}{}\label{index}\index{Intraoperative neuroimaging@{Intraoperative neuroimaging}}
+\hypertarget{index_intro_sec}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_intro_sec}
+This software allows to acquire RGB or Hyperspectral images, record theses images in an hardrive and process it in order to identify activated functional brain areas during a neurosurgical operation.
+
+Papers related to this work are located in the directory papers.
+
+Note that if you want to use other cameras than one used in this project you have to change th class ABasler\+Camera. The best practice should be to add a new class that should refer to the new camera. Make sure to use the same names public functions, public slots and signals than the ones used in ABasler\+Camera.
+
+If no camera is detected, a video dataset (set of images or video) can be loaded. These images are then processed in a standard way.
+
+The code developed during the Pulsalys project "{}\+NEUROIMAGERIE"{} is contained in the PCoeff class.\hypertarget{index_install_sec}{}\doxysection{\texorpdfstring{Installation on Fedora}{Installation on Fedora}}\label{index_install_sec}
+This program is coded in C++ with the framework Qt and the compiler g++.
+
+First Qt should be installed (\texorpdfstring{$>$}{>}=6.\+10.\+1)
+\begin{DoxyItemize}
+\item Download the Qt online installer :\+ \href{https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34\%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4}{\texttt{https:\+/\+/\+www.\+qt.\+io/\+download-\/qt-\/installer?hs\+Cta\+Tracking=99d9dd4f-\/5681-\/48d2-\/b096-\/470725510d34\%7\+C074ddad0-\/fdef-\/4e53-\/8aa8-\/5e8a876d6ab4}}
+\item Install Qt with its additional libraries (custom installation) :\+ Qt5 Compatibility mode, Qt charts, Qt multimedia, Qt Sensors, Qt serial bus, Qt serial port, Qt Shader tools
+\end{DoxyItemize}
+
+Different libraries and framework should be installed in order to use the softwares properly.
+\begin{DoxyItemize}
+\item Opencv (latest version):\+ sudo dnf install opencv opencv-\/contrib opencv-\/doc python3-\/opencv python3-\/matplotlib python3-\/numpy
+\item Boost (latest version):\+ sudo dnf install boost boost-\/devel
+\item fftw (latest version):\+ sudo dnf install fftw fftw-\/devel
+\item The Pylon framework has to be installed to acquire images from a Basler camera. Please download the installation guidelines here:\+ \href{https://www.baslerweb.com/en/sales-support/downloads/software-downloads/pylon-5-1-0-linux-x86-64-bit-debian/}{\texttt{https:\+/\+/\+www.\+baslerweb.\+com/\+en/\+sales-\/support/\+downloads/\+software-\/downloads/\+pylon-\/5-\/1-\/0-\/linux-\/x86-\/64-\/bit-\/debian/\+}}
+\end{DoxyItemize}
+
+The file has a .deb extension and need to be converted into .rpm to be installed under fedora:\+
+
+
+\begin{DoxyItemize}
+\item First install alien:\+ sudo dnf intall alien
+\item Convert the deb file into rpm:\+ alien -\/r pylon\texorpdfstring{$\ast$}{*}.deb
+\item Install the rpm file:\+ sudo rpm -\/i pylon\texorpdfstring{$\ast$}{*}.rpm
+\end{DoxyItemize}
+
+Depending on the version of Pylon, symbolic links need to be created:\+
+\begin{DoxyItemize}
+\item cd /\+opt/\+pylon5/\+lib64
+\item sudo ln -\/s lib\+GCBase\+\_\+gcc\+\_\+v3\+\_\+1\+\_\+\+Basler\+\_\+pylon\+\_\+v5\+\_\+1.\+so lib\+GCBase.\+so
+\item sudo ln -\/s lib\+Gen\+Api\+\_\+gcc\+\_\+v3\+\_\+1\+\_\+\+Basler\+\_\+pylon\+\_\+v5\+\_\+1.\+so lib\+Gen\+Api.\+so
+\end{DoxyItemize}\hypertarget{index_sec_deployment_Fedora}{}\doxysection{\texorpdfstring{Deployment on Fedora}{Deployment on Fedora}}\label{index_sec_deployment_Fedora}
+Deployment scripts are located in the folder script.
+
+
+\begin{DoxyItemize}
+\item To deploy the soft on Fedora, please download the last release of the appimage of linuxdeploy-\/x86\+\_\+64.\+App\+Image (\href{https://github.com/linuxdeploy/linuxdeploy/releases/tag/1-alpha-20251107-1}{\texttt{https:\+/\+/\+github.\+com/\+linuxdeploy/\+linuxdeploy/\+releases/\+tag/\+1-\/alpha-\/20251107-\/1}}) and linuxdeploy-\/plugin-\/qt-\/x86\+\_\+64.\+App\+Image (\href{https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/tag/1-alpha-20250213-1}{\texttt{https:\+/\+/\+github.\+com/\+linuxdeploy/\+linuxdeploy-\/plugin-\/qt/\+releases/\+tag/\+1-\/alpha-\/20250213-\/1}})
+\item Place it in the following directory:\+ \texorpdfstring{$\sim$}{\string~}/\+\+Soft/\+ and make it executable (chmod +x linuxdeploy\texorpdfstring{$\ast$}{*})
+\item In .bashrc file add the line:\+ PATH:\+ export PATH="{}\texorpdfstring{$\sim$}{\string~}/\+\+Soft:\+\$\+PATH"{}
+\item \+[If necessary]\+ In the script script/\+linux\+\_\+deploy\+\_\+app.\+sh, adapt the path of the current Qt version
+\item Run the script linux\+\_\+deploy.\+sh to create an appimage of the soft:\+ ./\+linux\+\_\+deploy.sh \texorpdfstring{$\sim$}{\string~}/\+\+Soft It will create the an app\+Image of the soft (standalone) that could be use on other computers having the same fedora distribs.
+\end{DoxyItemize}\hypertarget{index_install_sec_win}{}\doxysection{\texorpdfstring{Installation on Windows}{Installation on Windows}}\label{index_install_sec_win}
+This program is coded in C++ with the framework Qt and the Microsoft Visual Studio 2022.
+
+Install Visual Studio 2022 (not via Visual studio installer because it will install Visual studio 2026. Version 2022 is required to work with Qt.
+
+Download visual studio professional 2022:\+ \href{https://my.visualstudio.com/Downloads?q=visual\%20studio\%202022&wt.mc_id=o~msft~vscom~older-downloads}{\texttt{https:\+/\+/\+my.\+visualstudio.\+com/\+\+Downloads?q=visual\%20studio\%202022\&wt.\+mc\+\_\+id=o\texorpdfstring{$\sim$}{\string~}msft\texorpdfstring{$\sim$}{\string~}vscom\texorpdfstring{$\sim$}{\string~}older-\/downloads}}
+
+Install visual Studio professional 2022, and tick the box Desktop Development with C++ Click on install
+
+Download qt installer:\+ \href{https://www.qt.io/development/download-qt-installer-oss}{\texttt{https:\+/\+/\+www.\+qt.\+io/\+development/\+download-\/qt-\/installer-\/oss}}
+\begin{DoxyItemize}
+\item CLick on personalized installation
+\item Tick these boxes:\+
+\begin{DoxyItemize}
+\item Qt/\+ Qt version/\+ MSVC 20022 (or more recent)
+\item Qt5 Compatibility Module, Qt Charts, Qt Graphs, Qt Multimedia, Qt Sensors, Qt Serial bus, Qt Serial Port, Qt shader tools, Qt Task Tree -\/do not tick Min\+GW compiler
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Download cmake binary and install it\hypertarget{index_compile_opencv}{}\doxysubsection{\texorpdfstring{Compile Opencv on Windows with msvc22}{Compile Opencv on Windows with msvc22}}\label{index_compile_opencv}
+1) Download opencv
+\begin{DoxyItemize}
+\item source \href{https://github.com/opencv/opencv}{\texttt{https:\+/\+/\+github.\+com/\+opencv/\+opencv}}
+\item contrib \href{https://github.com/opencv/opencv_contrib}{\texttt{https:\+/\+/\+github.\+com/\+opencv/\+opencv\+\_\+contrib}}
+\end{DoxyItemize}
+
+2) In C:\+\textbackslash{}\+Downloads, create build dir next to opencv sources:\+ ├─ C:\+\textbackslash{}\+Downloads\textbackslash{}opencv\textbackslash{}
+
+│ ├─ opencv\textbackslash{}
+
+│ ├─ contrib\textbackslash{}
+
+│ └─ build\textbackslash{}
+
+3) Open Developer Power\+Shell for VS 2022 with administrator privilege 4) go in build dir, for example:\+ cd C:\+\textbackslash{}\+Users\textbackslash{}\+PRIMES\textbackslash{}\+Downloads\textbackslash{}opencv\textbackslash{}build
+
+5) Compile Opencv and Opencv-\/contrib with cmake:\+
+
+cmake -\/D CMAKE\+\_\+\+BUILD\+\_\+\+TYPE=Release -\/D CMAKE\+\_\+\+INSTALL\+\_\+\+PREFIX=C:\+\textbackslash{}opencv\textbackslash{}install -\/D OPENCV\+\_\+\+EXTRA\+\_\+\+MODULES\+\_\+\+PATH=C:\+\textbackslash{}\+Users\textbackslash{}ccaredda\textbackslash{}\+Downloads\textbackslash{}opencv\textbackslash{}contrib\textbackslash{}modules -\/D BUILD\+\_\+\+EXAMPLES=OFF -\/D BUILD\+\_\+opencv\+\_\+world=ON -\/D WITH\+\_\+\+OPENMP=ON C:\+\textbackslash{}\+Users\textbackslash{}ccaredda\textbackslash{}\+Downloads\textbackslash{}opencv\textbackslash{}opencv
+
+cmake --build . --config Release --target INSTALL
+
+6) Add C:\+\textbackslash{}opencv\textbackslash{}install\textbackslash{}x64\textbackslash{}vc17\textbackslash{}bin to PATH environment variable\hypertarget{index_compile_fftw}{}\doxysubsection{\texorpdfstring{Compile FFTW on Windows with msvc22}{Compile FFTW on Windows with msvc22}}\label{index_compile_fftw}
+1) Download fftw3 source
+
+2) Install cmake
+
+Install Visual Studio 2022 (with “\+Desktop development with C++” workload).
+
+3) In C:\+\textbackslash{}\+Downloads, create build dir next to opencv sources:\+ ├─ C:\+\textbackslash{}\+Downloads\textbackslash{}fftw-\/3.\+3.\+10\textbackslash{}
+
+│ ├─ src\textbackslash{}
+
+│ └─ build\textbackslash{}
+
+│ └─ build\+\_\+f\textbackslash{}
+
+│ └─ build\+\_\+openmp\textbackslash{} ~\newline
+
+
+4) Open developer MSVC command prompt with administrator privilege 5) go in build dir, for example:\+ cd C:\+\textbackslash{}\+Users\textbackslash{}\+PRIMES\textbackslash{}\+Downloads\textbackslash{}fftw-\/3.\+3.\+10\textbackslash{}build 6) Compile fftw with cmake (double precision):\+
+
+cmake -\/D CMAKE\+\_\+\+POLICY\+\_\+\+VERSION\+\_\+\+MINIMUM=3.\+5 -\/D CMAKE\+\_\+\+BUILD\+\_\+\+TYPE=Release -\/D CMALE\+\_\+\+INSTALL\+\_\+\+PREFIX=C:\+\textbackslash{}fftw -\/D BUILD\+\_\+\+SHARED\+\_\+\+LIBS=OFF C:\+\textbackslash{}\+Users\textbackslash{}ccaredda\textbackslash{}\+Downloads\textbackslash{}fftw-\/3.\+3.\+10\textbackslash{}src
+
+cmake --build . --config Release --target INSTALL
+
+7) Go to build\+\_\+f dir, build fftw with float precision
+
+cmake -\/D CMAKE\+\_\+\+POLICY\+\_\+\+VERSION\+\_\+\+MINIMUM=3.\+5 -\/D CMAKE\+\_\+\+BUILD\+\_\+\+TYPE=Release -\/D CMALE\+\_\+\+INSTALL\+\_\+\+PREFIX=C:\+\textbackslash{}fftw -\/D ENABLE\+\_\+\+FLOAT=ON -\/D ENABLE\+\_\+\+THREADS=ON -\/D BUILD\+\_\+\+SHARED\+\_\+\+LIBS=OFF C:\+\textbackslash{}\+Users\textbackslash{}ccaredda\textbackslash{}\+Downloads\textbackslash{}fftw-\/3.\+3.\+10\textbackslash{}src
+
+cmake --build . --config Release --target INSTALL
+
+8) Go to build\+\_\+openmp dir, build fftw with openmp
+
+cmake -\/D CMAKE\+\_\+\+POLICY\+\_\+\+VERSION\+\_\+\+MINIMUM=3.\+5 -\/D CMAKE\+\_\+\+BUILD\+\_\+\+TYPE=Release -\/D CMALE\+\_\+\+INSTALL\+\_\+\+PREFIX=C:\+\textbackslash{}fftw -\/D ENABLE\+\_\+\+FLOAT=ON -\/D ENABLE\+\_\+\+OPENMP=ON -\/D ENABLE\+\_\+\+THREADS=ON -\/D BUILD\+\_\+\+SHARED\+\_\+\+LIBS=OFF -\/DFFTW3\+F\+\_\+\+LIB=../\+build/\+\+Release/\+fftw3f.lib C:\+\textbackslash{}\+Users\textbackslash{}ccaredda\textbackslash{}\+Downloads\textbackslash{}fftw-\/3.\+3.\+10\textbackslash{}src
+
+cmake --build . --config Release --target INSTALL
+
+9) Move directory C:\+\textbackslash{}\+Program Files (x86)\textbackslash{}fftw to C:\+\textbackslash{}fftw
+
+10) Add C:\+\textbackslash{}fftw\textbackslash{}lib to PATH environment variable\hypertarget{index_compile_boost}{}\doxysubsection{\texorpdfstring{Install boost library}{Install boost library}}\label{index_compile_boost}
+1) Download boost binary for msvc compiler 64 bits 2) Execute the .exe file with administrator right and install the library in C:\+\textbackslash{}boost\hypertarget{index_Install}{}\doxysubsection{\texorpdfstring{ffmpeg for video reading}{ffmpeg for video reading}}\label{index_Install}
+cd C:\+\textbackslash{}
+
+git clone \href{https://github.com/microsoft/vcpkg.git}{\texttt{https:\+/\+/\+github.\+com/\+microsoft/\+vcpkg.\+git}}
+
+cd vcpkg ~\newline
+
+
+.\textbackslash{}bootstrap-\/vcpkg.\+bat ~\newline
+
+
+.\textbackslash{}vcpkg install ffmpeg:\+x64-\/windows ~\newline
+\hypertarget{index_compile_project}{}\doxysubsection{\texorpdfstring{Project Compilation}{Project Compilation}}\label{index_compile_project}
+Before compiling, make sure that the .pro file link to the correct Open\+CV version. Change the line OPENCV\+\_\+\+VER = 4140 according to your Open\+CV version (check filenames in C:\+\textbackslash{}opencv\textbackslash{}install\textbackslash{}x64\textbackslash{}vc17\textbackslash{}lib\hypertarget{index_Correct}{}\doxysection{\texorpdfstring{video acquired from surgical microscopes}{video acquired from surgical microscopes}}\label{index_Correct}
+Videos acquired from surgical microscopes could be corrupted. If frames are not read, or the soft crash, it could be due to a corruption in the video file. In that case, you need to correct the video:\+
+
+ffmpeg -\/fflags +genpts -\/i Segment01.\+mp4 \textbackslash{} -\/vf "{}setpts=\+PTS-\/\+STARTPTS,fps=60000/\+1001"{} \textbackslash{} -\/af "{}asetpts=\+PTS-\/\+STARTPTS"{} \textbackslash{} -\/c:\+v libx264 -\/preset fast -\/crf 18 \textbackslash{} -\/c:\+a aac -\/b:\+a 192k \textbackslash{} -\/movflags faststart \textbackslash{} Segmentfixed\+\_\+01.\+mp4\hypertarget{index_sec_deployment_Windows}{}\doxysection{\texorpdfstring{Deployment on Windows}{Deployment on Windows}}\label{index_sec_deployment_Windows}
+To deploy the software for Windows users, use the virtual machine (foptics\+\_\+windows\+\_\+img with boxes). Deployment scripts are located in the folder script.
+
+Execute the bat script windows\+\_\+create\+\_\+venv.\+bat. \+[If necessary]\+ In the script, adapt the path of the current Qt version.\hypertarget{index_sec_soft_architecture}{}\doxysection{\texorpdfstring{Software architecture}{Software architecture}}\label{index_sec_soft_architecture}
+The software architecture is roughly represented by the next figure (to simplify the reading, not all classes are represented in this schematic). The following steps describe how the software works :\+
+
+
+\begin{DoxyItemize}
+\item 1) The software automatically tries to connect an available Basler camera. If a camera is connected the graphical interface contained in HCamera\+Pamars is displayed, otherwise, a video dataset (set of images or video) can be loaded and the graphical interface contained in \doxylink{classHLoadDatas}{HLoad\+Datas} is displayed.
+\item 1) The user uses the graphical interface to launch data acquisition or to load dataset.
+\item 2) Acquired or loaded images are sent to the class \doxylink{classAPostAcquisition}{APost\+Acquisition} to compute pre processing (image cropping and undersampling).
+\item 3) Pre processed images are sent to the class \doxylink{classARegistration}{ARegistration} to compensate the motionin the images using the algorithm developped by Michaël Sdika \href{https://doi.org/10.1016/j.media.2018.12.005}{\texttt{https:\+/\+/\+doi.\+org/\+10.\+1016/\+j.\+media.\+2018.\+12.\+005}}
+\item 4) Images with motion compensated are sent to the class PExtract\+Data for data extraction. The images are formatted in a single table according to the region of interest defined by the user (or automatically calculated, see PAutomatic\+\_\+\+ROI\+\_\+\+Detection).
+\item 5) Formated images are stored into the computer RAM.
+\item 6) When all images have been stored into the computer RAM, temporal filtering is computed (low-\/pass fitering, data correction, cardiac filtering)
+\item 7) Data filtered with the cardiac filter are sent to the PCoeff class. In this class, the automatic calibration procedure is executed in order to get a matrix of coefficient to automatically quantify hemodynamics in tissue.
+\item 8) The autocalibration matrix is sent to the PAnalysis class for quantifying hemodynamics in tissue using low-\/pass filtered data (filtered in \doxylink{classPFiltering}{PFiltering}).
+\item 9) The hemodynamic contrasts are obtained by projecting the absorbance changes measured at the surface of the tissue on the orthonormal basis calculated in step 7).
+\item 10) The \doxylink{classP__SPM}{P\+\_\+\+SPM} class is used to calculate statistic inferences. It allows to obtain t-\/stats matrix and a binary mask that indicates the extent of the activated functional brain areas.
+\item 11) The activation masks are merged with the initial image in \doxylink{classHdisplayResult}{Hdisplay\+Result} class. Then the class \doxylink{classHImageDisplay}{HImage\+Display} is used to display results.
+\end{DoxyItemize}
+
+\hypertarget{index_sec_user_guide}{}\doxysection{\texorpdfstring{User guide}{User guide}}\label{index_sec_user_guide}
+\href{../../usage_doc.odt}{\texttt{You can find the user guide here:\+ doc\+\_\+src/\+usage\+\_\+doc.\+odt}} 

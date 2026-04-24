@@ -1,0 +1,34 @@
+\doxysection{FFmpeg\+Video\+Reader Class Reference}
+\hypertarget{classFFmpegVideoReader}{}\label{classFFmpegVideoReader}\index{FFmpegVideoReader@{FFmpegVideoReader}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFFmpegVideoReader_a74c092d199a6406970eabdac9950b08c}\label{classFFmpegVideoReader_a74c092d199a6406970eabdac9950b08c} 
+bool {\bfseries open} (const std::\+string \&path, float fps)
+\item 
+\Hypertarget{classFFmpegVideoReader_aae50f75e747cdadb1bf9818870d6066b}\label{classFFmpegVideoReader_aae50f75e747cdadb1bf9818870d6066b} 
+void {\bfseries close} ()
+\item 
+\Hypertarget{classFFmpegVideoReader_aedd26fdca5d32a37ef74d48098431bbc}\label{classFFmpegVideoReader_aedd26fdca5d32a37ef74d48098431bbc} 
+bool {\bfseries read\+Frame} (int frame\+Index, cv::\+\+Mat \&out\+Mat)
+\item 
+\Hypertarget{classFFmpegVideoReader_a16a2f9ec1717d471041da5b542999cfc}\label{classFFmpegVideoReader_a16a2f9ec1717d471041da5b542999cfc} 
+bool {\bfseries read\+Frame\+\_\+debug} (int frame\+Index, cv::\+\+Mat \&out\+Mat)
+\item 
+\Hypertarget{classFFmpegVideoReader_a85f1805327fdf0070e83de20b63720d8}\label{classFFmpegVideoReader_a85f1805327fdf0070e83de20b63720d8} 
+bool {\bfseries read\+Range} (int start\+Frame, int end\+Frame, std::\+function$<$ void(const cv::\+\+Mat \&, int)$>$ callback)
+\item 
+\Hypertarget{classFFmpegVideoReader_a68cbeccd3ce6e64da6af19fa1c4f2dfa}\label{classFFmpegVideoReader_a68cbeccd3ce6e64da6af19fa1c4f2dfa} 
+int {\bfseries total\+Frames} () const
+\item 
+\Hypertarget{classFFmpegVideoReader_ae0e1ebb521966993a295cc88519d1ae6}\label{classFFmpegVideoReader_ae0e1ebb521966993a295cc88519d1ae6} 
+double {\bfseries fps} () const
+\item 
+\Hypertarget{classFFmpegVideoReader_a0a54b62f13e51193611eb958ac36877f}\label{classFFmpegVideoReader_a0a54b62f13e51193611eb958ac36877f} 
+bool {\bfseries is\+Open} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Acquisition/\+inc/\+FFmpeg\+Video\+Reader.\+h\end{DoxyCompactItemize}

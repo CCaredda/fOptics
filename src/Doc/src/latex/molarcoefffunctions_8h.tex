@@ -1,0 +1,143 @@
+\doxysection{C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Vision/\+inc/\+molarcoefffunctions.h File Reference}
+\hypertarget{molarcoefffunctions_8h}{}\label{molarcoefffunctions_8h}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/molarcoefffunctions.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/molarcoefffunctions.h}}
+
+
+Set of functions used to compute matrices of coefficients used in the modified Beer Lambert law. These matrices and then used to get chromophore\textquotesingle{}s concentration changes.  
+
+
+{\ttfamily \+\#include $<$QVector$>$}\newline
+{\ttfamily \+\#include $<$QString$>$}\newline
+{\ttfamily \+\#include "{}conversion.\+h"{}}\newline
+{\ttfamily \+\#include $<$QDebug$>$}\newline
+{\ttfamily \+\#include $<$QFile$>$}\newline
+{\ttfamily \+\#include $<$QText\+Stream$>$}\newline
+{\ttfamily \+\#include $<$QString\+List$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_ad869fc2c4b58b06d1f872483edb9d6a6}{Erase\+Small\+Contour}} (Mat \&img, int area\+\_\+lim\+\_\+in\+\_\+px)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a30627aca72e348ed5613e4a7ab60425d}{fill\+Contour1\+\_\+\+If\+\_\+\+Contour2\+\_\+\+Is\+Not\+Included}} (Mat \&img, vector$<$ vector$<$ Point $>$ $>$ \&c1, vector$<$ vector$<$ Point $>$ $>$ \&c2)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_ad4f5fd44113d1cf7538f1cc621699cf5}{handle\+Internal\+Contour}} (Mat \&img1, Mat \&img2)
+\item 
+double \doxymbox{\hyperlink{molarcoefffunctions_8h_a36e976ee86cf60163d6dce75b1299250}{vector\+\_\+sum}} (QVector$<$ double $>$ a)
+\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{molarcoefffunctions_8h_a05f89412c4d2a52a33ba0214203234fb}{element\+\_\+wise\+\_\+multiplication}} (QVector$<$ double $>$ \&a, QVector$<$ double $>$ \&b)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a669382f516ad731748a62e20be41c9e9}{scale\+\_\+vector}} (QVector$<$ double $>$ \&in\+\_\+out, double factor)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_ad22f07f6c92b798976bbfefaedd8b257}{invert\+Matrix}} (Mat \&in, Mat \&out)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_ad9e268d97be66328fbf863aaf7df0e77}{invert\+Matrix}} (QVector$<$ Mat $>$ \&in, QVector$<$ Mat $>$ \&out)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a754763a6b8b2edfa9a9414708a77790a}{integrate\+Datas\+\_\+\+Hb\+\_\+\+Hb\+O2\+\_\+ox\+CCO}} (QVector$<$ Mat $>$ \&out, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb\+O2, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+ox\+CCO, QVector$<$ double $>$ \&Mean\+\_\+path, QVector$<$ QVector$<$ int $>$ $>$ \&id)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a0ecb34b4fca98e49c00d155e01401861}{integrate\+Datas\+\_\+\+Hb\+\_\+\+Hb\+O2\+\_\+ox\+CCO}} (QVector$<$ Mat $>$ \&out, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb\+O2, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+ox\+CCO, QVector$<$ double $>$ \&Mean\+\_\+path)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a0620e64f3861abdd02226151d2658727}{integrate\+Datas}} (QVector$<$ Mat $>$ \&out, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb\+O2, QVector$<$ double $>$ \&Mean\+\_\+path, QVector$<$ QVector$<$ int $>$ $>$ \&id)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a1fae5325f4562d10c175f09f89a601de}{integrate\+Datas}} (QVector$<$ Mat $>$ \&out, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb, QVector$<$ QVector$<$ double $>$ $>$ \&spectral\+\_\+res\+\_\+\+Hb\+O2, QVector$<$ double $>$ \&Mean\+\_\+path)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a963e63b24fa6827d5ab0efe4f36fb59e}{get\+Distance\+Matrix}} (float reso\+\_\+in\+\_\+mm, Mat \&dst\+\_\+matrix, Mat \&blood\+\_\+vessel\+\_\+type, Mat \&mask, Mat \&S\+\_\+\+BV, Mat \&B\+\_\+\+BV, Mat \&unused)
+\item 
+void \doxymbox{\hyperlink{molarcoefffunctions_8h_a06ca4c91017189328997406f7a7033c3}{find\+\_\+best\+\_\+simulated\+\_\+spectra}} (QVector$<$ QVector$<$ double $>$ $>$ \&simulated\+\_\+spectra, QVector$<$ double $>$ \&in\+\_\+spectra, int \&id, float \&error)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of functions used to compute matrices of coefficients used in the modified Beer Lambert law. These matrices and then used to get chromophore\textquotesingle{}s concentration changes. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact:\+ \href{mailto:caredda.c@gmail.com}{\texttt{caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{molarcoefffunctions_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{molarcoefffunctions_8h_a05f89412c4d2a52a33ba0214203234fb}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!element\_wise\_multiplication@{element\_wise\_multiplication}}
+\index{element\_wise\_multiplication@{element\_wise\_multiplication}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{element\_wise\_multiplication()}{element\_wise\_multiplication()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a05f89412c4d2a52a33ba0214203234fb} 
+QVector$<$ double $>$ element\+\_\+wise\+\_\+multiplication (\begin{DoxyParamCaption}\item[{QVector$<$ double $>$ \&}]{a}{, }\item[{QVector$<$ double $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+Element wise multiplication between two vectors \Hypertarget{molarcoefffunctions_8h_ad869fc2c4b58b06d1f872483edb9d6a6}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!EraseSmallContour@{EraseSmallContour}}
+\index{EraseSmallContour@{EraseSmallContour}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{EraseSmallContour()}{EraseSmallContour()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_ad869fc2c4b58b06d1f872483edb9d6a6} 
+void Erase\+Small\+Contour (\begin{DoxyParamCaption}\item[{Mat \&}]{img}{, }\item[{int}]{area\+\_\+lim\+\_\+in\+\_\+px}{}\end{DoxyParamCaption})}
+
+Function used in the image segmentation procedure. Remove the small contours. \Hypertarget{molarcoefffunctions_8h_a30627aca72e348ed5613e4a7ab60425d}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!fillContour1\_If\_Contour2\_IsNotIncluded@{fillContour1\_If\_Contour2\_IsNotIncluded}}
+\index{fillContour1\_If\_Contour2\_IsNotIncluded@{fillContour1\_If\_Contour2\_IsNotIncluded}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{fillContour1\_If\_Contour2\_IsNotIncluded()}{fillContour1\_If\_Contour2\_IsNotIncluded()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a30627aca72e348ed5613e4a7ab60425d} 
+void fill\+Contour1\+\_\+\+If\+\_\+\+Contour2\+\_\+\+Is\+Not\+Included (\begin{DoxyParamCaption}\item[{Mat \&}]{img}{, }\item[{vector$<$ vector$<$ Point $>$ $>$ \&}]{c1}{, }\item[{vector$<$ vector$<$ Point $>$ $>$ \&}]{c2}{}\end{DoxyParamCaption})}
+
+Function used in the image segmentation procedure. \Hypertarget{molarcoefffunctions_8h_a06ca4c91017189328997406f7a7033c3}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!find\_best\_simulated\_spectra@{find\_best\_simulated\_spectra}}
+\index{find\_best\_simulated\_spectra@{find\_best\_simulated\_spectra}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{find\_best\_simulated\_spectra()}{find\_best\_simulated\_spectra()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a06ca4c91017189328997406f7a7033c3} 
+void find\+\_\+best\+\_\+simulated\+\_\+spectra (\begin{DoxyParamCaption}\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{simulated\+\_\+spectra}{, }\item[{QVector$<$ double $>$ \&}]{in\+\_\+spectra}{, }\item[{int \&}]{id}{, }\item[{float \&}]{error}{}\end{DoxyParamCaption})}
+
+return the id of the best spectral match \Hypertarget{molarcoefffunctions_8h_a963e63b24fa6827d5ab0efe4f36fb59e}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!getDistanceMatrix@{getDistanceMatrix}}
+\index{getDistanceMatrix@{getDistanceMatrix}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{getDistanceMatrix()}{getDistanceMatrix()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a963e63b24fa6827d5ab0efe4f36fb59e} 
+void get\+Distance\+Matrix (\begin{DoxyParamCaption}\item[{float}]{reso\+\_\+in\+\_\+mm}{, }\item[{Mat \&}]{dst\+\_\+matrix}{, }\item[{Mat \&}]{blood\+\_\+vessel\+\_\+type}{, }\item[{Mat \&}]{mask}{, }\item[{Mat \&}]{S\+\_\+\+BV}{, }\item[{Mat \&}]{B\+\_\+\+BV}{, }\item[{Mat \&}]{unused}{}\end{DoxyParamCaption})}
+
+Get distance of grey matter pixels to the nearest blood vessel \Hypertarget{molarcoefffunctions_8h_ad4f5fd44113d1cf7538f1cc621699cf5}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!handleInternalContour@{handleInternalContour}}
+\index{handleInternalContour@{handleInternalContour}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{handleInternalContour()}{handleInternalContour()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_ad4f5fd44113d1cf7538f1cc621699cf5} 
+void handle\+Internal\+Contour (\begin{DoxyParamCaption}\item[{Mat \&}]{img1}{, }\item[{Mat \&}]{img2}{}\end{DoxyParamCaption})}
+
+Function used in the image segmentation procedure. Handle internal contour, it calls fill\+Contour1\+\_\+\+If\+\_\+\+Contour2\+\_\+\+Is\+Not\+Included function \Hypertarget{molarcoefffunctions_8h_a1fae5325f4562d10c175f09f89a601de}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!integrateDatas@{integrateDatas}}
+\index{integrateDatas@{integrateDatas}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{integrateDatas()}{integrateDatas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a1fae5325f4562d10c175f09f89a601de} 
+void integrate\+Datas (\begin{DoxyParamCaption}\item[{QVector$<$ Mat $>$ \&}]{out}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb\+O2}{, }\item[{QVector$<$ double $>$ \&}]{Mean\+\_\+path}{}\end{DoxyParamCaption})}
+
+Data integration (2 chromophores) \Hypertarget{molarcoefffunctions_8h_a0620e64f3861abdd02226151d2658727}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!integrateDatas@{integrateDatas}}
+\index{integrateDatas@{integrateDatas}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{integrateDatas()}{integrateDatas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a0620e64f3861abdd02226151d2658727} 
+void integrate\+Datas (\begin{DoxyParamCaption}\item[{QVector$<$ Mat $>$ \&}]{out}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb\+O2}{, }\item[{QVector$<$ double $>$ \&}]{Mean\+\_\+path}{, }\item[{QVector$<$ QVector$<$ int $>$ $>$ \&}]{id}{}\end{DoxyParamCaption})}
+
+Data integration (2 chromophores) \Hypertarget{molarcoefffunctions_8h_a0ecb34b4fca98e49c00d155e01401861}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!integrateDatas\_Hb\_HbO2\_oxCCO@{integrateDatas\_Hb\_HbO2\_oxCCO}}
+\index{integrateDatas\_Hb\_HbO2\_oxCCO@{integrateDatas\_Hb\_HbO2\_oxCCO}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{integrateDatas\_Hb\_HbO2\_oxCCO()}{integrateDatas\_Hb\_HbO2\_oxCCO()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a0ecb34b4fca98e49c00d155e01401861} 
+void integrate\+Datas\+\_\+\+Hb\+\_\+\+Hb\+O2\+\_\+ox\+CCO (\begin{DoxyParamCaption}\item[{QVector$<$ Mat $>$ \&}]{out}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb\+O2}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+ox\+CCO}{, }\item[{QVector$<$ double $>$ \&}]{Mean\+\_\+path}{}\end{DoxyParamCaption})}
+
+Data integration (3 chromophores) \Hypertarget{molarcoefffunctions_8h_a754763a6b8b2edfa9a9414708a77790a}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!integrateDatas\_Hb\_HbO2\_oxCCO@{integrateDatas\_Hb\_HbO2\_oxCCO}}
+\index{integrateDatas\_Hb\_HbO2\_oxCCO@{integrateDatas\_Hb\_HbO2\_oxCCO}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{integrateDatas\_Hb\_HbO2\_oxCCO()}{integrateDatas\_Hb\_HbO2\_oxCCO()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a754763a6b8b2edfa9a9414708a77790a} 
+void integrate\+Datas\+\_\+\+Hb\+\_\+\+Hb\+O2\+\_\+ox\+CCO (\begin{DoxyParamCaption}\item[{QVector$<$ Mat $>$ \&}]{out}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+\+Hb\+O2}{, }\item[{QVector$<$ QVector$<$ double $>$ $>$ \&}]{spectral\+\_\+res\+\_\+ox\+CCO}{, }\item[{QVector$<$ double $>$ \&}]{Mean\+\_\+path}{, }\item[{QVector$<$ QVector$<$ int $>$ $>$ \&}]{id}{}\end{DoxyParamCaption})}
+
+Data integration (3 chromophores) \Hypertarget{molarcoefffunctions_8h_ad22f07f6c92b798976bbfefaedd8b257}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!invertMatrix@{invertMatrix}}
+\index{invertMatrix@{invertMatrix}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{invertMatrix()}{invertMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_ad22f07f6c92b798976bbfefaedd8b257} 
+void invert\+Matrix (\begin{DoxyParamCaption}\item[{Mat \&}]{in}{, }\item[{Mat \&}]{out}{}\end{DoxyParamCaption})}
+
+Matrix inversion \Hypertarget{molarcoefffunctions_8h_ad9e268d97be66328fbf863aaf7df0e77}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!invertMatrix@{invertMatrix}}
+\index{invertMatrix@{invertMatrix}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{invertMatrix()}{invertMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_ad9e268d97be66328fbf863aaf7df0e77} 
+void invert\+Matrix (\begin{DoxyParamCaption}\item[{QVector$<$ Mat $>$ \&}]{in}{, }\item[{QVector$<$ Mat $>$ \&}]{out}{}\end{DoxyParamCaption})}
+
+Matrix inversion \Hypertarget{molarcoefffunctions_8h_a669382f516ad731748a62e20be41c9e9}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!scale\_vector@{scale\_vector}}
+\index{scale\_vector@{scale\_vector}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{scale\_vector()}{scale\_vector()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a669382f516ad731748a62e20be41c9e9} 
+void scale\+\_\+vector (\begin{DoxyParamCaption}\item[{QVector$<$ double $>$ \&}]{in\+\_\+out}{, }\item[{double}]{factor}{}\end{DoxyParamCaption})}
+
+Multiply a vector by a factor \Hypertarget{molarcoefffunctions_8h_a36e976ee86cf60163d6dce75b1299250}\index{molarcoefffunctions.h@{molarcoefffunctions.h}!vector\_sum@{vector\_sum}}
+\index{vector\_sum@{vector\_sum}!molarcoefffunctions.h@{molarcoefffunctions.h}}
+\doxysubsubsection{\texorpdfstring{vector\_sum()}{vector\_sum()}}
+{\footnotesize\ttfamily \label{molarcoefffunctions_8h_a36e976ee86cf60163d6dce75b1299250} 
+double vector\+\_\+sum (\begin{DoxyParamCaption}\item[{QVector$<$ double $>$}]{a}{}\end{DoxyParamCaption})}
+
+Sum of a QVector vector 

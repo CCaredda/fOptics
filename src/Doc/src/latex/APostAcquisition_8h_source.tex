@@ -1,0 +1,133 @@
+\doxysection{APost\+Acquisition.\+h}
+\hypertarget{APostAcquisition_8h_source}{}\label{APostAcquisition_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/APostAcquisition.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/APostAcquisition.h}}
+\doxymbox{\hyperlink{APostAcquisition_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ APOSTACQUISITION\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ APOSTACQUISITION\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QProcess>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QWaitCondition>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QQueue>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{pobject_8h}{pobject.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }APostAcquisition\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ APostAcquisition(QObject\ *parent\ =\ 0);}
+\DoxyCodeLine{00033\ \ \ \ \ \string~APostAcquisition();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{classAPostAcquisition_a2aff4ae1e3bc5de1a1c1342118be0e97}{getSpatialSampling}}()\ \{\textcolor{keywordflow}{return}\ \_M\_spatial\_sampling;\}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_a54ce882ad770491f4bc0dd967fd845dc}{setSpatialSampling}}(\textcolor{keywordtype}{double}\ v)\ \ \ \{\_M\_spatial\_sampling\ =\ v;\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ Mat\ \doxymbox{\hyperlink{classAPostAcquisition_accedca9cfb100ca0e9a9734f635ed67a}{getPreProcessedImg}}()\ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_pre\_processed\_img;\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_a93ec06cba39579a8edabecb4106c478b}{setRectROI}}(QPoint\ p1,QPoint\ p2);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_ab77b676a015fd1a8e4dd066be5e83544}{setRectROI}}(QPoint\ p1,QPoint\ p2,\textcolor{keywordtype}{double}\ spatial\_sampling);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ Size\ \doxymbox{\hyperlink{classAPostAcquisition_a2d7e7cb22e75905e52f2a58311b33e54}{getInitialImgSize}}()\ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_initial\_img.size();\}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ Size\ \doxymbox{\hyperlink{classAPostAcquisition_a17aa5f84af0b522d3c95f1a314a3f67a}{getPreProcessedImgSize}}()\ \ \ \{\textcolor{keywordflow}{return}\ \_M\_pre\_processed\_img.size();\}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ Rect\ \doxymbox{\hyperlink{classAPostAcquisition_a9588e6af94a5ec61f2c346809cea216d}{getPreROIRect}}()\ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_Pre\_ROI\_Rect;\}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_a930d8072a341b8a96d7020c80b1f9180}{WriteInfos}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_aca83a6fb8ab564ef862f99e2c9f83697}{stop}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_a9ff0e4739942d267d5da8400114d8581}{run}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ signals:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_ad8818d672d2648fad9588bfb7a38d6ee}{newPreProcessedImg}}(\doxymbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_ab8982e7fdd418bb2baefa910970209cc}{newDisplayImage}}(Mat);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_ae5b43af5c69ae25357fb4d5229d2927e}{newInitialImg}}(Mat);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_adf1acc1fd4312f06e4d78fa7aa6f065b}{request\_Initial\_Image}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_acc045286920efdf25376f05a0fa6531c}{on\_New\_Maximum\_number\_Analyzed\_pixels}}(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_a4252945fc066615f7f7ffc689b8ed842}{newImage}}(\doxymbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_a4252945fc066615f7f7ffc689b8ed842}{newImage}}(Mat,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_ab1fc41af7af95abb307a0f6124a5531f}{InitROI}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_ae75439d6cb8bc28eeaa408b7314c9aec}{requestPreProcessing}}(Mat\ mat);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classAPostAcquisition_a8f8f1852bae380edde7071d7d5b2598d}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_result\_directory\ =\ v;\}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \_ProcessPreProcessing(\doxymbox{\hyperlink{struct__Processed__img}{\_Processed\_img}}\ img);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \_setROI(Rect\ roi);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \_setROI(Rect\ roi,\textcolor{keywordtype}{double}\ spatial\_sampling);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \_applyRoi(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//indicators}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_acquisition\_is\_over;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_apply\_Pre\_ROI;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//Pre-\/ROI\ Rect}}
+\DoxyCodeLine{00123\ \ \ \ \ Rect\ \ \ \ \_M\_Pre\_ROI\_Rect;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//spatial\ sampling}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{double}\ \_M\_spatial\_sampling;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//Image\ buffer}}
+\DoxyCodeLine{00129\ \ \ \ \ QQueue<\_Processed\_img>\ \_M\_img\_buffer;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//Mutex}}
+\DoxyCodeLine{00133\ \ \ \ \ QMutex\ \_M\_mutex;}
+\DoxyCodeLine{00134\ \ \ \ \ QWaitCondition\ \ \_M\_condition;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \_M\_stop;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//Image\ size}}
+\DoxyCodeLine{00138\ \ \ \ \ cv::Size\ \_M\_img\_size;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//Pre\ processed\ image\ (first\ image)}}
+\DoxyCodeLine{00142\ \ \ \ \ Mat\ \_M\_pre\_processed\_img;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//Get\ initial\ image\ (before\ undersampling\ and\ roi\ extraction)}}
+\DoxyCodeLine{00145\ \ \ \ \ Mat\ \_M\_initial\_img;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//Max\ data\ amount}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_max\_data\_amount;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//enable\ under\ sampling}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_M\_enable\_under\_sampling;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00154\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ APOSTACQUISITION\_H}}
+
+\end{DoxyCode}

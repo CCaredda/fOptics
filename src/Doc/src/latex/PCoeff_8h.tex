@@ -1,0 +1,50 @@
+\doxysection{C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+intraoperative-\/functional-\/brain-\/mapping/\+\+Vision/\+inc/\+\+PCoeff.h File Reference}
+\hypertarget{PCoeff_8h}{}\label{PCoeff_8h}\index{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PCoeff.h@{C:/Users/ccaredda/Desktop/DVP/intraoperative-\/functional-\/brain-\/mapping/Vision/inc/PCoeff.h}}
+
+
+Class that aims to compute matrix of coefficient using the autocalibration method. This matrix is then used to project input data and to thus to get signals directly correlated to the tissue\textquotesingle{}s blood volume changes and the oxy-\/hemoglobin concentration changes.  
+
+
+{\ttfamily \+\#include $<$QObject$>$}\newline
+{\ttfamily \+\#include $<$QFile\+Dialog$>$}\newline
+{\ttfamily \+\#include "{}oxygenation.\+h"{}}\newline
+{\ttfamily \+\#include "{}acquisition.\+h"{}}\newline
+{\ttfamily \+\#include $<$QDir$>$}\newline
+{\ttfamily \+\#include $<$QCore\+Application$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classPCoeff}{PCoeff}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{PCoeff_8h_a9629196f0145203d9f7641f8e42c75b2}\label{PCoeff_8h_a9629196f0145203d9f7641f8e42c75b2} 
+\+\#define {\bfseries F\+\_\+max}~1.\+4
+\item 
+\Hypertarget{PCoeff_8h_ac0705b2aafc349d5bcd973f71c02793b}\label{PCoeff_8h_ac0705b2aafc349d5bcd973f71c02793b} 
+\+\#define {\bfseries F\+\_\+min}~0.\+8
+\item 
+\Hypertarget{PCoeff_8h_a9aec907bdae96329f99044133611a948}\label{PCoeff_8h_a9aec907bdae96329f99044133611a948} 
+\+\#define {\bfseries Delta\+\_\+F}~0.\+25
+\item 
+\Hypertarget{PCoeff_8h_a8bf3ad57a9201ea14a1f9bda4bc852ee}\label{PCoeff_8h_a8bf3ad57a9201ea14a1f9bda4bc852ee} 
+\+\#define {\bfseries ICA\+\_\+\+Method}~0
+\item 
+\Hypertarget{PCoeff_8h_a97ec5a8a27a7c80d2cff62a5628a6b2e}\label{PCoeff_8h_a97ec5a8a27a7c80d2cff62a5628a6b2e} 
+\+\#define {\bfseries PCA\+\_\+\+Method}~1
+\item 
+\Hypertarget{PCoeff_8h_ac6ecddcc3f5a0f3e05db97fbaca2c69d}\label{PCoeff_8h_ac6ecddcc3f5a0f3e05db97fbaca2c69d} 
+\+\#define {\bfseries NMF\+\_\+\+Method}~2
+\item 
+\Hypertarget{PCoeff_8h_ad827c169ab52a173f1fc3a2c74bce645}\label{PCoeff_8h_ad827c169ab52a173f1fc3a2c74bce645} 
+\+\#define {\bfseries NN\+\_\+\+PARAFAC}~3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that aims to compute matrix of coefficient using the autocalibration method. This matrix is then used to project input data and to thus to get signals directly correlated to the tissue\textquotesingle{}s blood volume changes and the oxy-\/hemoglobin concentration changes. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact:\+ \href{mailto:caredda.c@gmail.com}{\texttt{caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}

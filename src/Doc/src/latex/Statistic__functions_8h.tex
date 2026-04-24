@@ -1,0 +1,190 @@
+\doxysection{C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Vision/\+inc/\+\+Statistic\+\_\+functions.h File Reference}
+\hypertarget{Statistic__functions_8h}{}\label{Statistic__functions_8h}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/Statistic\_functions.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/Statistic\_functions.h}}
+
+
+Set of functions used to compute statistical tests (T tests, person correlation ...).  
+
+
+{\ttfamily \+\#include $<$QVariant$>$}\newline
+{\ttfamily \+\#include $<$QVector$>$}\newline
+{\ttfamily \+\#include $<$QDebug$>$}\newline
+{\ttfamily \+\#include $<$QObject$>$}\newline
+{\ttfamily \+\#include $<$cmath$>$}\newline
+{\ttfamily \+\#include $<$omp.\+h$>$}\newline
+{\ttfamily \+\#include $<$QProcess$>$}\newline
+{\ttfamily \+\#include $<$QFile$>$}\newline
+{\ttfamily \+\#include $<$QText\+Stream$>$}\newline
+{\ttfamily \+\#include $<$boost/\+math/\+distributions/\+students\+\_\+t.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+imgproc/\+imgproc.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+imgproc/\+imgproc\+\_\+c.\+h$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+imgproc/\+types\+\_\+c.\+h$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+highgui/\+highgui.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+core/\+core.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+opencv.\+hpp$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{Statistic__functions_8h_a598a3330b3c21701223ee0ca14316eca}\label{Statistic__functions_8h_a598a3330b3c21701223ee0ca14316eca} 
+\+\#define {\bfseries PI}~3.\+141592653589793
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{Statistic__functions_8h_ab25a81624126ba7f65a1cbb4297f1316}{get\+\_\+\+Mean}} (const QVector$<$ float $>$ \&vec, int id\+\_\+start=-\/1, int id\+\_\+end=-\/1)
+\item 
+double \doxymbox{\hyperlink{Statistic__functions_8h_adcefa9c3b3b2bbe47383c897e7082d59}{get\+\_\+\+Max}} (const QVector$<$ float $>$ \&vec)
+\item 
+double \doxymbox{\hyperlink{Statistic__functions_8h_af42745000f058186066468847cb237b9}{get\+\_\+\+Max}} (const QVector$<$ QVector$<$ float $>$ $>$ \&vec)
+\item 
+double \doxymbox{\hyperlink{Statistic__functions_8h_a0c23ea6496239659054ffd82dbe5937d}{get\+\_\+\+Vector\+\_\+sum}} (const QVector$<$ double $>$ \&vec)
+\item 
+void \doxymbox{\hyperlink{Statistic__functions_8h_ae51754b3374c5d241e6580a8ee0805bd}{Normalize\+Max\+Vector}} (QVector$<$ double $>$ \&vector)
+\item 
+double \doxymbox{\hyperlink{Statistic__functions_8h_a1a95b28e121eaf6bd6c706e97796f95b}{pearsoncoeff}} (const QVector$<$ float $>$ \&X, const QVector$<$ float $>$ \&Y)
+\item 
+double \doxymbox{\hyperlink{Statistic__functions_8h_aae0c814aab58cadcb682bc70b0669023}{pearsoncoeff}} (const QVector$<$ float $>$ \&X, const QVector$<$ float $>$ \&Y, const int \&process\+\_\+duration)
+\item 
+QVector$<$ float $>$ \doxymbox{\hyperlink{Statistic__functions_8h_a48385361a4018f8be533d92ed25c459a}{operator+}} (const QVector$<$ float $>$ \&a, const QVector$<$ float $>$ \&b)
+\item 
+QVector$<$ float $>$ \doxymbox{\hyperlink{Statistic__functions_8h_a3716a6d1580a0e80051483d8f83244b8}{operator-\/}} (const QVector$<$ float $>$ \&a, const float \&b)
+\item 
+QVector$<$ float $>$ \doxymbox{\hyperlink{Statistic__functions_8h_a418cc59aedb531f16c3866ebd7486205}{operator/\+}} (const QVector$<$ float $>$ \&a, const float b)
+\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{Statistic__functions_8h_a6e8092a092bccf3e2b4373eb085187bc}{operator/\+}} (const QVector$<$ double $>$ \&a, const double b)
+\item 
+Mat \doxymbox{\hyperlink{Statistic__functions_8h_ac4360face50f7444ed83bb6426bda5ba}{autocorrelation}} (const Mat \&in)
+\item 
+Mat \doxymbox{\hyperlink{Statistic__functions_8h_a8029c6ffebe7c0ad22475338c90c11d3}{autocorrelation}} (const Mat \&in, int spatial\+\_\+id)
+\item 
+void \doxymbox{\hyperlink{Statistic__functions_8h_a4ccc92cad804111d0831f64f0326f334}{extract\+Variance\+From\+Mat}} (const Mat \&in, Mat \&out)
+\item 
+double \doxymbox{\hyperlink{Statistic__functions_8h_a1cea4da1749a3b2893f31e35c638dd7e}{get\+Trace\+\_\+of\+\_\+product}} (const Mat \&a, const Mat \&b)
+\item 
+float \doxymbox{\hyperlink{Statistic__functions_8h_a5311e3c20e1dc6213c81e5e1fc3ed89e}{fisher\+\_\+r\+\_\+to\+\_\+z\+\_\+transform}} (float r)
+\item 
+float \doxymbox{\hyperlink{Statistic__functions_8h_a39121ed5cbb7aa8d310522346490f294}{convert\+\_\+\+T\+\_\+to\+\_\+\+Z\+\_\+stats}} (float t)
+\item 
+float \doxymbox{\hyperlink{Statistic__functions_8h_a7b14defdca23811b31416ae11fe5c641}{convert\+\_\+\+Corr\+\_\+to\+\_\+\+T\+\_\+stats}} (float R, int df)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of functions used to compute statistical tests (T tests, person correlation ...). 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact:\+ \href{mailto:caredda.c@gmail.com}{\texttt{caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{Statistic__functions_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{Statistic__functions_8h_ac4360face50f7444ed83bb6426bda5ba}\index{Statistic\_functions.h@{Statistic\_functions.h}!autocorrelation@{autocorrelation}}
+\index{autocorrelation@{autocorrelation}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{autocorrelation()}{autocorrelation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_ac4360face50f7444ed83bb6426bda5ba} 
+Mat autocorrelation (\begin{DoxyParamCaption}\item[{const Mat \&}]{in}{}\end{DoxyParamCaption})}
+
+Autocorrelation function. correlation of a vector by itself \Hypertarget{Statistic__functions_8h_a8029c6ffebe7c0ad22475338c90c11d3}\index{Statistic\_functions.h@{Statistic\_functions.h}!autocorrelation@{autocorrelation}}
+\index{autocorrelation@{autocorrelation}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{autocorrelation()}{autocorrelation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a8029c6ffebe7c0ad22475338c90c11d3} 
+Mat autocorrelation (\begin{DoxyParamCaption}\item[{const Mat \&}]{in}{, }\item[{int}]{spatial\+\_\+id}{}\end{DoxyParamCaption})}
+
+Autocorrelation function. correlation of a vector by itself \Hypertarget{Statistic__functions_8h_a7b14defdca23811b31416ae11fe5c641}\index{Statistic\_functions.h@{Statistic\_functions.h}!convert\_Corr\_to\_T\_stats@{convert\_Corr\_to\_T\_stats}}
+\index{convert\_Corr\_to\_T\_stats@{convert\_Corr\_to\_T\_stats}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{convert\_Corr\_to\_T\_stats()}{convert\_Corr\_to\_T\_stats()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a7b14defdca23811b31416ae11fe5c641} 
+float convert\+\_\+\+Corr\+\_\+to\+\_\+\+T\+\_\+stats (\begin{DoxyParamCaption}\item[{float}]{R}{, }\item[{int}]{df}{}\end{DoxyParamCaption})}
+
+Convert correlation coefficients to t stats \Hypertarget{Statistic__functions_8h_a39121ed5cbb7aa8d310522346490f294}\index{Statistic\_functions.h@{Statistic\_functions.h}!convert\_T\_to\_Z\_stats@{convert\_T\_to\_Z\_stats}}
+\index{convert\_T\_to\_Z\_stats@{convert\_T\_to\_Z\_stats}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{convert\_T\_to\_Z\_stats()}{convert\_T\_to\_Z\_stats()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a39121ed5cbb7aa8d310522346490f294} 
+float convert\+\_\+\+T\+\_\+to\+\_\+\+Z\+\_\+stats (\begin{DoxyParamCaption}\item[{float}]{t}{}\end{DoxyParamCaption})}
+
+Convert t-\/stats to z-\/stats \Hypertarget{Statistic__functions_8h_a4ccc92cad804111d0831f64f0326f334}\index{Statistic\_functions.h@{Statistic\_functions.h}!extractVarianceFromMat@{extractVarianceFromMat}}
+\index{extractVarianceFromMat@{extractVarianceFromMat}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{extractVarianceFromMat()}{extractVarianceFromMat()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a4ccc92cad804111d0831f64f0326f334} 
+void extract\+Variance\+From\+Mat (\begin{DoxyParamCaption}\item[{const Mat \&}]{in}{, }\item[{Mat \&}]{out}{}\end{DoxyParamCaption})}
+
+Extract variance from Matrix in size(\+T,\+N) out size(1,\+N) \Hypertarget{Statistic__functions_8h_a5311e3c20e1dc6213c81e5e1fc3ed89e}\index{Statistic\_functions.h@{Statistic\_functions.h}!fisher\_r\_to\_z\_transform@{fisher\_r\_to\_z\_transform}}
+\index{fisher\_r\_to\_z\_transform@{fisher\_r\_to\_z\_transform}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{fisher\_r\_to\_z\_transform()}{fisher\_r\_to\_z\_transform()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a5311e3c20e1dc6213c81e5e1fc3ed89e} 
+float fisher\+\_\+r\+\_\+to\+\_\+z\+\_\+transform (\begin{DoxyParamCaption}\item[{float}]{r}{}\end{DoxyParamCaption})}
+
+Fisher conversion. Convert correlation coefficient to z value \Hypertarget{Statistic__functions_8h_adcefa9c3b3b2bbe47383c897e7082d59}\index{Statistic\_functions.h@{Statistic\_functions.h}!get\_Max@{get\_Max}}
+\index{get\_Max@{get\_Max}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{get\_Max()}{get\_Max()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_adcefa9c3b3b2bbe47383c897e7082d59} 
+double get\+\_\+\+Max (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+
+Get the max value of a vector of float \Hypertarget{Statistic__functions_8h_af42745000f058186066468847cb237b9}\index{Statistic\_functions.h@{Statistic\_functions.h}!get\_Max@{get\_Max}}
+\index{get\_Max@{get\_Max}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{get\_Max()}{get\_Max()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_af42745000f058186066468847cb237b9} 
+double get\+\_\+\+Max (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+
+Get the max value of a vector of float \Hypertarget{Statistic__functions_8h_ab25a81624126ba7f65a1cbb4297f1316}\index{Statistic\_functions.h@{Statistic\_functions.h}!get\_Mean@{get\_Mean}}
+\index{get\_Mean@{get\_Mean}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{get\_Mean()}{get\_Mean()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_ab25a81624126ba7f65a1cbb4297f1316} 
+float get\+\_\+\+Mean (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{vec}{, }\item[{int}]{id\+\_\+start}{ = {\ttfamily -\/1}, }\item[{int}]{id\+\_\+end}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+Get the mean value of a vector of float \Hypertarget{Statistic__functions_8h_a0c23ea6496239659054ffd82dbe5937d}\index{Statistic\_functions.h@{Statistic\_functions.h}!get\_Vector\_sum@{get\_Vector\_sum}}
+\index{get\_Vector\_sum@{get\_Vector\_sum}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{get\_Vector\_sum()}{get\_Vector\_sum()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a0c23ea6496239659054ffd82dbe5937d} 
+double get\+\_\+\+Vector\+\_\+sum (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+
+Get the sum of a vector of double \Hypertarget{Statistic__functions_8h_a1cea4da1749a3b2893f31e35c638dd7e}\index{Statistic\_functions.h@{Statistic\_functions.h}!getTrace\_of\_product@{getTrace\_of\_product}}
+\index{getTrace\_of\_product@{getTrace\_of\_product}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{getTrace\_of\_product()}{getTrace\_of\_product()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a1cea4da1749a3b2893f31e35c638dd7e} 
+double get\+Trace\+\_\+of\+\_\+product (\begin{DoxyParamCaption}\item[{const Mat \&}]{a}{, }\item[{const Mat \&}]{b}{}\end{DoxyParamCaption})}
+
+Trace of a matrix product \Hypertarget{Statistic__functions_8h_ae51754b3374c5d241e6580a8ee0805bd}\index{Statistic\_functions.h@{Statistic\_functions.h}!NormalizeMaxVector@{NormalizeMaxVector}}
+\index{NormalizeMaxVector@{NormalizeMaxVector}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{NormalizeMaxVector()}{NormalizeMaxVector()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_ae51754b3374c5d241e6580a8ee0805bd} 
+void Normalize\+Max\+Vector (\begin{DoxyParamCaption}\item[{QVector$<$ double $>$ \&}]{vector}{}\end{DoxyParamCaption})}
+
+Normalize with vector max value \Hypertarget{Statistic__functions_8h_a48385361a4018f8be533d92ed25c459a}\index{Statistic\_functions.h@{Statistic\_functions.h}!operator+@{operator+}}
+\index{operator+@{operator+}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a48385361a4018f8be533d92ed25c459a} 
+QVector$<$ float $>$ operator+ (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{a}{, }\item[{const QVector$<$ float $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+Addition operator for two float vectors \Hypertarget{Statistic__functions_8h_a3716a6d1580a0e80051483d8f83244b8}\index{Statistic\_functions.h@{Statistic\_functions.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a3716a6d1580a0e80051483d8f83244b8} 
+QVector$<$ float $>$ operator-\/ (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{a}{, }\item[{const float \&}]{b}{}\end{DoxyParamCaption})}
+
+Substraction operator between a vector of float and a constant \Hypertarget{Statistic__functions_8h_a6e8092a092bccf3e2b4373eb085187bc}\index{Statistic\_functions.h@{Statistic\_functions.h}!operator/@{operator/}}
+\index{operator/@{operator/}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a6e8092a092bccf3e2b4373eb085187bc} 
+QVector$<$ double $>$ operator/\+ (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{a}{, }\item[{const double}]{b}{}\end{DoxyParamCaption})}
+
+Division operator between a vector of double and a constant \Hypertarget{Statistic__functions_8h_a418cc59aedb531f16c3866ebd7486205}\index{Statistic\_functions.h@{Statistic\_functions.h}!operator/@{operator/}}
+\index{operator/@{operator/}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a418cc59aedb531f16c3866ebd7486205} 
+QVector$<$ float $>$ operator/\+ (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{a}{, }\item[{const float}]{b}{}\end{DoxyParamCaption})}
+
+Division operator between a vector of float and a constant \Hypertarget{Statistic__functions_8h_a1a95b28e121eaf6bd6c706e97796f95b}\index{Statistic\_functions.h@{Statistic\_functions.h}!pearsoncoeff@{pearsoncoeff}}
+\index{pearsoncoeff@{pearsoncoeff}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{pearsoncoeff()}{pearsoncoeff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_a1a95b28e121eaf6bd6c706e97796f95b} 
+double pearsoncoeff (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{X}{, }\item[{const QVector$<$ float $>$ \&}]{Y}{}\end{DoxyParamCaption})}
+
+Compute Pearson correlation coefficient between two random variables \Hypertarget{Statistic__functions_8h_aae0c814aab58cadcb682bc70b0669023}\index{Statistic\_functions.h@{Statistic\_functions.h}!pearsoncoeff@{pearsoncoeff}}
+\index{pearsoncoeff@{pearsoncoeff}!Statistic\_functions.h@{Statistic\_functions.h}}
+\doxysubsubsection{\texorpdfstring{pearsoncoeff()}{pearsoncoeff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{Statistic__functions_8h_aae0c814aab58cadcb682bc70b0669023} 
+double pearsoncoeff (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{X}{, }\item[{const QVector$<$ float $>$ \&}]{Y}{, }\item[{const int \&}]{process\+\_\+duration}{}\end{DoxyParamCaption})}
+
+Compute Pearson correlation coefficient between two random variables 

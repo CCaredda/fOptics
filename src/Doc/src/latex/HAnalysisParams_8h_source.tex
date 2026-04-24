@@ -1,0 +1,148 @@
+\doxysection{HAnalysis\+Params.\+h}
+\hypertarget{HAnalysisParams_8h_source}{}\label{HAnalysisParams_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HAnalysisParams.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HAnalysisParams.h}}
+\doxymbox{\hyperlink{HAnalysisParams_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ HANALYSISPARAMS\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ HANALYSISPARAMS\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{PAnalyse_8h}{PAnalyse.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QtConcurrent>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }HAnalysisParams;}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }HAnalysisParams\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ HAnalysisParams(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00031\ \ \ \ \ \string~HAnalysisParams();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ SetElapsed\_ProcessTime(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ onNewErrorMessage(QString);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a1d7fd5bf1f4926c3be80786c2a7ce024}{AnalysisChoice}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//Statistic\ mask}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a8a16af50784b8f452b32ac5290ff1335}{onNewProcessImage}}(\doxymbox{\hyperlink{struct__Processed__img}{\_Processed\_img}});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_ad6865c862d22152a20292ef5ff0d7c53}{onAnalysisZoneRequested}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a0ab95d439202ff11452067df7b688115}{onNewAnalysisZone}}(QVector<QPoint>,\ Size,\ \textcolor{keywordtype}{int}\ nb\_channels,\ \textcolor{keywordtype}{int}\ nb\_frames);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_adde8712a151111a39eb913ea16d41234}{onLaunchProcess}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a1f54724773f5f21d501f9e59a6eab116}{onNewFrameRate}}(\textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a426284238c47bec2e87e396e27f5db91}{onNewProcessTimes}}(QVector<int>,\textcolor{keywordtype}{double}\ Fs);\ \textcolor{comment}{//(define\ by\ camera\ acquistion)}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_ab1e9c03d72cca1f6044e647709912f64}{onNewFirstLastAnalysisFrames}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a1ce9bffdf04bada3fb59ef6d55d284c3}{onPointSelected}}(Point);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a3cc76638f89976be68e89cd55cabce0d}{onnewDisplayValue}}(\textcolor{keywordtype}{double}\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_analyse.onnewDisplayValue(v);\}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_afe4c0706a0e8e95577f4b7f949f8b40d}{onnewInitialImg}}(Mat\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\_M\_analyse.onnewInitialImg(v);\}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_aac494ad8e1c88a0f687b78a1e065c66f}{onNewResultDirectory}}(QString);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ signals:}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a0630763cdbcf50b1e50d3b3375e46ce2}{newReselsNumber}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_ab17076573e8608c4298605c1fe12db7a}{newZThreshValue}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a655b09325f4e602ea5a6eb5593a5a0b1}{newAcquisitionInfo}}(QString);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_afcc4d7145b773786d77682f5cb1d0e07}{newActivationtimes}}(QVector<double>);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_ac8660aef2964acd790331ce928cfe1fb}{newBoldSignal}}(QVector<float>);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a6bd04ddb9e523f0588eedde4539377e7}{enableFiltering}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a217a530675a6a91d8ace6ac5b66c57d2}{enableDataCorrection}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a42fd82932319df4711be503520f9970a}{enableLowPassFiltering}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a309cedca9e48331267e7bf8d1ee51425}{newMeanROIRadius}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a58fbcc7a600cf04b9050fc503ccbb978}{requestMeanROIMeasure}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a596a55ddd7e190b97aa9c3af7e75747f}{requestSaveResults}}(\doxymbox{\hyperlink{struct__data__saving__info}{\_data\_saving\_info}});}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a2c1cc18ed68d9a5dfe9aa36a6daae699}{newSettingStatisticZone}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_acbd1d8cf09d7f62e8591a338b795f9f5}{newOpticalConfigIDx}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_aee8c6715582ede1aadc95152837e1230}{ClearImgRequested}}();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_abecbb679a29f8a1816a8c68733a3c634}{AnalysisZoneRequested}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_aa4292e83ff8b7b5debfdfa2ecab4e0fa}{DataAcquisitionIsReady}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_ae2253bca07f46d25ba8f9812bfdf1ead}{newProgressValue}}(QString,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_ac188f4dd3f80e38e28efc1d9babaaf0e}{newContrastImage}}(QVector<Mat>);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_ab20be393f0937dfefd2faf31f2154be8}{newStatType}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_abb68d4d07db24c6869dd22135112e237}{newContrastplot}}(QVector<QVector<float>\ >);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a3f795a5e3373c13e4d967dc36bcc09bb}{newPixelPos}}(QVector<Point>);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHAnalysisParams_a340b6df205750f3d239aedeefcb3399b}{newChromophoreID}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00169\ \ \ \ \ Ui::HAnalysisParams\ *ui;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{int}\ \_showInfosMessage(QString\ text,\ QString\ infoText,\textcolor{keywordtype}{bool}\ YesNoQuestion);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//Data\ analysis\ class}}
+\DoxyCodeLine{00175\ \ \ \ \ \doxymbox{\hyperlink{classPAnalyse}{PAnalyse}}\ \ \ \ \_M\_analyse;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ QVector<Mat>\ \_M\_stats\_zone;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//Nb\ of\ frames}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_nb\_frames;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//Frame\ per\ second}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_FS;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HANALYSISPARAMS\_H}}
+
+\end{DoxyCode}

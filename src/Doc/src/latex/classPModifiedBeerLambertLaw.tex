@@ -1,0 +1,83 @@
+\doxysection{PModified\+Beer\+Lambert\+Law Class Reference}
+\hypertarget{classPModifiedBeerLambertLaw}{}\label{classPModifiedBeerLambertLaw}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+Inheritance diagram for PModified\+Beer\+Lambert\+Law:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPModifiedBeerLambertLaw}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_aa0eec209560886c92b14d4d2381c1478}{onnew\+Reference\+Time}} (int start, int end)
+\item 
+void \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a78e83667784d9cb4c2a7a5ee187b77a3}{onnew\+Correlation\+Times}} (int start, int end)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPModifiedBeerLambertLaw_a53309bc2533d43828b133cd27dffc615}\label{classPModifiedBeerLambertLaw_a53309bc2533d43828b133cd27dffc615} 
+{\bfseries PModified\+Beer\+Lambert\+Law} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a31330fdb1f27d563e5856b74a276b092}{set\+Reference\+IDX}} (int start, int end)
+\item 
+void \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_aa130d6ebc17c3ada14b548fdecb75a8b}{set\+Activity\+IDX}} (int start, int end)
+\item 
+void \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a4f7dc1d3e9aaaaa6b21252fc62701ac4}{set\+Correlation\+IDX}} (int start, int end)
+\item 
+void \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_a2d4bf1d82b1434a4206f8595c450f079}{get\+Averaged\+Concentration\+Changes}} (const QVector$<$ QVector$<$ float $>$ $>$ \&temporal\+\_\+vec, const QVector$<$ Mat $>$ \&coeff, QVector$<$ float $>$ \&results, int start\+\_\+act=-\/1, int end\+\_\+act=-\/1, int start\+\_\+ref=-\/1, int end\+\_\+ref=-\/1, int start\+\_\+id=-\/1, int end\+\_\+id=-\/1)
+\item 
+void \doxymbox{\hyperlink{classPModifiedBeerLambertLaw_ac8c1b49802b3a85ca4363e706c56ad1f}{get\+\_\+\+Chromophore\+\_\+\+Time\+\_\+courses}} (const QVector$<$ QVector$<$ float $>$ $>$ \&temporal\+\_\+vec, const QVector$<$ Mat $>$ \&coeff, QVector$<$ QVector$<$ float $>$ $>$ \&contrast, int start\+\_\+ref=-\/1, int end\+\_\+ref=-\/1, int start\+\_\+id=-\/1, int end\+\_\+id=-\/1)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classPModifiedBeerLambertLaw_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPModifiedBeerLambertLaw_ac8c1b49802b3a85ca4363e706c56ad1f}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}!get\_Chromophore\_Time\_courses@{get\_Chromophore\_Time\_courses}}
+\index{get\_Chromophore\_Time\_courses@{get\_Chromophore\_Time\_courses}!PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+\doxysubsubsection{\texorpdfstring{get\_Chromophore\_Time\_courses()}{get\_Chromophore\_Time\_courses()}}
+{\footnotesize\ttfamily \label{classPModifiedBeerLambertLaw_ac8c1b49802b3a85ca4363e706c56ad1f} 
+void PModified\+Beer\+Lambert\+Law::\+get\+\_\+\+Chromophore\+\_\+\+Time\+\_\+courses (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{temporal\+\_\+vec}{, }\item[{const QVector$<$ Mat $>$ \&}]{coeff}{, }\item[{QVector$<$ QVector$<$ float $>$ $>$ \&}]{contrast}{, }\item[{int}]{start\+\_\+ref}{ = {\ttfamily -\/1}, }\item[{int}]{end\+\_\+ref}{ = {\ttfamily -\/1}, }\item[{int}]{start\+\_\+id}{ = {\ttfamily -\/1}, }\item[{int}]{end\+\_\+id}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+Get the concentration changes time courses for a temporal pixel using the modified Beer-\/\+Lambert law \Hypertarget{classPModifiedBeerLambertLaw_a2d4bf1d82b1434a4206f8595c450f079}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}!getAveragedConcentrationChanges@{getAveragedConcentrationChanges}}
+\index{getAveragedConcentrationChanges@{getAveragedConcentrationChanges}!PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+\doxysubsubsection{\texorpdfstring{getAveragedConcentrationChanges()}{getAveragedConcentrationChanges()}}
+{\footnotesize\ttfamily \label{classPModifiedBeerLambertLaw_a2d4bf1d82b1434a4206f8595c450f079} 
+void PModified\+Beer\+Lambert\+Law::\+get\+Averaged\+Concentration\+Changes (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{temporal\+\_\+vec}{, }\item[{const QVector$<$ Mat $>$ \&}]{coeff}{, }\item[{QVector$<$ float $>$ \&}]{results}{, }\item[{int}]{start\+\_\+act}{ = {\ttfamily -\/1}, }\item[{int}]{end\+\_\+act}{ = {\ttfamily -\/1}, }\item[{int}]{start\+\_\+ref}{ = {\ttfamily -\/1}, }\item[{int}]{end\+\_\+ref}{ = {\ttfamily -\/1}, }\item[{int}]{start\+\_\+id}{ = {\ttfamily -\/1}, }\item[{int}]{end\+\_\+id}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+Get the concentration changes averaged during the activity periode (using the modified Beer-\/\+Lambert law) Get the concentration changes averaged during the activity periode (using the modified Beer-\/\+Lambert law) \Hypertarget{classPModifiedBeerLambertLaw_a78e83667784d9cb4c2a7a5ee187b77a3}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}!onnewCorrelationTimes@{onnewCorrelationTimes}}
+\index{onnewCorrelationTimes@{onnewCorrelationTimes}!PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+\doxysubsubsection{\texorpdfstring{onnewCorrelationTimes}{onnewCorrelationTimes}}
+{\footnotesize\ttfamily \label{classPModifiedBeerLambertLaw_a78e83667784d9cb4c2a7a5ee187b77a3} 
+void PModified\+Beer\+Lambert\+Law::\+onnew\+Correlation\+Times (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Set the correlation times \Hypertarget{classPModifiedBeerLambertLaw_aa0eec209560886c92b14d4d2381c1478}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}!onnewReferenceTime@{onnewReferenceTime}}
+\index{onnewReferenceTime@{onnewReferenceTime}!PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+\doxysubsubsection{\texorpdfstring{onnewReferenceTime}{onnewReferenceTime}}
+{\footnotesize\ttfamily \label{classPModifiedBeerLambertLaw_aa0eec209560886c92b14d4d2381c1478} 
+void PModified\+Beer\+Lambert\+Law::\+onnew\+Reference\+Time (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Set New reference times (start and end indexes of the first rest period) \Hypertarget{classPModifiedBeerLambertLaw_aa130d6ebc17c3ada14b548fdecb75a8b}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}!setActivityIDX@{setActivityIDX}}
+\index{setActivityIDX@{setActivityIDX}!PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+\doxysubsubsection{\texorpdfstring{setActivityIDX()}{setActivityIDX()}}
+{\footnotesize\ttfamily \label{classPModifiedBeerLambertLaw_aa130d6ebc17c3ada14b548fdecb75a8b} 
+void PModified\+Beer\+Lambert\+Law::\+set\+Activity\+IDX (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set activity idx \Hypertarget{classPModifiedBeerLambertLaw_a4f7dc1d3e9aaaaa6b21252fc62701ac4}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}!setCorrelationIDX@{setCorrelationIDX}}
+\index{setCorrelationIDX@{setCorrelationIDX}!PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+\doxysubsubsection{\texorpdfstring{setCorrelationIDX()}{setCorrelationIDX()}}
+{\footnotesize\ttfamily \label{classPModifiedBeerLambertLaw_a4f7dc1d3e9aaaaa6b21252fc62701ac4} 
+void PModified\+Beer\+Lambert\+Law::\+set\+Correlation\+IDX (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set correlation time \Hypertarget{classPModifiedBeerLambertLaw_a31330fdb1f27d563e5856b74a276b092}\index{PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}!setReferenceIDX@{setReferenceIDX}}
+\index{setReferenceIDX@{setReferenceIDX}!PModifiedBeerLambertLaw@{PModifiedBeerLambertLaw}}
+\doxysubsubsection{\texorpdfstring{setReferenceIDX()}{setReferenceIDX()}}
+{\footnotesize\ttfamily \label{classPModifiedBeerLambertLaw_a31330fdb1f27d563e5856b74a276b092} 
+void PModified\+Beer\+Lambert\+Law::\+set\+Reference\+IDX (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set reference idx (start and end indexes of the first rest period 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Vision/\+inc/\+\doxymbox{\hyperlink{PModifiedBeerLambertLaw_8h}{PModified\+Beer\+Lambert\+Law.\+h}}\end{DoxyCompactItemize}

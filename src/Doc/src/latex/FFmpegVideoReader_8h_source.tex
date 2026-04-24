@@ -1,0 +1,58 @@
+\doxysection{FFmpeg\+Video\+Reader.\+h}
+\hypertarget{FFmpegVideoReader_8h_source}{}\label{FFmpegVideoReader_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/FFmpegVideoReader.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Acquisition/inc/FFmpegVideoReader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FFMPEGVIDEOREADER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FFMPEGVIDEOREADER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <libavcodec/avcodec.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <libavformat/avformat.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <libswscale/swscale.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <libavutil/imgutils.h>}}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }FFmpegVideoReader}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ FFmpegVideoReader()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \ \ \string~FFmpegVideoReader();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ open(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keywordtype}{float}\ fps);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Read\ a\ single\ frame\ by\ index}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ readFrame(\textcolor{keywordtype}{int}\ frameIndex,\ cv::Mat\&\ outMat);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ readFrame\_debug(\textcolor{keywordtype}{int}\ frameIndex,\ cv::Mat\&\ outMat);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Read\ a\ range\ of\ frames\ sequentially}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ readRange(\textcolor{keywordtype}{int}\ startFrame,\ \textcolor{keywordtype}{int}\ endFrame,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ cv::Mat\&,\ \textcolor{keywordtype}{int})>\ callback);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ totalFrames()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ fps()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ isOpen()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_isOpen;\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ cv::Mat\ AVFrameToMat(AVFrame*\ frame);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ AVFormatContext*\ \_formatCtx\ \ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00042\ \ \ \ \ AVCodecContext*\ \ \_codecCtx\ \ \ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00043\ \ \ \ \ AVStream*\ \ \ \ \ \ \ \ \_stream\ \ \ \ \ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \ \ \ \ AVFrame*\ \ \ \ \ \ \ \ \ \_frame\ \ \ \ \ \ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00045\ \ \ \ \ AVPacket*\ \ \ \ \ \ \ \ \_packet\ \ \ \ \ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00046\ \ \ \ \ AVRational\ \ \ \ \ \ \ \_timeBase\ \ \ =\ \{0,\ 1\};}
+\DoxyCodeLine{00047\ \ \ \ \ AVRational\ \ \ \ \ \ \ \_fps\ \ \ \ \ \ \ \ =\ \{0,\ 1\};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_streamIndex\ =\ -\/1;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \_isOpen\ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FFMPEGVIDEOREADER\_H}}
+
+\end{DoxyCode}

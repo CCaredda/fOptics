@@ -1,0 +1,77 @@
+\doxysection{C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Vision/\+inc/\+filtering.h File Reference}
+\hypertarget{filtering_8h}{}\label{filtering_8h}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/filtering.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/filtering.h}}
+
+
+Set of functions used to process temporal filtering in the Fourier domain.  
+
+
+{\ttfamily \+\#include "{}polyfit.\+hpp"{}}\newline
+{\ttfamily \+\#include $<$fftw3.\+h$>$}\newline
+{\ttfamily \+\#include $<$omp.\+h$>$}\newline
+{\ttfamily \+\#include "{}Statistic\+\_\+functions.\+h"{}}\newline
+{\ttfamily \+\#include "{}acquisition.\+h"{}}\newline
+{\ttfamily \+\#include $<$Qt\+Math$>$}\newline
+{\ttfamily \+\#include $<$QVector$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{filtering_8h_a598a3330b3c21701223ee0ca14316eca}\label{filtering_8h_a598a3330b3c21701223ee0ca14316eca} 
+\+\#define {\bfseries PI}~3.\+141592653589793
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{filtering_8h_a9f26e19b6f2270a1dd255a4b9934abf0}{Blackman\+\_\+\+Window}} (const double Fs, const double Fc, QVector$<$ float $>$ \&filter, const int N)
+\item 
+void \doxymbox{\hyperlink{filtering_8h_a3a582d8774ca9849ff6a6c5f240a33e2}{Apply\+\_\+\+Filtering}} (const QVector$<$ float $>$ \&x, QVector$<$ float $>$ \&data, const fftwf\+\_\+plan \&p, const fftwf\+\_\+plan \&q, const QVector$<$ float $>$ \&filter)
+\item 
+void \doxymbox{\hyperlink{filtering_8h_a57a69b858e3da649a92274305822f443}{Apply\+\_\+\+Data\+\_\+\+Correction}} (const QVector$<$ float $>$ \&x, QVector$<$ float $>$ \&data)
+\item 
+QVector$<$ float $>$ \doxymbox{\hyperlink{filtering_8h_a5721ae82b45cda9e998a66e673096c06}{Apply\+\_\+\+Data\+\_\+\+Correction}} (const QVector$<$ float $>$ \&data, int start\+\_\+acquis, int end\+\_\+acquis, int rest1\+\_\+start, int rest1\+\_\+end, int rest\+\_\+last\+\_\+start, int rest\+\_\+last\+\_\+end)
+\item 
+void \doxymbox{\hyperlink{filtering_8h_ac9fe384cd7bdc476f7e1dba4f052882e}{Apply\+\_\+\+Low\+\_\+\+Pass\+\_\+\+Filtering}} (const QVector$<$ float $>$ \&x, QVector$<$ float $>$ \&data, const fftwf\+\_\+plan \&p, const fftwf\+\_\+plan \&q, const QVector$<$ float $>$ \&filter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of functions used to process temporal filtering in the Fourier domain. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact:\+ \href{mailto:caredda.c@gmail.com}{\texttt{caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{filtering_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{filtering_8h_a5721ae82b45cda9e998a66e673096c06}\index{filtering.h@{filtering.h}!Apply\_Data\_Correction@{Apply\_Data\_Correction}}
+\index{Apply\_Data\_Correction@{Apply\_Data\_Correction}!filtering.h@{filtering.h}}
+\doxysubsubsection{\texorpdfstring{Apply\_Data\_Correction()}{Apply\_Data\_Correction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{filtering_8h_a5721ae82b45cda9e998a66e673096c06} 
+QVector$<$ float $>$ Apply\+\_\+\+Data\+\_\+\+Correction (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{data}{, }\item[{int}]{start\+\_\+acquis}{, }\item[{int}]{end\+\_\+acquis}{, }\item[{int}]{rest1\+\_\+start}{, }\item[{int}]{rest1\+\_\+end}{, }\item[{int}]{rest\+\_\+last\+\_\+start}{, }\item[{int}]{rest\+\_\+last\+\_\+end}{}\end{DoxyParamCaption})}
+
+apply data correction with start and end index \Hypertarget{filtering_8h_a57a69b858e3da649a92274305822f443}\index{filtering.h@{filtering.h}!Apply\_Data\_Correction@{Apply\_Data\_Correction}}
+\index{Apply\_Data\_Correction@{Apply\_Data\_Correction}!filtering.h@{filtering.h}}
+\doxysubsubsection{\texorpdfstring{Apply\_Data\_Correction()}{Apply\_Data\_Correction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{filtering_8h_a57a69b858e3da649a92274305822f443} 
+void Apply\+\_\+\+Data\+\_\+\+Correction (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{x}{, }\item[{QVector$<$ float $>$ \&}]{data}{}\end{DoxyParamCaption})}
+
+apply data correction \Hypertarget{filtering_8h_a3a582d8774ca9849ff6a6c5f240a33e2}\index{filtering.h@{filtering.h}!Apply\_Filtering@{Apply\_Filtering}}
+\index{Apply\_Filtering@{Apply\_Filtering}!filtering.h@{filtering.h}}
+\doxysubsubsection{\texorpdfstring{Apply\_Filtering()}{Apply\_Filtering()}}
+{\footnotesize\ttfamily \label{filtering_8h_a3a582d8774ca9849ff6a6c5f240a33e2} 
+void Apply\+\_\+\+Filtering (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{x}{, }\item[{QVector$<$ float $>$ \&}]{data}{, }\item[{const fftwf\+\_\+plan \&}]{p}{, }\item[{const fftwf\+\_\+plan \&}]{q}{, }\item[{const QVector$<$ float $>$ \&}]{filter}{}\end{DoxyParamCaption})}
+
+apply filtering (low pass filtering + data correction) \Hypertarget{filtering_8h_ac9fe384cd7bdc476f7e1dba4f052882e}\index{filtering.h@{filtering.h}!Apply\_Low\_Pass\_Filtering@{Apply\_Low\_Pass\_Filtering}}
+\index{Apply\_Low\_Pass\_Filtering@{Apply\_Low\_Pass\_Filtering}!filtering.h@{filtering.h}}
+\doxysubsubsection{\texorpdfstring{Apply\_Low\_Pass\_Filtering()}{Apply\_Low\_Pass\_Filtering()}}
+{\footnotesize\ttfamily \label{filtering_8h_ac9fe384cd7bdc476f7e1dba4f052882e} 
+void Apply\+\_\+\+Low\+\_\+\+Pass\+\_\+\+Filtering (\begin{DoxyParamCaption}\item[{const QVector$<$ float $>$ \&}]{x}{, }\item[{QVector$<$ float $>$ \&}]{data}{, }\item[{const fftwf\+\_\+plan \&}]{p}{, }\item[{const fftwf\+\_\+plan \&}]{q}{, }\item[{const QVector$<$ float $>$ \&}]{filter}{}\end{DoxyParamCaption})}
+
+apply low pass filtering \Hypertarget{filtering_8h_a9f26e19b6f2270a1dd255a4b9934abf0}\index{filtering.h@{filtering.h}!Blackman\_Window@{Blackman\_Window}}
+\index{Blackman\_Window@{Blackman\_Window}!filtering.h@{filtering.h}}
+\doxysubsubsection{\texorpdfstring{Blackman\_Window()}{Blackman\_Window()}}
+{\footnotesize\ttfamily \label{filtering_8h_a9f26e19b6f2270a1dd255a4b9934abf0} 
+void Blackman\+\_\+\+Window (\begin{DoxyParamCaption}\item[{const double}]{Fs}{, }\item[{const double}]{Fc}{, }\item[{QVector$<$ float $>$ \&}]{filter}{, }\item[{const int}]{N}{}\end{DoxyParamCaption})}
+
+Create low pass spectral filter using a Blackman window 

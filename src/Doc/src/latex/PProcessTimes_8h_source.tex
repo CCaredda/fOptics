@@ -1,0 +1,105 @@
+\doxysection{PProcess\+Times.\+h}
+\hypertarget{PProcessTimes_8h_source}{}\label{PProcessTimes_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/PProcessTimes.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/PProcessTimes.h}}
+\doxymbox{\hyperlink{PProcessTimes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ PPROCESSTIMES\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ PPROCESSTIMES\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{loadinfos_8h}{loadinfos.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }PProcessTimes\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ PProcessTimes(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a3c90fde9b18918f533a11e17f1ea5edf}{setFirstLastFrameForAnalysis}}(\textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a4090d97301343b99e3812dc5265a88e9}{setProcessTimes}}(QVector<int>);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a5324d2ce8e372873b39d0223c035c38b}{setNbTotFrames}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a1f7a7dd28d494bdce73d49579eb9f560}{setFrameRate}}(\textcolor{keywordtype}{double}\ Fs);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_aef86cc9d00724a4fbf2c91876280a02b}{setActivationStepsToConsider}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPProcessTimes_a8bb97afa3c8482b0415a6a4ad927013d}{get\_rest\_start\_id}}()\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_rest\_time\_start;\}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPProcessTimes_ad8a7161e90065ca2fe345f738cc70361}{get\_rest\_end\_id}}()\ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_rest\_time\_end;\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPProcessTimes_ada91b90cdb374a47b6553581f12a67dc}{get\_last\_analyzed\_frame\_for\_Correlation}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPProcessTimes_a1f7abef95a20136fdbf6a820f459ce2d}{get\_first\_analyzed\_frame\_for\_Correlation}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ QVector<int>\ \doxymbox{\hyperlink{classPProcessTimes_a5065d591e80d3b1693992e5c2ee5db08}{get\_Full\_activity\_start}}();}
+\DoxyCodeLine{00056\ \ \ \ \ QVector<int>\ \doxymbox{\hyperlink{classPProcessTimes_a8f314fd64be7ba3b6575be68089c5e06}{get\_Full\_activity\_end}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPProcessTimes_a21cc9a1e8b8aee7600dcb4d66a6718e8}{get\_activity\_start}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_activity\_time\_start[0];\}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classPProcessTimes_ac597e56d67906f71344c1ac3975ee3b5}{get\_activity\_end}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_activity\_time\_end[0];\}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ QVector<float>\ \doxymbox{\hyperlink{classPProcessTimes_a7327910e4a4778ca8d25b7bd15a0981b}{get\_Bold\_Signal}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ \_M\_BOLD\_signal;\}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ QVector<float>\ \doxymbox{\hyperlink{classPProcessTimes_a974141ddf1576d1ecd3ce89f31954f38}{get\_Activation\_Signal}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ void\ process\_frame\_indexes\_for\_data\_correction(int\ start,int\ end);}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ signals:}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a25b5fefea15bd8e51833ed3cfd9a291c}{newReferenceTime}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_aeb723413477c5cb316037f90c53ff2a7}{newCorrelationTimes}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a828cfc965ecab525f0d0a4fa57e793c7}{newActivationtimes}}(QVector<double>);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a7edce95907764b9fc2a7f77199d1c69c}{newBoldSignal}}(QVector<float>);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_aee2815339fea3ef954c6e9a54c7c027b}{newDataCorrectionIdx}}(\textcolor{keywordtype}{int}\ start\_first\_rest,\ \textcolor{keywordtype}{int}\ end\_first\_rest,\textcolor{keywordtype}{int}\ start\_last\_rest,\textcolor{keywordtype}{int}\ end\_last\_rest);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classPProcessTimes_a8a2870a5aebd006b1877135633b9d3dd}{onNewResultDirectory}}(QString\ v)\ \ \ \ \{\_M\_result\_directory\ =\ v;\}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \_Compute\_Bold\_Signal();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ activity\ step\ to\ consider\ in\ the\ calculation\ of\ correlation\ and\ SPM}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_activity\_step\_to\_consider;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//Global\ aquisiton\ info}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_nb\_frames;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \_M\_FS;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//Paradigm\ infos}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_average\_activity\_period;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_time\_start;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_M\_rest\_time\_end;}
+\DoxyCodeLine{00113\ \ \ \ \ QVector<int>\ \ \ \ \_M\_last\_analyzed\_frame\_for\_correlation;}
+\DoxyCodeLine{00114\ \ \ \ \ QVector<int>\ \ \ \ \_M\_first\_analyzed\_frame\_for\_correlation;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Activity\ steps\ contained\ in\ the\ .txt\ file}}
+\DoxyCodeLine{00117\ \ \ \ \ QVector<int>\ \ \ \ \_M\_activity\_time\_start;}
+\DoxyCodeLine{00118\ \ \ \ \ QVector<int>\ \ \ \ \_M\_activity\_time\_end;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//BOLD\ Signal}}
+\DoxyCodeLine{00121\ \ \ \ \ QVector<float>\ \ \_M\_BOLD\_signal;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//Result\ directory}}
+\DoxyCodeLine{00124\ \ \ \ \ QString\ \_M\_result\_directory;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_nb\_of\_frame\_to\_substract;}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PPROCESSTIMES\_H}}
+
+\end{DoxyCode}

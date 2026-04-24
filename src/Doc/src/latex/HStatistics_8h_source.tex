@@ -1,0 +1,60 @@
+\doxysection{HStatistics.\+h}
+\hypertarget{HStatistics_8h_source}{}\label{HStatistics_8h_source}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HStatistics.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Display/inc/HStatistics.h}}
+\doxymbox{\hyperlink{HStatistics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ HSTATISTICS\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ HSTATISTICS\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QFileDialog>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{acquisition_8h}{acquisition.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }HStatistics;}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }HStatistics\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ HStatistics(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00031\ \ \ \ \ \string~HStatistics();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHStatistics_a88da9e5ab8a4a03c8cbe868f6c211ccc}{enableActivatedAreasDefinition}}(\textcolor{keywordtype}{bool}\ v);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ onnewStatType(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ signals:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHStatistics_a64a3e105e64de50342df283993ee1708}{newSettingStatisticZone}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHStatistics_a13d29e46bfa92c8ea2fb8f74e6a1f6fc}{newStatType}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHStatistics_a1c4480c1b518c4ec7b2f1512914205c3}{newZThreshValue}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classHStatistics_abd69b7a129eb1a9cbb66c27e4672a37d}{AnalysisChoice}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \ \ Ui::HStatistics\ *ui;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//-\/1:\ no\ analysis}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//0\ :\ task-\/based}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//1:\ resting\ state}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//2:\ Impulsion}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \_M\_analysis\_choice;}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HSTATISTICS\_H}}
+
+\end{DoxyCode}

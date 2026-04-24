@@ -1,0 +1,61 @@
+\doxysection{C:\+/\+\+Users/\+ccaredda/\+\+Desktop/\+\+DVP/\+f\+Optics/\+src/\+\+Vision/\+inc/\+oxygenation.h File Reference}
+\hypertarget{oxygenation_8h}{}\label{oxygenation_8h}\index{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/oxygenation.h@{C:/Users/ccaredda/Desktop/DVP/fOptics/src/Vision/inc/oxygenation.h}}
+
+
+Set of functions used to calculate chromophore\textquotesingle{}s concentration changes using the modified Beer Lambert law and to compute the Pearson correlation coefficient between expected and measure time curves.  
+
+
+{\ttfamily \+\#include $<$QDebug$>$}\newline
+{\ttfamily \+\#include $<$QFile$>$}\newline
+{\ttfamily \+\#include $<$QText\+Stream$>$}\newline
+{\ttfamily \+\#include $<$cmath$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+imgproc/\+imgproc.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+imgproc/\+imgproc\+\_\+c.\+h$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+imgproc/\+types\+\_\+c.\+h$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+highgui/\+highgui.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+core/\+core.\+hpp$>$}\newline
+{\ttfamily \+\#include $<$opencv2/\+opencv.\+hpp$>$}\newline
+{\ttfamily \+\#include "{}vblob\+Foreach.\+h"{}}\newline
+{\ttfamily \+\#include "{}pobject.\+h"{}}\newline
+{\ttfamily \+\#include "{}Statistic\+\_\+functions.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{oxygenation_8h_a4c3e9b1315775d3963e5810a2ea796e1}{Compare\+\_\+\+Bold\+\_\+\+Vs\+\_\+\+Oxy}} (QVector$<$ QVector$<$ float $>$ $>$ \&contrast, QVector$<$ QVector$<$ float $>$ $>$ \&model, QVector$<$ double $>$ \&stat\+\_\+vec)
+\item 
+bool \doxymbox{\hyperlink{oxygenation_8h_a724dfdf7301b61b85123b6251df356de}{get\+Reference\+\_\+\+Single\+\_\+\+Deconvolution}} (const QVector$<$ QVector$<$ float $>$ $>$ \&temporal\+\_\+vec, int start, int end, int Nb\+Channels, QVector$<$ float $>$ \&mean\+\_\+val)
+\item 
+void \doxymbox{\hyperlink{oxygenation_8h_a914f24748dd30539304b21d84cd6325d}{process\+\_\+\+Single\+\_\+\+Deconvolution}} (const QVector$<$ QVector$<$ float $>$ $>$ \&temporal\+\_\+vec, int t, QVector$<$ float $>$ \&OD, QVector$<$ float $>$ \&mean\+\_\+val, int Nb\+Channels, int nb\+\_\+chromophore, const Mat \&Molar\+\_\+coeff, QVector$<$ float $>$ \&measure)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of functions used to calculate chromophore\textquotesingle{}s concentration changes using the modified Beer Lambert law and to compute the Pearson correlation coefficient between expected and measure time curves. 
+
+\begin{DoxyAuthor}{Author}
+Charly Caredda Contact:\+ \href{mailto:caredda.c@gmail.com}{\texttt{caredda.\+c@gmail.\+com}} 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{oxygenation_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{oxygenation_8h_a4c3e9b1315775d3963e5810a2ea796e1}\index{oxygenation.h@{oxygenation.h}!Compare\_Bold\_Vs\_Oxy@{Compare\_Bold\_Vs\_Oxy}}
+\index{Compare\_Bold\_Vs\_Oxy@{Compare\_Bold\_Vs\_Oxy}!oxygenation.h@{oxygenation.h}}
+\doxysubsubsection{\texorpdfstring{Compare\_Bold\_Vs\_Oxy()}{Compare\_Bold\_Vs\_Oxy()}}
+{\footnotesize\ttfamily \label{oxygenation_8h_a4c3e9b1315775d3963e5810a2ea796e1} 
+void Compare\+\_\+\+Bold\+\_\+\+Vs\+\_\+\+Oxy (\begin{DoxyParamCaption}\item[{QVector$<$ QVector$<$ float $>$ $>$ \&}]{contrast}{, }\item[{QVector$<$ QVector$<$ float $>$ $>$ \&}]{model}{, }\item[{QVector$<$ double $>$ \&}]{stat\+\_\+vec}{}\end{DoxyParamCaption})}
+
+Compare measure contrast to the theoretical one using Pearson correlation coefficient \Hypertarget{oxygenation_8h_a724dfdf7301b61b85123b6251df356de}\index{oxygenation.h@{oxygenation.h}!getReference\_Single\_Deconvolution@{getReference\_Single\_Deconvolution}}
+\index{getReference\_Single\_Deconvolution@{getReference\_Single\_Deconvolution}!oxygenation.h@{oxygenation.h}}
+\doxysubsubsection{\texorpdfstring{getReference\_Single\_Deconvolution()}{getReference\_Single\_Deconvolution()}}
+{\footnotesize\ttfamily \label{oxygenation_8h_a724dfdf7301b61b85123b6251df356de} 
+bool get\+Reference\+\_\+\+Single\+\_\+\+Deconvolution (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{temporal\+\_\+vec}{, }\item[{int}]{start}{, }\item[{int}]{end}{, }\item[{int}]{Nb\+Channels}{, }\item[{QVector$<$ float $>$ \&}]{mean\+\_\+val}{}\end{DoxyParamCaption})}
+
+Get intensities averaged during the first rest period \Hypertarget{oxygenation_8h_a914f24748dd30539304b21d84cd6325d}\index{oxygenation.h@{oxygenation.h}!process\_Single\_Deconvolution@{process\_Single\_Deconvolution}}
+\index{process\_Single\_Deconvolution@{process\_Single\_Deconvolution}!oxygenation.h@{oxygenation.h}}
+\doxysubsubsection{\texorpdfstring{process\_Single\_Deconvolution()}{process\_Single\_Deconvolution()}}
+{\footnotesize\ttfamily \label{oxygenation_8h_a914f24748dd30539304b21d84cd6325d} 
+void process\+\_\+\+Single\+\_\+\+Deconvolution (\begin{DoxyParamCaption}\item[{const QVector$<$ QVector$<$ float $>$ $>$ \&}]{temporal\+\_\+vec}{, }\item[{int}]{t}{, }\item[{QVector$<$ float $>$ \&}]{OD}{, }\item[{QVector$<$ float $>$ \&}]{mean\+\_\+val}{, }\item[{int}]{Nb\+Channels}{, }\item[{int}]{nb\+\_\+chromophore}{, }\item[{const Mat \&}]{Molar\+\_\+coeff}{, }\item[{QVector$<$ float $>$ \&}]{measure}{}\end{DoxyParamCaption})}
+
+Process chromophore deconvolution using a single Matrix to project data 
