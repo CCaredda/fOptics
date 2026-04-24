@@ -3,7 +3,6 @@
 INCLUDEPATH+= $$absolute_path(./inc)
 
 SOURCES +=  \
-    $$PWD/src/HChooseAnalysis.cpp \
     $$absolute_path(.)/src/HImageDisplay.cpp \
     $$PWD/src/HPLotProfile.cpp \
     $$PWD/src/HAcquisitionDisplay.cpp \
@@ -19,7 +18,6 @@ SOURCES +=  \
 
 
 HEADERS  += \
-    $$PWD/inc/HChooseAnalysis.h \
     $$absolute_path(.)/inc/HImageDisplay.h \
     $$PWD/inc/HPLotProfile.h \
     $$PWD/inc/HAcquisitionDisplay.h \
@@ -34,7 +32,6 @@ HEADERS  += \
     $$PWD/inc/HSaveData.h
 
 FORMS += \
-    $$PWD/ui/HChooseAnalysis.ui \
     $$PWD/ui/HPLotProfile.ui \
     $$PWD/ui/HAcquisitionDisplay.ui \
     $$PWD/ui/HLoadDatas.ui \

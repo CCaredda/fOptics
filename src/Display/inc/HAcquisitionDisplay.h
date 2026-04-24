@@ -24,7 +24,6 @@
 #include <QTimer>
 
 
-#include "HChooseAnalysis.h"
 #include <thread>
 #include <chrono>
 
@@ -206,10 +205,6 @@ private:
 
     //Require First img
     bool                            _M_require_Learning_First_img;
-
-    //Choose analysis when selecting directory
-    HChooseAnalysis                 _M_choose_analysis;
-
 
     //Result directory
     QString _M_result_directory;

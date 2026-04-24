@@ -137,7 +137,6 @@ HAcquisitionDisplay::HAcquisitionDisplay(QWidget *parent) :
 
     //analysis type
     connect(&_M_load_datas_hard_drive,SIGNAL(requestAnalysisChoose(QVector<int>)),this,SLOT(requestAnalysisChoose(QVector<int>)));
-    connect(&_M_choose_analysis,SIGNAL(enableAnalysis(int)),this,SLOT(enableAnalysis(int)));
 
 }
 
@@ -412,9 +411,36 @@ void HAcquisitionDisplay::DisplayRegistrationResult()
 /** request analysis choice */
 void HAcquisitionDisplay::requestAnalysisChoose(QVector<int> v)
 {
-    _M_choose_analysis.setAnalysis(v);
+    bool analysis_found = false;
+    for(int i=0;i<v.size();i++)
+    {
+        if(v[i]==0)
+        {
+            analysis_found = true;
+            break;
+        }
+    }
 
-    this->setEnabled(false);
+    if(analysis_found)
+        enableAnalysis(0);
+    else
+    {
+        QMessageBox::information(
+            this,
+            "Information missing in Acquisition_info.txt file",
+
+            "Make sure that the file Acquisition_info.txt located next to the RGB video have these items\n"
+            "Start task-based : xxx\n"
+            "End task-based : xxx\n"
+            "Step 0 : xxxx\n"
+            "...\n"
+            "Step N : xxx\n"
+            "\n"
+            "Replace xxx with your frame number",
+            QMessageBox::Ok
+            );
+        QCoreApplication::exit();
+    }
 
 }
 
