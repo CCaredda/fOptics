@@ -30,7 +30,11 @@ public:
     explicit HAnalysisParams(QWidget *parent = 0);
     ~HAnalysisParams();
 
+    /** stop threads */
+    void stop_threads();
 
+    /** Wait threads to be finished */
+    bool wait_threads();
 
 
 private slots:

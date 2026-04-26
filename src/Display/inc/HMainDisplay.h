@@ -35,6 +35,12 @@ public:
     /** Get result directory */
     QString getResultDirectory();
 
+    /* stop threads */
+    void stop_thread();
+
+    /** Wait thread to be finished */
+    bool wait_thread();
+
 
 private slots:
 

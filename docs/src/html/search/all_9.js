@@ -1,26 +1,4 @@
 var searchData=
 [
-  ['init_0',['init',['../classPDataExtracting.html#a08462d114b864df0e9851290af6ef3c3',1,'PDataExtracting::init()'],['../classPFiltering.html#abbcd4a42340e43a4d4c8ba32844dde00',1,'PFiltering::init()']]],
-  ['init_5finterface_1',['init_Interface',['../classHROI.html#a06448c25c1e1edeae8a9a1ab1156c8ba',1,'HROI']]],
-  ['initialize_2',['Initialize',['../classPAnalyse.html#ac8dd302dd2e79e3ce23f112fac3f7d2b',1,'PAnalyse']]],
-  ['initializeminmaxvalues_3',['InitializeMinMaxValues',['../classHPLotProfile.html#add06ecc7f8a368b41a00b72e998dcc7a',1,'HPLotProfile::InitializeMinMaxValues()'],['../classHPLotProfile.html#a4a5d59560cad6e5e9723b4772c60d8ca',1,'HPLotProfile::InitializeMinMaxValues(double min, double max)']]],
-  ['initmolarcoeff_4',['initMolarCoeff',['../classPPixelWiseMolarCoeff.html#a002748c96247a9522e0cb3930ca0a530',1,'PPixelWiseMolarCoeff::initMolarCoeff()'],['../classPPixelWiseMolarCoeff.html#a002748c96247a9522e0cb3930ca0a530',1,'PPixelWiseMolarCoeff::initMolarCoeff()']]],
-  ['initroi_5',['InitROI',['../classAPostAcquisition.html#ab1fc41af7af95abb307a0f6124a5531f',1,'APostAcquisition']]],
-  ['initroirequested_6',['InitROIRequested',['../classHLoadDatas.html#afa24ac6be3728baac85e77f18bda991e',1,'HLoadDatas']]],
-  ['initvalues_7',['InitValues',['../classHPLotProfile.html#a1bd787ad012959953bd965902af8fef5',1,'HPLotProfile']]],
-  ['install_20boost_20library_8',['Install boost library',['../index.html#compile_boost',1,'']]],
-  ['installation_20on_20windows_9',['Installation on Windows',['../index.html#install_sec_win',1,'']]],
-  ['integratedatas_10',['integrateDatas',['../molarcoefffunctions_8h.html#a0620e64f3861abdd02226151d2658727',1,'integrateDatas(QVector&lt; Mat &gt; &amp;out, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_Hb, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_HbO2, QVector&lt; double &gt; &amp;Mean_path, QVector&lt; QVector&lt; int &gt; &gt; &amp;id):&#160;molarcoefffunctions.h'],['../molarcoefffunctions_8h.html#a1fae5325f4562d10c175f09f89a601de',1,'integrateDatas(QVector&lt; Mat &gt; &amp;out, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_Hb, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_HbO2, QVector&lt; double &gt; &amp;Mean_path):&#160;molarcoefffunctions.h']]],
-  ['integratedatas_5fhb_5fhbo2_5foxcco_11',['integrateDatas_Hb_HbO2_oxCCO',['../molarcoefffunctions_8h.html#a754763a6b8b2edfa9a9414708a77790a',1,'integrateDatas_Hb_HbO2_oxCCO(QVector&lt; Mat &gt; &amp;out, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_Hb, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_HbO2, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_oxCCO, QVector&lt; double &gt; &amp;Mean_path, QVector&lt; QVector&lt; int &gt; &gt; &amp;id):&#160;molarcoefffunctions.h'],['../molarcoefffunctions_8h.html#a0ecb34b4fca98e49c00d155e01401861',1,'integrateDatas_Hb_HbO2_oxCCO(QVector&lt; Mat &gt; &amp;out, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_Hb, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_HbO2, QVector&lt; QVector&lt; double &gt; &gt; &amp;spectral_res_oxCCO, QVector&lt; double &gt; &amp;Mean_path):&#160;molarcoefffunctions.h']]],
-  ['intraoperative_20neuroimaging_12',['Intraoperative neuroimaging',['../index.html',1,'']]],
-  ['introduction_13',['Introduction',['../index.html#intro_sec',1,'']]],
-  ['invertmatrix_14',['invertMatrix',['../molarcoefffunctions_8h.html#ad22f07f6c92b798976bbfefaedd8b257',1,'invertMatrix(Mat &amp;in, Mat &amp;out):&#160;molarcoefffunctions.h'],['../molarcoefffunctions_8h.html#ad9e268d97be66328fbf863aaf7df0e77',1,'invertMatrix(QVector&lt; Mat &gt; &amp;in, QVector&lt; Mat &gt; &amp;out):&#160;molarcoefffunctions.h']]],
-  ['isdataloadedfromharddrive_15',['isDataLoadedFromHardDrive',['../classHLoadDatas.html#a7a077cbff3f5c6872658d5ca206f3e0e',1,'HLoadDatas']]],
-  ['isemptymatrix_16',['isEmptyMatrix',['../classPPixelWiseMolarCoeff.html#a3b33454939839b5d03aee432cb8980a6',1,'PPixelWiseMolarCoeff::isEmptyMatrix(int id)'],['../classPPixelWiseMolarCoeff.html#a3b33454939839b5d03aee432cb8980a6',1,'PPixelWiseMolarCoeff::isEmptyMatrix(int id)']]],
-  ['isfilteringenabled_17',['isFilteringEnabled',['../classPFiltering.html#a2a897adda42413effc89ad29b3d07264',1,'PFiltering']]],
-  ['isinithasbeendone_18',['IsInitHasBeenDone',['../classPPixelWiseMolarCoeff.html#a873ec203816cf162344117734d39bca5',1,'PPixelWiseMolarCoeff::IsInitHasBeenDone()'],['../classPPixelWiseMolarCoeff.html#a873ec203816cf162344117734d39bca5',1,'PPixelWiseMolarCoeff::IsInitHasBeenDone()']]],
-  ['islearningdone_19',['isLearningDone',['../classPAnalyse.html#a868c651c3e500023c3fbf44ea08e5758',1,'PAnalyse']]],
-  ['ispathloaded_20',['isPathLoaded',['../classAloadDatas.html#a32d79ee83c71c034f564faa9612d7823',1,'AloadDatas']]],
-  ['isroiempty_21',['isROIempty',['../classPAnalyse.html#a435765c9745f67e96895d0f249fa19ef',1,'PAnalyse']]],
-  ['isrowdatavalid_22',['isRowDataValid',['../classPFiltering.html#a72d80d86d1c17442e82ca2de2c7382bb',1,'PFiltering']]]
+  ['neuroimaging_0',['Intraoperative neuroimaging',['../index.html',1,'']]]
 ];

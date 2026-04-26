@@ -67,17 +67,21 @@ ARegistration::ARegistration(QObject *parent) : QThread(parent)
 
 ARegistration::~ARegistration()
 {
+    if (isRunning()) // Only stop/wait if not already done in closeEvent()
     {
         QMutexLocker locker(&_M_mutex);
         _M_stop = true;
-        _M_condition.wakeOne(); // wake the thread so it can see _M_stop and exit
+        _M_condition.wakeOne();
+        // Must release lock before wait()
     }
 
-    wait(); // block here until the thread has fully finished
+    if (isRunning())
+        wait();
 }
 
 void ARegistration::stop()
 {
+    qDebug()<<"ARegistration::stop";
     QMutexLocker locker(&_M_mutex);
     _M_stop = true;
     _M_condition.wakeOne(); // wake it so it can exit
@@ -242,51 +246,10 @@ void ARegistration::requestParallelThreadProcess(_Processed_img img)
 //Protected
 void ARegistration::run()
 {
-
-//     while(_M_img.size()>0)
-//     {
-//         if(_M_learning_Model_is_done)
-//         {
-//             if(!_M_img.empty() && _M_soft_ready)
-//             {
-//                 _Processed_img img;
-
-//                 QMutexLocker locker(&_M_mutex);
-//                  _M_img[0].img.copyTo(img.img);
-//                  img.thread_id = _M_img[0].thread_id;
-//                  locker.unlock();
-
-//                 _RegisterImage(img);
-
-//                 locker.relock();
-//                 _M_img.erase(_M_img.begin());
-//                 locker.unlock();
-//             }
-//         }
-//         else
-//         {
-//             while(!_M_learning_Model_is_done)
-//             {
-//                 if(!_M_img.empty() && _M_img.size()>=_M_id_learning_frame+1)
-//                 {
-//                     _Processed_img img;
-
-//                     QMutexLocker locker(&_M_mutex);
-//                      _M_img[_M_id_learning_frame].img.copyTo(img.img);
-//                      img.thread_id = _M_img[_M_id_learning_frame].thread_id;
-//                      locker.unlock();
-
-//                     _LearnModel(img);
-
-// //                    locker.relock();
-// //                    _M_img.erase(_M_img.begin());
-// //                    locker.unlock();
-//                 }
-//             }
-//         }
-//     }
     for (;;)
     {
+        if(_M_stop)
+            break;
         if(_M_learning_Model_is_done)
         {
             _Processed_img img;

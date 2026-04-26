@@ -13,6 +13,7 @@
 
 #include <QMainWindow>
 #include <QFile>
+#include <QCloseEvent>
 
 namespace Ui {
 class HMain;
@@ -25,6 +26,9 @@ class HMain : public QMainWindow
 public:
     explicit HMain(QWidget *parent = 0);
     ~HMain();
+
+protected:
+    virtual void closeEvent(QCloseEvent *);
 
 private:
     Ui::HMain *ui;

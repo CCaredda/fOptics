@@ -230,6 +230,22 @@ HMainDisplay::~HMainDisplay()
 }
 
 
+/* stop threads */
+void HMainDisplay::stop_thread()
+{
+    ui->_params_acquisition->stop_threads();
+    ui->_params_analysis->stop_threads();
+}
+
+bool HMainDisplay::wait_thread()
+{
+    bool acquis = ui->_params_acquisition->wait_thread();
+    bool analysis =ui->_params_analysis->wait_threads();
+
+    return acquis && analysis;
+}
+
+
 void HMainDisplay::onhelp_required()
 {
     QString share_dir = getShareDirPath("Doc");

@@ -146,6 +146,60 @@ HAcquisitionDisplay::~HAcquisitionDisplay()
 }
 
 
+//Stop all acquisition threads
+void HAcquisitionDisplay::stop_threads()
+{
+    //Stop load image thread
+    if (_M_load_datas_hard_drive.isRunning())
+        _M_load_datas_hard_drive.stop();
+
+
+    //Stop registration thread
+    _M_reg.stop_thread();
+
+    //Stop post-process thread
+    if (_M_post_acquis.isRunning())
+    {
+        _M_post_acquis.stop();
+
+    }
+
+}
+
+bool HAcquisitionDisplay::wait_thread()
+{
+    bool reg_load = true;
+    if (!_M_load_datas_hard_drive.wait(3000))
+    {
+        qDebug() << "AloadDatas Thread did not stop" ;
+        reg_load = false;
+    }
+    if(reg_load)
+        qDebug()<<"AloadDatas Thread stopped";
+    if(_M_load_datas_hard_drive.isRunning())
+        qDebug() << "AloadDatas Thread is still running" ;
+
+
+    bool reg_wait = _M_reg.wait_thread();
+    if(reg_wait)
+        qDebug()<<"ARegistration Thread stopped";
+
+
+
+    bool reg_post_acquis = true;
+    if (!_M_post_acquis.wait(3000))
+    {
+        qDebug() << "APostAcquisition Thread did not stop" ;
+        reg_post_acquis = false;
+    }
+    if(reg_post_acquis)
+        qDebug()<<"APostAcquisition Thread stopped";
+    if(_M_post_acquis.isRunning())
+        qDebug() << "APostAcquisition Thread is still running" ;
+
+
+    return reg_wait && reg_post_acquis && reg_load;
+}
 
 
 //Set HMI mode (user, guru)

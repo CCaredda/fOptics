@@ -29,6 +29,7 @@ public:
 
     void loadVideo(const QString &filePath);
     void startReadingFrames();
+    void stop_reading();
 
     void set_Total_frame_number(int v)  {_M_tot_frames = v;}
     void init_frame_count()             {_M_video_framecount = 0;}

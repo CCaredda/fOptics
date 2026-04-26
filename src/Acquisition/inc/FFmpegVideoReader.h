@@ -23,6 +23,8 @@ public:
     bool open(const std::string& path, float fps);
     void close();
 
+    void stop_reading() {_M_stop = true;}
+
     // Read a single frame by index
     bool readFrame(int frameIndex, cv::Mat& outMat);
     bool readFrame_debug(int frameIndex, cv::Mat& outMat);
@@ -47,6 +49,8 @@ private:
     AVRational       _fps        = {0, 1};
     int              _streamIndex = -1;
     bool             _isOpen     = false;
+
+    bool             _M_stop     = false;
 };
 
 #endif // FFMPEGVIDEOREADER_H

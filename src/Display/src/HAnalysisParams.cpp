@@ -132,6 +132,17 @@ HAnalysisParams::~HAnalysisParams()
 }
 
 
+//Stop all acquisition threads
+void HAnalysisParams::stop_threads()
+{
+    _M_analyse.stop_threads();
+}
+
+//Wait threads to be finished
+bool HAnalysisParams::wait_threads()
+{
+    return _M_analyse.wait_threads();
+}
 
 /** set result directory */
 void HAnalysisParams::onNewResultDirectory(QString v)

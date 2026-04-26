@@ -52,6 +52,12 @@ public:
     /** Set HMI mode (user, guru) */
     void onNew_Guru_Mode(bool);
 
+    /** Stop all threads */
+    void stop_threads();
+
+    /** Wait threads to be finished */
+    bool wait_thread();
+
 private slots:
 
     /** Update data acquisition progress bar */
@@ -209,8 +215,6 @@ private:
     //Result directory
     QString _M_result_directory;
 
-//    //TEMP IMG
-//    Mat temp_img;
 
 };
 

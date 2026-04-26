@@ -206,6 +206,7 @@ private:
 
 
     AVideoProcessor _M_video_processor;
+    FFmpegVideoReader _M_ffmpeg_reader;
     int             _M_video_id;
 
     //Frame idx loaded
@@ -213,6 +214,9 @@ private:
 
     //mode video reading (Qt, opencv, ffmpeg)
     QString _M_mode_video_reading;
+
+    //stop thread
+    bool _M_stop;
 };
 
 #endif // ALOADDATAS_H

@@ -20,6 +20,29 @@ AImageRegistration::~AImageRegistration()
 
 }
 
+
+void AImageRegistration::stop_thread()
+{
+    if (_M_reg_RGB.isRunning())
+    {
+        _M_reg_RGB.stop();
+    }
+}
+
+bool AImageRegistration::wait_thread()
+{
+    bool ok = true;
+    if (!_M_reg_RGB.wait(3000))
+    {
+        qDebug() << "AImageRegistration Thread did not stop" ;
+        ok = false;
+    }
+    if(_M_reg_RGB.isRunning())
+        qDebug() << "AImageRegistration Thread is still running" ;
+
+    return ok;
+}
+
 //enable motion compensation
 void AImageRegistration::enableMotionCompensation(bool v)
 {

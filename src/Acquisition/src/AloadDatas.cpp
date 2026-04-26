@@ -31,6 +31,7 @@ AloadDatas::AloadDatas(QObject *parent) : QThread(parent)
     _M_camera_name = "";
     _M_Light_source_type = "";
 
+    _M_stop = false;
 
     //Connect video processor
     connect(&_M_video_processor,SIGNAL(newImageAcquired(_Processed_img)),this,SIGNAL(newImageAcquired(_Processed_img)));
@@ -49,6 +50,15 @@ AloadDatas::~AloadDatas()
 }
 
 
+void AloadDatas::stop()
+{
+    qDebug()<<"AloadDatas::stop";
+    _M_stop = true;
+    _M_ffmpeg_reader.stop_reading();
+    _M_video_processor.stop_reading();
+}
+
+
 // Load all datas
 void AloadDatas::LoadDatas()
 {
@@ -58,6 +68,9 @@ void AloadDatas::LoadDatas()
 //Protected function (run the code in a different thread)
 void AloadDatas::run()
 {
+    if(_M_stop)
+        return;
+
     if(_M_mode_video)
     {
         if(_M_mode_video_reading=="Qt")
@@ -69,6 +82,7 @@ void AloadDatas::run()
     }
     else
         _LoadDatasFromImgFiles();
+
 
 }
 
@@ -83,6 +97,8 @@ void AloadDatas::_LoadDatasFromImgFiles()
     _Processed_img img;
     for(int current_frame=_M_start_frame;current_frame<_M_last_frame;current_frame++)
     {
+        if(_M_stop)
+            break;
 
         // filename
         result.clear();
@@ -114,6 +130,8 @@ void AloadDatas::_LoadDatasFromVideoFile_Qt()
 
     qDebug()<<"[AloadDatas::_LoadDatasFromVideoFile_Qt] ask video reading";
 
+    if(_M_stop)
+        return;
 
     qDebug()<<"[AloadDatas::_LoadDatasFromVideoFile_Qt] Load video mode Qt";
     _M_video_processor.init_frame_count();
@@ -143,6 +161,8 @@ void AloadDatas::_LoadDatasFromVideoFile_ffmpeg()
     int id_frame = 0;
     for(int id_video = 0;id_video<_M_idx_video.size();id_video++)
     {
+        if(_M_stop)
+            return;
 
         QString video_file = _M_video_dir + _M_video_files[_M_idx_video[id_video]];
 
@@ -160,19 +180,14 @@ void AloadDatas::_LoadDatasFromVideoFile_ffmpeg()
 
         cv::Mat frame;
 
-        FFmpegVideoReader reader;
-        reader.open(video_file.toStdString(),(float)_M_FPS);
-        qDebug()<<"[AloadDatas::_LoadDatasFromVideoFile_ffmpeg] reader is open "<<reader.isOpen();
+
+        _M_ffmpeg_reader.open(video_file.toStdString(),(float)_M_FPS);
+        qDebug()<<"[AloadDatas::_LoadDatasFromVideoFile_ffmpeg] reader is open "<<_M_ffmpeg_reader.isOpen();
 
 
-
-        std::map<int, int> frameCount; // frameIndex -> how many times received
-
-
-        reader.readRange(startFrame, endFrame,
-                         [this, &id_frame, &frameCount](const cv::Mat& mat, int index)
+        _M_ffmpeg_reader.readRange(startFrame, endFrame,
+                         [this, &id_frame](const cv::Mat& mat, int index)
                          {
-                             frameCount[index]++;
 
                              _Processed_img process_img;
                              process_img.img = mat.clone();
@@ -184,19 +199,13 @@ void AloadDatas::_LoadDatasFromVideoFile_ffmpeg()
                          }
                          );
 
-        reader.close();
+        _M_ffmpeg_reader.close();
 
-
-        int duplicates = 0;
-        for (auto& [idx, cnt] : frameCount) {
-            if (cnt > 1) {
-                qDebug() << "Duplicate frame index:" << idx << "received" << cnt << "times";
-                duplicates += cnt - 1;
-            }
+        if(_M_stop)
+        {
+            qDebug()<<"[AloadDatas::_LoadDatasFromVideoFile_ffmpeg] stop requested";
+            return;
         }
-        qDebug() << "Total duplicates:" << duplicates;
-        qDebug() << "Unique frames received:" << frameCount.size();
-
         qDebug()<<"AloadDatas::_LoadDatasFromVideoFile_ffmpeg video "<<id_video<<" "<<id_frame<<"/"<<_M_tot_frames;
     }
 }
@@ -217,7 +226,8 @@ void AloadDatas::_LoadDatasFromVideoFile_Opencv()
     int id_frame = 0;
     for(int id_video = 0;id_video<_M_idx_video.size();id_video++)
     {
-
+        if(_M_stop)
+            return;
 
         cv::VideoCapture cap((_M_video_dir + _M_video_files[_M_idx_video[id_video]]).toStdString(), preferredBackendForFile(_M_video_dir + _M_video_files[_M_idx_video[id_video]])); // On Windows, FFmpeg backend is often the best if available
         if (!cap.isOpened()) {
@@ -230,19 +240,19 @@ void AloadDatas::_LoadDatasFromVideoFile_Opencv()
 
         cv::Mat frame;
 
-        cap.set(cv::CAP_PROP_POS_FRAMES, startFrame); // seek ONCE
+        int currentFrame = (int)cap.get(cv::CAP_PROP_POS_FRAMES);
+        while (currentFrame < startFrame) {
+            cap.grab(); // Fast skip — no decode
+            currentFrame++;
+        }
+
 
         for (int i = startFrame; i <= endFrame; ++i)
         {
-            cap.set(cv::CAP_PROP_POS_FRAMES, i);
-            // int currentPos = (int)cap.get(cv::CAP_PROP_POS_FRAMES);
+            if(_M_stop)
+                return;
 
-            // // Re-seek only if drifted
-            // if (currentPos != i) {
-            //     qDebug() << "Drift detected, re-seeking to" << i;
-            //     cap.set(cv::CAP_PROP_POS_FRAMES, i);
-            // }
-
+            //cap.set(cv::CAP_PROP_POS_FRAMES, i);
             if (!cap.read(frame) || frame.empty()) break;
 
             _Processed_img process_img;

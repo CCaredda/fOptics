@@ -2,6 +2,7 @@
 #include "ui_HMain.h"
 #include <QFile>
 #include <QMessageBox>
+#include <QThreadPool>
 
 
 HMain::HMain(QWidget *parent) :
@@ -30,4 +31,20 @@ HMain::HMain(QWidget *parent) :
 HMain::~HMain()
 {
     delete ui;
+}
+
+
+
+void HMain::closeEvent(QCloseEvent *event)
+{
+    qDebug()<<"Close the app";
+    ui->centralWidget->stop_thread();
+    bool v = ui->centralWidget->wait_thread();
+
+    qDebug() << "Active threads in QThreadPool:"
+             << QThreadPool::globalInstance()->activeThreadCount();
+    if(v)
+        event->accept();
+    else
+        event->ignore();
 }

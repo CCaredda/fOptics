@@ -22,6 +22,12 @@ public:
     explicit AImageRegistration(QObject *parent = nullptr);
     ~AImageRegistration();
 
+    /** Stop the thread */
+    void stop_thread();
+    /** wait the thread to be finished */
+    bool wait_thread();
+
+
     /** Data processing is ready */
     void DataAcquisitionIsReady();
 

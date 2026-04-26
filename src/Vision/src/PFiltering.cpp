@@ -61,26 +61,68 @@ PFiltering::PFiltering(QObject *parent) : QThread(parent)
 
 PFiltering::~PFiltering()
 {
+    if (isRunning()) // Only stop/wait if not already done in closeEvent()
     {
         QMutexLocker locker(&_M_mutex);
         _M_stop = true;
-        _M_condition.wakeOne(); // wake the thread so it can see _M_stop and exit
+        _M_condition.wakeOne();
+        // Must release lock before wait()
     }
 
-    wait(); // block here until the thread has fully finished
+    if (isRunning())
+        wait();
 }
 
 void PFiltering::stop()
 {
+    qDebug()<<"[PFiltering] PFiltering::stop()";
     QMutexLocker locker(&_M_mutex);
     _M_stop = true;
     _M_condition.wakeOne(); // wake it so it can exit
 }
 
+void PFiltering::stop_threads()
+{
+    if(isRunning())
+        stop();
+
+    if(_M_data_extract.isRunning())
+        _M_data_extract.stop();
+}
+
+//Wait threads to be finished
+bool PFiltering::wait_threads()
+{
+    bool _wait = true;
+    if (!this->wait(3000))
+    {
+        qDebug() << "PFiltering Thread did not stop" ;
+        _wait = false;
+    }
+    if(_wait)
+        qDebug()<<"PFiltering Thread stopped";
+    if(isRunning())
+        qDebug() << "PFiltering Thread is still running" ;
+
+
+    if (!_M_data_extract.wait(3000))
+    {
+        qDebug() << "PDataExtracting Thread did not stop" ;
+        _wait = false;
+    }
+    if(_wait)
+        qDebug()<<"PDataExtracting Thread stopped";
+    if(_M_data_extract.isRunning())
+        qDebug() << "PDataExtracting Thread is still running" ;
+
+
+    return _wait;
+}
+
 void PFiltering::onPreprocessFinished()
 {
 
-    qDebug()<<"In PFiltering::onPreprocessFinished";
+    // qDebug()<<"In PFiltering::onPreprocessFinished";
     if(_M_process_is_finished)
     {
         this->wait(); // block here until the thread has fully finished
@@ -162,7 +204,7 @@ void PFiltering::run()
                 _M_condition.wait(&_M_mutex);
 
             if (_M_stop)
-                break;
+                return;
 
             _Processed_img tmp = _M_img_buffer.dequeue();
             img.thread_id = tmp.thread_id;
@@ -485,6 +527,8 @@ void PFiltering::_Process_FFT_Filtering()
             #pragma omp for
             for(int id=0;id<_M_nb_Spatial_pixels;id++)
             {
+                if(_M_stop)
+                    continue;
                 #pragma omp critical
                 {
                     emit newProgressStatut("Data correction",(int)((100*id*nb_thread)/_M_nb_Spatial_pixels));
@@ -510,6 +554,8 @@ void PFiltering::_Process_FFT_Filtering()
                 {
                     emit newProgressStatut("Filtering",(int)((100*id*nb_thread)/_M_nb_Spatial_pixels));
                 }
+                if(_M_stop)
+                    continue;
 
                 for(int k=0;k<_M_nb_spectral_channels;k++)
                 {
@@ -534,6 +580,9 @@ void PFiltering::_Process_FFT_Filtering()
                 {
                     emit newProgressStatut("Filtering",(int)((100*id*nb_thread)/_M_nb_Spatial_pixels));
                 }
+                if(_M_stop)
+                    continue;
+
                 for(int k=0;k<_M_nb_spectral_channels;k++)
                 {
 

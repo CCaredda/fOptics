@@ -274,7 +274,7 @@ bool FFmpegVideoReader::readRange(int startFrame, int endFrame,
         currentFrame++; // pure increment after calibration — no more PTS math
     };
 
-    while (!done && av_read_frame(_formatCtx, _packet) >= 0)
+    while (!_M_stop && !done && av_read_frame(_formatCtx, _packet) >= 0)
     {
         if (_packet->stream_index != _streamIndex) {
             av_packet_unref(_packet);
@@ -283,7 +283,7 @@ bool FFmpegVideoReader::readRange(int startFrame, int endFrame,
 
         avcodec_send_packet(_codecCtx, _packet);
 
-        while (avcodec_receive_frame(_codecCtx, _frame) == 0) {
+        while (!_M_stop && avcodec_receive_frame(_codecCtx, _frame) == 0) {
             processFrame();
             av_frame_unref(_frame);
         }
@@ -294,7 +294,7 @@ bool FFmpegVideoReader::readRange(int startFrame, int endFrame,
     // Flush decoder
     if (!done) {
         avcodec_send_packet(_codecCtx, nullptr);
-        while (avcodec_receive_frame(_codecCtx, _frame) == 0) {
+        while (!_M_stop && avcodec_receive_frame(_codecCtx, _frame) == 0) {
             processFrame();
             av_frame_unref(_frame);
         }

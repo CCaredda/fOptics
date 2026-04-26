@@ -34,19 +34,16 @@ APostAcquisition::APostAcquisition(QObject *parent) : QThread(parent)
 
 APostAcquisition::~APostAcquisition()
 {
-    // if (isRunning())
-    // {
-    //     requestInterruption();
-    //     wait();
-    // }
-
+    if (isRunning()) // Only stop/wait if not already done in closeEvent()
     {
         QMutexLocker locker(&_M_mutex);
         _M_stop = true;
-        _M_condition.wakeOne(); // wake the thread so it can see _M_stop and exit
+        _M_condition.wakeOne();
+        // Must release lock before wait()
     }
 
-    wait(); // block here until the thread has fully finished
+    if (isRunning())
+        wait();
 }
 
 
@@ -174,6 +171,7 @@ void APostAcquisition::run()
 
 void APostAcquisition::stop()
 {
+    qDebug()<<"APostAcquisition::stop";
     QMutexLocker locker(&_M_mutex);
     _M_stop = true;
     _M_condition.wakeOne(); // wake it so it can exit

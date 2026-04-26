@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['blackman_5fwindow_0',['Blackman_Window',['../filtering_8h.html#a9f26e19b6f2270a1dd255a4b9934abf0',1,'filtering.h']]],
-  ['boost_20library_1',['Install boost library',['../index.html#compile_boost',1,'']]],
-  ['build_5fdesign_5fmatrix_2',['Build_Design_Matrix',['../classP__SPM.html#a26307fdc64423bd5321b49af027db503',1,'P_SPM']]]
+  ['compilation_0',['Project Compilation',['../index.html#compile_project',1,'']]],
+  ['compile_20fftw_20on_20windows_20with_20msvc22_1',['Compile FFTW on Windows with msvc22',['../index.html#compile_fftw',1,'']]],
+  ['compile_20opencv_20on_20windows_20with_20msvc22_2',['Compile Opencv on Windows with msvc22',['../index.html#compile_opencv',1,'']]]
 ];

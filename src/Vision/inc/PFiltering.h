@@ -42,6 +42,11 @@ public:
 
     /** stop thread */
     void stop();
+    void stop_threads();
+
+
+    /** Wait threads to be finished */
+    bool wait_threads();
 
     /*********************************************************/
     /*********************************************************/

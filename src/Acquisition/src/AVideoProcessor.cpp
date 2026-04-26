@@ -32,6 +32,11 @@ AVideoProcessor::~AVideoProcessor()
     _M_mediaPlayer->stop();
 }
 
+void AVideoProcessor::stop_reading()
+{
+    _M_mediaPlayer->stop();
+}
+
 void AVideoProcessor::loadVideo(const QString &filePath)
 {
     _M_mediaPlayer->setSource(QUrl::fromLocalFile(filePath));

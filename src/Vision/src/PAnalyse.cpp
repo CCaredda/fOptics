@@ -3,12 +3,7 @@
 PAnalyse::PAnalyse(QObject *parent):
     QThread(parent)
 {
-
-    //Hyperspectral img dynamic
-    _M_HS_Dyn        = 16;
-
-
-    //moveToThread(this);
+    _M_stop = false;
 
     //Init result directory
     _M_result_directory =  "/home/results/";
@@ -96,6 +91,28 @@ PAnalyse::~PAnalyse()
 }
 
 
+//Stop all acquisition threads
+void PAnalyse::stop_threads()
+{
+    //Stop this thread
+    if (isRunning())
+    {
+        qDebug()<<"[PAnalysis] stop";
+        _M_stop = true;
+        //wait();
+    }
+    _M_filtering.stop_threads();
+}
+
+
+//Wait threads to be finished
+bool PAnalyse::wait_threads()
+{
+    // wait();
+    return _M_filtering.wait_threads();
+}
+
+
 /** New result directory */
 void PAnalyse::onNewResultDirectory(QString v)
 {
@@ -172,6 +189,9 @@ QVector<Mat> PAnalyse::_Get_Delta_C_Maps(int nb_chromopores)
             if(!_M_PixelWise_Molar_Coeff.getMolarCoeff(id,Molar_coeff))
                 continue;
 
+            if(_M_stop)
+                continue;
+
             #pragma omp critical
             {
                 emit newProgressStatut("Get Delta C maps",(int)((100*id*nb_thread)/_M_nb_temporal_vectors));
@@ -230,6 +250,9 @@ QVector<Mat> PAnalyse::_Get_Camera_Intensity()
             }
             QVector<Mat> Molar_coeff;
             if(!_M_PixelWise_Molar_Coeff.getMolarCoeff(id,Molar_coeff))
+                continue;
+
+            if(_M_stop)
                 continue;
 
             //get concentration changes time courses
@@ -394,7 +417,8 @@ void PAnalyse::_Save_Results()
     if(!_M_saving_info.save_camera_intensity &&  !_M_saving_info.save_Delta_C)
         return;
 
-
+    if(_M_stop)
+        return;
 
     //Save Delta C
     qDebug()<<"[PAnalyse::_Save_Results] save_Delta_C";
@@ -411,6 +435,9 @@ void PAnalyse::_Save_Results()
         //Save contrasts
         for(int c=0;c<Delta_C_maps.size();c++)
         {
+            if(_M_stop)
+                return;
+
             QString file_path = (contrast_dir+ "MBLL_"+QString::number(c)+".dat");
             // WriteFloatImg(file_path,Delta_C_maps[c]);
             WriteFloatImg_bin(file_path,Delta_C_maps[c]);
@@ -435,7 +462,8 @@ void PAnalyse::_Save_Results()
         //Save intensity maps
         for(int c=0;c<I_maps.size();c++)
         {
-
+            if(_M_stop)
+                return;
             QString file_path = I_dir+ "I_"+QString::number(c)+".dat";
             //WriteFloatImg(file_path,I_maps[c]);
             WriteFloatImg_bin(file_path,I_maps[c]);
@@ -525,6 +553,9 @@ void PAnalyse::_ProcessCorrelationMeasure()
     for(int i =0 ;i<Correlation_maps.size();i++)
         contrast_img.push_back(_Display(Correlation_maps[i]));
 
+
+    if(_M_stop)
+        return;
 
     //Write results
     QString temp_name = "Corr_MBLL";
@@ -618,6 +649,9 @@ void PAnalyse::_ProcessCorrelation(QVector<QVector<float> > &Correlation_map)
         Correlation_map[i].fill(0,_M_nb_temporal_vectors);
 
 
+    if(_M_stop)
+        return;
+
 
     //Process Loop ([Hb], [HbO2] calculation)
     #pragma omp parallel
@@ -629,6 +663,11 @@ void PAnalyse::_ProcessCorrelation(QVector<QVector<float> > &Correlation_map)
             QVector<Mat> Molar_coeff;
             if(!_M_PixelWise_Molar_Coeff.getMolarCoeff(id,Molar_coeff))
                 continue;
+
+
+            if(_M_stop)
+                continue;
+
 
             #pragma omp critical
             {
@@ -678,6 +717,11 @@ void PAnalyse::_ProcessCorrelation(QVector<QVector<float> > &Correlation_map)
 void  PAnalyse::_ProcessMeanConcentrationMeasure()
 {
     QVector<Mat> contrast = _Process_Mean_Delta_C();
+
+
+    if(_M_stop)
+        return;
+
 
     //Write results
     QString temp_name = "Mean_C_MBLL";
@@ -790,6 +834,11 @@ QVector<Mat> PAnalyse::_Process_Mean_Delta_C()
             QVector<Mat> Molar_coeff;
             if(!_M_PixelWise_Molar_Coeff.getMolarCoeff(id,Molar_coeff))
                 continue;
+
+
+            if(_M_stop)
+                continue;
+
 
             // #pragma omp critical
             // {
@@ -1245,6 +1294,9 @@ void PAnalyse::_General_Linear_Model_Auto_thresh()
     if(!QDir().exists(saving_dir))
         QDir().mkdir(saving_dir);
 
+    if(_M_stop)
+        return;
+
 
     //Nb of chromophore
     int nb_chromopores = _M_PixelWise_Molar_Coeff.getChromophoreNumber()+1;
@@ -1276,6 +1328,8 @@ void PAnalyse::_General_Linear_Model_Auto_thresh()
     Mat activation_map=Mat::zeros(_M_img_size,CV_8UC1);
     QVector<Mat> Z_maps;
 
+    if(_M_stop)
+        return;
 
 
     emit newProgressStatut("SPM",0);
@@ -1283,6 +1337,9 @@ void PAnalyse::_General_Linear_Model_Auto_thresh()
     for(int c=0;c<nb_chromopores;c++)
     {
         qDebug()<<"[PAnalyse::_General_Linear_Model_Auto_thresh] Delta_C_maps[c] : "<<Delta_C_maps[c].rows<<";"<<Delta_C_maps[c].cols<<" model: "<<model_for_correlation[c].size();
+
+        if(_M_stop)
+            return;
 
 
         //Create a directory to store the results
@@ -1362,12 +1419,18 @@ void PAnalyse::_General_Linear_Model_Random_Field_Theory()
     Mat activation_map=Mat::zeros(_M_img_size,CV_8UC1);
     QVector<Mat> Z_maps;
 
+
+    if(_M_stop)
+        return;
+
+
     emit newProgressStatut("SPM",0);
 
     for(int c=0;c<nb_chromopores;c++)
     {
         qDebug()<<"[PAnalyse::_General_Linear_Model_pixel_wise] Delta_C_maps[c] : "<<Delta_C_maps[c].rows<<";"<<Delta_C_maps[c].cols<<" model: "<<model_for_correlation[c].size();
-
+        if(_M_stop)
+            return;
 
         //Create a directory to store the results
         QString path =saving_dir+QString::number(c)+"/";

@@ -63,6 +63,12 @@ public:
     explicit PAnalyse(QObject *parent = 0);
     ~PAnalyse();
 
+    /** stop threads */
+    void stop_threads();
+
+    /** Wait threads to be finished */
+    bool wait_threads();
+
     /** Check if learning has been done (learning of motion) */
     bool isLearningDone()                   {return _M_learningDone;}
     /** Check if the ROI is empty */
@@ -320,9 +326,6 @@ private:
     //Fitlering class
     PFiltering                  _M_filtering;
 
-    //Statistics
-    bool                        _M_get_filtered_non_filtered_signals;
-
     //Processing type (SPM, t-tests, Mean concentration changes, correlation....
     int                         _M_processing_type;
 
@@ -350,18 +353,13 @@ private:
     int _M_chromophore_id;
 
 
-
-    //Contrast idx for phase analysis
-    //0: HbO2; 1: Hb; 2: HbT; 3: oxCCO
-    int _M_id_phase1;
-    int _M_id_phase2;
-
     //Result directory
     QString _M_result_directory;
 
+    //Stop thread
+    bool _M_stop;
 
-    //Hyperspectral img dynamic
-    int _M_HS_Dyn;
+
 
 
 };
