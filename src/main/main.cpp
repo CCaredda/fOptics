@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     a.setWindowIcon(QIcon(file_icon));
 
 
-    QString filename_css = getShareDirPath("Display")+"/style/display.css";
+    QString filename_css = getShareDirPath("share")+"/style/display.css";
     qDebug()<<"Filename css: "<<filename_css;
     QFile file_css(filename_css);
     if (file_css.open(QFile::ReadOnly | QFile::Text)) {
