@@ -1,4 +1,4 @@
-# Intraoperative Functional Brain Mapping
+# functional Optical imaging for neurosurgery guidance
 
 **fOptics** is a software tool for processing intraoperative RGB video or RGB image data to identify activated functional brain areas during neurosurgical operations.  
 
