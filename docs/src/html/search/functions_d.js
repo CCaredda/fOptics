@@ -13,6 +13,6 @@ var searchData=
   ['process_5fsingle_5fdeconvolution_10',['process_Single_Deconvolution',['../oxygenation_8h.html#a914f24748dd30539304b21d84cd6325d',1,'oxygenation.h']]],
   ['process_5fspm_11',['process_SPM',['../classP__SPM.html#a1e729ecf214bf29996dcce36a92910e6',1,'P_SPM']]],
   ['process_5fspm_5fauto_5fthresh_12',['process_SPM_auto_thresh',['../classP__SPM.html#a8f918fdcfc1a6b8d5e01051c93c50d6f',1,'P_SPM']]],
-  ['processfinished_13',['processFinished',['../classPPixelWiseMolarCoeff.html#a7d0c91c35b8ab9b1f027837ca77c3bf0',1,'PPixelWiseMolarCoeff::processFinished()'],['../classPPixelWiseMolarCoeff.html#a7d0c91c35b8ab9b1f027837ca77c3bf0',1,'PPixelWiseMolarCoeff::processFinished()']]],
-  ['processmolarcoeff_14',['processMolarCoeff',['../classPPixelWiseMolarCoeff.html#a4b7767dd4f2eb648980b9320beb44711',1,'PPixelWiseMolarCoeff::processMolarCoeff()'],['../classPPixelWiseMolarCoeff.html#a4b7767dd4f2eb648980b9320beb44711',1,'PPixelWiseMolarCoeff::processMolarCoeff()']]]
+  ['processfinished_13',['processFinished',['../classPPixelWiseMolarCoeff.html#a7d0c91c35b8ab9b1f027837ca77c3bf0',1,'PPixelWiseMolarCoeff']]],
+  ['processmolarcoeff_14',['processMolarCoeff',['../classPPixelWiseMolarCoeff.html#a4b7767dd4f2eb648980b9320beb44711',1,'PPixelWiseMolarCoeff']]]
 ];

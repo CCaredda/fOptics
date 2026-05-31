@@ -51,7 +51,8 @@ var searchData=
   ['onrequestsaveresults_48',['onrequestSaveResults',['../classHImageDisplay.html#ad6dad55e49a4309b3630d02305aa0ba9',1,'HImageDisplay::onrequestSaveResults()'],['../classPAnalyse.html#aed20bcbf8e528c70e3f8915dc5d13a2c',1,'PAnalyse::onrequestSaveResults()']]],
   ['onroi_5fdrawn_49',['onROI_drawn',['../classHROI.html#a03e7194ad64eeff5de32238b035c550b',1,'HROI']]],
   ['onwindowsizechanged_50',['onWindowSizeChanged',['../classHImageDisplay.html#a29e0977283135950e3ed16be3d8765de',1,'HImageDisplay']]],
-  ['operator_2b_51',['operator+',['../Statistic__functions_8h.html#a48385361a4018f8be533d92ed25c459a',1,'Statistic_functions.h']]],
-  ['operator_2d_52',['operator-',['../Statistic__functions_8h.html#a3716a6d1580a0e80051483d8f83244b8',1,'Statistic_functions.h']]],
-  ['operator_2f_53',['operator/',['../Statistic__functions_8h.html#a418cc59aedb531f16c3866ebd7486205',1,'operator/(const QVector&lt; float &gt; &amp;a, const float b):&#160;Statistic_functions.h'],['../Statistic__functions_8h.html#a6e8092a092bccf3e2b4373eb085187bc',1,'operator/(const QVector&lt; double &gt; &amp;a, const double b):&#160;Statistic_functions.h']]]
+  ['open_51',['open',['../classFFmpegVideoReader.html#a74c092d199a6406970eabdac9950b08c',1,'FFmpegVideoReader']]],
+  ['operator_2b_52',['operator+',['../Statistic__functions_8h.html#a48385361a4018f8be533d92ed25c459a',1,'Statistic_functions.h']]],
+  ['operator_2d_53',['operator-',['../Statistic__functions_8h.html#a3716a6d1580a0e80051483d8f83244b8',1,'Statistic_functions.h']]],
+  ['operator_2f_54',['operator/',['../Statistic__functions_8h.html#a418cc59aedb531f16c3866ebd7486205',1,'operator/(const QVector&lt; float &gt; &amp;a, const float b):&#160;Statistic_functions.h'],['../Statistic__functions_8h.html#a6e8092a092bccf3e2b4373eb085187bc',1,'operator/(const QVector&lt; double &gt; &amp;a, const double b):&#160;Statistic_functions.h']]]
 ];

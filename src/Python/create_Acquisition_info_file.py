@@ -112,7 +112,7 @@ def create_Acquisition_info_file(video_path, start_task_based_s, end_task_based_
 ## Create acquisition file info task-based + resting state + impulsion
 
 
-#langage or task-based (named task-based in file, change it if motor and langage are done in the same acquisition)
+#langage or task-based (named task-based in Acquisition info file, change it if motor and langage are done in the same acquisition)
 task_rest_in_s = 30
 task_test_in_s = 30
 Nb_repetitions = 3
@@ -129,17 +129,6 @@ for i in range(Nb_repetitions):
 #Remove last rest step
 steps_task_based_s = steps_task_based_s[0:-1]
 steps_task_based_s = start_task_based_s + np.cumsum(np.asarray(steps_task_based_s))
-
-
-# #Task based
-# start_task_based_s = 40.39
-#
-#
-# steps_task_based_s = np.array([21.40, 21.98, 22.06, 22, 22.28, 21.73, 21.46, 20.93])
-# steps_task_based_s = start_task_based_s + np.cumsum(np.asarray(steps_task_based_s))
-#
-# # end_task_based_s = "stop"
-# end_task_based_s = steps_task_based_s[-1] + 21.28
 
 
 #Resting state
@@ -167,65 +156,3 @@ file_path = [video_dir+"Segment01.mp4",video_dir+"Segment02.mp4"]
 
 
 create_Acquisition_info_file(file_path, start_task_based_s, end_task_based_s, steps_task_based_s, start_resting_state_s, end_resting_state_s, start_impulsion_s=-1, end_impulsion_s=-1, steps_impulsion_s=[],Data_synchronisation = data_synch,comments=comments)
-
-## Create acquisition file info resting state
-
-
-
-start_task_based_s = -1
-end_task_based_s = -1
-
-steps_task_based_s = []
-
-start_resting_state_s = 5*60
-end_resting_state_s = "stop"
-
-comments = ""
-
-video_dir = "/home/caredda/temp/To_upload/video/"
-file_path = [video_dir+"1.mp4",video_dir+"2.mp4"]
-
-
-#Data synchro (no synchronization problem)
-data_synch = Data_synchronization() #Synch ok
-
-create_Acquisition_info_file(file_path, start_task_based_s, end_task_based_s, steps_task_based_s, start_resting_state_s, end_resting_state_s, start_impulsion_s=-1, end_impulsion_s=-1, steps_impulsion_s=[], Data_synchronisation = data_synch, comments=comments)
-
-## Create acquisition file (tb-only)
-
-
-#Task based
-start_task_based_s = 51.07
-
-
-# steps_task_based_s = np.array([21.21, 20.75, 21.93, 21.47, 22.12, 21.83, 22.40, 21.71])
-steps_task_based_s = np.array([21.21, 20.75, 21.93, 21.47, 22.12, 21.83])
-steps_task_based_s = start_task_based_s + np.cumsum(np.asarray(steps_task_based_s))
-
-# end_task_based_s = "stop"
-end_task_based_s = steps_task_based_s[-1] + 22.40
-
-
-#Resting state
-start_resting_state_s = -1
-end_resting_state_s = -1
-
-#Impulsions
-start_impulsion_s=-1
-end_impulsion_s=-1
-steps_impulsion_s=[]
-
-
-#Data synchro (problem in data synchronization) (adapt values)
-# data_synch = Data_synchronization(sync_start = False, sync_stop=True,
-#                                   total_duration_test_s=steps_task_based_s[-1]+30.42)
-
-#Data synchro (synch ok)
-data_synch = Data_synchronization()
-
-
-#Create acquisition file
-video_dir = "/home/caredda/Videos/RGB_videos/tb_To_process/P90/Condition_Task_based_Right_Hand_autonomous/"
-file_path = [video_dir+"Segment03.mp4"]
-
-create_Acquisition_info_file(file_path, start_task_based_s, end_task_based_s, steps_task_based_s, start_resting_state_s, end_resting_state_s, start_impulsion_s=-1, end_impulsion_s=-1, steps_impulsion_s=[], Data_synchronisation = data_synch)

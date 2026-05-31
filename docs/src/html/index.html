@@ -76,11 +76,13 @@ $(function() {
 <div class="contents">
 <div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_sec"></a>
 Introduction</h1>
-<p><b>fOptics</b> is a software tool for processing intraoperative RGB video or RGB image data to identify activated functional brain areas during neurosurgical operations. <br  />
-</p>
-<h1 class="doxsection"><a class="anchor" id="install_sec_win"></a>
+<p><b>fOptics</b> is a software tool for indentifying functional brain areas during neurosurgical procedures using colour cameras.</p>
+<h1 class="doxsection"><a class="anchor" id="binary_win"></a>
 Installation on Windows</h1>
-<p>This program is coded in C++ with the framework Qt and the Microsoft Visual Studio 2022.</p>
+<p>A pre-built Windows installer is available in the Releases section: <a href="https://github.com/CCaredda/fOptics/releases">https://github.com/CCaredda/fOptics/releases</a></p>
+<h1 class="doxsection"><a class="anchor" id="install_sec_win"></a>
+Compilation on Windows</h1>
+<p>Follow these steps, if you need to compile the code. This program is coded in C++ with the framework Qt and the Microsoft Visual Studio 2022.</p>
 <p>Install Visual Studio 2022 (not via Visual studio installer because it will install Visual studio 2026. Version 2022 is required to work with Qt.</p>
 <p>Download visual studio professional 2022: <a href="https://my.visualstudio.com/Downloads?q=visual%20studio%202022&amp;wt.mc_id=o~msft~vscom~older-downloads">https://my.visualstudio.com/Downloads?q=visual%20studio%202022&amp;wt.mc_id=o~msft~vscom~older-downloads</a></p>
 <p>Install visual Studio professional 2022, and tick the box Desktop Development with C++ Click on install</p>
@@ -99,7 +101,8 @@ Compile Opencv on Windows with msvc22</h2>
 <li>source <a href="https://github.com/opencv/opencv">https://github.com/opencv/opencv</a></li>
 <li>contrib <a href="https://github.com/opencv/opencv_contrib">https://github.com/opencv/opencv_contrib</a></li>
 </ul>
-<p>2) In C:\Downloads, create build dir next to opencv sources: ├─ C:\Downloads\opencv\</p>
+<p>2) In C:\Downloads, create build dir next to opencv sources:</p>
+<p>├─ C:\Downloads\opencv\</p>
 <p>│ ├─ opencv\</p>
 <p>│ ├─ contrib\</p>
 <p>│ └─ build\</p>
@@ -113,7 +116,8 @@ Compile FFTW on Windows with msvc22</h2>
 <p>1) Download fftw3 source</p>
 <p>2) Install cmake</p>
 <p>Install Visual Studio 2022 (with “Desktop development with C++” workload).</p>
-<p>3) In C:\Downloads, create build dir next to opencv sources: ├─ C:\Downloads\fftw-3.3.10\</p>
+<p>3) In C:\Downloads, create build dir next to opencv sources:</p>
+<p>├─ C:\Downloads\fftw-3.3.10\</p>
 <p>│ ├─ src\</p>
 <p>│ └─ build\</p>
 <p>│ └─ build_f\</p>
@@ -146,23 +150,27 @@ ffmpeg for video reading</h2>
 <h2 class="doxsection"><a class="anchor" id="compile_project"></a>
 Project Compilation</h2>
 <p>Before compiling, make sure that the .pro file link to the correct OpenCV version. Change the line OPENCV_VER = 4140 according to your OpenCV version (check filenames in C:\opencv\install\x64\vc17\lib</p>
-<h1 class="doxsection"><a class="anchor" id="Correct"></a>
-video acquired from surgical microscopes</h1>
-<p>Videos acquired from surgical microscopes could be corrupted. If frames are not read, or the soft crash, it could be due to a corruption in the video file. In that case, you need to correct the video:</p>
-<p>ffmpeg -fflags +genpts -i Segment01.mp4 \ -vf "setpts=PTS-STARTPTS,fps=60000/1001" \ -af "asetpts=PTS-STARTPTS" \ -c:v libx264 -preset fast -crf 18 \ -c:a aac -b:a 192k \ -movflags faststart \ Segmentfixed_01.mp4</p>
 <h1 class="doxsection"><a class="anchor" id="sec_deployment_Windows"></a>
 Deployment on Windows</h1>
-<p>To deploy the software for Windows users, use the virtual machine (foptics_windows_img with boxes). Deployment scripts are located in the folder script.</p>
-<p>Execute the bat script windows_create_venv.bat. [If necessary] In the script, adapt the path of the current Qt version.</p>
+<p>To deploy the software on Windows, use the bat script <a href="../../src/script/windows_create_venv.bat">windows_create_venv.bat</a>.</p>
+<p>Other scripts are available to deploy the software on Linux distributions.</p>
 <h1 class="doxsection"><a class="anchor" id="sec_soft_architecture"></a>
 Software architecture</h1>
 <p>The software architecture is roughly represented by the next figure (to simplify the reading, not all classes are represented in this schematic). </p><div class="image">
 <img src="software_architecture_RT_process.png" alt="" width="1500px"/>
 <div class="caption">
 Software architecture</div></div>
+<h1 class="doxsection"><a class="anchor" id="python_code"></a>
+Python code</h1>
+<p>You can find a set of optional Python scripts in the <a href="../../src/Python">src/Python</a> folder. They are not required, but they may be useful if you want to customize the rendering of the functional brain maps.</p>
+<ul>
+<li><a href="../../src/Python/create_Acquisition_info_file.py">create_Acquisition_info_file.py</a> can be used to generate the acquisition_info.txt file that must be placed alongside the RGB video file. acquisition_info.txt file contains the frame indices related to patient cerebral activity.</li>
+<li><a href="../../src/Python/plot_functional_maps.ipynb">plot_functional_maps.ipynb</a> can be used to display the functional brain maps computed by the C++ software and customize the visualization, including the colormap and colorbar.</li>
+<li><a href="../../src/Python/utils.py">utils.py</a> contains utility functions for displaying the functional brain maps.</li>
+</ul>
 <h1 class="doxsection"><a class="anchor" id="sec_user_guide"></a>
 User guide</h1>
-<p><a href="../../usage_doc.odt">You can find the user guide here: doc_src/usage_doc.odt</a> </p>
+<p>You can find the user guide here: <a href="../../usage_doc.odt">doc/usage_doc.odt</a> </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

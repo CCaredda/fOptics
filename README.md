@@ -28,6 +28,13 @@ A pre-built Windows installer is available in the [Releases](../../releases) sec
 
 ---
 
+## Documentation
+
+The code documentation can be found here: [Code Documentation](https://ccaredda.github.io/fOptics/src/html/index.html)
+The user guide can be found here: [User guide](https://github.com/CCaredda/fOptics/blob/main/usage_doc.pdf)
+
+---
+
 ## Build instructions 
 
 To build the app, please refer to the compilation instructions here: [Documentation](https://ccaredda.github.io/fOptics/src/html/index.html)

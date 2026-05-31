@@ -2,13 +2,17 @@
  
  \section intro_sec Introduction
  
-**fOptics** is a software tool for processing intraoperative RGB video or RGB image data to identify activated functional brain areas during neurosurgical operations.  
+**fOptics** is a software tool for indentifying functional brain areas during neurosurgical procedures using colour cameras.
 
 
 
+ \section binary_win Installation on Windows
+A pre-built Windows installer is available in the Releases section: https://github.com/CCaredda/fOptics/releases
 
- \section install_sec_win Installation on Windows
+
+ \section install_sec_win Compilation on Windows
  
+ Follow these steps, if you need to compile the code.
  This program is coded in C++ with the framework Qt and the Microsoft Visual Studio 2022.
 
 Install Visual Studio 2022 (not via Visual studio installer because it will install Visual studio 2026. Version 2022 is required to work with Qt.
@@ -38,7 +42,8 @@ Download cmake binary and install it
 	- contrib https://github.com/opencv/opencv_contrib
 	
 2) In C:\Downloads, create build dir next to opencv sources:
-├─ C:\Downloads\opencv\
+
+ ├─ C:\Downloads\opencv\
 
  │   ├─ opencv\
  
@@ -69,7 +74,8 @@ cmake --build . --config Release --target INSTALL
    Install Visual Studio 2022 (with “Desktop development with C++” workload).
    
 3) In C:\Downloads, create build dir next to opencv sources:
-├─ C:\Downloads\fftw-3.3.10\
+
+ ├─ C:\Downloads\fftw-3.3.10\
 
  │   ├─ src\
  
@@ -133,33 +139,11 @@ Before compiling, make sure that the .pro file link to the correct OpenCV versio
 Change the line OPENCV_VER  = 4140 according to your OpenCV version (check filenames in C:\opencv\install\x64\vc17\lib
 
 
-
-
-\section Correct video acquired from surgical microscopes
-
-Videos acquired from surgical microscopes could be corrupted. If frames are not read, or the soft crash, it could be due to a corruption in the video file.
-In that case, you need to correct the video:
-
-
-ffmpeg -fflags +genpts -i Segment01.mp4 \
--vf "setpts=PTS-STARTPTS,fps=60000/1001" \
--af "asetpts=PTS-STARTPTS" \
--c:v libx264 -preset fast -crf 18 \
--c:a aac -b:a 192k \
--movflags faststart \
-Segmentfixed_01.mp4
-
-
-
-
-
-
 \section sec_deployment_Windows Deployment on Windows
 
-To deploy the software for Windows users, use the virtual machine (foptics_windows_img with boxes).
-Deployment scripts are located in the folder script.
+To deploy the software on Windows, use the bat script [windows_create_venv.bat](../../src/script/windows_create_venv.bat).
 
-Execute the bat script windows_create_venv.bat. [If necessary] In the script, adapt the path of the current Qt version.
+Other scripts are available to deploy the software on Linux distributions.
 
  \section sec_soft_architecture Software architecture
 
@@ -167,9 +151,18 @@ The software architecture is roughly represented by the next figure (to simplify
  \image html software_architecture_RT_process.png "Software architecture" width=1500px
  
 
+\section python_code Python code
+
+You can find a set of optional Python scripts in the [src/Python](../../src/Python) folder. They are not required, but they may be useful if you want to customize the rendering of the functional brain maps.
+
+- [create_Acquisition_info_file.py](../../src/Python/create_Acquisition_info_file.py) can be used to generate the acquisition_info.txt file that must be placed alongside the RGB video file. acquisition_info.txt file contains the frame indices related to patient cerebral activity.
+- [plot_functional_maps.ipynb](../../src/Python/plot_functional_maps.ipynb) can be used to display the functional brain maps computed by the C++ software and customize the visualization, including the colormap and colorbar.
+- [utils.py](../../src/Python/utils.py) contains utility functions for displaying the functional brain maps.
+
+
  \section sec_user_guide User guide
 
-[You can find the user guide here: doc_src/usage_doc.odt](../../usage_doc.odt)
+You can find the user guide here: [doc/usage_doc.odt](../../usage_doc.odt)
 
  
 
