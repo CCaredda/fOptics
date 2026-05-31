@@ -139,9 +139,10 @@ Before compiling, make sure that the .pro file link to the correct OpenCV versio
 Change the line OPENCV_VER  = 4140 according to your OpenCV version (check filenames in C:\opencv\install\x64\vc17\lib
 
 
-\section sec_deployment_Windows Deployment on Windows
+\section sec_deployment_Windows Software deployment
+Deployment scripts can be found in [src/script](https://github.com/CCaredda/fOptics/tree/main/src/script) folder.
 
-To deploy the software on Windows, use the bat script [windows_create_venv.bat](../../src/script/windows_create_venv.bat).
+To deploy the software on Windows, use the bat script [windows_create_venv.bat](https://github.com/CCaredda/fOptics/blob/main/src/script/windows_deploy_app.bat).
 
 Other scripts are available to deploy the software on Linux distributions.
 
@@ -153,11 +154,11 @@ The software architecture is roughly represented by the next figure (to simplify
 
 \section python_code Python code
 
-You can find a set of optional Python scripts in the [src/Python](../../src/Python) folder. They are not required, but they may be useful if you want to customize the rendering of the functional brain maps.
+You can find a set of optional Python scripts in the [src/Python](https://github.com/CCaredda/fOptics/tree/main/src/Python) folder. They are not required, but they may be useful if you want to customize the rendering of the functional brain maps.
 
-- [create_Acquisition_info_file.py](../../src/Python/create_Acquisition_info_file.py) can be used to generate the acquisition_info.txt file that must be placed alongside the RGB video file. acquisition_info.txt file contains the frame indices related to patient cerebral activity.
-- [plot_functional_maps.ipynb](../../src/Python/plot_functional_maps.ipynb) can be used to display the functional brain maps computed by the C++ software and customize the visualization, including the colormap and colorbar.
-- [utils.py](../../src/Python/utils.py) contains utility functions for displaying the functional brain maps.
+- [create_Acquisition_info_file.py](https://github.com/CCaredda/fOptics/blob/main/src/Python/create_Acquisition_info_file.py) can be used to generate the acquisition_info.txt file that must be placed alongside the RGB video file. acquisition_info.txt file contains the frame indices related to patient cerebral activity.
+- [plot_functional_maps.ipynb](https://github.com/CCaredda/fOptics/blob/main/src/Python/plot_functional_maps.ipynb) can be used to display the functional brain maps computed by the C++ software and customize the visualization, including the colormap and colorbar.
+- [utils.py](https://github.com/CCaredda/fOptics/blob/main/src/Python/utils.py) contains utility functions for displaying the functional brain maps.
 
 
  \section sec_user_guide User guide
