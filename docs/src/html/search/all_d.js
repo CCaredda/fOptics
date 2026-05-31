@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['on_20windows_0',['on Windows',['../index.html#install_sec_win',1,'Compilation on Windows'],['../index.html#sec_deployment_Windows',1,'Deployment on Windows'],['../index.html#binary_win',1,'Installation on Windows']]],
+  ['on_20windows_0',['on Windows',['../index.html#install_sec_win',1,'Compilation on Windows'],['../index.html#binary_win',1,'Installation on Windows']]],
   ['on_20windows_20with_20msvc22_1',['on Windows with msvc22',['../index.html#compile_fftw',1,'Compile FFTW on Windows with msvc22'],['../index.html#compile_opencv',1,'Compile Opencv on Windows with msvc22']]],
   ['on_5fnew_5fmaximum_5fnumber_5fanalyzed_5fpixels_2',['on_New_Maximum_number_Analyzed_pixels',['../classAPostAcquisition.html#acc045286920efdf25376f05a0fa6531c',1,'APostAcquisition']]],
   ['onanalysiszonerequested_3',['onAnalysisZoneRequested',['../classHAnalysisParams.html#ad6865c862d22152a20292ef5ff0d7c53',1,'HAnalysisParams::onAnalysisZoneRequested()'],['../classHdisplayResult.html#a64efd8428d19538ce328f8615134700c',1,'HdisplayResult::onAnalysisZoneRequested()'],['../classHImageDisplay.html#a6250da801ad2f8c106c10f4cdff09915',1,'HImageDisplay::onAnalysisZoneRequested()']]],

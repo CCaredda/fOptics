@@ -45,9 +45,10 @@ var searchData=
   ['setyvalue_42',['setYValue',['../classHPlot.html#a82d4a3f7e9b2677310536eb83b34f8f7',1,'HPlot::setYValue()'],['../classHPLotProfile.html#aa6dd048ef46b7981aeba38fdc4e77ed0',1,'HPLotProfile::setYValue()']]],
   ['setzthreshvalue_43',['setZThreshValue',['../classP__SPM.html#aa6f853463ab4907f877435fcc35644b9',1,'P_SPM']]],
   ['software_20architecture_44',['Software architecture',['../index.html#sec_soft_architecture',1,'']]],
-  ['statistic_5ffunctions_2eh_45',['Statistic_functions.h',['../Statistic__functions_8h.html',1,'']]],
-  ['stop_46',['stop',['../classAloadDatas.html#ad5d11debb7ba3765790ac4a5cc287483',1,'AloadDatas::stop()'],['../classAPostAcquisition.html#aca83a6fb8ab564ef862f99e2c9f83697',1,'APostAcquisition::stop()'],['../classARegistration.html#a4b30b1e8e0f8f4fcf216161f635219fe',1,'ARegistration::stop()'],['../classPDataExtracting.html#ab051abc671d048641b5cbe28581deba2',1,'PDataExtracting::stop()'],['../classPFiltering.html#aea0043b549c831322fa4dd63924c3ce0',1,'PFiltering::stop()']]],
-  ['stop_5freading_47',['stop_reading',['../classFFmpegVideoReader.html#ac87561a76931a87f09dea64f442003ef',1,'FFmpegVideoReader']]],
-  ['stop_5fthread_48',['stop_thread',['../classAImageRegistration.html#a849228f65df4b178f0a02102d5b5ed6b',1,'AImageRegistration']]],
-  ['stop_5fthreads_49',['stop_threads',['../classHAcquisitionDisplay.html#a2f7924d264c1fea3a4192dda8898a409',1,'HAcquisitionDisplay::stop_threads()'],['../classHAnalysisParams.html#a8124d5ceb03a7d6d03da5b292c299df6',1,'HAnalysisParams::stop_threads()'],['../classPAnalyse.html#a60df83a80368c2842dfb5f9ad59617dc',1,'PAnalyse::stop_threads()']]]
+  ['software_20deployment_45',['Software deployment',['../index.html#sec_deployment_Windows',1,'']]],
+  ['statistic_5ffunctions_2eh_46',['Statistic_functions.h',['../Statistic__functions_8h.html',1,'']]],
+  ['stop_47',['stop',['../classAloadDatas.html#ad5d11debb7ba3765790ac4a5cc287483',1,'AloadDatas::stop()'],['../classAPostAcquisition.html#aca83a6fb8ab564ef862f99e2c9f83697',1,'APostAcquisition::stop()'],['../classARegistration.html#a4b30b1e8e0f8f4fcf216161f635219fe',1,'ARegistration::stop()'],['../classPDataExtracting.html#ab051abc671d048641b5cbe28581deba2',1,'PDataExtracting::stop()'],['../classPFiltering.html#aea0043b549c831322fa4dd63924c3ce0',1,'PFiltering::stop()']]],
+  ['stop_5freading_48',['stop_reading',['../classFFmpegVideoReader.html#ac87561a76931a87f09dea64f442003ef',1,'FFmpegVideoReader']]],
+  ['stop_5fthread_49',['stop_thread',['../classAImageRegistration.html#a849228f65df4b178f0a02102d5b5ed6b',1,'AImageRegistration']]],
+  ['stop_5fthreads_50',['stop_threads',['../classHAcquisitionDisplay.html#a2f7924d264c1fea3a4192dda8898a409',1,'HAcquisitionDisplay::stop_threads()'],['../classHAnalysisParams.html#a8124d5ceb03a7d6d03da5b292c299df6',1,'HAnalysisParams::stop_threads()'],['../classPAnalyse.html#a60df83a80368c2842dfb5f9ad59617dc',1,'PAnalyse::stop_threads()']]]
 ];

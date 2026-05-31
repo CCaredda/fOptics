@@ -4,7 +4,7 @@ var searchData=
   ['wait_5fthreads_1',['wait_threads',['../classHAnalysisParams.html#a7ddd690c028f4af3b1cd4093b3806caa',1,'HAnalysisParams::wait_threads()'],['../classPAnalyse.html#a6a5a5bfcec4dba91fb3d6eb1f1036fae',1,'PAnalyse::wait_threads()'],['../classPFiltering.html#ae8779191b7932318b02494b5c0b3d108',1,'PFiltering::wait_threads()']]],
   ['wclickablelabel_2',['WClickableLabel',['../classWClickableLabel.html',1,'']]],
   ['wclickablelabel_2eh_3',['WClickableLabel.h',['../WClickableLabel_8h.html',1,'']]],
-  ['windows_4',['Windows',['../index.html#install_sec_win',1,'Compilation on Windows'],['../index.html#sec_deployment_Windows',1,'Deployment on Windows'],['../index.html#binary_win',1,'Installation on Windows']]],
+  ['windows_4',['Windows',['../index.html#install_sec_win',1,'Compilation on Windows'],['../index.html#binary_win',1,'Installation on Windows']]],
   ['windows_20with_20msvc22_5',['Windows with msvc22',['../index.html#compile_fftw',1,'Compile FFTW on Windows with msvc22'],['../index.html#compile_opencv',1,'Compile Opencv on Windows with msvc22']]],
   ['with_20msvc22_6',['with msvc22',['../index.html#compile_fftw',1,'Compile FFTW on Windows with msvc22'],['../index.html#compile_opencv',1,'Compile Opencv on Windows with msvc22']]],
   ['write_5fspm_5finfo_7',['Write_SPM_info',['../classP__SPM.html#a9909788f935b91f3f49b5012d6483892',1,'P_SPM']]],
