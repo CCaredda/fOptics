@@ -12,24 +12,27 @@ A pre-built Windows installer is available in the Releases section: https://gith
 
  \section install_sec_win Compilation on Windows
  
- Follow these steps, if you need to compile the code.
- This program is coded in C++ with the framework Qt and the Microsoft Visual Studio 2022.
+Follow these steps, if you need to compile the code.
+This program is coded in C++ with the framework Qt and the Microsoft Visual Studio 2022.
 
-Install Visual Studio 2022 (not via Visual studio installer because it will install Visual studio 2026. Version 2022 is required to work with Qt.
+Install Visual Studio 2022 (not via the Visual Studio installer, as it will install Visual Studio 2026). Version 2022 is required to work with Qt.
 
 Download visual studio professional 2022: https://my.visualstudio.com/Downloads?q=visual%20studio%202022&wt.mc_id=o~msft~vscom~older-downloads
 
-Install visual Studio professional 2022, and tick the box Desktop Development with C++
-Click on install
+Install visual Studio professional 2022, and tick the box "Desktop Development with C++".
+Click on install.
 	
-Download qt installer: https://www.qt.io/development/download-qt-installer-oss
-- CLick on personalized installation
+Download the Qt installer: https://www.qt.io/development/download-qt-installer-oss for Windows x64.
+- Launch the installer 
+- CLick on "Personalized installation".
 - Tick these boxes: 
-	- Qt/ Qt version/ MSVC 20022 (or more recent)
-	- Qt5 Compatibility Module, Qt Charts, Qt Graphs, Qt Multimedia, Qt Sensors, Qt Serial bus, Qt Serial Port, Qt shader tools, Qt Task Tree
--do not tick MinGW compiler
+	- Developper Tools/Qt Creator (use the latest version)
+	- Qt for Developpement/Qt/Qt.x.x.x (choose the latest version)/ MSVC 20022 (or more recent)
+	- Qt for Developpement/Qt/Qt.x.x.x/Additional libraries/
+	Qt5 Compatibility Module, Qt Charts, Qt Graphs, Qt Multimedia, Qt Sensors, Qt Serial bus, Qt Serial Port, Qt shader tools, Qt Task Tree
+- Do not tick MinGW compiler
 	
-Download cmake binary and install it
+Download the latest CMake release and install it: https://cmake.org/download/
 
 
 
@@ -37,11 +40,11 @@ Download cmake binary and install it
 
 \subsection compile_opencv Compile Opencv on Windows with msvc22
 
-1) Download opencv
+1) Download opencv:
 	- source https://github.com/opencv/opencv
 	- contrib https://github.com/opencv/opencv_contrib
 	
-2) In C:\Downloads, create build dir next to opencv sources:
+2) In C:\Downloads, create build directory next to opencv sources:
 
  ├─ C:\Downloads\opencv\
 
@@ -51,11 +54,11 @@ Download cmake binary and install it
  
  │   └─ build\
 
-3) Open Developer PowerShell for VS 2022 with administrator privilege
-4) go in build dir, for example:
+3) Open "Developer PowerShell for VS 2022" with administrator privilege.
+4) Go to the build directory, for example:
 cd C:\Users\PRIMES\Downloads\opencv\build
 
-5) Compile Opencv and Opencv-contrib with cmake:
+5) Compile Opencv and Opencv-contrib with CMake (adapt the path):
 
 cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=C:\opencv\install -D OPENCV_EXTRA_MODULES_PATH=C:\Users\ccaredda\Downloads\opencv\contrib\modules -D BUILD_EXAMPLES=OFF -D BUILD_opencv_world=ON -D WITH_OPENMP=ON C:\Users\ccaredda\Downloads\opencv\opencv
   
@@ -67,13 +70,10 @@ cmake --build . --config Release --target INSTALL
 
 \subsection compile_fftw Compile FFTW on Windows with msvc22
 
-1) Download fftw3 source
+1) Download fftw3 sources: https://www.fftw.org/download.html
 
-2) Install cmake
-
-   Install Visual Studio 2022 (with “Desktop development with C++” workload).
    
-3) In C:\Downloads, create build dir next to opencv sources:
+2) In C:\Downloads, create a build directory next to the FFTW sources.
 
  ├─ C:\Downloads\fftw-3.3.10\
 
@@ -85,16 +85,18 @@ cmake --build . --config Release --target INSTALL
  
  │   └─ build_openmp\		
 
-4) Open developer MSVC command prompt with administrator privilege
-5) go in build dir, for example:
+3) Open "Developer PowerShell for VS 2022" with administrator privilege.
+
+4) Go to the build directory, for example:
 cd C:\Users\PRIMES\Downloads\fftw-3.3.10\build
-6) Compile fftw with cmake (double precision):
+
+5) Compile fftw with cmake (double precision):
 
 cmake -D CMAKE_POLICY_VERSION_MINIMUM=3.5 -D CMAKE_BUILD_TYPE=Release -D CMALE_INSTALL_PREFIX=C:\fftw -D BUILD_SHARED_LIBS=OFF C:\Users\ccaredda\Downloads\fftw-3.3.10\src
 
 cmake --build . --config Release --target INSTALL
 
-7) Go to build_f dir, build fftw with float precision
+6) Go to the build_f directory, build fftw with float precision:
 
 cmake -D CMAKE_POLICY_VERSION_MINIMUM=3.5 -D CMAKE_BUILD_TYPE=Release -D CMALE_INSTALL_PREFIX=C:\fftw -D ENABLE_FLOAT=ON -D ENABLE_THREADS=ON -D BUILD_SHARED_LIBS=OFF C:\Users\ccaredda\Downloads\fftw-3.3.10\src
 
@@ -102,29 +104,36 @@ cmake --build . --config Release --target INSTALL
 
 
 
-8) Go to build_openmp dir, build fftw with openmp
+7) Go to the build_openmp directory, build fftw with openmp:
 
 cmake -D CMAKE_POLICY_VERSION_MINIMUM=3.5 -D CMAKE_BUILD_TYPE=Release -D CMALE_INSTALL_PREFIX=C:\fftw -D ENABLE_FLOAT=ON -D ENABLE_OPENMP=ON -D ENABLE_THREADS=ON -D BUILD_SHARED_LIBS=OFF -DFFTW3F_LIB=../build/Release/fftw3f.lib C:\Users\ccaredda\Downloads\fftw-3.3.10\src
 
 cmake --build . --config Release --target INSTALL
 
-9) Move directory C:\Program Files (x86)\fftw to C:\fftw
+8) Move directory C:\Program Files (x86)\fftw to C:\fftw
 
-10) Add C:\fftw\lib to PATH environment variable
+9) Add C:\fftw\lib to the PATH environment variable
 
 
 \subsection compile_boost Install boost library
 
-1) Download boost binary for msvc compiler 64 bits
+1) Download the latest Boost Windows binary for msvc compiler 64 bits: https://www.boost.org/releases/latest/
+
 2) Execute the .exe file with administrator right and install the library in C:\boost
 
 
 
 \subsection Install ffmpeg for video reading
 
+1) Open the Windows powershell and go to C:\
+
 cd C:\
 
+2) Download vcpkg:
+
 git clone https://github.com/microsoft/vcpkg.git 
+
+3) Install ffmpeg via vcpkg:
 
 cd vcpkg  
 
